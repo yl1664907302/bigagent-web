@@ -1,115 +1,170 @@
-import type { UserConfig, ConfigEnv } from 'vite'
-import pkg from './package.json'
-import dayjs from 'dayjs'
-import { loadEnv } from 'vite'
 import { resolve } from 'path'
-import { generateModifyVars } from './build/generate/generateModifyVars'
-import { createProxy } from './build/vite/proxy'
-import { wrapperEnv } from './build/utils'
-import { createVitePlugins } from './build/vite/plugin'
-import { OUTPUT_DIR } from './build/constant'
+import { loadEnv } from 'vite'
+import type { UserConfig, ConfigEnv } from 'vite'
+import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
+import progress from 'vite-plugin-progress'
+// import EslintPlugin from 'vite-plugin-eslint'
+import { ViteEjsPlugin } from "vite-plugin-ejs"
+import { viteMockServe } from 'vite-plugin-mock'
+import PurgeIcons from 'vite-plugin-purge-icons'
+import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite"
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
+import UnoCSS from 'unocss/vite'
+import { visualizer } from 'rollup-plugin-visualizer'
+
+// https://vitejs.dev/config/
+const root = process.cwd()
 
 function pathResolve(dir: string) {
-  return resolve(process.cwd(), '.', dir)
-}
-
-const { dependencies, devDependencies, name, version } = pkg
-const __APP_INFO__ = {
-  pkg: { dependencies, devDependencies, name, version },
-  lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+  return resolve(root, '.', dir)
 }
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
-  const root = process.cwd()
-
-  const env = loadEnv(mode, root)
-
-  // The boolean type read by loadEnv is a string. This function can be converted to boolean type
-  const viteEnv = wrapperEnv(env)
-
-  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } = viteEnv
-
+  let env = {} as any
   const isBuild = command === 'build'
-
+  if (!isBuild) {
+    env = loadEnv((process.argv[3] === '--mode' ? process.argv[4] : process.argv[3]), root)
+  } else {
+    env = loadEnv(mode, root)
+  }
   return {
-    base: VITE_PUBLIC_PATH,
-    root,
-    resolve: {
-      alias: [
-        {
-          find: 'vue-i18n',
-          replacement: 'vue-i18n/dist/vue-i18n.cjs.js',
-        },
-        // /@/xxxx => src/xxxx
-        {
-          find: /\/@\//,
-          replacement: pathResolve('src') + '/',
-        },
-        // /#/xxxx => types/xxxx
-        {
-          find: /\/#\//,
-          replacement: pathResolve('types') + '/',
-        },
-      ],
-    },
-    server: {
-      https: true,
-      // Listening on all local IPs
-      host: true,
-      port: VITE_PORT,
-      // Load proxy configuration from .env
-      proxy: createProxy(VITE_PROXY),
-    },
-    esbuild: {
-      pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
-    },
-    build: {
-      target: 'es2015',
-      cssTarget: 'chrome80',
-      outDir: OUTPUT_DIR,
-      // minify: 'terser',
-      /**
-       * 当 minify=“minify:'terser'” 解开注释
-       * Uncomment when minify="minify:'terser'"
-       */
-      // terserOptions: {
-      //   compress: {
-      //     keep_infinity: true,
-      //     drop_console: VITE_DROP_CONSOLE,
-      //   },
-      // },
-      // Turning off brotliSize display can slightly reduce packaging time
-      brotliSize: false,
-      chunkSizeWarningLimit: 2000,
-    },
-    define: {
-      // setting vue-i18-next
-      // Suppress warning
-      __INTLIFY_PROD_DEVTOOLS__: false,
-      __APP_INFO__: JSON.stringify(__APP_INFO__),
-    },
+    base: env.VITE_BASE_PATH,
+    plugins: [
+      Vue({
+        script: {
+          // 开启defineModel
+          defineModel: true
+        }
+      }),
+      VueJsx(),
+      progress(),
+      env.VITE_USE_ALL_ELEMENT_PLUS_STYLE === 'false'
+        ? createStyleImportPlugin({
+            resolves: [ElementPlusResolve()],
+            libs: [
+              {
+                libraryName: 'element-plus',
+                esModule: true,
+                resolveStyle: (name) => {
+                  if (name === 'click-outside') {
+                    return ''
+                  }
+                  return `element-plus/es/components/${name.replace(/^el-/, '')}/style/css`
+                }
+              }
+            ]
+          })
+        : undefined,
+      // EslintPlugin({
+      //   cache: false,
+      //   include: ['src/**/*.vue', 'src/**/*.ts', 'src/**/*.tsx'] // 检查的文件
+      // }),
+      VueI18nPlugin({
+        runtimeOnly: true,
+        compositionOnly: true,
+        include: [resolve(__dirname, 'src/locales/**')]
+      }),
+      createSvgIconsPlugin({
+        iconDirs: [pathResolve('src/assets/svgs')],
+        symbolId: 'icon-[dir]-[name]',
+        svgoOptions: true
+      }),
+      PurgeIcons(),
+      env.VITE_USE_MOCK === 'true'
+        ? viteMockServe({
+            ignore: /^\_/,
+            mockPath: 'mock',
+            localEnabled: !isBuild,
+            prodEnabled: isBuild,
+            injectCode: `
+          import { setupProdMockServer } from '../mock/_createProductionServer'
+
+          setupProdMockServer()
+          `
+          })
+        : undefined,
+      ViteEjsPlugin({
+        title: env.VITE_APP_TITLE
+      }),
+      UnoCSS(),
+      // sveltekit(),
+    ],
 
     css: {
       preprocessorOptions: {
         less: {
-          modifyVars: generateModifyVars(),
-          javascriptEnabled: true,
+          additionalData: '@import "./src/styles/variables.module.less";',
+          javascriptEnabled: true
+        }
+      }
+    },
+    resolve: {
+      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.less', '.css'],
+      alias: [
+        {
+          find: 'vue-i18n',
+          replacement: 'vue-i18n/dist/vue-i18n.cjs.js'
         },
+        {
+          find: /\@\//,
+          replacement: `${pathResolve('src')}/`
+        }
+      ]
+    },
+    esbuild: {
+      pure: env.VITE_DROP_CONSOLE === 'true' ? ['console.log'] : undefined,
+      drop: env.VITE_DROP_DEBUGGER === 'true' ? ['debugger'] : undefined
+    },
+    build: {
+      target: 'es2015',
+      outDir: env.VITE_OUT_DIR || 'dist',
+      sourcemap: env.VITE_SOURCEMAP === 'true',
+      // brotliSize: false,
+      rollupOptions: {
+        plugins: env.VITE_USE_BUNDLE_ANALYZER === 'true' ? [visualizer()] : undefined,
+        // 拆包
+        output: {
+          manualChunks: {
+            'vue-chunks': ['vue', 'vue-router', 'pinia', 'vue-i18n'],
+            'element-plus': ['element-plus'],
+            'wang-editor': ['@wangeditor/editor', '@wangeditor/editor-for-vue']
+          }
+        }
       },
+      cssCodeSplit: !(env.VITE_USE_CSS_SPLIT === 'false')
     },
-
-    // The vite plugin used by the project. The quantity is large, so it is separately extracted and managed
-    plugins: createVitePlugins(viteEnv, isBuild),
-
+    server: {
+      port: 3005,
+      proxy: {
+        // 选项写法
+        '/api': {
+          target: 'http://127.0.0.1:8000',
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api/, '')
+        }
+      },
+      hmr: {
+        overlay: false
+      },
+      host: '0.0.0.0'
+    },
     optimizeDeps: {
-      // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
       include: [
-        '@vue/runtime-core',
-        '@vue/shared',
+        'vue',
+        'vue-router',
+        'vue-types',
+        'element-plus/es/locale/lang/zh-cn',
+        'element-plus/es/locale/lang/en',
         '@iconify/iconify',
-        'ant-design-vue/es/locale/zh_CN',
-        'ant-design-vue/es/locale/en_US',
-      ],
-    },
+        '@vueuse/core',
+        'axios',
+        'qs',
+        '@zxcvbn-ts/core',
+        'dayjs',
+        'xgplayer'
+      ]
+    }
   }
 }

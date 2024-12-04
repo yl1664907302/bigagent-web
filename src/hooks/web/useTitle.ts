@@ -1,35 +1,25 @@
-import { watch, unref } from 'vue'
-import { useI18n } from '/@/hooks/web/useI18n'
-import { useTitle as usePageTitle } from '@vueuse/core'
-import { useGlobSetting } from '/@/hooks/setting'
-import { useRouter } from 'vue-router'
-import { useLocaleStore } from '/@/store/modules/locale'
+import { watch, ref } from 'vue'
+import { isString } from '@/utils/is'
+import { useAppStoreWithOut } from '@/store/modules/app'
+import { useI18n } from '@/hooks/web/useI18n'
 
-import { REDIRECT_NAME } from '/@/router/constant'
-
-/**
- * Listening to page changes and dynamically changing site titles
- */
-export function useTitle() {
-  const { title } = useGlobSetting()
+export const useTitle = (newTitle?: string) => {
   const { t } = useI18n()
-  const { currentRoute } = useRouter()
-  const localeStore = useLocaleStore()
+  const appStore = useAppStoreWithOut()
 
-  const pageTitle = usePageTitle()
+  const title = ref(
+    newTitle ? `${appStore.getTitle} - ${t(newTitle as string)}` : appStore.getTitle
+  )
 
   watch(
-    [() => currentRoute.value.path, () => localeStore.getLocale],
-    () => {
-      const route = unref(currentRoute)
-
-      if (route.name === REDIRECT_NAME) {
-        return
+    title,
+    (n, o) => {
+      if (isString(n) && n !== o && document) {
+        document.title = n
       }
-
-      const tTitle = t(route?.meta?.title as string)
-      pageTitle.value = tTitle ? ` ${tTitle} - ${title} ` : `${title}`
     },
-    { immediate: true },
+    { immediate: true }
   )
+
+  return title
 }

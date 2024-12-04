@@ -1,34 +1,24 @@
-import { CSSProperties, VNodeChild } from 'vue'
-import { createTypes, VueTypeValidableDef, VueTypesInterface } from 'vue-types'
-
-export type VueNode = VNodeChild | JSX.Element
+import { VueTypeValidableDef, VueTypesInterface, createTypes, toValidableType } from 'vue-types'
+import { CSSProperties } from 'vue'
 
 type PropTypes = VueTypesInterface & {
   readonly style: VueTypeValidableDef<CSSProperties>
-  readonly VNodeChild: VueTypeValidableDef<VueNode>
-  // readonly trueBool: VueTypeValidableDef<boolean>;
 }
-
-const propTypes = createTypes({
+const newPropTypes = createTypes({
   func: undefined,
   bool: undefined,
   string: undefined,
   number: undefined,
   object: undefined,
-  integer: undefined,
+  integer: undefined
 }) as PropTypes
 
-propTypes.extend([
-  {
-    name: 'style',
-    getter: true,
-    type: [String, Object],
-    default: undefined,
-  },
-  {
-    name: 'VNodeChild',
-    getter: true,
-    type: undefined,
-  },
-])
+class propTypes extends newPropTypes {
+  static get style() {
+    return toValidableType('style', {
+      type: [String, Object]
+    })
+  }
+}
+
 export { propTypes }

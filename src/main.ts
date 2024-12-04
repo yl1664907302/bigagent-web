@@ -1,64 +1,67 @@
-import 'virtual:windi-base.css'
-import 'virtual:windi-components.css'
-import '/@/design/index.less'
-import 'virtual:windi-utilities.css'
-// Register icon sprite
-import 'virtual:svg-icons-register'
-import App from './App.vue'
+import 'vue/jsx'
+
+// 引入unocss
+import '@/plugins/unocss'
+
+// 导入全局的svg图标
+import '@/plugins/svgIcon'
+
+// 初始化多语言
+import { setupI18n } from '@/plugins/vueI18n'
+
+// 引入状态管理
+import { setupStore } from '@/store'
+
+// 全局组件
+import { setupGlobCom } from '@/components'
+
+// 引入element-plus
+import { setupElementPlus } from '@/plugins/elementPlus'
+
+// 引入全局样式
+import '@/styles/index.less'
+
+// 引入动画
+import '@/plugins/animate.css'
+
+// 路由
+import { setupRouter } from './router'
+
 import { createApp } from 'vue'
-import { initAppConfigStore } from '/@/logics/initAppConfig'
-import { router, setupRouter } from '/@/router'
-import { setupRouterGuard } from '/@/router/guard'
-import { setupStore } from '/@/store'
-import { setupGlobDirectives } from '/@/directives'
-import { setupI18n } from '/@/locales/setupI18n'
-import { registerGlobComp } from '/@/components/registerGlobComp'
 
-import { isDevMode } from './utils/env'
+// ele plus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
-if (isDevMode()) {
-  import('ant-design-vue/es/style')
-}
+// ant
+import  DatePicker  from 'ant-design-vue';
+import 'ant-design-vue/dist/reset.css';
 
-async function bootstrap() {
+// ar
+import ArcoVue from '@arco-design/web-vue';
+import '@arco-design/web-vue/dist/arco.css';
+
+import App from './App.vue'
+
+import './permission'
+
+// 创建实例
+const setupAll = async () => {
   const app = createApp(App)
 
-  // Configure store
-  // 配置 store
-  setupStore(app)
-
-  // Initialize internal system configuration
-  // 初始化内部系统配置
-  initAppConfigStore()
-
-  // Register global components
-  // 注册全局组件
-  registerGlobComp(app)
-
-  // Multilingual configuration
-  // 多语言配置
-  // Asynchronous case: language files may be obtained from the server side
-  // 异步案例：语言文件可能从服务器端获取
   await setupI18n(app)
 
-  // Configure routing
-  // 配置路由
+  setupStore(app)
+
+  setupGlobCom(app)
+
+  setupElementPlus(app)
+
   setupRouter(app)
-
-  // router-guard
-  // 路由守卫
-  setupRouterGuard(router)
-
-  // Register global directive
-  // 注册全局指令
-  setupGlobDirectives(app)
-
-  // Configure global error handling
-
-  // https://next.router.vuejs.org/api/#isready
-  // await router.isReady();
-
+  app.use(ElementPlus)
+  app.use(DatePicker)
+  app.use(ArcoVue)
   app.mount('#app')
 }
 
-bootstrap()
+setupAll()

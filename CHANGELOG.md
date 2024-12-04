@@ -1,1586 +1,763 @@
-## [2.8.0](https://github.com/anncwb/vue-vben-admin/compare/v2.7.2...v2.8.0) (2021-11-03)
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.9.9](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.8...v1.9.9) (2023-04-13)
 
 ### Bug Fixes
 
-- fixed token clear error ([9640484](https://github.com/anncwb/vue-vben-admin/commit/96404848955f84d57b88dd240ab3a57b7017103c))
-- improve type introduction, fix [#1196](https://github.com/anncwb/vue-vben-admin/issues/1196) ([2820d5a](https://github.com/anncwb/vue-vben-admin/commit/2820d5a627260bb8eddfcd25df1cd7d1196932e8))
-- **api-select:** fixed `value` prop define ([f87b0f2](https://github.com/anncwb/vue-vben-admin/commit/f87b0f2f5efe4e9977c4cc0742dbcaefbad2ca02)), closes [#1175](https://github.com/anncwb/vue-vben-admin/issues/1175)
-- **card-list:** fixed build error ([628e820](https://github.com/anncwb/vue-vben-admin/commit/628e820684ce5d81f130548505efe83e8d516131))
-- **code-editor:** fixed formatting error ([e7c9636](https://github.com/anncwb/vue-vben-admin/commit/e7c96363a1963b7733a9ee498403eb6a062160e6))
-- **echarts:** theme setting supported ([93812f7](https://github.com/anncwb/vue-vben-admin/commit/93812f734ec85529aa27fc3100a2eaef8c7a6df5)), closes [#1095](https://github.com/anncwb/vue-vben-admin/issues/1095)
-- **markdown:** the hierarchy of markDown components after full screen ([c8017b1](https://github.com/anncwb/vue-vben-admin/commit/c8017b1365ea49f95a26148a539f8c30d8a8631f))
-- **markdown:** `value` not worked on init ([0bb9c03](https://github.com/anncwb/vue-vben-admin/commit/0bb9c035f77588c58d36b3fd45d89b9730cd70d7))
-- **modal:** avoid style pollution to the whole world ([#1128](https://github.com/anncwb/vue-vben-admin/issues/1128)) ([6e7f6f8](https://github.com/anncwb/vue-vben-admin/commit/6e7f6f82ed2819e02e2b3114884e665d0762d7e9))
-- **table:** `rowClassName` not worked with `striped` ([044e2e4](https://github.com/anncwb/vue-vben-admin/commit/044e2e4e866dd5b120daab03c47aba1ca1f9140a)), closes [#1167](https://github.com/anncwb/vue-vben-admin/issues/1167)
-- **table:** 修复表格背景颜色再深色模式下会被穿透问题 ([#1133](https://github.com/anncwb/vue-vben-admin/issues/1133)) ([30fa4cf](https://github.com/anncwb/vue-vben-admin/commit/30fa4cfa2ab6229efc67224fd082e32da0a95d49))
-- **table:** editable icon not show with empty cell ([edc3096](https://github.com/anncwb/vue-vben-admin/commit/edc30965653831b4572c5d5e067f556f4757ce75)), closes [#1103](https://github.com/anncwb/vue-vben-admin/issues/1103)
-- **table:** fix table footer style ([a426b90](https://github.com/anncwb/vue-vben-admin/commit/a426b9027ef524f9033d510d0c74cd17b2ad5bcf)), closes [#1112](https://github.com/anncwb/vue-vben-admin/issues/1112)
-- **table:** Solve the bug of setting ifshow to false in table column ([#1166](https://github.com/anncwb/vue-vben-admin/issues/1166)) ([5fa730c](https://github.com/anncwb/vue-vben-admin/commit/5fa730c49ae46fa448d49d597dc7b2b6a019b268))
-- **table-action:** `divider` not work as expected ([7593ef6](https://github.com/anncwb/vue-vben-admin/commit/7593ef6a4f081ed800658b70316ab2f1e3ee631d))
-- **tinymce:** fixed `inline` mode ([8e01377](https://github.com/anncwb/vue-vben-admin/commit/8e01377481a34cda221de6bbb01fc7d5b2824c82)), closes [#1092](https://github.com/anncwb/vue-vben-admin/issues/1092)
-- **upload:** `accept` not work as expected ([656ee4e](https://github.com/anncwb/vue-vben-admin/commit/656ee4e5c9b363b6ab59aa071915414e5ee95de4))
-- `getUserinfo` is compatible with empty roles data ([1ddfc31](https://github.com/anncwb/vue-vben-admin/commit/1ddfc31c3c4c792c5f741f6d0f0754ffc9a6613c))
-- `slots` worked in `basicTable` and `basicModal` ([5138e44](https://github.com/anncwb/vue-vben-admin/commit/5138e447e74ef01309457d22f44129c8b1b2f815))
-- `useRedo` called duplicate may cause exception ([1235978](https://github.com/anncwb/vue-vben-admin/commit/1235978ab23740dfb11e3de7ac26a7d10a4899dc)), closes [#1121](https://github.com/anncwb/vue-vben-admin/issues/1121)
-- 修复 `apiSelect` 绑定值 `attrs` 的问题 ([#1172](https://github.com/anncwb/vue-vben-admin/issues/1172)) ([c753d94](https://github.com/anncwb/vue-vben-admin/commit/c753d945e08f72cab5bc8a585601cab6a0523fca))
-- 修复弹窗全屏按钮异常关闭的问题([#1177](https://github.com/anncwb/vue-vben-admin/issues/1177)) ([#1182](https://github.com/anncwb/vue-vben-admin/issues/1182)) ([9e9ea3f](https://github.com/anncwb/vue-vben-admin/commit/9e9ea3f43d8c4b88649c1998bf89186b5f7ee6a2))
-- 修改 axios 中 urlPrefix 字段不生效问题 ([#1170](https://github.com/anncwb/vue-vben-admin/issues/1170)) ([7df9b51](https://github.com/anncwb/vue-vben-admin/commit/7df9b513447d8deab2fd8e86fa23c807adb6d440))
-- add loss action for userStore ([a36825a](https://github.com/anncwb/vue-vben-admin/commit/a36825a6d423aae9aaf1936ce55947ba8c2104b0))
-- fix all types of errors, compatible with volar plugin ([e15b4f1](https://github.com/anncwb/vue-vben-admin/commit/e15b4f14db51812effd55670b3d2da7b082e00a7))
-- fixed build warning for style of `intro.js` ([d27633f](https://github.com/anncwb/vue-vben-admin/commit/d27633fb31824e92cbeb24f8d626d8e33ce7179e)), closes [#1130](https://github.com/anncwb/vue-vben-admin/issues/1130)
-- Improve content height calculation ([#1136](https://github.com/anncwb/vue-vben-admin/issues/1136)) ([6717fe6](https://github.com/anncwb/vue-vben-admin/commit/6717fe654e88e6a939a16c523832870388ec1886))
-- name of vite `mode` support more characters ([9f68229](https://github.com/anncwb/vue-vben-admin/commit/9f6822991c4b2da78e0a5d0c7d6e0288f0d9d1cb)), closes [#1115](https://github.com/anncwb/vue-vben-admin/issues/1115)
-- refresh failed while token invalid ([3a5d1a5](https://github.com/anncwb/vue-vben-admin/commit/3a5d1a5757c0a2be17e6dd370cbb023ddbb30d5e)), closes [#1101](https://github.com/anncwb/vue-vben-admin/issues/1101)
-- warning in logout action ([b3307fe](https://github.com/anncwb/vue-vben-admin/commit/b3307fe2836fb6f9806d602d5bdb7e540c49f1b0))
-- **tinymce:** fixed `tinymce` destory method ([fb43fad](https://github.com/anncwb/vue-vben-admin/commit/fb43fad555b093af23194bdb3670bc1347c0010f))
+- 使用动态路由时，多级路由只有一个子路且父路由未使用alwaysShow时，子路由未添加至路由中 ([9b330a1](https://github.com/kailong321200875/vue-element-plus-admin/commit/9b330a1f513d3af9233b9a9dde6bdfeeefbc3393))
+
+## [1.9.8](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.7...v1.9.8) (2023-04-12)
+
+### Bug Fixes
+
+- 修复已知问题 ([0a6f306](https://github.com/kailong321200875/vue-element-plus-admin/commit/0a6f306686ea024e30bcdccac34e485b8526e38f))
+
+## [1.9.7](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.6...v1.9.7) (2023-03-28)
+
+### Bug Fixes
+
+- 修复表格与搜索框字段不能不一致的问题 ([5c1cd29](https://github.com/kailong321200875/vue-element-plus-admin/commit/5c1cd298defefb36b858adc766b776a0a7b9bd66))
+
+## [1.9.6](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.5...v1.9.6) (2023-03-22)
+
+### Bug Fixes
+
+- 修改 Editor 的 z-index 使其不会遮挡『综合示例 - 新增』界面的下拉菜单 ([c046e45](https://github.com/kailong321200875/vue-element-plus-admin/commit/c046e4554ba8fd99614484d8fb636650072b833e))
+
+## [1.9.5](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.4...v1.9.5) (2023-03-13)
+
+### Bug Fixes
+
+- 面包屑:1.修复使用动态路由的时候，无法显示的bug ([8790c8c](https://github.com/kailong321200875/vue-element-plus-admin/commit/8790c8cbd8d63ea0f8f276fd5af006f39b06e7d3))
+
+## [1.9.4](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.3...v1.9.4) (2023-03-03)
+
+### Bug Fixes
+
+- 修复已知BUG ([782b8e2](https://github.com/kailong321200875/vue-element-plus-admin/commit/782b8e2f94c867c3ee282287c37c888fff93fc55))
+
+## [1.9.3](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.2...v1.9.3) (2023-03-01)
+
+### Types
+
+- 修复类型错误 ([297b2c6](https://github.com/kailong321200875/vue-element-plus-admin/commit/297b2c69a239b487126c3b9316645a1b5f06bb7c))
+
+### Styling
+
+- 抽屉弹出样式问题 ([16a3eef](https://github.com/kailong321200875/vue-element-plus-admin/commit/16a3eef85a1ffb296bd44f67d89a911ecaf1c25e))
+- 调整主题切换样式 ([6e6beef](https://github.com/kailong321200875/vue-element-plus-admin/commit/6e6beefc3c380f7297985adcabcf966fbd2c5197))
+
+## [1.9.2](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.1...v1.9.2) (2023-01-16)
+
+### Bug Fixes
+
+- 修复TS类型错误 ([1c06a27](https://github.com/kailong321200875/vue-element-plus-admin/commit/1c06a27b900a891cd0b47098062cebc984ff6505))
+
+## [1.9.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.9.0...v1.9.1) (2023-01-11)
+
+### Bug Fixes
+
+- dark mode toggle ([bbc7646](https://github.com/kailong321200875/vue-element-plus-admin/commit/bbc764601ec864c2fdbe3ad78c083c5ae80615e0))
+
+## [1.9.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.8.7...v1.9.0) (2022-12-28)
 
 ### Features
 
-- **demo:** add `JsonPreview` demo ([83c1683](https://github.com/anncwb/vue-vben-admin/commit/83c1683bfdcf4ea33de771895b46e41f276969e8)), closes [#1146](https://github.com/anncwb/vue-vben-admin/issues/1146)
-- **form:** add `Divider` for schema component type ([47a448b](https://github.com/anncwb/vue-vben-admin/commit/47a448b8aea572e54dac97dc4f9fb6c1c005685a))
-- **form:** component `Divider` support `helpMessage` ([a5ff592](https://github.com/anncwb/vue-vben-admin/commit/a5ff59237f2eb6ea4c1770acc594c75bf1f6e95f))
-- **markdown-viewer:** add new component ([73dc492](https://github.com/anncwb/vue-vben-admin/commit/73dc492b2a49793d945ccdae7f5c429c874f298c)), closes [#1181](https://github.com/anncwb/vue-vben-admin/issues/1181)
-- **table:** 添加和支持动态删除和插入数据 ([#1152](https://github.com/anncwb/vue-vben-admin/issues/1152)) ([59a9087](https://github.com/anncwb/vue-vben-admin/commit/59a90877287a289f746eec97d12c2d3a1d5476b0))
-- **table:** add `beforeEditSubmit` for editable cell ([2c867b3](https://github.com/anncwb/vue-vben-admin/commit/2c867b3d636d57cdc526a4ca600af7d747b7d833))
-- **table:** add `onValid` for editRow ([ee7c31d](https://github.com/anncwb/vue-vben-admin/commit/ee7c31db44fd8f99f0d26da368e1d82b5630f309))
-- **tree:** 1. 添加自定义数据过滤判断方法 2. 添加搜索完成自动展开结果选项 3. 添加搜索完成自动选中结果选项 4. 树节点数据变化时强制搜索(同步 searchData 避免展示错误) ([#1132](https://github.com/anncwb/vue-vben-admin/issues/1132)) ([e00578c](https://github.com/anncwb/vue-vben-admin/commit/e00578c40a585a4a35f235c0228aebaf62cea1ba))
-- add CardList component ([0f5ddbf](https://github.com/anncwb/vue-vben-admin/commit/0f5ddbf1ec777fc238a94bd037d37ea787316757))
+- 添加打包进度条 ([354e87f](https://github.com/kailong321200875/vue-element-plus-admin/commit/354e87f7c533ad8e93ef484b47d0fe16f17048c9))
+
+### Bug Fixes
+
+- husky ([6fe5b2e](https://github.com/kailong321200875/vue-element-plus-admin/commit/6fe5b2e6c781b251bff5f0ac936c04dcfe5ef95f))
+
+## [1.8.7](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.8.6...v1.8.7) (2022-12-05)
+
+### Bug Fixes
+
+- 解决iframe无法正常工作 ([4fcc46f](https://github.com/kailong321200875/vue-element-plus-admin/commit/4fcc46fccf747b47909e2079c4f2abc5dbfb1a0c))
+
+## [1.8.6](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.8.5...v1.8.6) (2022-11-21)
+
+### Bug Fixes
+
+- 修复Search组件无法默认值 ([3368fda](https://github.com/kailong321200875/vue-element-plus-admin/commit/3368fda251bd3ff5a8e0059b3b33f9c0339d236b))
+
+## [1.8.5](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.8.4...v1.8.5) (2022-11-17)
+
+### Bug Fixes
+
+- 修复Form赋值问题 ([f37cc1b](https://github.com/kailong321200875/vue-element-plus-admin/commit/f37cc1b5801add3ada168dbbcf4cd2c340f0e30d))
+
+## [1.8.4](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.8.3...v1.8.4) (2022-11-07)
+
+### Bug Fixes
+
+- 修复option禁用属性无效 ([0b671e9](https://github.com/kailong321200875/vue-element-plus-admin/commit/0b671e914e396c7666ad5e34768a6e29f7dfbd33))
+
+### Styling
+
+- input默认宽度与select对齐 ([0b671e9](https://github.com/kailong321200875/vue-element-plus-admin/commit/0b671e914e396c7666ad5e34768a6e29f7dfbd33))
+
+## [1.8.3](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.8.2...v1.8.3) (2022-10-28)
 
 ### Performance Improvements
 
-- **tree:** 优化 Tree 搜索功能，添加搜索高亮功能，优化样式表现 ([#1153](https://github.com/anncwb/vue-vben-admin/issues/1153)) ([3b6b4f7](https://github.com/anncwb/vue-vben-admin/commit/3b6b4f73033e8757fd3a032f0910dfcc30dee151))
-- not waiting for router.isReady ([2884e86](https://github.com/anncwb/vue-vben-admin/commit/2884e863ce826cd92cd782f40cdee31588bc6d32))
-- optimize css volume ([466d4ed](https://github.com/anncwb/vue-vben-admin/commit/466d4edcd02fc91e2b4cdbbc3c501bfd2fde7a3d))
+- 优化描述组件 ([73ecc98](https://github.com/kailong321200875/vue-element-plus-admin/commit/73ecc98671d430013920246d98ce9ab1752e56eb))
 
-## [2.7.1](https://github.com/anncwb/vue-vben-admin/compare/v2.6.1...v2.7.1) (2021-08-16)
+## [1.8.2](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.8.1...v1.8.2) (2022-10-18)
 
 ### Bug Fixes
 
-- `slots` working in components ([b1f3176](https://github.com/anncwb/vue-vben-admin/commit/b1f31762e3c86a432a8d559ab957444eaf5525ad))
-- add axios error info from response ([#1083](https://github.com/anncwb/vue-vben-admin/issues/1083)) ([72634ff](https://github.com/anncwb/vue-vben-admin/commit/72634ffe6e6649d36ee41f7633c8ee2ab80cf25e))
-- auto remove script dom in `useScript` ([a544dd3](https://github.com/anncwb/vue-vben-admin/commit/a544dd3e589329339177dad3d5c1f75dd6e6f0ca))
-- fixed `useRedo` may loss route params ([2dd3d85](https://github.com/anncwb/vue-vben-admin/commit/2dd3d8544866231895d23dba63785b683ae0062e)), closes [#1079](https://github.com/anncwb/vue-vben-admin/issues/1079)
-- fixed basicButton ghost style ([3ba8a67](https://github.com/anncwb/vue-vben-admin/commit/3ba8a67647d35fb9639a5af66f33d43eff493d15))
-- fixed basicButton primary style ([1b57792](https://github.com/anncwb/vue-vben-admin/commit/1b577922e752c02fe7c033c53be37ef81e4e9b8e))
-- fixed basicButton style ([beb4ae9](https://github.com/anncwb/vue-vben-admin/commit/beb4ae92c190780bbd3bc6bc7547d52e2ccf8cf1))
-- **cropper:** cropper not destroy in time ([3819430](https://github.com/anncwb/vue-vben-admin/commit/381943078fd55123fde3d5555e04f279d7f1c407)), closes [#1027](https://github.com/anncwb/vue-vben-admin/issues/1027)
-- **demo:** fix form style in modal ([30c5fc6](https://github.com/anncwb/vue-vben-admin/commit/30c5fc63c8600cfb03f917d79e56c0a7e7ff64e0)), closes [#1076](https://github.com/anncwb/vue-vben-admin/issues/1076)
-- **i18n:** add i18n translate data ([1f55c41](https://github.com/anncwb/vue-vben-admin/commit/1f55c4180f9c0cf48e3796a77d6f0bfd46107272))
-- **locales:** fix that vscode extension i18n-Ally detect zh-CN as zh ([#1044](https://github.com/anncwb/vue-vben-admin/issues/1044)) ([b2d49cb](https://github.com/anncwb/vue-vben-admin/commit/b2d49cbbf81cb15e75905deb95bdf7ac4af4e599))
-- **modal:** `helpMessage` doesn't work ([953bfc6](https://github.com/anncwb/vue-vben-admin/commit/953bfc6f1a559309ea2b1114b8ede911a3751cc7))
-- **page-wrapper:** fix `class` not working ([8879ae8](https://github.com/anncwb/vue-vben-admin/commit/8879ae8d773e8dc4c252c4234eefeab9bc135a30))
-- **qrcode:** qrcode not displayed properly ([26f251e](https://github.com/anncwb/vue-vben-admin/commit/26f251e1ed5bfd79c8615fb552ca302f917cc588)), closes [#1026](https://github.com/anncwb/vue-vben-admin/issues/1026)
-- **route:** the whitelist should include basicRoutes ([#1048](https://github.com/anncwb/vue-vben-admin/issues/1048)) ([1bb5156](https://github.com/anncwb/vue-vben-admin/commit/1bb51569236fd9bcc55dd9f237f51f218956b258))
-- **table:** `0` is not shown in editable cell ([33a335a](https://github.com/anncwb/vue-vben-admin/commit/33a335a3f52aead522b3fbee0d558e2e797580ff)), closes [#1039](https://github.com/anncwb/vue-vben-admin/issues/1039)
-- **table:** `cellFormat` support `Map` ([1214b7c](https://github.com/anncwb/vue-vben-admin/commit/1214b7c32c425750a4d0202a9b235eb9e45a6f47)), closes [#1031](https://github.com/anncwb/vue-vben-admin/issues/1031)
-- **table:** `getSelectRows` support multi-page ([4b6025c](https://github.com/anncwb/vue-vben-admin/commit/4b6025cb9a3ef067680201ec3052bc651e0a0c1b)), closes [#914](https://github.com/anncwb/vue-vben-admin/issues/914)
-- **table:** `selection-change` not triggered in unchecking ([019555b](https://github.com/anncwb/vue-vben-admin/commit/019555be0c88edc673cae382023d647e78959b30)), closes [#1053](https://github.com/anncwb/vue-vben-admin/issues/1053)
-- **table:** `size` not worked in `editComponentProps` ([7971896](https://github.com/anncwb/vue-vben-admin/commit/7971896383296c155b7ab16b5beb3544f34ee525)), closes [#1074](https://github.com/anncwb/vue-vben-admin/issues/1074)
-- **table:** fix `getSelectRows` for treeTable ([f2b8bb4](https://github.com/anncwb/vue-vben-admin/commit/f2b8bb43a0b9172b9ef9ced8e83bf91143a091d9)), closes [#1003](https://github.com/anncwb/vue-vben-admin/issues/1003)
-- **table:** fix `injection not found` warning ([53e79a2](https://github.com/anncwb/vue-vben-admin/commit/53e79a2d94df19c0e1aa7399d5ce4c27834e0350))
-- **types:** fix some type errors ([9035fd1](https://github.com/anncwb/vue-vben-admin/commit/9035fd191e4e8d954f42b3a4cd1e80ec70b7cbb6))
-- The Style of tableTitle slot ([#1023](https://github.com/anncwb/vue-vben-admin/issues/1023)) ([02e7756](https://github.com/anncwb/vue-vben-admin/commit/02e77560624cc4a95a5a20ffd5e0601f1f88c6f4))
-- fix build handler & misc ([#1060](https://github.com/anncwb/vue-vben-admin/issues/1060)) ([66feb77](https://github.com/anncwb/vue-vben-admin/commit/66feb779a8645a93760c784c510512118c4c6efa))
-- **table:** recursive updateTableDataRecord ([#1024](https://github.com/anncwb/vue-vben-admin/issues/1024)) ([72f953c](https://github.com/anncwb/vue-vben-admin/commit/72f953c8d3413a7f5482793258503017a81cc759))
-- **table:** wrong bg-color in fullscreen mode ([2052eb5](https://github.com/anncwb/vue-vben-admin/commit/2052eb5a65be38c44165efecdb15266de4638667))
-- **type:** fix ant-design-vue -> ([#1043](https://github.com/anncwb/vue-vben-admin/issues/1043)) ([6d5388a](https://github.com/anncwb/vue-vben-admin/commit/6d5388aaf143ac76bac0b68d56a3ab6b5993e807))
-- fix iframe heigth error ([#1012](https://github.com/anncwb/vue-vben-admin/issues/1012)) ([d76cfd7](https://github.com/anncwb/vue-vben-admin/commit/d76cfd7f809ba48880c950a64cb43a5c9c44176c))
-- Fix the invalid hot update of BasicButton when changing style outside ([#1016](https://github.com/anncwb/vue-vben-admin/issues/1016)) ([be2d11d](https://github.com/anncwb/vue-vben-admin/commit/be2d11d5d344a508e94abe3534726c80e1f1f271))
-- the position of tinymce upload image is wrong ([#1015](https://github.com/anncwb/vue-vben-admin/issues/1015)) ([2fd0fd2](https://github.com/anncwb/vue-vben-admin/commit/2fd0fd281e65d6d2551478c5f19250347dc14062))
-- **tree:** fix `checkAll` effects `disabled` node ([ddd1893](https://github.com/anncwb/vue-vben-admin/commit/ddd1893b113e13786037522341abb2e75f8f9d5b))
-- style property of actionColOpt is invalid ([#997](https://github.com/anncwb/vue-vben-admin/issues/997)) ([225bd4c](https://github.com/anncwb/vue-vben-admin/commit/225bd4c39de377d93c605f33bfdf3d8fd565f12b))
-- typo ([#980](https://github.com/anncwb/vue-vben-admin/issues/980)) ([7e6a89f](https://github.com/anncwb/vue-vben-admin/commit/7e6a89ffeb8c63467908d5807d3d7c4761620ee3))
-- **api-tree-select:** auto reload while `params` changed ([c734f68](https://github.com/anncwb/vue-vben-admin/commit/c734f6858daea6d11cd517463b06fcce58744947))
-- **dark-theme:** alert color in dark-theme ([9b7ede0](https://github.com/anncwb/vue-vben-admin/commit/9b7ede09b9efe4d5a15ab0cdeadac480a29c0f62))
-- **dark-theme:** bgcolor of `selected tree node` in dark theme ([8cf004a](https://github.com/anncwb/vue-vben-admin/commit/8cf004a5f59895e2487c3a350c83000e585b897e)), closes [#949](https://github.com/anncwb/vue-vben-admin/issues/949)
-- **dark-theme:** disabled link `button` color ([4281216](https://github.com/anncwb/vue-vben-admin/commit/42812162c46832ce4d3e332bd579c042309115bc))
-- **dark-theme:** fixed `TreeSelect` & `DatePicker` theme ([d1e0e8b](https://github.com/anncwb/vue-vben-admin/commit/d1e0e8bcea1c168631222989969e14f7d0d1b6a4)), closes [#955](https://github.com/anncwb/vue-vben-admin/issues/955)
-- **dark-theme:** style for checked tree nodes ([662b576](https://github.com/anncwb/vue-vben-admin/commit/662b576ac2088247cb58e295378f228462508a37))
-- **demo:** account page form validation ([8702965](https://github.com/anncwb/vue-vben-admin/commit/87029650570e470431fb94d35a273c5d07a73135))
-- **demo:** fix roles mock data ([c375e32](https://github.com/anncwb/vue-vben-admin/commit/c375e32305eae5128e09ad1bda39ce0cc6afd790))
-- **form:** remove console error for `setFieldsValue` ([8d185bb](https://github.com/anncwb/vue-vben-admin/commit/8d185bb5841c83eb49c78e8342e65067aa6f9b80)), closes [#952](https://github.com/anncwb/vue-vben-admin/issues/952)
-- **table:** fix `pagination` props working ([e327893](https://github.com/anncwb/vue-vben-admin/commit/e32789373eb5b1b531572b59692bf552dac365dc))
-- expandIcon slot of BasicTable component is invalid ([#975](https://github.com/anncwb/vue-vben-admin/issues/975)) ([98c206d](https://github.com/anncwb/vue-vben-admin/commit/98c206d9c9661a18dde4ec7782cbe1eb6e62ebeb))
-- **demo:** menu `error-log` link to 404 page ([341bd63](https://github.com/anncwb/vue-vben-admin/commit/341bd633d8ed38a5a357db8f97166c2eba2895d3))
-- **demo:** multi-modal used with dynamic component ([e1c4723](https://github.com/anncwb/vue-vben-admin/commit/e1c47233edf7675aede6d5f023726945a510ddf7))
-- **echarts:** fix graphic config cannot be used in echarts options ([#959](https://github.com/anncwb/vue-vben-admin/issues/959)) ([525484e](https://github.com/anncwb/vue-vben-admin/commit/525484e7a409b032d22231f90a92e700ef4290ae))
-- **form:** fix `validate` promise catch ([571f281](https://github.com/anncwb/vue-vben-admin/commit/571f28138f782553eb39cda2d632e5ac1aa1e145))
-- **img-rotate-drag-verify:** fix `resume` method support ([32d64db](https://github.com/anncwb/vue-vben-admin/commit/32d64dbe816a0afda6ee9e91863199afb3e7b48e)), closes [#946](https://github.com/anncwb/vue-vben-admin/issues/946)
-- **login:** fix `auto fill` style in dark-theme ([cebc6a5](https://github.com/anncwb/vue-vben-admin/commit/cebc6a590e1a19af7380a55aed43b23af274df0a))
-- **perm-guard:** Fix the problem that the routing query is lost after refreshing the page ([#941](https://github.com/anncwb/vue-vben-admin/issues/941)) ([9c4889f](https://github.com/anncwb/vue-vben-admin/commit/9c4889f0859bc60decf0ef40c383c1946de1d68a))
-- **qrcode:** Fix the problem that the QR code cannot be dynamically generated ([#974](https://github.com/anncwb/vue-vben-admin/issues/974)) ([fe4eae3](https://github.com/anncwb/vue-vben-admin/commit/fe4eae37146068f01ba08f033e0c2e8bd03e48b5))
-- **style:** fix checkbox-checked css in dark mode ([d3f08e3](https://github.com/anncwb/vue-vben-admin/commit/d3f08e37c5b6e46f33d525e9ef4b4c235d77a192))
-- **table:** component shown in `fullscreen` mode ([a07ab6d](https://github.com/anncwb/vue-vben-admin/commit/a07ab6d7aa1060f856649a9bdbec9dfa50b14f26))
-- **table:** editable cell display with validation ([202aa42](https://github.com/anncwb/vue-vben-admin/commit/202aa42b8d5a94e84ad386bcf7feab96926c70dd)), closes [#953](https://github.com/anncwb/vue-vben-admin/issues/953)
-- **table:** fix `dataPicker` show in `fullscreen` mode ([a5a9b3f](https://github.com/anncwb/vue-vben-admin/commit/a5a9b3fb34c64b6ea9c9ab3d58045f6e5963952b))
-- **table:** fix expand style ([14fb21d](https://github.com/anncwb/vue-vben-admin/commit/14fb21d0b7b9ac69c7b3c463de6d709bd5713d14)), closes [#969](https://github.com/anncwb/vue-vben-admin/issues/969)
-- **table:** fix tableSettings popup in fullscreen mode ([dce3fb0](https://github.com/anncwb/vue-vben-admin/commit/dce3fb0f20516aaf4817281f5d08109e53a73ecb))
-- **table-action:** stopButtonPropagation not working ([9b8f165](https://github.com/anncwb/vue-vben-admin/commit/9b8f165a365758d001e6d86ae7afe4ae3316d485))
-- Fix vite profile hot update error reporting ([#968](https://github.com/anncwb/vue-vben-admin/issues/968)) ([956ed2e](https://github.com/anncwb/vue-vben-admin/commit/956ed2e3f770cc9cf822ce80f71b1e7f179792fb))
-- **utils:** The date function gets a non-date when the parameter is null ([#954](https://github.com/anncwb/vue-vben-admin/issues/954)) ([350c85a](https://github.com/anncwb/vue-vben-admin/commit/350c85accf5033cc5a21b71bc36d5b7a74eb2573))
-- fixed moment locale config ([27207a7](https://github.com/anncwb/vue-vben-admin/commit/27207a78caccb04372e0275c5cee526ec460de0e))
-- typo for utils/env ([#1004](https://github.com/anncwb/vue-vben-admin/issues/1004)) ([e8eefd1](https://github.com/anncwb/vue-vben-admin/commit/e8eefd1bca41c181ec6395bf1d087d2018e2b1f1))
-- **table:** fix editable cell not support `ellipsis` ([4bb506f](https://github.com/anncwb/vue-vben-admin/commit/4bb506fb1f6ac7d246f8792d29f337ec003ff426)), closes [#944](https://github.com/anncwb/vue-vben-admin/issues/944)
+- Correct spelling of words(aciton →action) ([eb405b2](https://github.com/kailong321200875/vue-element-plus-admin/commit/eb405b2a9041ca0ad4455db79bf617ec910dc485))
+- Correct spelling of words(tigger →trigger) ([c2ca2d7](https://github.com/kailong321200875/vue-element-plus-admin/commit/c2ca2d736c92e02380923a6741450844acb41a38))
+
+## [1.8.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.8.0...v1.8.1) (2022-10-11)
+
+### Bug Fixes
+
+- 修复cutMenu收起时 ([993af6b](https://github.com/kailong321200875/vue-element-plus-admin/commit/993af6bb6576249e66e0c0ea592ebf851f65ab8c))
+
+### Styling
+
+- cutMenu层级样式 ([32d2408](https://github.com/kailong321200875/vue-element-plus-admin/commit/32d2408588c487cff2cf73e3cc132e5105ff4459))
+
+## [1.8.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.7.1...v1.8.0) (2022-10-10)
 
 ### Features
 
-- add `updatePath` for `useTabs` ([bcfa338](https://github.com/anncwb/vue-vben-admin/commit/bcfa33822736b761757a2673d977f752cb5c4f7c)), closes [#1068](https://github.com/anncwb/vue-vben-admin/issues/1068)
-- always refresh userinfo when page reload ([cc46935](https://github.com/anncwb/vue-vben-admin/commit/cc46935a8296dae62ecfc753a956338ba433927e))
-- **demo:** add `async-validator` demo ([8b4b767](https://github.com/anncwb/vue-vben-admin/commit/8b4b767f4ca78f7c6f7586d8ba662552c2b7bb51))
-- **form:** add `alwaysShowLines` prop ([93f9a19](https://github.com/anncwb/vue-vben-admin/commit/93f9a19aa16a3e9cb95338417c52d9a398e3f70b)), closes [#1051](https://github.com/anncwb/vue-vben-admin/issues/1051)
-- **preview:** add more features ([e23bd26](https://github.com/anncwb/vue-vben-admin/commit/e23bd2696da945291a9b652f1af39ad1936f376b))
-- **table:** add getRawDataSource() function ([#1029](https://github.com/anncwb/vue-vben-admin/issues/1029)) ([f3cf162](https://github.com/anncwb/vue-vben-admin/commit/f3cf162af1fa5634d4e562fa5239939af6f26093))
-- **tree:** add searchable function ([60577d6](https://github.com/anncwb/vue-vben-admin/commit/60577d6720fd3f8d4d1a88b20ab902d6161a0eec)), closes [#1057](https://github.com/anncwb/vue-vben-admin/issues/1057)
-- **use-loading:** add `setTip` method ([26d9476](https://github.com/anncwb/vue-vben-admin/commit/26d9476caff41cc355190604af42e0bd2ef0a353))
-- Added support for tailwindcss night mode mechanism ([#998](https://github.com/anncwb/vue-vben-admin/issues/998)) ([189bc6f](https://github.com/anncwb/vue-vben-admin/commit/189bc6feb3f2860be8c531dd1ca996f3a2cff018))
+- types优化 ([3351155](https://github.com/kailong321200875/vue-element-plus-admin/commit/33511553cd9055b036b2d7491f9c2eda123f8b22))
+
+### Styling
+
+- 优化第四种布局 ([122fa62](https://github.com/kailong321200875/vue-element-plus-admin/commit/122fa62d859413d16175e0d97c7bf13f232dbb3a))
+
+## [1.7.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.7.0...v1.7.1) (2022-10-10)
+
+### Bug Fixes
+
+- 修正types提示错误 ([ef3e006](https://github.com/kailong321200875/vue-element-plus-admin/commit/ef3e006859dcd8b93ffb7cffcaeae24cbb330f2a))
+
+## [1.7.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.6.6...v1.7.0) (2022-10-09)
+
+### Features
+
+- type抽离 ([8b4fa1a](https://github.com/kailong321200875/vue-element-plus-admin/commit/8b4fa1aa21aa2c1379288315ccd64a6f3375be51))
+
+## [1.6.6](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.6.5...v1.6.6) (2022-10-09)
+
+### Bug Fixes
+
+- table search params ([a62929a](https://github.com/kailong321200875/vue-element-plus-admin/commit/a62929a8dac21028d3dd1cddf98189492c33b093))
+
+## [1.6.5](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.6.4...v1.6.5) (2022-10-08)
+
+### Bug Fixes
+
+- The attribute of option does not work ([d946920](https://github.com/kailong321200875/vue-element-plus-admin/commit/d946920e61ed81beacf9f1f8be7ee1f50505f64d))
 
 ### Performance Improvements
 
-- **table:** fixed code style ([da12da9](https://github.com/anncwb/vue-vben-admin/commit/da12da9d8caeba0e7732551cfbad9b0da3baaac4)), closes [#1070](https://github.com/anncwb/vue-vben-admin/issues/1070)
-- improve legacy compatibility ([e2664f6](https://github.com/anncwb/vue-vben-admin/commit/e2664f60029f03642f8b1a6afa9b1998705fce37))
+- perf store ([d416178](https://github.com/kailong321200875/vue-element-plus-admin/commit/d416178d69ca6100be4b635922b1a22d27629f08))
+- token test ([b320e65](https://github.com/kailong321200875/vue-element-plus-admin/commit/b320e658d1a559a6eaebdf374d63649c223c2ecd))
 
-# [2.7.0](https://github.com/anncwb/vue-vben-admin/compare/v2.5.9...v2.7.0) (2021-08-03)
+## [1.6.4](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.6.3...v1.6.4) (2022-09-21)
 
 ### Bug Fixes
 
-- The Style of tableTitle slot ([#1023](https://github.com/anncwb/vue-vben-admin/issues/1023)) ([02e7756](https://github.com/anncwb/vue-vben-admin/commit/02e77560624cc4a95a5a20ffd5e0601f1f88c6f4))
-- **api-select:** ensure that the onchange function parameters are correct ([fa64fc8](https://github.com/anncwb/vue-vben-admin/commit/fa64fc8a622832b87fdf672965d55d543b5929a2))
-- **app-search:** exclude hidden items ([faf5c9f](https://github.com/anncwb/vue-vben-admin/commit/faf5c9fd7ea40c407419a5a5c473f9b0c32c2a53))
-- **app-search:** exclude items by `hideChildrenInMenu` ([02d3dca](https://github.com/anncwb/vue-vben-admin/commit/02d3dca57efedc1322ae38e3f432cf1f6c2cf839))
-- **axios:** option `withToken` not work ([d509e89](https://github.com/anncwb/vue-vben-admin/commit/d509e897be5753c852e912112e70dac6247ba467))
-- **breadcrumb:** `redirect` not worked ([f5e31fe](https://github.com/anncwb/vue-vben-admin/commit/f5e31febbd18372a34166cac390b1d9b914fe80e))
-- **comp-tree:** support comp-tree-foreach stop,add insertNodesByKey ([#818](https://github.com/anncwb/vue-vben-admin/issues/818)) ([d97aa92](https://github.com/anncwb/vue-vben-admin/commit/d97aa927417bf45a7c127ecfa9b8e835b6b68855))
-- **CountTo:** Fix displaying empty string when the value is 0 ([#864](https://github.com/anncwb/vue-vben-admin/issues/864)) ([82eb72b](https://github.com/anncwb/vue-vben-admin/commit/82eb72bbced931ba7f50069211f9511035ad09f4))
-- **demo:** `setup` page route config ([d5d5c4b](https://github.com/anncwb/vue-vben-admin/commit/d5d5c4b4bfb3e3a5e54f9993966adc46a09a8b90))
-- **demo:** account list fetch loss param ([424b171](https://github.com/anncwb/vue-vben-admin/commit/424b171e0db727f5e0157cbcfd5460f15f8ea609)), closes [#830](https://github.com/anncwb/vue-vben-admin/issues/830)
-- **demo:** add mock data `account detail` route ([993e19d](https://github.com/anncwb/vue-vben-admin/commit/993e19dcc319e2b4c68df2ab76174b7b4d7b0428)), closes [#858](https://github.com/anncwb/vue-vben-admin/issues/858)
-- **demo:** fix async tree demo, fixed: [#823](https://github.com/anncwb/vue-vben-admin/issues/823) ([5637588](https://github.com/anncwb/vue-vben-admin/commit/5637588fce880b01137191cc82c73e0fce621e8c))
-- **demo:** form pages support `keepAlive` ([9228282](https://github.com/anncwb/vue-vben-admin/commit/9228282ae27daaa246f42e441e27b1b05eb30464))
-- **demo:** resolve `key not exist` warnings ([45a94e4](https://github.com/anncwb/vue-vben-admin/commit/45a94e41c1397b84d08373f84f766204d2488714))
-- **demo:** style error,fix [#806](https://github.com/anncwb/vue-vben-admin/issues/806) ([a2d8be3](https://github.com/anncwb/vue-vben-admin/commit/a2d8be3ab29da88126f3ba971f6893cb12327759))
-- **demo-form:** add fieldMapToTime example,fix [#807](https://github.com/anncwb/vue-vben-admin/issues/807) ([a2a75a0](https://github.com/anncwb/vue-vben-admin/commit/a2a75a097ff6c9df12471eff0d62d44d2b88cfff))
-- **design:** correct tailwind configuration,fix [#800](https://github.com/anncwb/vue-vben-admin/issues/800) ([aec230c](https://github.com/anncwb/vue-vben-admin/commit/aec230ca19d541079b64c54ba00596ef9cd92ca0))
-- **drawer:** openDrawer is not normal in some cases ([941ad59](https://github.com/anncwb/vue-vben-admin/commit/941ad59759cbd5a5e39bcdf29783d8eea85caf72))
-- **dropdown:** icon and trigger work unexpected ([60b80c9](https://github.com/anncwb/vue-vben-admin/commit/60b80c96e82da9101d56b2e195e9e7571de11f0a)), closes [#796](https://github.com/anncwb/vue-vben-admin/issues/796) [#787](https://github.com/anncwb/vue-vben-admin/issues/787)
-- **form:** fix `suffix` slot style ([a9bbed1](https://github.com/anncwb/vue-vben-admin/commit/a9bbed19739376ab2bf67a14b04e872f14ca84cc))
-- **form:** fix some prop declaration ([b5046f0](https://github.com/anncwb/vue-vben-admin/commit/b5046f07a27e8ca7fc8b961b74fa5e1b0d715149))
-- **lock-screen:** ensure lock info is saved ([d38ff66](https://github.com/anncwb/vue-vben-admin/commit/d38ff6670a37478b31447f8058e786c4b044e218))
-- **lock-screen:** fix lock-screen can skip on new window ([d7b84c7](https://github.com/anncwb/vue-vben-admin/commit/d7b84c78744f7d0077a779b232e1358040b50383))
-- **markdown:** resolving markdown exceptions ([d95815b](https://github.com/anncwb/vue-vben-admin/commit/d95815b5031984e224140eb1b1d46e2dbf80abc1))
-- **markdown:** set `value` error ([35e1347](https://github.com/anncwb/vue-vben-admin/commit/35e1347029e29a83a9648b6b398e6863cc40fca9))
-- **menu:** display error when contains hidden items ([5ceeefd](https://github.com/anncwb/vue-vben-admin/commit/5ceeefd17d9ddc0e8844b900069b100f24d9c00e))
-- **menu:** fix mix-menu incorrect jumping in `hover` mode ([cad021c](https://github.com/anncwb/vue-vben-admin/commit/cad021c34b71fa109640af75a0c2b72179e9e257))
-- **menu:** make sure the menu is activated correctly ([cdb10cc](https://github.com/anncwb/vue-vben-admin/commit/cdb10cc4ac5e5e8f9cce3ff18d8fbd29ef10c86f))
-- **mix-sider:** fix mix-sider hover logic ([0595a72](https://github.com/anncwb/vue-vben-admin/commit/0595a72da9c666af81a0916663e8e6a014e6fa69))
-- **modal:** `setModalProps` support `defaultFullscreen` ([c7de65e](https://github.com/anncwb/vue-vben-admin/commit/c7de65ebba53941771153f18b184d3d4d31c0dbf))
-- **modal:** maskClosable not work ([f750ff4](https://github.com/anncwb/vue-vben-admin/commit/f750ff435fee06acee78d6b9633e6e18d91685f8))
-- **modal:** remove console log ([3dbbde2](https://github.com/anncwb/vue-vben-admin/commit/3dbbde2662352780377a9b216598d9348522f6ba))
-- **pop-confirm:** fix event working unexpected ([a6ef771](https://github.com/anncwb/vue-vben-admin/commit/a6ef771fcce14c3644c965afaa69b3a17d0a7087))
-- **popconfirm-button:** remove button excess `title` ([73654b7](https://github.com/anncwb/vue-vben-admin/commit/73654b7862c59d623d6d5dc7dcf6ff2704564d9a))
-- **sider:** bottom trigger not work ([1bde404](https://github.com/anncwb/vue-vben-admin/commit/1bde4041211229d5d9d01ce0ca806fa99356b6de)), closes [#820](https://github.com/anncwb/vue-vben-admin/issues/820)
-- **sider:** custom trigger does not take effect ([5005e6e](https://github.com/anncwb/vue-vben-admin/commit/5005e6e56b1cc7763a1cc23e1162dfb49452013b))
-- **svg-icon:** fix SvgIcon style ([99829c7](https://github.com/anncwb/vue-vben-admin/commit/99829c79ab41a2319f40c5595a7d82d9e406ba18))
-- **table:** fix index column style ([c7c0a7e](https://github.com/anncwb/vue-vben-admin/commit/c7c0a7e4c88a895000b1621981e4d4b2020c64b1))
-- **table:** auto hide unnecessary scrollbar ([735028c](https://github.com/anncwb/vue-vben-admin/commit/735028c43055e8e80ebc7344af0cd0f51c744f98))
-- **table:** editComponentProps support onChange ([829b366](https://github.com/anncwb/vue-vben-admin/commit/829b366cb2abf27e69d9665e5be022b3d3f15655))
-- **table:** event editCancel loss params ([8d22231](https://github.com/anncwb/vue-vben-admin/commit/8d22231a5fa4afed19201a4a4e5c29d674498516))
-- **table:** fix rowSelection.onChange not work ([df0f000](https://github.com/anncwb/vue-vben-admin/commit/df0f00085c1113eddd7a15954818ccece3538068)), closes [#825](https://github.com/anncwb/vue-vben-admin/issues/825)
-- **table:** fix table jitter problem ([8eba7fb](https://github.com/anncwb/vue-vben-admin/commit/8eba7fb52786d1977e4cb7b67673d74c91c5c827))
-- **table:** fix tree node align ([1e61da6](https://github.com/anncwb/vue-vben-admin/commit/1e61da644f65a79ce10fde98ee017aba7d36be10)), closes [#829](https://github.com/anncwb/vue-vben-admin/issues/829)
-- **table:** getDataSource not worked on empty data ([e78af6f](https://github.com/anncwb/vue-vben-admin/commit/e78af6f228e25f052dc4c5a1859a6db50e0b112e)), closes [#752](https://github.com/anncwb/vue-vben-admin/issues/752)
-- **table:** global configuration accidentally modified ([b4a3f93](https://github.com/anncwb/vue-vben-admin/commit/b4a3f936cd19bf1fff3a331bacad60e79d2d6c22))
-- **table:** param of `handleSearchInfoFn` ([791b323](https://github.com/anncwb/vue-vben-admin/commit/791b323dbd30acd7fabfe9c3fb6e528916311ffd))
-- **table:** recursive updateTableDataRecord ([#1024](https://github.com/anncwb/vue-vben-admin/issues/1024)) ([72f953c](https://github.com/anncwb/vue-vben-admin/commit/72f953c8d3413a7f5482793258503017a81cc759))
-- auto remove script dom in `useScript` ([a544dd3](https://github.com/anncwb/vue-vben-admin/commit/a544dd3e589329339177dad3d5c1f75dd6e6f0ca))
-- fix iframe heigth error ([#1012](https://github.com/anncwb/vue-vben-admin/issues/1012)) ([d76cfd7](https://github.com/anncwb/vue-vben-admin/commit/d76cfd7f809ba48880c950a64cb43a5c9c44176c))
-- Fix the invalid hot update of BasicButton when changing style outside ([#1016](https://github.com/anncwb/vue-vben-admin/issues/1016)) ([be2d11d](https://github.com/anncwb/vue-vben-admin/commit/be2d11d5d344a508e94abe3534726c80e1f1f271))
-- style property of actionColOpt is invalid ([#997](https://github.com/anncwb/vue-vben-admin/issues/997)) ([225bd4c](https://github.com/anncwb/vue-vben-admin/commit/225bd4c39de377d93c605f33bfdf3d8fd565f12b))
-- the position of tinymce upload image is wrong ([#1015](https://github.com/anncwb/vue-vben-admin/issues/1015)) ([2fd0fd2](https://github.com/anncwb/vue-vben-admin/commit/2fd0fd281e65d6d2551478c5f19250347dc14062))
-- **api-select:** fix `options-change` event data ([897bed9](https://github.com/anncwb/vue-vben-admin/commit/897bed97295a0b9101d33102340749689a4368de))
-- **api-tree-select:** auto load data if necessary ([1b3058f](https://github.com/anncwb/vue-vben-admin/commit/1b3058f8253effe974feaf08a12250a111ab58c0))
-- **api-tree-select:** auto reload while `params` changed ([c734f68](https://github.com/anncwb/vue-vben-admin/commit/c734f6858daea6d11cd517463b06fcce58744947))
-- **api-tree-select:** fix `event` checked in form ([d9d0071](https://github.com/anncwb/vue-vben-admin/commit/d9d00714011fa7914c61f990ce1159351ee21a1a))
-- **basic-tree:** `checkedKeys` not worked with `search` ([b06a7ab](https://github.com/anncwb/vue-vben-admin/commit/b06a7ab77b99abee63dd55770ffd55b594ee42f9)), closes [#915](https://github.com/anncwb/vue-vben-admin/issues/915)
-- **code-editor:** `value` not support use as `v-model` ([8832a07](https://github.com/anncwb/vue-vben-admin/commit/8832a074dceb44f057c87289d3a99feef58c08fd)), closes [#933](https://github.com/anncwb/vue-vben-admin/issues/933)
-- **countdown-input:** add `slots` support ([a764a95](https://github.com/anncwb/vue-vben-admin/commit/a764a95ae9a6cff831f75aa97b00724cadc48e92))
-- **dark-theme:** alert color in dark-theme ([9b7ede0](https://github.com/anncwb/vue-vben-admin/commit/9b7ede09b9efe4d5a15ab0cdeadac480a29c0f62))
-- **dark-theme:** bgcolor of `selected tree node` in dark theme ([8cf004a](https://github.com/anncwb/vue-vben-admin/commit/8cf004a5f59895e2487c3a350c83000e585b897e)), closes [#949](https://github.com/anncwb/vue-vben-admin/issues/949)
-- **dark-theme:** disabled link `button` color ([4281216](https://github.com/anncwb/vue-vben-admin/commit/42812162c46832ce4d3e332bd579c042309115bc))
-- **dark-theme:** fixed `TreeSelect` & `DatePicker` theme ([d1e0e8b](https://github.com/anncwb/vue-vben-admin/commit/d1e0e8bcea1c168631222989969e14f7d0d1b6a4)), closes [#955](https://github.com/anncwb/vue-vben-admin/issues/955)
-- **dark-theme:** style for checked tree nodes ([662b576](https://github.com/anncwb/vue-vben-admin/commit/662b576ac2088247cb58e295378f228462508a37))
-- **demo:** account page form validation ([8702965](https://github.com/anncwb/vue-vben-admin/commit/87029650570e470431fb94d35a273c5d07a73135))
-- **demo:** fix display problem of editable table with `apiSelect` ([535bddd](https://github.com/anncwb/vue-vben-admin/commit/535bdddf91785e20295c18cf80c8a22cc2172681))
-- **demo:** fix roles mock data ([c375e32](https://github.com/anncwb/vue-vben-admin/commit/c375e32305eae5128e09ad1bda39ce0cc6afd790))
-- **demo:** menu `error-log` link to 404 page ([341bd63](https://github.com/anncwb/vue-vben-admin/commit/341bd633d8ed38a5a357db8f97166c2eba2895d3))
-- **demo:** multi-modal used with dynamic component ([e1c4723](https://github.com/anncwb/vue-vben-admin/commit/e1c47233edf7675aede6d5f023726945a510ddf7))
-- **echarts:** fix graphic config cannot be used in echarts options ([#959](https://github.com/anncwb/vue-vben-admin/issues/959)) ([525484e](https://github.com/anncwb/vue-vben-admin/commit/525484e7a409b032d22231f90a92e700ef4290ae))
-- **form:** fix `validate` promise catch ([571f281](https://github.com/anncwb/vue-vben-admin/commit/571f28138f782553eb39cda2d632e5ac1aa1e145))
-- **form:** remove console error for `setFieldsValue` ([8d185bb](https://github.com/anncwb/vue-vben-admin/commit/8d185bb5841c83eb49c78e8342e65067aa6f9b80)), closes [#952](https://github.com/anncwb/vue-vben-admin/issues/952)
-- **formItem:** Fix labelcol type mismatch ([#903](https://github.com/anncwb/vue-vben-admin/issues/903)) ([03b17a8](https://github.com/anncwb/vue-vben-admin/commit/03b17a8f8bdb50322aa10e3b614bcc40b9e9dcc8))
-- **img-rotate-drag-verify:** fix `resume` method support ([32d64db](https://github.com/anncwb/vue-vben-admin/commit/32d64dbe816a0afda6ee9e91863199afb3e7b48e)), closes [#946](https://github.com/anncwb/vue-vben-admin/issues/946)
-- **login:** fix `auto fill` style in dark-theme ([cebc6a5](https://github.com/anncwb/vue-vben-admin/commit/cebc6a590e1a19af7380a55aed43b23af274df0a))
-- **modal:** ensure that props are passed correctly,fix [#897](https://github.com/anncwb/vue-vben-admin/issues/897) ([ae7821e](https://github.com/anncwb/vue-vben-admin/commit/ae7821e29690bea8934ea724bfd0ae4e2cf30c77))
-- **modal:** fixed `fullscreen` not worked ([5baaa58](https://github.com/anncwb/vue-vben-admin/commit/5baaa58581f22a915cda9fa39e4cb9f094254d3b)), closes [#918](https://github.com/anncwb/vue-vben-admin/issues/918)
-- **model:** auto validate on value change ([f844017](https://github.com/anncwb/vue-vben-admin/commit/f8440175f35076073c9f53483cf6c0164d427ff4)), closes [#920](https://github.com/anncwb/vue-vben-admin/issues/920)
-- **multiple-tab:** ignore login page ([1e63379](https://github.com/anncwb/vue-vben-admin/commit/1e63379088e1d7c823f29f607ab49d62ca22cb25))
-- **page-wrapper:** fix `class` not working ([8879ae8](https://github.com/anncwb/vue-vben-admin/commit/8879ae8d773e8dc4c252c4234eefeab9bc135a30))
-- **perm-guard:** Fix the problem that the routing query is lost after refreshing the page ([#941](https://github.com/anncwb/vue-vben-admin/issues/941)) ([9c4889f](https://github.com/anncwb/vue-vben-admin/commit/9c4889f0859bc60decf0ef40c383c1946de1d68a))
-- **qrcode:** Fix the problem that the QR code cannot be dynamically generated ([#974](https://github.com/anncwb/vue-vben-admin/issues/974)) ([fe4eae3](https://github.com/anncwb/vue-vben-admin/commit/fe4eae37146068f01ba08f033e0c2e8bd03e48b5))
-- **style:** fix checkbox-checked css in dark mode ([d3f08e3](https://github.com/anncwb/vue-vben-admin/commit/d3f08e37c5b6e46f33d525e9ef4b4c235d77a192))
-- **table:** `value` show problem in editable cell ([61ce25b](https://github.com/anncwb/vue-vben-admin/commit/61ce25be1b40d7a0e26205ca6a6757c6c43fc21e)), closes [#922](https://github.com/anncwb/vue-vben-admin/issues/922)
-- **table:** component shown in `fullscreen` mode ([a07ab6d](https://github.com/anncwb/vue-vben-admin/commit/a07ab6d7aa1060f856649a9bdbec9dfa50b14f26))
-- **table:** editable cell display with validation ([202aa42](https://github.com/anncwb/vue-vben-admin/commit/202aa42b8d5a94e84ad386bcf7feab96926c70dd)), closes [#953](https://github.com/anncwb/vue-vben-admin/issues/953)
-- **table:** fix `dataPicker` show in `fullscreen` mode ([a5a9b3f](https://github.com/anncwb/vue-vben-admin/commit/a5a9b3fb34c64b6ea9c9ab3d58045f6e5963952b))
-- **table:** fix `getSelectRows` for treeTable ([f2b8bb4](https://github.com/anncwb/vue-vben-admin/commit/f2b8bb43a0b9172b9ef9ced8e83bf91143a091d9)), closes [#1003](https://github.com/anncwb/vue-vben-admin/issues/1003)
-- **table:** fix `pagination` props working ([e327893](https://github.com/anncwb/vue-vben-admin/commit/e32789373eb5b1b531572b59692bf552dac365dc))
-- **table:** fix editable cell not support `ellipsis` ([4bb506f](https://github.com/anncwb/vue-vben-admin/commit/4bb506fb1f6ac7d246f8792d29f337ec003ff426)), closes [#944](https://github.com/anncwb/vue-vben-admin/issues/944)
-- **table:** fix expand style ([14fb21d](https://github.com/anncwb/vue-vben-admin/commit/14fb21d0b7b9ac69c7b3c463de6d709bd5713d14)), closes [#969](https://github.com/anncwb/vue-vben-admin/issues/969)
-- **table:** fix tableSettings popup in fullscreen mode ([dce3fb0](https://github.com/anncwb/vue-vben-admin/commit/dce3fb0f20516aaf4817281f5d08109e53a73ecb))
-- **tree:** fix `checkAll` effects `disabled` node ([ddd1893](https://github.com/anncwb/vue-vben-admin/commit/ddd1893b113e13786037522341abb2e75f8f9d5b))
-- ensure PAGE_NOT_FOUND_ROUTE exist ([87583c8](https://github.com/anncwb/vue-vben-admin/commit/87583c8b54d335ddf1c416859ef62bbde189c809))
-- expandIcon slot of BasicTable component is invalid ([#975](https://github.com/anncwb/vue-vben-admin/issues/975)) ([98c206d](https://github.com/anncwb/vue-vben-admin/commit/98c206d9c9661a18dde4ec7782cbe1eb6e62ebeb))
-- fix homePage affix error ([c117802](https://github.com/anncwb/vue-vben-admin/commit/c1178027f0fab2791d02efcd7c52beff5fc7dc25))
-- Fix vite profile hot update error reporting ([#968](https://github.com/anncwb/vue-vben-admin/issues/968)) ([956ed2e](https://github.com/anncwb/vue-vben-admin/commit/956ed2e3f770cc9cf822ce80f71b1e7f179792fb))
-- fixed moment locale config ([27207a7](https://github.com/anncwb/vue-vben-admin/commit/27207a78caccb04372e0275c5cee526ec460de0e))
-- infinite redirect in `BACK` mode ([4b46a84](https://github.com/anncwb/vue-vben-admin/commit/4b46a84c2b85e8da799426c54b3381ae93183db4))
-- resolving `Vue Router warn` ([237e65e](https://github.com/anncwb/vue-vben-admin/commit/237e65eac909368c4b4857da6c8deb1dc18e7684))
-- typo ([#980](https://github.com/anncwb/vue-vben-admin/issues/980)) ([7e6a89f](https://github.com/anncwb/vue-vben-admin/commit/7e6a89ffeb8c63467908d5807d3d7c4761620ee3))
-- typo for utils/env ([#1004](https://github.com/anncwb/vue-vben-admin/issues/1004)) ([e8eefd1](https://github.com/anncwb/vue-vben-admin/commit/e8eefd1bca41c181ec6395bf1d087d2018e2b1f1))
-- **table:** selection-change not triggered on row click ([6f845b5](https://github.com/anncwb/vue-vben-admin/commit/6f845b53bdc4c33fbca3e65f10f64c63166bed0e))
-- **table:** treeTable editable error ([4ae39c5](https://github.com/anncwb/vue-vben-admin/commit/4ae39c53b49532fc6c31086a31e30429d2e236ed)), closes [#811](https://github.com/anncwb/vue-vben-admin/issues/811)
-- **table-action:** fix `circle` button style ([db7254a](https://github.com/anncwb/vue-vben-admin/commit/db7254a5e0ac6d10a7ea37334ad523b150facb19))
-- **table-action:** fixed icon `margin` without label ([dc51e6a](https://github.com/anncwb/vue-vben-admin/commit/dc51e6a8d4e4f2c97b387b37959944c9bb49d779))
-- **table-action:** incorrect button color of `disabled` state ([0f28e80](https://github.com/anncwb/vue-vben-admin/commit/0f28e803d0b65537216cd9f40ad5cad63c20db9b)), closes [#891](https://github.com/anncwb/vue-vben-admin/issues/891)
-- **table-action:** stopButtonPropagation not working ([9b8f165](https://github.com/anncwb/vue-vben-admin/commit/9b8f165a365758d001e6d86ae7afe4ae3316d485))
-- **tree:** fixed `checkedKeys` with `search` mode ([f707541](https://github.com/anncwb/vue-vben-admin/commit/f707541dda78146bda89814ddccbb259d9f5d8a2))
-- **upload:** ensure the value type is correct ([05329ce](https://github.com/anncwb/vue-vben-admin/commit/05329ce9501eb899a0bbb45320e5807c83372317))
-- **useWatermark:** fix `func` call `createWatermark` call `clear` to resizeEvent removed ([#901](https://github.com/anncwb/vue-vben-admin/issues/901)) ([a1d956d](https://github.com/anncwb/vue-vben-admin/commit/a1d956d3697cd07e0ba8910768f2a73e55f18491))
-- `menuSetting` can not set collapsed to false as default ([808291b](https://github.com/anncwb/vue-vben-admin/commit/808291b503d59e3026f5f0b5e7a38b9c69bcc451))
-- ensure that safari is running properly, fix [#875](https://github.com/anncwb/vue-vben-admin/issues/875) ([dafcdd8](https://github.com/anncwb/vue-vben-admin/commit/dafcdd898caae57104f1155b0ec660ea333e7b19))
-- **table:** scrollbar style ([d8c3820](https://github.com/anncwb/vue-vben-admin/commit/d8c38207c08510d805a8dc66ffbba210e0cf4215))
-- **tailwindcss:** remove console warnings ([acacb32](https://github.com/anncwb/vue-vben-admin/commit/acacb32bb592345cd0a90b4bbeb60a9b6ab1ac3c))
-- `hasPermission` not work in `ROLE` Mode ([76a5f87](https://github.com/anncwb/vue-vben-admin/commit/76a5f87c0ce871cca48b9e4c32331353a796e7d2))
-- fix antdv console warning ([480cfb9](https://github.com/anncwb/vue-vben-admin/commit/480cfb914e78c06eb7784e33465ed91b7d4c3eee))
-- fix defHttp baseUrl work ([d5f9919](https://github.com/anncwb/vue-vben-admin/commit/d5f9919b60fdd7d5c435129e8db519c0bbd37529))
-- multi windows token sharing ([e5f3788](https://github.com/anncwb/vue-vben-admin/commit/e5f37885ffb32d04d244f0ef39ac660dda6b71e1)), closes [#761](https://github.com/anncwb/vue-vben-admin/issues/761)
-- routes filter can't effective when permission mode set to ROUTE_MAPPING ([#836](https://github.com/anncwb/vue-vben-admin/issues/836)) ([3871204](https://github.com/anncwb/vue-vben-admin/commit/3871204d08d481b8984440cd60bbf2bacb58d063))
-- support various vite modes of build, not just production ([#832](https://github.com/anncwb/vue-vben-admin/issues/832)) ([95c16a5](https://github.com/anncwb/vue-vben-admin/commit/95c16a5d26f9fd9a1d11894afe1146ca495eee93))
-- user drop-down event key loss ([20d7a25](https://github.com/anncwb/vue-vben-admin/commit/20d7a25eb898a5c28351ff269b93bf104b8ac10e))
-- user dropdown event response failure ([c73694a](https://github.com/anncwb/vue-vben-admin/commit/c73694ab8b0b6242c4d5e0f30bc7ebe3d69b4e33))
-- **upload:** make sure to carry custom parameters, fix [#802](https://github.com/anncwb/vue-vben-admin/issues/802) ([c4b22a2](https://github.com/anncwb/vue-vben-admin/commit/c4b22a225d0088d87be0c0068f543366312521db))
-- **utils:** The date function gets a non-date when the parameter is null ([#954](https://github.com/anncwb/vue-vben-admin/issues/954)) ([350c85a](https://github.com/anncwb/vue-vben-admin/commit/350c85accf5033cc5a21b71bc36d5b7a74eb2573))
+- fix bug ([da39f3b](https://github.com/kailong321200875/vue-element-plus-admin/commit/da39f3bc904ca2d80f432a31709725f9a57deb19))
 
-### Features
+## [1.6.3](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.6.2...v1.6.3) (2022-08-20)
 
-- **use-loading:** add `setTip` method ([26d9476](https://github.com/anncwb/vue-vben-admin/commit/26d9476caff41cc355190604af42e0bd2ef0a353))
-- Added support for tailwindcss night mode mechanism ([#998](https://github.com/anncwb/vue-vben-admin/issues/998)) ([189bc6f](https://github.com/anncwb/vue-vben-admin/commit/189bc6feb3f2860be8c531dd1ca996f3a2cff018))
-- **api-select:** clear options before fetch ([9cf070d](https://github.com/anncwb/vue-vben-admin/commit/9cf070dd6305bb69a67ab6be85ef00bddc86fda0))
-- **api-tree-select:** add `api` options to tree-select ([d81db89](https://github.com/anncwb/vue-vben-admin/commit/d81db890dfeb533d60f378ddb86f8ac50a31252b))
-- **avatar-cropper:** add action tooltip ([6cbac4b](https://github.com/anncwb/vue-vben-admin/commit/6cbac4b7ece60a1a7c1fda931cfffce42dfe3e51))
-- **avatar-cropper:** more props added ([b96ea07](https://github.com/anncwb/vue-vben-admin/commit/b96ea0753bfd769693a368cf1e3d8316688c0dcb))
-- **axios:** add `withToken` option ([c99cf5e](https://github.com/anncwb/vue-vben-admin/commit/c99cf5e53f057cdc332ab6c0635adf9c2d27de29))
-- **axios:** use `defHttp` like `axios` ([49f39de](https://github.com/anncwb/vue-vben-admin/commit/49f39de7b40e3ec8343bdeaf3eb00fd79d395746)), closes [#850](https://github.com/anncwb/vue-vben-admin/issues/850)
-- **basic-table:** add `ApiTreeSelect` edit component ([52af1dd](https://github.com/anncwb/vue-vben-admin/commit/52af1dd0d494e66c0af20f886dcc2b983cbb096f))
-- **basic-upload:** `value` support v-model ([16c5d32](https://github.com/anncwb/vue-vben-admin/commit/16c5d327f1209f7c7437acde2ab0fa031da6a641))
-- **basic-upload:** add preview-delete event ([49e72a8](https://github.com/anncwb/vue-vben-admin/commit/49e72a8e76b78fe54e19de9e23d7c72a19427f01)), closes [#835](https://github.com/anncwb/vue-vben-admin/issues/835)
-- **demo:** add `async-validator` demo ([8b4b767](https://github.com/anncwb/vue-vben-admin/commit/8b4b767f4ca78f7c6f7586d8ba662552c2b7bb51))
-- **demo:** add basicTree with async data expand all ([5421211](https://github.com/anncwb/vue-vben-admin/commit/542121129eb5bf65f61e7b484835591756c80f04))
-- **demo:** add route multi tabs show ([0e414ba](https://github.com/anncwb/vue-vben-admin/commit/0e414ba3c10b4e47a85feb1a38cae66c815719d8)), closes [#817](https://github.com/anncwb/vue-vben-admin/issues/817)
-- **demo:** add search demo for apiSelect ([41e6d94](https://github.com/anncwb/vue-vben-admin/commit/41e6d94b3b64dc0d40b7ec57ecfaa4d966f202ae))
-- **demo:** demo default expanded tree table ([5f1a6cd](https://github.com/anncwb/vue-vben-admin/commit/5f1a6cdc599d5840df2dfebdaad029aac093cd81))
-- **demo:** multi-modal in one page usage ([7a7dab0](https://github.com/anncwb/vue-vben-admin/commit/7a7dab0c4b3602b7bd3e9381408e4168d7494c52))
-- **menu:** the route is automatically mapped to the menu ([913c22c](https://github.com/anncwb/vue-vben-admin/commit/913c22c84fc9a4221fdfff6bae0e79a68fd09b17))
-- **modal:** add `tooltip` for action buttons ([c3b9076](https://github.com/anncwb/vue-vben-admin/commit/c3b907656a5fad7a9b241562179f7a0f6fe0e6f0))
-- **notice-list:** add `pagination` support ([c16be2c](https://github.com/anncwb/vue-vben-admin/commit/c16be2c499d90126dfa35d699da9294c21a4ab48)), closes [#894](https://github.com/anncwb/vue-vben-admin/issues/894)
-- **preview:** add more features ([e23bd26](https://github.com/anncwb/vue-vben-admin/commit/e23bd2696da945291a9b652f1af39ad1936f376b))
-- customized user home page ([0a3683a](https://github.com/anncwb/vue-vben-admin/commit/0a3683a186ab55d34a12a5a3c6d794dfa1094ad4))
-- **param-menu:** feature: menu with params ([#845](https://github.com/anncwb/vue-vben-admin/issues/845)) ([48fcd76](https://github.com/anncwb/vue-vben-admin/commit/48fcd7684cabff66e8648b71527c6cb4ce7d03be))
-- **route:** add `hidePathForChildren` in `meta` ([d52b0de](https://github.com/anncwb/vue-vben-admin/commit/d52b0de83e69f7505c28e6f59ec84bbe526ecd0d))
-- **table:** add `headerTop` slot ([540423e](https://github.com/anncwb/vue-vben-admin/commit/540423ecf741a815d28d7a6baa1541ac884efe95)), closes [#881](https://github.com/anncwb/vue-vben-admin/issues/881)
-- **table:** support asynchrony in beforeFetch and afterFetch ([#827](https://github.com/anncwb/vue-vben-admin/issues/827)) ([749ba5c](https://github.com/anncwb/vue-vben-admin/commit/749ba5c1daf459625518937c239787b756c0a780))
-- **table-action:** support `tooltip` option ([5fab267](https://github.com/anncwb/vue-vben-admin/commit/5fab267a69600fdf5d7a7f9e4d9fff859d09dede)), closes [#848](https://github.com/anncwb/vue-vben-admin/issues/848)
-- **tree:** add `insertNodesByKey` method ([5a20df4](https://github.com/anncwb/vue-vben-admin/commit/5a20df45ad36b523d48bf7fe11bdb10a6d03df64))
-- add Tree LoadData demo ([9298b3c](https://github.com/anncwb/vue-vben-admin/commit/9298b3c988c10b81d83430ca31b9ce1d98a3fad9))
-- routers support `ignoreRoute` option ([72ac240](https://github.com/anncwb/vue-vben-admin/commit/72ac240f2858cd74cb62b7647ca89d63bb71d247))
+### Bug Fixes
+
+- 修复重定向错误 ([89d03fd](https://github.com/kailong321200875/vue-element-plus-admin/commit/89d03fd067e7aca565ceb84ea9276f340bbfcb60))
+
+### Styling
+
+- 调整样式 ([d29e151](https://github.com/kailong321200875/vue-element-plus-admin/commit/d29e151f8a660031a685f6ef9f789532b1b7b58b))
+
+## [1.6.2](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.6.1...v1.6.2) (2022-08-13)
+
+### Styling
+
+- Misspelling ([c43e833](https://github.com/kailong321200875/vue-element-plus-admin/commit/c43e833582e4f14ac78b0683f1eb3bdeb9fb4821))
+- perfect tableDemo ([c589edd](https://github.com/kailong321200875/vue-element-plus-admin/commit/c589edd960b23ad0c8b56d2c7880b61014114d45))
+
+### Code Refactoring
+
+- refactor axios ([0980640](https://github.com/kailong321200875/vue-element-plus-admin/commit/0980640f65fc80e3e58ba49e98db10b7b1b80077))
+
+## [1.6.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.6.0...v1.6.1) (2022-07-30)
+
+### Bug Fixes
+
+- fix menu active bug ([ff59fc7](https://github.com/kailong321200875/vue-element-plus-admin/commit/ff59fc7e133202945360a7e210f9cdf3a4a89dd7))
+- Pie chart data not updated ([55d4ce7](https://github.com/kailong321200875/vue-element-plus-admin/commit/55d4ce7e35ff9a0c5590bc3589160cfd304d3ae5))
 
 ### Performance Improvements
 
-- improve legacy compatibility ([e2664f6](https://github.com/anncwb/vue-vben-admin/commit/e2664f60029f03642f8b1a6afa9b1998705fce37))
-- **menu:** Optimize the style of the bottom collapse button in the Mix menu layout ([#896](https://github.com/anncwb/vue-vben-admin/issues/896)) ([6f83070](https://github.com/anncwb/vue-vben-admin/commit/6f830703a2607c33e5d25d6d17d0e453fc2fac2e))
-- image compression configuration optimization ([cf840e3](https://github.com/anncwb/vue-vben-admin/commit/cf840e3e73b9572de0ba7bf7b32d83f6a353a8ad))
-- **icon:** remove Icon component global registration ([59d3e8c](https://github.com/anncwb/vue-vben-admin/commit/59d3e8c80f72f029f2b90432b31901ad54ed1ee4))
-- **pagewrapper:** 优化 PageWrapper 的高度自适应表现使用 getViewportOffset 替代 useContentViewHeight ([#792](https://github.com/anncwb/vue-vben-admin/issues/792)) ([4d8e398](https://github.com/anncwb/vue-vben-admin/commit/4d8e39857ea59fff99e69832b4a8cabf3a424c24))
-- **router:** reduce the number of guard files ([327d71b](https://github.com/anncwb/vue-vben-admin/commit/327d71b8fb4907ae971d040f6b84bbecb0a6d897))
-- **scrollbar:** scrollbar update when slot changed ([e9e51b2](https://github.com/anncwb/vue-vben-admin/commit/e9e51b2fdc879a66d8df08504a0955c9c21e3e27))
+- add static router ([55522b0](https://github.com/kailong321200875/vue-element-plus-admin/commit/55522b0661a8df3ad3c8afafcc9f8fcb162c5a00))
 
-### Reverts
+### Styling
 
-- **axios:** remove baseUrl config ([61d4efd](https://github.com/anncwb/vue-vben-admin/commit/61d4efd55a8b4f09990b5f1888e23ead43958164))
+- tagviews styles update ([bff7d93](https://github.com/kailong321200875/vue-element-plus-admin/commit/bff7d9370db7a9c171828721bb99643dac2f235d))
 
-## [2.6.1](https://github.com/anncwb/vue-vben-admin/compare/v2.6.0...v2.6.1) (2021-07-19)
-
-### Bug Fixes
-
-- **api-select:** fix `options-change` event data ([897bed9](https://github.com/anncwb/vue-vben-admin/commit/897bed97295a0b9101d33102340749689a4368de))
-- **api-tree-select:** auto load data if necessary ([1b3058f](https://github.com/anncwb/vue-vben-admin/commit/1b3058f8253effe974feaf08a12250a111ab58c0))
-- **api-tree-select:** fix `event` checked in form ([d9d0071](https://github.com/anncwb/vue-vben-admin/commit/d9d00714011fa7914c61f990ce1159351ee21a1a))
-- **app-search:** exclude hidden items ([faf5c9f](https://github.com/anncwb/vue-vben-admin/commit/faf5c9fd7ea40c407419a5a5c473f9b0c32c2a53))
-- **app-search:** exclude items by `hideChildrenInMenu` ([02d3dca](https://github.com/anncwb/vue-vben-admin/commit/02d3dca57efedc1322ae38e3f432cf1f6c2cf839))
-- **basic-tree:** `checkedKeys` not worked with `search` ([b06a7ab](https://github.com/anncwb/vue-vben-admin/commit/b06a7ab77b99abee63dd55770ffd55b594ee42f9)), closes [#915](https://github.com/anncwb/vue-vben-admin/issues/915)
-- **breadcrumb:** `redirect` not worked ([f5e31fe](https://github.com/anncwb/vue-vben-admin/commit/f5e31febbd18372a34166cac390b1d9b914fe80e))
-- **code-editor:** `value` not support use as `v-model` ([8832a07](https://github.com/anncwb/vue-vben-admin/commit/8832a074dceb44f057c87289d3a99feef58c08fd)), closes [#933](https://github.com/anncwb/vue-vben-admin/issues/933)
-- **countdown-input:** add `slots` support ([a764a95](https://github.com/anncwb/vue-vben-admin/commit/a764a95ae9a6cff831f75aa97b00724cadc48e92))
-- **CountTo:** Fix displaying empty string when the value is 0 ([#864](https://github.com/anncwb/vue-vben-admin/issues/864)) ([82eb72b](https://github.com/anncwb/vue-vben-admin/commit/82eb72bbced931ba7f50069211f9511035ad09f4))
-- **demo:** `setup` page route config ([d5d5c4b](https://github.com/anncwb/vue-vben-admin/commit/d5d5c4b4bfb3e3a5e54f9993966adc46a09a8b90))
-- **demo:** add mock data `account detail` route ([993e19d](https://github.com/anncwb/vue-vben-admin/commit/993e19dcc319e2b4c68df2ab76174b7b4d7b0428)), closes [#858](https://github.com/anncwb/vue-vben-admin/issues/858)
-- **demo:** fix display problem of editable table with `apiSelect` ([535bddd](https://github.com/anncwb/vue-vben-admin/commit/535bdddf91785e20295c18cf80c8a22cc2172681))
-- **demo:** form pages support `keepAlive` ([9228282](https://github.com/anncwb/vue-vben-admin/commit/9228282ae27daaa246f42e441e27b1b05eb30464))
-- **demo:** resolve `key not exist` warnings ([45a94e4](https://github.com/anncwb/vue-vben-admin/commit/45a94e41c1397b84d08373f84f766204d2488714))
-- **form:** fix `suffix` slot style ([a9bbed1](https://github.com/anncwb/vue-vben-admin/commit/a9bbed19739376ab2bf67a14b04e872f14ca84cc))
-- **formItem:** Fix labelcol type mismatch ([#903](https://github.com/anncwb/vue-vben-admin/issues/903)) ([03b17a8](https://github.com/anncwb/vue-vben-admin/commit/03b17a8f8bdb50322aa10e3b614bcc40b9e9dcc8))
-- **markdown:** resolving markdown exceptions ([d95815b](https://github.com/anncwb/vue-vben-admin/commit/d95815b5031984e224140eb1b1d46e2dbf80abc1))
-- **markdown:** set `value` error ([35e1347](https://github.com/anncwb/vue-vben-admin/commit/35e1347029e29a83a9648b6b398e6863cc40fca9))
-- **menu:** display error when contains hidden items ([5ceeefd](https://github.com/anncwb/vue-vben-admin/commit/5ceeefd17d9ddc0e8844b900069b100f24d9c00e))
-- **menu:** fix mix-menu incorrect jumping in `hover` mode ([cad021c](https://github.com/anncwb/vue-vben-admin/commit/cad021c34b71fa109640af75a0c2b72179e9e257))
-- **mix-sider:** fix mix-sider hover logic ([0595a72](https://github.com/anncwb/vue-vben-admin/commit/0595a72da9c666af81a0916663e8e6a014e6fa69))
-- **modal:** ensure that props are passed correctly,fix [#897](https://github.com/anncwb/vue-vben-admin/issues/897) ([ae7821e](https://github.com/anncwb/vue-vben-admin/commit/ae7821e29690bea8934ea724bfd0ae4e2cf30c77))
-- **modal:** fixed `fullscreen` not worked ([5baaa58](https://github.com/anncwb/vue-vben-admin/commit/5baaa58581f22a915cda9fa39e4cb9f094254d3b)), closes [#918](https://github.com/anncwb/vue-vben-admin/issues/918)
-- **model:** auto validate on value change ([f844017](https://github.com/anncwb/vue-vben-admin/commit/f8440175f35076073c9f53483cf6c0164d427ff4)), closes [#920](https://github.com/anncwb/vue-vben-admin/issues/920)
-- **table:** fix index column style ([c7c0a7e](https://github.com/anncwb/vue-vben-admin/commit/c7c0a7e4c88a895000b1621981e4d4b2020c64b1))
-- **table:** `value` show problem in editable cell ([61ce25b](https://github.com/anncwb/vue-vben-admin/commit/61ce25be1b40d7a0e26205ca6a6757c6c43fc21e)), closes [#922](https://github.com/anncwb/vue-vben-admin/issues/922)
-- **table-action:** fixed icon `margin` without label ([dc51e6a](https://github.com/anncwb/vue-vben-admin/commit/dc51e6a8d4e4f2c97b387b37959944c9bb49d779))
-- **tree:** fixed `checkedKeys` with `search` mode ([f707541](https://github.com/anncwb/vue-vben-admin/commit/f707541dda78146bda89814ddccbb259d9f5d8a2))
-- fix homePage affix error ([c117802](https://github.com/anncwb/vue-vben-admin/commit/c1178027f0fab2791d02efcd7c52beff5fc7dc25))
-- **table-action:** fix `circle` button style ([db7254a](https://github.com/anncwb/vue-vben-admin/commit/db7254a5e0ac6d10a7ea37334ad523b150facb19))
-- `menuSetting` can not set collapsed to false as default ([808291b](https://github.com/anncwb/vue-vben-admin/commit/808291b503d59e3026f5f0b5e7a38b9c69bcc451))
-- ensure PAGE_NOT_FOUND_ROUTE exist ([87583c8](https://github.com/anncwb/vue-vben-admin/commit/87583c8b54d335ddf1c416859ef62bbde189c809))
-- ensure that safari is running properly, fix [#875](https://github.com/anncwb/vue-vben-admin/issues/875) ([dafcdd8](https://github.com/anncwb/vue-vben-admin/commit/dafcdd898caae57104f1155b0ec660ea333e7b19))
-- infinite redirect in `BACK` mode ([4b46a84](https://github.com/anncwb/vue-vben-admin/commit/4b46a84c2b85e8da799426c54b3381ae93183db4))
-- **multiple-tab:** ignore login page ([1e63379](https://github.com/anncwb/vue-vben-admin/commit/1e63379088e1d7c823f29f607ab49d62ca22cb25))
-- resolving `Vue Router warn` ([237e65e](https://github.com/anncwb/vue-vben-admin/commit/237e65eac909368c4b4857da6c8deb1dc18e7684))
-- **table:** fix tree node align ([1e61da6](https://github.com/anncwb/vue-vben-admin/commit/1e61da644f65a79ce10fde98ee017aba7d36be10)), closes [#829](https://github.com/anncwb/vue-vben-admin/issues/829)
-- **table:** scrollbar style ([d8c3820](https://github.com/anncwb/vue-vben-admin/commit/d8c38207c08510d805a8dc66ffbba210e0cf4215))
-- **table-action:** incorrect button color of `disabled` state ([0f28e80](https://github.com/anncwb/vue-vben-admin/commit/0f28e803d0b65537216cd9f40ad5cad63c20db9b)), closes [#891](https://github.com/anncwb/vue-vben-admin/issues/891)
-- **upload:** ensure the value type is correct ([05329ce](https://github.com/anncwb/vue-vben-admin/commit/05329ce9501eb899a0bbb45320e5807c83372317))
-- **useWatermark:** fix `func` call `createWatermark` call `clear` to resizeEvent removed ([#901](https://github.com/anncwb/vue-vben-admin/issues/901)) ([a1d956d](https://github.com/anncwb/vue-vben-admin/commit/a1d956d3697cd07e0ba8910768f2a73e55f18491))
+## [1.6.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.5.4...v1.6.0) (2022-07-18)
 
 ### Features
 
-- **api-tree-select:** add `api` options to tree-select ([d81db89](https://github.com/anncwb/vue-vben-admin/commit/d81db890dfeb533d60f378ddb86f8ac50a31252b))
-- **basic-table:** add `ApiTreeSelect` edit component ([52af1dd](https://github.com/anncwb/vue-vben-admin/commit/52af1dd0d494e66c0af20f886dcc2b983cbb096f))
-- **demo:** multi-modal in one page usage ([7a7dab0](https://github.com/anncwb/vue-vben-admin/commit/7a7dab0c4b3602b7bd3e9381408e4168d7494c52))
-- customized user home page ([0a3683a](https://github.com/anncwb/vue-vben-admin/commit/0a3683a186ab55d34a12a5a3c6d794dfa1094ad4))
-- **api-select:** clear options before fetch ([9cf070d](https://github.com/anncwb/vue-vben-admin/commit/9cf070dd6305bb69a67ab6be85ef00bddc86fda0))
-- **demo:** add basicTree with async data expand all ([5421211](https://github.com/anncwb/vue-vben-admin/commit/542121129eb5bf65f61e7b484835591756c80f04))
-- **demo:** add search demo for apiSelect ([41e6d94](https://github.com/anncwb/vue-vben-admin/commit/41e6d94b3b64dc0d40b7ec57ecfaa4d966f202ae))
-- **demo:** demo default expanded tree table ([5f1a6cd](https://github.com/anncwb/vue-vben-admin/commit/5f1a6cdc599d5840df2dfebdaad029aac093cd81))
-- **notice-list:** add `pagination` support ([c16be2c](https://github.com/anncwb/vue-vben-admin/commit/c16be2c499d90126dfa35d699da9294c21a4ab48)), closes [#894](https://github.com/anncwb/vue-vben-admin/issues/894)
-- **table:** add `headerTop` slot ([540423e](https://github.com/anncwb/vue-vben-admin/commit/540423ecf741a815d28d7a6baa1541ac884efe95)), closes [#881](https://github.com/anncwb/vue-vben-admin/issues/881)
+- 添加按钮权限 ([7bef662](https://github.com/kailong321200875/vue-element-plus-admin/commit/7bef662db1e91aa8164e9f7a92de3fe4480a3c3b))
 
 ### Performance Improvements
 
-- **menu:** Optimize the style of the bottom collapse button in the Mix menu layout ([#896](https://github.com/anncwb/vue-vben-admin/issues/896)) ([6f83070](https://github.com/anncwb/vue-vben-admin/commit/6f830703a2607c33e5d25d6d17d0e453fc2fac2e))
-- image compression configuration optimization ([cf840e3](https://github.com/anncwb/vue-vben-admin/commit/cf840e3e73b9572de0ba7bf7b32d83f6a353a8ad))
+- 移除md5依赖 ([a123097](https://github.com/kailong321200875/vue-element-plus-admin/commit/a123097f1f38eac45e945c7d3fdccafc16ea9b69))
 
-# [2.6.0](https://github.com/anncwb/vue-vben-admin/compare/v2.5.2...v2.6.0) (2021-07-04)
+### Styling
 
-### Bug Fixes
+- 压缩图片尺寸 ([ae3c565](https://github.com/kailong321200875/vue-element-plus-admin/commit/ae3c5657b604ffbdae5ce3ce3603626ad4acc5e5))
 
-- **axios:** option `withToken` not work ([d509e89](https://github.com/anncwb/vue-vben-admin/commit/d509e897be5753c852e912112e70dac6247ba467))
-- **demo:** account list fetch loss param ([424b171](https://github.com/anncwb/vue-vben-admin/commit/424b171e0db727f5e0157cbcfd5460f15f8ea609)), closes [#830](https://github.com/anncwb/vue-vben-admin/issues/830)
-- **demo:** fix async tree demo, fixed: [#823](https://github.com/anncwb/vue-vben-admin/issues/823) ([5637588](https://github.com/anncwb/vue-vben-admin/commit/5637588fce880b01137191cc82c73e0fce621e8c))
-- **form:** fix some prop declaration ([b5046f0](https://github.com/anncwb/vue-vben-admin/commit/b5046f07a27e8ca7fc8b961b74fa5e1b0d715149))
-- **lock-screen:** ensure lock info is saved ([d38ff66](https://github.com/anncwb/vue-vben-admin/commit/d38ff6670a37478b31447f8058e786c4b044e218))
-- **lock-screen:** fix lock-screen can skip on new window ([d7b84c7](https://github.com/anncwb/vue-vben-admin/commit/d7b84c78744f7d0077a779b232e1358040b50383))
-- **menu:** make sure the menu is activated correctly ([cdb10cc](https://github.com/anncwb/vue-vben-admin/commit/cdb10cc4ac5e5e8f9cce3ff18d8fbd29ef10c86f))
-- **modal:** `setModalProps` support `defaultFullscreen` ([c7de65e](https://github.com/anncwb/vue-vben-admin/commit/c7de65ebba53941771153f18b184d3d4d31c0dbf))
-- **modal:** maskClosable not work ([f750ff4](https://github.com/anncwb/vue-vben-admin/commit/f750ff435fee06acee78d6b9633e6e18d91685f8))
-- **modal:** remove console log ([3dbbde2](https://github.com/anncwb/vue-vben-admin/commit/3dbbde2662352780377a9b216598d9348522f6ba))
-- **popconfirm-button:** remove button excess `title` ([73654b7](https://github.com/anncwb/vue-vben-admin/commit/73654b7862c59d623d6d5dc7dcf6ff2704564d9a))
-- **sider:** bottom trigger not work ([1bde404](https://github.com/anncwb/vue-vben-admin/commit/1bde4041211229d5d9d01ce0ca806fa99356b6de)), closes [#820](https://github.com/anncwb/vue-vben-admin/issues/820)
-- **sider:** custom trigger does not take effect ([5005e6e](https://github.com/anncwb/vue-vben-admin/commit/5005e6e56b1cc7763a1cc23e1162dfb49452013b))
-- **svg-icon:** fix SvgIcon style ([99829c7](https://github.com/anncwb/vue-vben-admin/commit/99829c79ab41a2319f40c5595a7d82d9e406ba18))
-- **table:** auto hide unnecessary scrollbar ([735028c](https://github.com/anncwb/vue-vben-admin/commit/735028c43055e8e80ebc7344af0cd0f51c744f98))
-- **table:** global configuration accidentally modified ([b4a3f93](https://github.com/anncwb/vue-vben-admin/commit/b4a3f936cd19bf1fff3a331bacad60e79d2d6c22))
-- **table:** param of `handleSearchInfoFn` ([791b323](https://github.com/anncwb/vue-vben-admin/commit/791b323dbd30acd7fabfe9c3fb6e528916311ffd))
-- **tailwindcss:** remove console warnings ([acacb32](https://github.com/anncwb/vue-vben-admin/commit/acacb32bb592345cd0a90b4bbeb60a9b6ab1ac3c))
-- `hasPermission` not work in `ROLE` Mode ([76a5f87](https://github.com/anncwb/vue-vben-admin/commit/76a5f87c0ce871cca48b9e4c32331353a796e7d2))
-- routes filter can't effective when permission mode set to ROUTE_MAPPING ([#836](https://github.com/anncwb/vue-vben-admin/issues/836)) ([3871204](https://github.com/anncwb/vue-vben-admin/commit/3871204d08d481b8984440cd60bbf2bacb58d063))
-- **table:** selection-change not triggered on row click ([6f845b5](https://github.com/anncwb/vue-vben-admin/commit/6f845b53bdc4c33fbca3e65f10f64c63166bed0e))
-- multi windows token sharing ([e5f3788](https://github.com/anncwb/vue-vben-admin/commit/e5f37885ffb32d04d244f0ef39ac660dda6b71e1)), closes [#761](https://github.com/anncwb/vue-vben-admin/issues/761)
-- support various vite modes of build, not just production ([#832](https://github.com/anncwb/vue-vben-admin/issues/832)) ([95c16a5](https://github.com/anncwb/vue-vben-admin/commit/95c16a5d26f9fd9a1d11894afe1146ca495eee93))
-- **table:** editComponentProps support onChange ([829b366](https://github.com/anncwb/vue-vben-admin/commit/829b366cb2abf27e69d9665e5be022b3d3f15655))
-- **table:** fix rowSelection.onChange not work ([df0f000](https://github.com/anncwb/vue-vben-admin/commit/df0f00085c1113eddd7a15954818ccece3538068)), closes [#825](https://github.com/anncwb/vue-vben-admin/issues/825)
+### Docs
+
+- vite2 to vite3 ([b3918b9](https://github.com/kailong321200875/vue-element-plus-admin/commit/b3918b9c3c5de4b48811ec95967851cfb3c231e1))
+- vite2 to vite3 ([aaf07de](https://github.com/kailong321200875/vue-element-plus-admin/commit/aaf07de77aa600332880a894faa35757f787c012))
+
+## [1.6.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.5.4...v1.6.0) (2022-07-18)
 
 ### Features
 
-- **avatar-cropper:** add action tooltip ([6cbac4b](https://github.com/anncwb/vue-vben-admin/commit/6cbac4b7ece60a1a7c1fda931cfffce42dfe3e51))
-- **avatar-cropper:** more props added ([b96ea07](https://github.com/anncwb/vue-vben-admin/commit/b96ea0753bfd769693a368cf1e3d8316688c0dcb))
-- **axios:** add `withToken` option ([c99cf5e](https://github.com/anncwb/vue-vben-admin/commit/c99cf5e53f057cdc332ab6c0635adf9c2d27de29))
-- **axios:** use `defHttp` like `axios` ([49f39de](https://github.com/anncwb/vue-vben-admin/commit/49f39de7b40e3ec8343bdeaf3eb00fd79d395746)), closes [#850](https://github.com/anncwb/vue-vben-admin/issues/850)
-- **basic-upload:** `value` support v-model ([16c5d32](https://github.com/anncwb/vue-vben-admin/commit/16c5d327f1209f7c7437acde2ab0fa031da6a641))
-- **basic-upload:** add preview-delete event ([49e72a8](https://github.com/anncwb/vue-vben-admin/commit/49e72a8e76b78fe54e19de9e23d7c72a19427f01)), closes [#835](https://github.com/anncwb/vue-vben-admin/issues/835)
-- **modal:** add `tooltip` for action buttons ([c3b9076](https://github.com/anncwb/vue-vben-admin/commit/c3b907656a5fad7a9b241562179f7a0f6fe0e6f0))
-- **param-menu:** feature: menu with params ([#845](https://github.com/anncwb/vue-vben-admin/issues/845)) ([48fcd76](https://github.com/anncwb/vue-vben-admin/commit/48fcd7684cabff66e8648b71527c6cb4ce7d03be))
-- **route:** add `hidePathForChildren` in `meta` ([d52b0de](https://github.com/anncwb/vue-vben-admin/commit/d52b0de83e69f7505c28e6f59ec84bbe526ecd0d))
-- **table:** support asynchrony in beforeFetch and afterFetch ([#827](https://github.com/anncwb/vue-vben-admin/issues/827)) ([749ba5c](https://github.com/anncwb/vue-vben-admin/commit/749ba5c1daf459625518937c239787b756c0a780))
-- **table-action:** support `tooltip` option ([5fab267](https://github.com/anncwb/vue-vben-admin/commit/5fab267a69600fdf5d7a7f9e4d9fff859d09dede)), closes [#848](https://github.com/anncwb/vue-vben-admin/issues/848)
-- **tree:** add `insertNodesByKey` method ([5a20df4](https://github.com/anncwb/vue-vben-admin/commit/5a20df45ad36b523d48bf7fe11bdb10a6d03df64))
-- routers support `ignoreRoute` option ([72ac240](https://github.com/anncwb/vue-vben-admin/commit/72ac240f2858cd74cb62b7647ca89d63bb71d247))
+- 添加按钮权限 ([7bef662](https://github.com/kailong321200875/vue-element-plus-admin/commit/7bef662db1e91aa8164e9f7a92de3fe4480a3c3b))
 
 ### Performance Improvements
 
-- **scrollbar:** scrollbar update when slot changed ([e9e51b2](https://github.com/anncwb/vue-vben-admin/commit/e9e51b2fdc879a66d8df08504a0955c9c21e3e27))
+- 移除md5依赖 ([a123097](https://github.com/kailong321200875/vue-element-plus-admin/commit/a123097f1f38eac45e945c7d3fdccafc16ea9b69))
 
-## [2.5.1](https://github.com/anncwb/vue-vben-admin/compare/v2.4.0...v2.5.1) (2021-06-26)
+### Styling
+
+- 压缩图片尺寸 ([ae3c565](https://github.com/kailong321200875/vue-element-plus-admin/commit/ae3c5657b604ffbdae5ce3ce3603626ad4acc5e5))
+
+### Docs
+
+- vite2 to vite3 ([b3918b9](https://github.com/kailong321200875/vue-element-plus-admin/commit/b3918b9c3c5de4b48811ec95967851cfb3c231e1))
+- vite2 to vite3 ([aaf07de](https://github.com/kailong321200875/vue-element-plus-admin/commit/aaf07de77aa600332880a894faa35757f787c012))
+
+## [1.5.4](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.5.3...v1.5.4) (2022-07-16)
 
 ### Bug Fixes
 
-- **comp-tree:** support comp-tree-foreach stop,add insertNodesByKey ([#818](https://github.com/anncwb/vue-vben-admin/issues/818)) ([d97aa92](https://github.com/anncwb/vue-vben-admin/commit/d97aa927417bf45a7c127ecfa9b8e835b6b68855))
-- fix antdv console warning ([480cfb9](https://github.com/anncwb/vue-vben-admin/commit/480cfb914e78c06eb7784e33465ed91b7d4c3eee))
-- fix defHttp baseUrl work ([d5f9919](https://github.com/anncwb/vue-vben-admin/commit/d5f9919b60fdd7d5c435129e8db519c0bbd37529))
-- **api:** select api type error ([b387681](https://github.com/anncwb/vue-vben-admin/commit/b387681c00ac018f5bc6a9251009ddffe37acae6))
-- **api-select:** ensure that the onchange function parameters are correct ([fa64fc8](https://github.com/anncwb/vue-vben-admin/commit/fa64fc8a622832b87fdf672965d55d543b5929a2))
-- **api-select:** loss option data on event callback ([c5f2577](https://github.com/anncwb/vue-vben-admin/commit/c5f2577f515e7ae96b27b509e5dd4b3317fcb7b4)), closes [#733](https://github.com/anncwb/vue-vben-admin/issues/733)
-- **ApiSelect demo:** add demo about ApiSelect's use ([#757](https://github.com/anncwb/vue-vben-admin/issues/757)) ([a03d3cc](https://github.com/anncwb/vue-vben-admin/commit/a03d3cc60c770eba644c1f3837850a2c1c015029))
-- **demo:** `breadcrumb` route invalid redirect ([84d9300](https://github.com/anncwb/vue-vben-admin/commit/84d9300e52fa73da575591aa4b71858a7e459c8c))
-- **demo:** account list page validate and save ([21f7a85](https://github.com/anncwb/vue-vben-admin/commit/21f7a854fe2455315287d04e895661ff739bce17))
-- **demo:** make sure the map https resource is correct ([7b9cd09](https://github.com/anncwb/vue-vben-admin/commit/7b9cd09ad8a50c45b2e661e07953d786d82f367d))
-- **demo:** style error,fix [#806](https://github.com/anncwb/vue-vben-admin/issues/806) ([a2d8be3](https://github.com/anncwb/vue-vben-admin/commit/a2d8be3ab29da88126f3ba971f6893cb12327759))
-- **demo-form:** add fieldMapToTime example,fix [#807](https://github.com/anncwb/vue-vben-admin/issues/807) ([a2a75a0](https://github.com/anncwb/vue-vben-admin/commit/a2a75a097ff6c9df12471eff0d62d44d2b88cfff))
-- **design:** correct tailwind configuration,fix [#800](https://github.com/anncwb/vue-vben-admin/issues/800) ([aec230c](https://github.com/anncwb/vue-vben-admin/commit/aec230ca19d541079b64c54ba00596ef9cd92ca0))
-- **dropdown:** icon and trigger work unexpected ([60b80c9](https://github.com/anncwb/vue-vben-admin/commit/60b80c96e82da9101d56b2e195e9e7571de11f0a)), closes [#796](https://github.com/anncwb/vue-vben-admin/issues/796) [#787](https://github.com/anncwb/vue-vben-admin/issues/787)
-- **flow-chart:** fix drag and drop menu loss ([fa828fd](https://github.com/anncwb/vue-vben-admin/commit/fa828fd972efeea87f364be76a1139ae53ec20d8))
-- **form:** loss args on component change event ([513823b](https://github.com/anncwb/vue-vben-admin/commit/513823bfbd3e8acc68098e0708c34bff2dd8dba6))
-- **layout:** props warn ([#756](https://github.com/anncwb/vue-vben-admin/issues/756)) ([bbce002](https://github.com/anncwb/vue-vben-admin/commit/bbce002be170c52db984647c931db88d7724cb52))
-- **menu:** fix the jitter problem of menu folding animation,fix [#732](https://github.com/anncwb/vue-vben-admin/issues/732) ([4c89ea7](https://github.com/anncwb/vue-vben-admin/commit/4c89ea7474f4315870df1790f99f3e431f343b90))
-- **mock:** make sure ignore matches the file correctly, fix [#745](https://github.com/anncwb/vue-vben-admin/issues/745) ([a222ec8](https://github.com/anncwb/vue-vben-admin/commit/a222ec8553f9b4477a43a8f7d113b5646fbfc373))
-- **mock:** type error ([7c1ffa3](https://github.com/anncwb/vue-vben-admin/commit/7c1ffa3d23de508a8d1590985806cb7a484b24e5))
-- **modal:** add v-model support for visible ([de12bab](https://github.com/anncwb/vue-vben-admin/commit/de12babd314ac831d3cb645f42dbf8a476075623))
-- **modal:** ensure that the full screen height is calculated correctly ([1c1755c](https://github.com/anncwb/vue-vben-admin/commit/1c1755cf5b4ada7263c05ddf4105abb52a2abb2f))
-- **modal:** ensure that the shutdown event is not triggered multiple times ([655b743](https://github.com/anncwb/vue-vben-admin/commit/655b74323653147943cbde2352208cb765c82b8a))
-- **pop-confirm:** fix event working unexpected ([a6ef771](https://github.com/anncwb/vue-vben-admin/commit/a6ef771fcce14c3644c965afaa69b3a17d0a7087))
-- **route:** dynamically introduce components error ([c6b766d](https://github.com/anncwb/vue-vben-admin/commit/c6b766d8ea902294ab1f7e4a06781f2bcfdd1f0b))
-- **router:** loss `directory` route ([df8cd86](https://github.com/anncwb/vue-vben-admin/commit/df8cd860514f32f44847dcf724f0737ed4d8b9e0)), closes [#722](https://github.com/anncwb/vue-vben-admin/issues/722)
-- **store:** fix type error after pinia version upgrade ([e8d6f88](https://github.com/anncwb/vue-vben-admin/commit/e8d6f8851efd7076946486864936f1797280d3ba))
-- **table:** event editCancel loss params ([8d22231](https://github.com/anncwb/vue-vben-admin/commit/8d22231a5fa4afed19201a4a4e5c29d674498516))
-- **table:** fix table jitter problem ([8eba7fb](https://github.com/anncwb/vue-vben-admin/commit/8eba7fb52786d1977e4cb7b67673d74c91c5c827))
-- **table:** getDataSource not worked on empty data ([e78af6f](https://github.com/anncwb/vue-vben-admin/commit/e78af6f228e25f052dc4c5a1859a6db50e0b112e)), closes [#752](https://github.com/anncwb/vue-vben-admin/issues/752)
-- **table:** treeTable editable error ([4ae39c5](https://github.com/anncwb/vue-vben-admin/commit/4ae39c53b49532fc6c31086a31e30429d2e236ed)), closes [#811](https://github.com/anncwb/vue-vben-admin/issues/811)
-- **upload:** make sure to carry custom parameters, fix [#802](https://github.com/anncwb/vue-vben-admin/issues/802) ([c4b22a2](https://github.com/anncwb/vue-vben-admin/commit/c4b22a225d0088d87be0c0068f543366312521db))
-- **use-message:** `content` not support vNode ([154ebc3](https://github.com/anncwb/vue-vben-admin/commit/154ebc3d96f73bb3ceab99ea0229a3619d585aba))
-- build error ([5212ea7](https://github.com/anncwb/vue-vben-admin/commit/5212ea79b43c832a5136354b549de8f89b6e2156))
-- **avatar:** mock data and Account center style ([2066f66](https://github.com/anncwb/vue-vben-admin/commit/2066f669715491f3e91ac6d0e905cd2b3e80b58d))
-- **axios:** make sure that the parameter is an object before processing, fix [#660](https://github.com/anncwb/vue-vben-admin/issues/660) ([834fa7e](https://github.com/anncwb/vue-vben-admin/commit/834fa7eb9c8aff252e083d38fdab4f6f53b4d43a))
-- **axios:** transformRequestHook logic error ([b69dcd7](https://github.com/anncwb/vue-vben-admin/commit/b69dcd79d742fd171302ce0f48c7750d60da217f))
-- **code-editor:** fix CodeEditor style problem, fix [#655](https://github.com/anncwb/vue-vben-admin/issues/655) ([5662804](https://github.com/anncwb/vue-vben-admin/commit/566280422de0537c4e31496eaaa95a9d51fe9458))
-- **codeeditor:** empty value set failed.fixed:[#659](https://github.com/anncwb/vue-vben-admin/issues/659) ([ba2bebb](https://github.com/anncwb/vue-vben-admin/commit/ba2bebb4069085817a90d065ed5877fdb50a8039))
-- **codeMirror:** fix the JsonEditor embedded in the bullet frame causing the style to be disordered ([#668](https://github.com/anncwb/vue-vben-admin/issues/668)) ([e1123a2](https://github.com/anncwb/vue-vben-admin/commit/e1123a2ccb5d5450a5072c19e5508a5dc0f14423))
-- **demo:** fix basic form page style ([8b6e07b](https://github.com/anncwb/vue-vben-admin/commit/8b6e07b768f110f13b4f2efa6c46e03266667a8c))
-- **form:** fix form update problem ([bcad95d](https://github.com/anncwb/vue-vben-admin/commit/bcad95d32a08a73f84ecbabab409cd64159f4077)), closes [#720](https://github.com/anncwb/vue-vben-admin/issues/720)
-- **form:** radioButtonGroup value support boolean ([9e2aa20](https://github.com/anncwb/vue-vben-admin/commit/9e2aa20daa08d2902cb5d56c1560306947e44939))
-- **form:** radioButtonGroup value support number ([bbddf30](https://github.com/anncwb/vue-vben-admin/commit/bbddf30e96feb1ab048323d93d3b8c1b18857acd))
-- **form:** schemas update problem ([808328d](https://github.com/anncwb/vue-vben-admin/commit/808328dc7e56b1cc07b678d501d9589290173443)), closes [#688](https://github.com/anncwb/vue-vben-admin/issues/688)
-- **keep-alive:** tablist cache updating effect ([d62d0ca](https://github.com/anncwb/vue-vben-admin/commit/d62d0ca08cff442c23eb9265851b066a2f24afa8)), closes [#695](https://github.com/anncwb/vue-vben-admin/issues/695)
-- **layout:** fix class loss ([d018363](https://github.com/anncwb/vue-vben-admin/commit/d018363ddcd68189a18829a2b2560f3b98da58a6))
-- **layout:** fix style compatibility issues ([905e5b7](https://github.com/anncwb/vue-vben-admin/commit/905e5b714b582548f32feca723012124343686a6))
-- **lock:** fix lock modal height ([40e3cb0](https://github.com/anncwb/vue-vben-admin/commit/40e3cb043c90a8343fa44a32acad2cb77de732da)), closes [#701](https://github.com/anncwb/vue-vben-admin/issues/701)
-- **log:** fix Wrong version number ([#653](https://github.com/anncwb/vue-vben-admin/issues/653)) ([4f0d45f](https://github.com/anncwb/vue-vben-admin/commit/4f0d45f1df48755eadc0b09fa19762ee68f9abd1))
-- **login:** login page modal style fixed: [#662](https://github.com/anncwb/vue-vben-admin/issues/662) ([#666](https://github.com/anncwb/vue-vben-admin/issues/666)) ([b218f10](https://github.com/anncwb/vue-vben-admin/commit/b218f10e25a9364c399a5fe42eedb549f57c01ea))
-- **mock:** menu list api loss `type` field ([4185412](https://github.com/anncwb/vue-vben-admin/commit/41854121f3713dbde236afd3a416e9f27bd0c673))
-- **modal:** redoModalHeight not work as expected ([5d554f1](https://github.com/anncwb/vue-vben-admin/commit/5d554f184f7b61774d1a1b2e61451677b38505de))
-- **page:** `basic form` action btns should be in line ([6c4f947](https://github.com/anncwb/vue-vben-admin/commit/6c4f947386c181f45253c94e4ef735d29a253053))
-- **radio-button:** fix RadioButton `disabled` support ([ee384b1](https://github.com/anncwb/vue-vben-admin/commit/ee384b1fa7e387b3680e9d54cbe4a1e2f15ec750)), closes [#710](https://github.com/anncwb/vue-vben-admin/issues/710)
-- **table:** wrong indeterminate state ([495b1da](https://github.com/anncwb/vue-vben-admin/commit/495b1da385e9b6428d2b994669d2065722445923))
-- **table:** make sure the table width is correct, fix [#593](https://github.com/anncwb/vue-vben-admin/issues/593) ([d73d43e](https://github.com/anncwb/vue-vben-admin/commit/d73d43ed91f30957cfd202c51552ca40a19cef08))
-- **table:** settings indeterminate state effect ([4fd2051](https://github.com/anncwb/vue-vben-admin/commit/4fd2051bc0403bfc5345ed6a5fc283a372ef7a92))
-- **table:** support change event ([9f4d171](https://github.com/anncwb/vue-vben-admin/commit/9f4d1719caa76de94e6362c16e4df3ac28df253c)), closes [#677](https://github.com/anncwb/vue-vben-admin/issues/677)
-- **table:** try to get close to the form stuck ([d81481c](https://github.com/anncwb/vue-vben-admin/commit/d81481c52186145dac130aaa1594f0ba8db4d392))
-- **table:** useTable support onChange ([9f5085c](https://github.com/anncwb/vue-vben-admin/commit/9f5085c9f9f46b09391156b17091c1771bc13026))
-- **table-action:** fix the split line style is missing,fix [#674](https://github.com/anncwb/vue-vben-admin/issues/674) ([b1cb863](https://github.com/anncwb/vue-vben-admin/commit/b1cb86350253dc5be095466966d9469775f4395d))
-- **Tinymce:** Read only status upload button can also be used ([#718](https://github.com/anncwb/vue-vben-admin/issues/718)) ([966571b](https://github.com/anncwb/vue-vben-admin/commit/966571bdcb11c2729ab9ce212bd3e195f7bf3a59))
-- **upload:** ensure preview items valid ([4376928](https://github.com/anncwb/vue-vben-admin/commit/437692869a232ee65c300c65ee473557ae0913c7))
-- ensure that roleList is not empty ([aebad61](https://github.com/anncwb/vue-vben-admin/commit/aebad61b3d3e11aaf720b37e762e53e2e6999d3c))
-- fix darkModeSwitch switch failure ([34a8054](https://github.com/anncwb/vue-vben-admin/commit/34a80542de670f0385dffaf5bf64bb9c3f6b90da))
-- fix if getDropdownList.length==0 show Dropdown component ([21c771b](https://github.com/anncwb/vue-vben-admin/commit/21c771b59cb45defbff37de21c5c1950370b8f92))
-- fix Login Page LocalePicker showLocale condition ([d683b0f](https://github.com/anncwb/vue-vben-admin/commit/d683b0f1e85b85b07090feba4ac7f741bd3bd482))
-- fix node12 version data mock error ([644dbe3](https://github.com/anncwb/vue-vben-admin/commit/644dbe315bb03ea1641a682359873237208a5303))
-- Fix the problem that the `lang` attribute of `HTML` will not be set when it is first loaded ([#682](https://github.com/anncwb/vue-vben-admin/issues/682)) ([eca8907](https://github.com/anncwb/vue-vben-admin/commit/eca8907a11c28d816c3da5a0667f45a38a499012))
-- login failed ([035f55a](https://github.com/anncwb/vue-vben-admin/commit/035f55af9778819d72adc1700d9de56a6569b58f))
-- session timeout login logic error ([#678](https://github.com/anncwb/vue-vben-admin/issues/678)) ([132c7fb](https://github.com/anncwb/vue-vben-admin/commit/132c7fb944df255c4d76a25d6d924439f91f9c54)), closes [#673](https://github.com/anncwb/vue-vben-admin/issues/673)
-- **tree:** support defaultExpandAll prop ([3ed2339](https://github.com/anncwb/vue-vben-admin/commit/3ed2339a6d75abbd6ccf723b6eaa762f9921409e))
-- **useViewHeight:** Fix the problem that useContentViewHeight does not calculate the footer ([#747](https://github.com/anncwb/vue-vben-admin/issues/747)) ([33cd8fe](https://github.com/anncwb/vue-vben-admin/commit/33cd8fe6533830176ab63ddfc4d74f75a384366c))
-- theme switching fails ([7e2ca79](https://github.com/anncwb/vue-vben-admin/commit/7e2ca79ece2f5209cb7ce4b0f5ee15012f9f51de))
+- fix build:test error ([14530cf](https://github.com/kailong321200875/vue-element-plus-admin/commit/14530cf790bfbbe37c72fa831f0376bbb4209e9d))
 
-### Features
+## [1.5.3](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.5.2...v1.5.3) (2022-07-01)
 
-- **demo:** add route multi tabs show ([0e414ba](https://github.com/anncwb/vue-vben-admin/commit/0e414ba3c10b4e47a85feb1a38cae66c815719d8)), closes [#817](https://github.com/anncwb/vue-vben-admin/issues/817)
-- add Tree LoadData demo ([9298b3c](https://github.com/anncwb/vue-vben-admin/commit/9298b3c988c10b81d83430ca31b9ce1d98a3fad9))
-- optimize error message for api failure ([ea6834a](https://github.com/anncwb/vue-vben-admin/commit/ea6834aeec3ef56d411b2c10a474f75d3d7bfdfc))
-- **api-select:** auto refetch after params changed ([50207ad](https://github.com/anncwb/vue-vben-admin/commit/50207ad702ef3faca1e27c873c89132ab92fae8e))
-- **app-search:** auto focus on show ([1ae6362](https://github.com/anncwb/vue-vben-admin/commit/1ae636296df2cf99e8a777f053c539c50e6ad49a))
-- **axios:** added authenticationScheme configuration,fix [#774](https://github.com/anncwb/vue-vben-admin/issues/774) ([b6d5b07](https://github.com/anncwb/vue-vben-admin/commit/b6d5b0796de4d0b66c0f33c335ec991d44f64ef2))
-- **demo:** `switch` use in table ([46899aa](https://github.com/anncwb/vue-vben-admin/commit/46899aa3cd6b1616c42ac263a28af75be839f6a0))
-- **demo:** added guide page example ([d196340](https://github.com/anncwb/vue-vben-admin/commit/d196340d270d2becbf2cc81b7d4f09273381bd09))
-- **echarts:** add getInstance for useECharts ([fb6c76d](https://github.com/anncwb/vue-vben-admin/commit/fb6c76db535bd0c6305d03c0cff876a1f079100b))
-- **modal:** add closeModal for useModal ([6d5f9aa](https://github.com/anncwb/vue-vben-admin/commit/6d5f9aa699c5da8af6bf5841baddc4a8bd603917))
-- **modal:** add redoModalHeight for useModalInner ([f732b56](https://github.com/anncwb/vue-vben-admin/commit/f732b569042f7fe77c85cb295538ddd85561f7e9))
-- **preview:** added createImgPreview picture preview function ([305630e](https://github.com/anncwb/vue-vben-admin/commit/305630e3fd886b3f690f890a934a8a6ba224fba1))
-- **project-setting:** added sessionTimeoutProcessing project configuration item,fix [#772](https://github.com/anncwb/vue-vben-admin/issues/772) ([0d07084](https://github.com/anncwb/vue-vben-admin/commit/0d0708409c4adbe7a0c5e33abf5307031147eaeb))
-- **table:** add editable DatePicker & TimePicker ([#654](https://github.com/anncwb/vue-vben-admin/issues/654)) ([93006c7](https://github.com/anncwb/vue-vben-admin/commit/93006c7dc7b5243b26637f444c8057c95935e622))
-- **table:** add updateTableDataRecord method ([8e4f486](https://github.com/anncwb/vue-vben-admin/commit/8e4f486fcf835f0b6f2a95676dba268ffdd0566e))
-- **table:** editable component text align ([8eaf575](https://github.com/anncwb/vue-vben-admin/commit/8eaf57562610a833c8083ae9957f458319d1cc93))
-- **table:** support columns-change event ([125a7d1](https://github.com/anncwb/vue-vben-admin/commit/125a7d14831642c9cbb2e4b3e75953c3b2e2cdef))
-- **table:** support custom update on row editing ([fe2bcfc](https://github.com/anncwb/vue-vben-admin/commit/fe2bcfc6f74159c355f3be153a316869fdb8b644)), closes [#646](https://github.com/anncwb/vue-vben-admin/issues/646)
-- **table:** updateTableDataRecord support functional rowKey ([448a4c2](https://github.com/anncwb/vue-vben-admin/commit/448a4c2809672480f8f635d7cc4661554112598a))
-- **table-action:** add stopButtonPropagation prop ([808012b](https://github.com/anncwb/vue-vben-admin/commit/808012b544b8c6f3cf467f42653c2783dbe8be6b)), closes [#699](https://github.com/anncwb/vue-vben-admin/issues/699)
-- **table-img:** support simple show mode and more props ([19d8e01](https://github.com/anncwb/vue-vben-admin/commit/19d8e01e11644c66222f137abd05940cbdec0bb6))
-- **test:** add jest test suite ([f6fe1dd](https://github.com/anncwb/vue-vben-admin/commit/f6fe1dd62df231ccbd063db0d32359b48aa5c76b))
-- **use-drawer:** add closeDrawer function ([639520a](https://github.com/anncwb/vue-vben-admin/commit/639520ad5ddf829875ab517067abf2b45ebc04c2))
-- add CropperAvatar component ([8e410fc](https://github.com/anncwb/vue-vben-admin/commit/8e410fc6401847d8e5545468b5ce6fd7ce9fc5cc))
-- **tabs:** add setTabTitle method ([#680](https://github.com/anncwb/vue-vben-admin/issues/680)) ([5ddccf6](https://github.com/anncwb/vue-vben-admin/commit/5ddccf6ba28453b9a35355d53d0db65f1a8876bc))
-- **tinymce:** support dark theme and I18n ([83c9cd7](https://github.com/anncwb/vue-vben-admin/commit/83c9cd77421e9c0888a41e2d8dcbca816da67488))
-- **Tinymce:** add dynamics to the read-only state of the rich text editor ([#725](https://github.com/anncwb/vue-vben-admin/issues/725)) ([efce482](https://github.com/anncwb/vue-vben-admin/commit/efce482b3215ddf9ed588f63a218d5f76939e947))
-- **tree:** add defaultExpandLevel prop ([6edca1c](https://github.com/anncwb/vue-vben-admin/commit/6edca1c19c3b0772f9ab82a7b09251a74fff2173)), closes [#672](https://github.com/anncwb/vue-vben-admin/issues/672)
+### Bug Fixes
+
+- fix useCrudSchemas not work ([0a855b9](https://github.com/kailong321200875/vue-element-plus-admin/commit/0a855b93e282dfe7863b3fce31dde5d7e0d3e2b6))
+
+## [1.5.2](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.5.1...v1.5.2) (2022-07-01)
 
 ### Performance Improvements
 
-- **component:** optimize tree and upload components ([3f6920f](https://github.com/anncwb/vue-vben-admin/commit/3f6920f7a9775fc06a34dead90b1724b23b7759c))
-- **cropper-avatar:** code optimization ([6dbbdba](https://github.com/anncwb/vue-vben-admin/commit/6dbbdbac76c2c3795e12dd346f6310d1b70f6a7d))
-- **i18n:** improve circular dependencies ([d677729](https://github.com/anncwb/vue-vben-admin/commit/d677729acbe2c024ab13cf490b205528507c4823))
-- **i18n:** improve warning prompt ([6ef62ba](https://github.com/anncwb/vue-vben-admin/commit/6ef62ba6ea7f5613a1fec982b30fe6b0f478bf59))
-- **locale:** reduce the number of multilingual files ([0acc4ab](https://github.com/anncwb/vue-vben-admin/commit/0acc4ab2dd70a239bd13929edede02b283feb7c2))
-- **pagewrapper:** 优化 PageWrapper 的高度自适应表现使用 getViewportOffset 替代 useContentViewHeight ([#792](https://github.com/anncwb/vue-vben-admin/issues/792)) ([4d8e398](https://github.com/anncwb/vue-vben-admin/commit/4d8e39857ea59fff99e69832b4a8cabf3a424c24))
-- **PageWrapper:** fix the height calculation problem when footer and global footer are opened at the same time ([#760](https://github.com/anncwb/vue-vben-admin/issues/760)) ([ab2c7ef](https://github.com/anncwb/vue-vben-admin/commit/ab2c7efe6994dacfe0ff407783f2c3b246427bfc))
-- **utils:** mitt default export is changed from Class to Function ([d3d620f](https://github.com/anncwb/vue-vben-admin/commit/d3d620f4fc75dd69270e4d090a71d426701272ef))
-- add createImgPreview func ([#713](https://github.com/anncwb/vue-vben-admin/issues/713)) ([b7c7c46](https://github.com/anncwb/vue-vben-admin/commit/b7c7c46853d332641d116d818e657447884784f3))
-- optimize components and add comments ([55e9d9f](https://github.com/anncwb/vue-vben-admin/commit/55e9d9fc2953643cec95c74b6ed34b0e68641fb6))
+- add useCrudSchemas demo ([ca3ce54](https://github.com/kailong321200875/vue-element-plus-admin/commit/ca3ce54630b723d87415b14c642440d6734876ff))
 
-### Reverts
-
-- **axios:** remove baseUrl config ([61d4efd](https://github.com/anncwb/vue-vben-admin/commit/61d4efd55a8b4f09990b5f1888e23ead43958164))
-
-## [2.5.1](https://github.com/anncwb/vue-vben-admin/compare/v2.4.0...v2.5.1) (2021-06-26)
+## [1.5.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.5.0...v1.5.1) (2022-07-01)
 
 ### Bug Fixes
 
-- fix antdv console warning ([480cfb9](https://github.com/anncwb/vue-vben-admin/commit/480cfb914e78c06eb7784e33465ed91b7d4c3eee))
-- fix defHttp baseUrl work ([d5f9919](https://github.com/anncwb/vue-vben-admin/commit/d5f9919b60fdd7d5c435129e8db519c0bbd37529))
-- **api:** select api type error ([b387681](https://github.com/anncwb/vue-vben-admin/commit/b387681c00ac018f5bc6a9251009ddffe37acae6))
-- **api-select:** ensure that the onchange function parameters are correct ([fa64fc8](https://github.com/anncwb/vue-vben-admin/commit/fa64fc8a622832b87fdf672965d55d543b5929a2))
-- **api-select:** loss option data on event callback ([c5f2577](https://github.com/anncwb/vue-vben-admin/commit/c5f2577f515e7ae96b27b509e5dd4b3317fcb7b4)), closes [#733](https://github.com/anncwb/vue-vben-admin/issues/733)
-- **ApiSelect demo:** add demo about ApiSelect's use ([#757](https://github.com/anncwb/vue-vben-admin/issues/757)) ([a03d3cc](https://github.com/anncwb/vue-vben-admin/commit/a03d3cc60c770eba644c1f3837850a2c1c015029))
-- **avatar:** mock data and Account center style ([2066f66](https://github.com/anncwb/vue-vben-admin/commit/2066f669715491f3e91ac6d0e905cd2b3e80b58d))
-- **axios:** make sure that the parameter is an object before processing, fix [#660](https://github.com/anncwb/vue-vben-admin/issues/660) ([834fa7e](https://github.com/anncwb/vue-vben-admin/commit/834fa7eb9c8aff252e083d38fdab4f6f53b4d43a))
-- **axios:** transformRequestHook logic error ([b69dcd7](https://github.com/anncwb/vue-vben-admin/commit/b69dcd79d742fd171302ce0f48c7750d60da217f))
-- **code-editor:** fix CodeEditor style problem, fix [#655](https://github.com/anncwb/vue-vben-admin/issues/655) ([5662804](https://github.com/anncwb/vue-vben-admin/commit/566280422de0537c4e31496eaaa95a9d51fe9458))
-- **codeeditor:** empty value set failed.fixed:[#659](https://github.com/anncwb/vue-vben-admin/issues/659) ([ba2bebb](https://github.com/anncwb/vue-vben-admin/commit/ba2bebb4069085817a90d065ed5877fdb50a8039))
-- **codeMirror:** fix the JsonEditor embedded in the bullet frame causing the style to be disordered ([#668](https://github.com/anncwb/vue-vben-admin/issues/668)) ([e1123a2](https://github.com/anncwb/vue-vben-admin/commit/e1123a2ccb5d5450a5072c19e5508a5dc0f14423))
-- **demo:** `breadcrumb` route invalid redirect ([84d9300](https://github.com/anncwb/vue-vben-admin/commit/84d9300e52fa73da575591aa4b71858a7e459c8c))
-- **demo:** account list page validate and save ([21f7a85](https://github.com/anncwb/vue-vben-admin/commit/21f7a854fe2455315287d04e895661ff739bce17))
-- **demo:** fix basic form page style ([8b6e07b](https://github.com/anncwb/vue-vben-admin/commit/8b6e07b768f110f13b4f2efa6c46e03266667a8c))
-- **demo:** make sure the map https resource is correct ([7b9cd09](https://github.com/anncwb/vue-vben-admin/commit/7b9cd09ad8a50c45b2e661e07953d786d82f367d))
-- **demo:** style error,fix [#806](https://github.com/anncwb/vue-vben-admin/issues/806) ([a2d8be3](https://github.com/anncwb/vue-vben-admin/commit/a2d8be3ab29da88126f3ba971f6893cb12327759))
-- **demo-form:** add fieldMapToTime example,fix [#807](https://github.com/anncwb/vue-vben-admin/issues/807) ([a2a75a0](https://github.com/anncwb/vue-vben-admin/commit/a2a75a097ff6c9df12471eff0d62d44d2b88cfff))
-- **design:** correct tailwind configuration,fix [#800](https://github.com/anncwb/vue-vben-admin/issues/800) ([aec230c](https://github.com/anncwb/vue-vben-admin/commit/aec230ca19d541079b64c54ba00596ef9cd92ca0))
-- **dropdown:** icon and trigger work unexpected ([60b80c9](https://github.com/anncwb/vue-vben-admin/commit/60b80c96e82da9101d56b2e195e9e7571de11f0a)), closes [#796](https://github.com/anncwb/vue-vben-admin/issues/796) [#787](https://github.com/anncwb/vue-vben-admin/issues/787)
-- **flow-chart:** fix drag and drop menu loss ([fa828fd](https://github.com/anncwb/vue-vben-admin/commit/fa828fd972efeea87f364be76a1139ae53ec20d8))
-- **form:** fix form update problem ([bcad95d](https://github.com/anncwb/vue-vben-admin/commit/bcad95d32a08a73f84ecbabab409cd64159f4077)), closes [#720](https://github.com/anncwb/vue-vben-admin/issues/720)
-- **form:** loss args on component change event ([513823b](https://github.com/anncwb/vue-vben-admin/commit/513823bfbd3e8acc68098e0708c34bff2dd8dba6))
-- **form:** radioButtonGroup value support boolean ([9e2aa20](https://github.com/anncwb/vue-vben-admin/commit/9e2aa20daa08d2902cb5d56c1560306947e44939))
-- **form:** radioButtonGroup value support number ([bbddf30](https://github.com/anncwb/vue-vben-admin/commit/bbddf30e96feb1ab048323d93d3b8c1b18857acd))
-- **form:** schemas update problem ([808328d](https://github.com/anncwb/vue-vben-admin/commit/808328dc7e56b1cc07b678d501d9589290173443)), closes [#688](https://github.com/anncwb/vue-vben-admin/issues/688)
-- **keep-alive:** tablist cache updating effect ([d62d0ca](https://github.com/anncwb/vue-vben-admin/commit/d62d0ca08cff442c23eb9265851b066a2f24afa8)), closes [#695](https://github.com/anncwb/vue-vben-admin/issues/695)
-- **layout:** fix class loss ([d018363](https://github.com/anncwb/vue-vben-admin/commit/d018363ddcd68189a18829a2b2560f3b98da58a6))
-- **layout:** fix style compatibility issues ([905e5b7](https://github.com/anncwb/vue-vben-admin/commit/905e5b714b582548f32feca723012124343686a6))
-- **layout:** props warn ([#756](https://github.com/anncwb/vue-vben-admin/issues/756)) ([bbce002](https://github.com/anncwb/vue-vben-admin/commit/bbce002be170c52db984647c931db88d7724cb52))
-- **lock:** fix lock modal height ([40e3cb0](https://github.com/anncwb/vue-vben-admin/commit/40e3cb043c90a8343fa44a32acad2cb77de732da)), closes [#701](https://github.com/anncwb/vue-vben-admin/issues/701)
-- **log:** fix Wrong version number ([#653](https://github.com/anncwb/vue-vben-admin/issues/653)) ([4f0d45f](https://github.com/anncwb/vue-vben-admin/commit/4f0d45f1df48755eadc0b09fa19762ee68f9abd1))
-- **login:** login page modal style fixed: [#662](https://github.com/anncwb/vue-vben-admin/issues/662) ([#666](https://github.com/anncwb/vue-vben-admin/issues/666)) ([b218f10](https://github.com/anncwb/vue-vben-admin/commit/b218f10e25a9364c399a5fe42eedb549f57c01ea))
-- **menu:** fix the jitter problem of menu folding animation,fix [#732](https://github.com/anncwb/vue-vben-admin/issues/732) ([4c89ea7](https://github.com/anncwb/vue-vben-admin/commit/4c89ea7474f4315870df1790f99f3e431f343b90))
-- **mock:** make sure ignore matches the file correctly, fix [#745](https://github.com/anncwb/vue-vben-admin/issues/745) ([a222ec8](https://github.com/anncwb/vue-vben-admin/commit/a222ec8553f9b4477a43a8f7d113b5646fbfc373))
-- **mock:** menu list api loss `type` field ([4185412](https://github.com/anncwb/vue-vben-admin/commit/41854121f3713dbde236afd3a416e9f27bd0c673))
-- **mock:** type error ([7c1ffa3](https://github.com/anncwb/vue-vben-admin/commit/7c1ffa3d23de508a8d1590985806cb7a484b24e5))
-- **modal:** add v-model support for visible ([de12bab](https://github.com/anncwb/vue-vben-admin/commit/de12babd314ac831d3cb645f42dbf8a476075623))
-- **modal:** ensure that the full screen height is calculated correctly ([1c1755c](https://github.com/anncwb/vue-vben-admin/commit/1c1755cf5b4ada7263c05ddf4105abb52a2abb2f))
-- **modal:** ensure that the shutdown event is not triggered multiple times ([655b743](https://github.com/anncwb/vue-vben-admin/commit/655b74323653147943cbde2352208cb765c82b8a))
-- **modal:** redoModalHeight not work as expected ([5d554f1](https://github.com/anncwb/vue-vben-admin/commit/5d554f184f7b61774d1a1b2e61451677b38505de))
-- **page:** `basic form` action btns should be in line ([6c4f947](https://github.com/anncwb/vue-vben-admin/commit/6c4f947386c181f45253c94e4ef735d29a253053))
-- **pop-confirm:** fix event working unexpected ([a6ef771](https://github.com/anncwb/vue-vben-admin/commit/a6ef771fcce14c3644c965afaa69b3a17d0a7087))
-- **radio-button:** fix RadioButton `disabled` support ([ee384b1](https://github.com/anncwb/vue-vben-admin/commit/ee384b1fa7e387b3680e9d54cbe4a1e2f15ec750)), closes [#710](https://github.com/anncwb/vue-vben-admin/issues/710)
-- **route:** dynamically introduce components error ([c6b766d](https://github.com/anncwb/vue-vben-admin/commit/c6b766d8ea902294ab1f7e4a06781f2bcfdd1f0b))
-- **router:** loss `directory` route ([df8cd86](https://github.com/anncwb/vue-vben-admin/commit/df8cd860514f32f44847dcf724f0737ed4d8b9e0)), closes [#722](https://github.com/anncwb/vue-vben-admin/issues/722)
-- **store:** fix type error after pinia version upgrade ([e8d6f88](https://github.com/anncwb/vue-vben-admin/commit/e8d6f8851efd7076946486864936f1797280d3ba))
-- **table:** wrong indeterminate state ([495b1da](https://github.com/anncwb/vue-vben-admin/commit/495b1da385e9b6428d2b994669d2065722445923))
-- **table:** event editCancel loss params ([8d22231](https://github.com/anncwb/vue-vben-admin/commit/8d22231a5fa4afed19201a4a4e5c29d674498516))
-- **table:** fix table jitter problem ([8eba7fb](https://github.com/anncwb/vue-vben-admin/commit/8eba7fb52786d1977e4cb7b67673d74c91c5c827))
-- **table:** getDataSource not worked on empty data ([e78af6f](https://github.com/anncwb/vue-vben-admin/commit/e78af6f228e25f052dc4c5a1859a6db50e0b112e)), closes [#752](https://github.com/anncwb/vue-vben-admin/issues/752)
-- **table:** make sure the table width is correct, fix [#593](https://github.com/anncwb/vue-vben-admin/issues/593) ([d73d43e](https://github.com/anncwb/vue-vben-admin/commit/d73d43ed91f30957cfd202c51552ca40a19cef08))
-- **table:** settings indeterminate state effect ([4fd2051](https://github.com/anncwb/vue-vben-admin/commit/4fd2051bc0403bfc5345ed6a5fc283a372ef7a92))
-- **table:** support change event ([9f4d171](https://github.com/anncwb/vue-vben-admin/commit/9f4d1719caa76de94e6362c16e4df3ac28df253c)), closes [#677](https://github.com/anncwb/vue-vben-admin/issues/677)
-- **table:** treeTable editable error ([4ae39c5](https://github.com/anncwb/vue-vben-admin/commit/4ae39c53b49532fc6c31086a31e30429d2e236ed)), closes [#811](https://github.com/anncwb/vue-vben-admin/issues/811)
-- **table:** try to get close to the form stuck ([d81481c](https://github.com/anncwb/vue-vben-admin/commit/d81481c52186145dac130aaa1594f0ba8db4d392))
-- **table:** useTable support onChange ([9f5085c](https://github.com/anncwb/vue-vben-admin/commit/9f5085c9f9f46b09391156b17091c1771bc13026))
-- **table-action:** fix the split line style is missing,fix [#674](https://github.com/anncwb/vue-vben-admin/issues/674) ([b1cb863](https://github.com/anncwb/vue-vben-admin/commit/b1cb86350253dc5be095466966d9469775f4395d))
-- **Tinymce:** Read only status upload button can also be used ([#718](https://github.com/anncwb/vue-vben-admin/issues/718)) ([966571b](https://github.com/anncwb/vue-vben-admin/commit/966571bdcb11c2729ab9ce212bd3e195f7bf3a59))
-- **upload:** ensure preview items valid ([4376928](https://github.com/anncwb/vue-vben-admin/commit/437692869a232ee65c300c65ee473557ae0913c7))
-- **upload:** make sure to carry custom parameters, fix [#802](https://github.com/anncwb/vue-vben-admin/issues/802) ([c4b22a2](https://github.com/anncwb/vue-vben-admin/commit/c4b22a225d0088d87be0c0068f543366312521db))
-- **use-message:** `content` not support vNode ([154ebc3](https://github.com/anncwb/vue-vben-admin/commit/154ebc3d96f73bb3ceab99ea0229a3619d585aba))
-- build error ([5212ea7](https://github.com/anncwb/vue-vben-admin/commit/5212ea79b43c832a5136354b549de8f89b6e2156))
-- ensure that roleList is not empty ([aebad61](https://github.com/anncwb/vue-vben-admin/commit/aebad61b3d3e11aaf720b37e762e53e2e6999d3c))
-- fix darkModeSwitch switch failure ([34a8054](https://github.com/anncwb/vue-vben-admin/commit/34a80542de670f0385dffaf5bf64bb9c3f6b90da))
-- fix if getDropdownList.length==0 show Dropdown component ([21c771b](https://github.com/anncwb/vue-vben-admin/commit/21c771b59cb45defbff37de21c5c1950370b8f92))
-- fix Login Page LocalePicker showLocale condition ([d683b0f](https://github.com/anncwb/vue-vben-admin/commit/d683b0f1e85b85b07090feba4ac7f741bd3bd482))
-- fix node12 version data mock error ([644dbe3](https://github.com/anncwb/vue-vben-admin/commit/644dbe315bb03ea1641a682359873237208a5303))
-- Fix the problem that the `lang` attribute of `HTML` will not be set when it is first loaded ([#682](https://github.com/anncwb/vue-vben-admin/issues/682)) ([eca8907](https://github.com/anncwb/vue-vben-admin/commit/eca8907a11c28d816c3da5a0667f45a38a499012))
-- login failed ([035f55a](https://github.com/anncwb/vue-vben-admin/commit/035f55af9778819d72adc1700d9de56a6569b58f))
-- session timeout login logic error ([#678](https://github.com/anncwb/vue-vben-admin/issues/678)) ([132c7fb](https://github.com/anncwb/vue-vben-admin/commit/132c7fb944df255c4d76a25d6d924439f91f9c54)), closes [#673](https://github.com/anncwb/vue-vben-admin/issues/673)
-- **tree:** support defaultExpandAll prop ([3ed2339](https://github.com/anncwb/vue-vben-admin/commit/3ed2339a6d75abbd6ccf723b6eaa762f9921409e))
-- **useViewHeight:** Fix the problem that useContentViewHeight does not calculate the footer ([#747](https://github.com/anncwb/vue-vben-admin/issues/747)) ([33cd8fe](https://github.com/anncwb/vue-vben-admin/commit/33cd8fe6533830176ab63ddfc4d74f75a384366c))
-- theme switching fails ([7e2ca79](https://github.com/anncwb/vue-vben-admin/commit/7e2ca79ece2f5209cb7ce4b0f5ee15012f9f51de))
-
-### Features
-
-- **demo:** add route multi tabs show ([0e414ba](https://github.com/anncwb/vue-vben-admin/commit/0e414ba3c10b4e47a85feb1a38cae66c815719d8)), closes [#817](https://github.com/anncwb/vue-vben-admin/issues/817)
-- add Tree LoadData demo ([9298b3c](https://github.com/anncwb/vue-vben-admin/commit/9298b3c988c10b81d83430ca31b9ce1d98a3fad9))
-- optimize error message for api failure ([ea6834a](https://github.com/anncwb/vue-vben-admin/commit/ea6834aeec3ef56d411b2c10a474f75d3d7bfdfc))
-- **api-select:** auto refetch after params changed ([50207ad](https://github.com/anncwb/vue-vben-admin/commit/50207ad702ef3faca1e27c873c89132ab92fae8e))
-- **app-search:** auto focus on show ([1ae6362](https://github.com/anncwb/vue-vben-admin/commit/1ae636296df2cf99e8a777f053c539c50e6ad49a))
-- **axios:** added authenticationScheme configuration,fix [#774](https://github.com/anncwb/vue-vben-admin/issues/774) ([b6d5b07](https://github.com/anncwb/vue-vben-admin/commit/b6d5b0796de4d0b66c0f33c335ec991d44f64ef2))
-- **demo:** `switch` use in table ([46899aa](https://github.com/anncwb/vue-vben-admin/commit/46899aa3cd6b1616c42ac263a28af75be839f6a0))
-- **demo:** added guide page example ([d196340](https://github.com/anncwb/vue-vben-admin/commit/d196340d270d2becbf2cc81b7d4f09273381bd09))
-- **echarts:** add getInstance for useECharts ([fb6c76d](https://github.com/anncwb/vue-vben-admin/commit/fb6c76db535bd0c6305d03c0cff876a1f079100b))
-- **modal:** add closeModal for useModal ([6d5f9aa](https://github.com/anncwb/vue-vben-admin/commit/6d5f9aa699c5da8af6bf5841baddc4a8bd603917))
-- **modal:** add redoModalHeight for useModalInner ([f732b56](https://github.com/anncwb/vue-vben-admin/commit/f732b569042f7fe77c85cb295538ddd85561f7e9))
-- **preview:** added createImgPreview picture preview function ([305630e](https://github.com/anncwb/vue-vben-admin/commit/305630e3fd886b3f690f890a934a8a6ba224fba1))
-- **project-setting:** added sessionTimeoutProcessing project configuration item,fix [#772](https://github.com/anncwb/vue-vben-admin/issues/772) ([0d07084](https://github.com/anncwb/vue-vben-admin/commit/0d0708409c4adbe7a0c5e33abf5307031147eaeb))
-- **table:** add editable DatePicker & TimePicker ([#654](https://github.com/anncwb/vue-vben-admin/issues/654)) ([93006c7](https://github.com/anncwb/vue-vben-admin/commit/93006c7dc7b5243b26637f444c8057c95935e622))
-- **table:** add updateTableDataRecord method ([8e4f486](https://github.com/anncwb/vue-vben-admin/commit/8e4f486fcf835f0b6f2a95676dba268ffdd0566e))
-- **table:** editable component text align ([8eaf575](https://github.com/anncwb/vue-vben-admin/commit/8eaf57562610a833c8083ae9957f458319d1cc93))
-- **table:** support columns-change event ([125a7d1](https://github.com/anncwb/vue-vben-admin/commit/125a7d14831642c9cbb2e4b3e75953c3b2e2cdef))
-- **table:** support custom update on row editing ([fe2bcfc](https://github.com/anncwb/vue-vben-admin/commit/fe2bcfc6f74159c355f3be153a316869fdb8b644)), closes [#646](https://github.com/anncwb/vue-vben-admin/issues/646)
-- **table:** updateTableDataRecord support functional rowKey ([448a4c2](https://github.com/anncwb/vue-vben-admin/commit/448a4c2809672480f8f635d7cc4661554112598a))
-- **table-action:** add stopButtonPropagation prop ([808012b](https://github.com/anncwb/vue-vben-admin/commit/808012b544b8c6f3cf467f42653c2783dbe8be6b)), closes [#699](https://github.com/anncwb/vue-vben-admin/issues/699)
-- **table-img:** support simple show mode and more props ([19d8e01](https://github.com/anncwb/vue-vben-admin/commit/19d8e01e11644c66222f137abd05940cbdec0bb6))
-- **test:** add jest test suite ([f6fe1dd](https://github.com/anncwb/vue-vben-admin/commit/f6fe1dd62df231ccbd063db0d32359b48aa5c76b))
-- **use-drawer:** add closeDrawer function ([639520a](https://github.com/anncwb/vue-vben-admin/commit/639520ad5ddf829875ab517067abf2b45ebc04c2))
-- add CropperAvatar component ([8e410fc](https://github.com/anncwb/vue-vben-admin/commit/8e410fc6401847d8e5545468b5ce6fd7ce9fc5cc))
-- **tabs:** add setTabTitle method ([#680](https://github.com/anncwb/vue-vben-admin/issues/680)) ([5ddccf6](https://github.com/anncwb/vue-vben-admin/commit/5ddccf6ba28453b9a35355d53d0db65f1a8876bc))
-- **tinymce:** support dark theme and I18n ([83c9cd7](https://github.com/anncwb/vue-vben-admin/commit/83c9cd77421e9c0888a41e2d8dcbca816da67488))
-- **Tinymce:** add dynamics to the read-only state of the rich text editor ([#725](https://github.com/anncwb/vue-vben-admin/issues/725)) ([efce482](https://github.com/anncwb/vue-vben-admin/commit/efce482b3215ddf9ed588f63a218d5f76939e947))
-- **tree:** add defaultExpandLevel prop ([6edca1c](https://github.com/anncwb/vue-vben-admin/commit/6edca1c19c3b0772f9ab82a7b09251a74fff2173)), closes [#672](https://github.com/anncwb/vue-vben-admin/issues/672)
+- change showMainRoute to canTo ([5e292f8](https://github.com/kailong321200875/vue-element-plus-admin/commit/5e292f8a2b2ded7297a2a76893e113ac81517d23))
 
 ### Performance Improvements
 
-- **component:** optimize tree and upload components ([3f6920f](https://github.com/anncwb/vue-vben-admin/commit/3f6920f7a9775fc06a34dead90b1724b23b7759c))
-- **cropper-avatar:** code optimization ([6dbbdba](https://github.com/anncwb/vue-vben-admin/commit/6dbbdbac76c2c3795e12dd346f6310d1b70f6a7d))
-- **i18n:** improve circular dependencies ([d677729](https://github.com/anncwb/vue-vben-admin/commit/d677729acbe2c024ab13cf490b205528507c4823))
-- **i18n:** improve warning prompt ([6ef62ba](https://github.com/anncwb/vue-vben-admin/commit/6ef62ba6ea7f5613a1fec982b30fe6b0f478bf59))
-- **locale:** reduce the number of multilingual files ([0acc4ab](https://github.com/anncwb/vue-vben-admin/commit/0acc4ab2dd70a239bd13929edede02b283feb7c2))
-- **pagewrapper:** 优化 PageWrapper 的高度自适应表现使用 getViewportOffset 替代 useContentViewHeight ([#792](https://github.com/anncwb/vue-vben-admin/issues/792)) ([4d8e398](https://github.com/anncwb/vue-vben-admin/commit/4d8e39857ea59fff99e69832b4a8cabf3a424c24))
-- **PageWrapper:** fix the height calculation problem when footer and global footer are opened at the same time ([#760](https://github.com/anncwb/vue-vben-admin/issues/760)) ([ab2c7ef](https://github.com/anncwb/vue-vben-admin/commit/ab2c7efe6994dacfe0ff407783f2c3b246427bfc))
-- **utils:** mitt default export is changed from Class to Function ([d3d620f](https://github.com/anncwb/vue-vben-admin/commit/d3d620f4fc75dd69270e4d090a71d426701272ef))
-- add createImgPreview func ([#713](https://github.com/anncwb/vue-vben-admin/issues/713)) ([b7c7c46](https://github.com/anncwb/vue-vben-admin/commit/b7c7c46853d332641d116d818e657447884784f3))
-- optimize components and add comments ([55e9d9f](https://github.com/anncwb/vue-vben-admin/commit/55e9d9fc2953643cec95c74b6ed34b0e68641fb6))
+- dialog combine with form ([34aefb6](https://github.com/kailong321200875/vue-element-plus-admin/commit/34aefb64ab9237521a1225925264818eebff9ad3))
+- dynamic options demo ([1acb4d7](https://github.com/kailong321200875/vue-element-plus-admin/commit/1acb4d7e8f449ba342699f1b4387ac2404a4c1fb))
+- dynamic options demo ([9a3b617](https://github.com/kailong321200875/vue-element-plus-admin/commit/9a3b6177aa0fbc99c86c5073a1c6c696e1eaf890))
+- useCrudSchemas cutom label ([7864d83](https://github.com/kailong321200875/vue-element-plus-admin/commit/7864d830e2134d814609e722b7bad1754ea9460e))
 
-### Reverts
-
-- **axios:** remove baseUrl config ([61d4efd](https://github.com/anncwb/vue-vben-admin/commit/61d4efd55a8b4f09990b5f1888e23ead43958164))
-
-# [2.5.0](https://github.com/anncwb/vue-vben-admin/compare/v2.4.0...v2.5.0) (2021-06-20)
-
-### Bug Fixes
-
-- **api:** select api type error ([b387681](https://github.com/anncwb/vue-vben-admin/commit/b387681c00ac018f5bc6a9251009ddffe37acae6))
-- **api-select:** loss option data on event callback ([c5f2577](https://github.com/anncwb/vue-vben-admin/commit/c5f2577f515e7ae96b27b509e5dd4b3317fcb7b4)), closes [#733](https://github.com/anncwb/vue-vben-admin/issues/733)
-- **ApiSelect demo:** add demo about ApiSelect's use ([#757](https://github.com/anncwb/vue-vben-admin/issues/757)) ([a03d3cc](https://github.com/anncwb/vue-vben-admin/commit/a03d3cc60c770eba644c1f3837850a2c1c015029))
-- **avatar:** mock data and Account center style ([2066f66](https://github.com/anncwb/vue-vben-admin/commit/2066f669715491f3e91ac6d0e905cd2b3e80b58d))
-- **axios:** make sure that the parameter is an object before processing, fix [#660](https://github.com/anncwb/vue-vben-admin/issues/660) ([834fa7e](https://github.com/anncwb/vue-vben-admin/commit/834fa7eb9c8aff252e083d38fdab4f6f53b4d43a))
-- **axios:** transformRequestHook logic error ([b69dcd7](https://github.com/anncwb/vue-vben-admin/commit/b69dcd79d742fd171302ce0f48c7750d60da217f))
-- **code-editor:** fix CodeEditor style problem, fix [#655](https://github.com/anncwb/vue-vben-admin/issues/655) ([5662804](https://github.com/anncwb/vue-vben-admin/commit/566280422de0537c4e31496eaaa95a9d51fe9458))
-- **codeeditor:** empty value set failed.fixed:[#659](https://github.com/anncwb/vue-vben-admin/issues/659) ([ba2bebb](https://github.com/anncwb/vue-vben-admin/commit/ba2bebb4069085817a90d065ed5877fdb50a8039))
-- **codeMirror:** fix the JsonEditor embedded in the bullet frame causing the style to be disordered ([#668](https://github.com/anncwb/vue-vben-admin/issues/668)) ([e1123a2](https://github.com/anncwb/vue-vben-admin/commit/e1123a2ccb5d5450a5072c19e5508a5dc0f14423))
-- **demo:** `breadcrumb` route invalid redirect ([84d9300](https://github.com/anncwb/vue-vben-admin/commit/84d9300e52fa73da575591aa4b71858a7e459c8c))
-- **demo:** account list page validate and save ([21f7a85](https://github.com/anncwb/vue-vben-admin/commit/21f7a854fe2455315287d04e895661ff739bce17))
-- **demo:** fix basic form page style ([8b6e07b](https://github.com/anncwb/vue-vben-admin/commit/8b6e07b768f110f13b4f2efa6c46e03266667a8c))
-- **demo:** make sure the map https resource is correct ([7b9cd09](https://github.com/anncwb/vue-vben-admin/commit/7b9cd09ad8a50c45b2e661e07953d786d82f367d))
-- **flow-chart:** fix drag and drop menu loss ([fa828fd](https://github.com/anncwb/vue-vben-admin/commit/fa828fd972efeea87f364be76a1139ae53ec20d8))
-- **form:** fix form update problem ([bcad95d](https://github.com/anncwb/vue-vben-admin/commit/bcad95d32a08a73f84ecbabab409cd64159f4077)), closes [#720](https://github.com/anncwb/vue-vben-admin/issues/720)
-- **form:** loss args on component change event ([513823b](https://github.com/anncwb/vue-vben-admin/commit/513823bfbd3e8acc68098e0708c34bff2dd8dba6))
-- **form:** radioButtonGroup value support boolean ([9e2aa20](https://github.com/anncwb/vue-vben-admin/commit/9e2aa20daa08d2902cb5d56c1560306947e44939))
-- **form:** radioButtonGroup value support number ([bbddf30](https://github.com/anncwb/vue-vben-admin/commit/bbddf30e96feb1ab048323d93d3b8c1b18857acd))
-- **form:** schemas update problem ([808328d](https://github.com/anncwb/vue-vben-admin/commit/808328dc7e56b1cc07b678d501d9589290173443)), closes [#688](https://github.com/anncwb/vue-vben-admin/issues/688)
-- **keep-alive:** tablist cache updating effect ([d62d0ca](https://github.com/anncwb/vue-vben-admin/commit/d62d0ca08cff442c23eb9265851b066a2f24afa8)), closes [#695](https://github.com/anncwb/vue-vben-admin/issues/695)
-- **layout:** fix class loss ([d018363](https://github.com/anncwb/vue-vben-admin/commit/d018363ddcd68189a18829a2b2560f3b98da58a6))
-- **layout:** fix style compatibility issues ([905e5b7](https://github.com/anncwb/vue-vben-admin/commit/905e5b714b582548f32feca723012124343686a6))
-- **layout:** props warn ([#756](https://github.com/anncwb/vue-vben-admin/issues/756)) ([bbce002](https://github.com/anncwb/vue-vben-admin/commit/bbce002be170c52db984647c931db88d7724cb52))
-- **lock:** fix lock modal height ([40e3cb0](https://github.com/anncwb/vue-vben-admin/commit/40e3cb043c90a8343fa44a32acad2cb77de732da)), closes [#701](https://github.com/anncwb/vue-vben-admin/issues/701)
-- **log:** fix Wrong version number ([#653](https://github.com/anncwb/vue-vben-admin/issues/653)) ([4f0d45f](https://github.com/anncwb/vue-vben-admin/commit/4f0d45f1df48755eadc0b09fa19762ee68f9abd1))
-- **login:** login page modal style fixed: [#662](https://github.com/anncwb/vue-vben-admin/issues/662) ([#666](https://github.com/anncwb/vue-vben-admin/issues/666)) ([b218f10](https://github.com/anncwb/vue-vben-admin/commit/b218f10e25a9364c399a5fe42eedb549f57c01ea))
-- **menu:** fix the jitter problem of menu folding animation,fix [#732](https://github.com/anncwb/vue-vben-admin/issues/732) ([4c89ea7](https://github.com/anncwb/vue-vben-admin/commit/4c89ea7474f4315870df1790f99f3e431f343b90))
-- **mock:** make sure ignore matches the file correctly, fix [#745](https://github.com/anncwb/vue-vben-admin/issues/745) ([a222ec8](https://github.com/anncwb/vue-vben-admin/commit/a222ec8553f9b4477a43a8f7d113b5646fbfc373))
-- **mock:** menu list api loss `type` field ([4185412](https://github.com/anncwb/vue-vben-admin/commit/41854121f3713dbde236afd3a416e9f27bd0c673))
-- **mock:** type error ([7c1ffa3](https://github.com/anncwb/vue-vben-admin/commit/7c1ffa3d23de508a8d1590985806cb7a484b24e5))
-- **modal:** add v-model support for visible ([de12bab](https://github.com/anncwb/vue-vben-admin/commit/de12babd314ac831d3cb645f42dbf8a476075623))
-- **modal:** ensure that the full screen height is calculated correctly ([1c1755c](https://github.com/anncwb/vue-vben-admin/commit/1c1755cf5b4ada7263c05ddf4105abb52a2abb2f))
-- **modal:** ensure that the shutdown event is not triggered multiple times ([655b743](https://github.com/anncwb/vue-vben-admin/commit/655b74323653147943cbde2352208cb765c82b8a))
-- **store:** fix type error after pinia version upgrade ([e8d6f88](https://github.com/anncwb/vue-vben-admin/commit/e8d6f8851efd7076946486864936f1797280d3ba))
-- **use-message:** `content` not support vNode ([154ebc3](https://github.com/anncwb/vue-vben-admin/commit/154ebc3d96f73bb3ceab99ea0229a3619d585aba))
-- build error ([5212ea7](https://github.com/anncwb/vue-vben-admin/commit/5212ea79b43c832a5136354b549de8f89b6e2156))
-- fix darkModeSwitch switch failure ([34a8054](https://github.com/anncwb/vue-vben-admin/commit/34a80542de670f0385dffaf5bf64bb9c3f6b90da))
-- fix if getDropdownList.length==0 show Dropdown component ([21c771b](https://github.com/anncwb/vue-vben-admin/commit/21c771b59cb45defbff37de21c5c1950370b8f92))
-- fix Login Page LocalePicker showLocale condition ([d683b0f](https://github.com/anncwb/vue-vben-admin/commit/d683b0f1e85b85b07090feba4ac7f741bd3bd482))
-- **modal:** redoModalHeight not work as expected ([5d554f1](https://github.com/anncwb/vue-vben-admin/commit/5d554f184f7b61774d1a1b2e61451677b38505de))
-- **page:** `basic form` action btns should be in line ([6c4f947](https://github.com/anncwb/vue-vben-admin/commit/6c4f947386c181f45253c94e4ef735d29a253053))
-- **radio-button:** fix RadioButton `disabled` support ([ee384b1](https://github.com/anncwb/vue-vben-admin/commit/ee384b1fa7e387b3680e9d54cbe4a1e2f15ec750)), closes [#710](https://github.com/anncwb/vue-vben-admin/issues/710)
-- **route:** dynamically introduce components error ([c6b766d](https://github.com/anncwb/vue-vben-admin/commit/c6b766d8ea902294ab1f7e4a06781f2bcfdd1f0b))
-- **router:** loss `directory` route ([df8cd86](https://github.com/anncwb/vue-vben-admin/commit/df8cd860514f32f44847dcf724f0737ed4d8b9e0)), closes [#722](https://github.com/anncwb/vue-vben-admin/issues/722)
-- **table:** wrong indeterminate state ([495b1da](https://github.com/anncwb/vue-vben-admin/commit/495b1da385e9b6428d2b994669d2065722445923))
-- **table:** make sure the table width is correct, fix [#593](https://github.com/anncwb/vue-vben-admin/issues/593) ([d73d43e](https://github.com/anncwb/vue-vben-admin/commit/d73d43ed91f30957cfd202c51552ca40a19cef08))
-- **table:** settings indeterminate state effect ([4fd2051](https://github.com/anncwb/vue-vben-admin/commit/4fd2051bc0403bfc5345ed6a5fc283a372ef7a92))
-- **table:** support change event ([9f4d171](https://github.com/anncwb/vue-vben-admin/commit/9f4d1719caa76de94e6362c16e4df3ac28df253c)), closes [#677](https://github.com/anncwb/vue-vben-admin/issues/677)
-- **table:** try to get close to the form stuck ([d81481c](https://github.com/anncwb/vue-vben-admin/commit/d81481c52186145dac130aaa1594f0ba8db4d392))
-- **table:** useTable support onChange ([9f5085c](https://github.com/anncwb/vue-vben-admin/commit/9f5085c9f9f46b09391156b17091c1771bc13026))
-- **table-action:** fix the split line style is missing,fix [#674](https://github.com/anncwb/vue-vben-admin/issues/674) ([b1cb863](https://github.com/anncwb/vue-vben-admin/commit/b1cb86350253dc5be095466966d9469775f4395d))
-- **Tinymce:** Read only status upload button can also be used ([#718](https://github.com/anncwb/vue-vben-admin/issues/718)) ([966571b](https://github.com/anncwb/vue-vben-admin/commit/966571bdcb11c2729ab9ce212bd3e195f7bf3a59))
-- **tree:** support defaultExpandAll prop ([3ed2339](https://github.com/anncwb/vue-vben-admin/commit/3ed2339a6d75abbd6ccf723b6eaa762f9921409e))
-- **upload:** ensure preview items valid ([4376928](https://github.com/anncwb/vue-vben-admin/commit/437692869a232ee65c300c65ee473557ae0913c7))
-- **useViewHeight:** Fix the problem that useContentViewHeight does not calculate the footer ([#747](https://github.com/anncwb/vue-vben-admin/issues/747)) ([33cd8fe](https://github.com/anncwb/vue-vben-admin/commit/33cd8fe6533830176ab63ddfc4d74f75a384366c))
-- ensure that roleList is not empty ([aebad61](https://github.com/anncwb/vue-vben-admin/commit/aebad61b3d3e11aaf720b37e762e53e2e6999d3c))
-- fix node12 version data mock error ([644dbe3](https://github.com/anncwb/vue-vben-admin/commit/644dbe315bb03ea1641a682359873237208a5303))
-- Fix the problem that the `lang` attribute of `HTML` will not be set when it is first loaded ([#682](https://github.com/anncwb/vue-vben-admin/issues/682)) ([eca8907](https://github.com/anncwb/vue-vben-admin/commit/eca8907a11c28d816c3da5a0667f45a38a499012))
-- login failed ([035f55a](https://github.com/anncwb/vue-vben-admin/commit/035f55af9778819d72adc1700d9de56a6569b58f))
-- session timeout login logic error ([#678](https://github.com/anncwb/vue-vben-admin/issues/678)) ([132c7fb](https://github.com/anncwb/vue-vben-admin/commit/132c7fb944df255c4d76a25d6d924439f91f9c54)), closes [#673](https://github.com/anncwb/vue-vben-admin/issues/673)
-- theme switching fails ([7e2ca79](https://github.com/anncwb/vue-vben-admin/commit/7e2ca79ece2f5209cb7ce4b0f5ee15012f9f51de))
+## [1.5.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.4.5...v1.5.0) (2022-06-25)
 
 ### Features
 
-- optimize error message for api failure ([ea6834a](https://github.com/anncwb/vue-vben-admin/commit/ea6834aeec3ef56d411b2c10a474f75d3d7bfdfc))
-- **api-select:** auto refetch after params changed ([50207ad](https://github.com/anncwb/vue-vben-admin/commit/50207ad702ef3faca1e27c873c89132ab92fae8e))
-- **app-search:** auto focus on show ([1ae6362](https://github.com/anncwb/vue-vben-admin/commit/1ae636296df2cf99e8a777f053c539c50e6ad49a))
-- **axios:** added authenticationScheme configuration,fix [#774](https://github.com/anncwb/vue-vben-admin/issues/774) ([b6d5b07](https://github.com/anncwb/vue-vben-admin/commit/b6d5b0796de4d0b66c0f33c335ec991d44f64ef2))
-- **demo:** `switch` use in table ([46899aa](https://github.com/anncwb/vue-vben-admin/commit/46899aa3cd6b1616c42ac263a28af75be839f6a0))
-- **demo:** added guide page example ([d196340](https://github.com/anncwb/vue-vben-admin/commit/d196340d270d2becbf2cc81b7d4f09273381bd09))
-- **echarts:** add getInstance for useECharts ([fb6c76d](https://github.com/anncwb/vue-vben-admin/commit/fb6c76db535bd0c6305d03c0cff876a1f079100b))
-- **modal:** add closeModal for useModal ([6d5f9aa](https://github.com/anncwb/vue-vben-admin/commit/6d5f9aa699c5da8af6bf5841baddc4a8bd603917))
-- **modal:** add redoModalHeight for useModalInner ([f732b56](https://github.com/anncwb/vue-vben-admin/commit/f732b569042f7fe77c85cb295538ddd85561f7e9))
-- **preview:** added createImgPreview picture preview function ([305630e](https://github.com/anncwb/vue-vben-admin/commit/305630e3fd886b3f690f890a934a8a6ba224fba1))
-- **project-setting:** added sessionTimeoutProcessing project configuration item,fix [#772](https://github.com/anncwb/vue-vben-admin/issues/772) ([0d07084](https://github.com/anncwb/vue-vben-admin/commit/0d0708409c4adbe7a0c5e33abf5307031147eaeb))
-- **table:** add editable DatePicker & TimePicker ([#654](https://github.com/anncwb/vue-vben-admin/issues/654)) ([93006c7](https://github.com/anncwb/vue-vben-admin/commit/93006c7dc7b5243b26637f444c8057c95935e622))
-- **table:** add updateTableDataRecord method ([8e4f486](https://github.com/anncwb/vue-vben-admin/commit/8e4f486fcf835f0b6f2a95676dba268ffdd0566e))
-- **table:** editable component text align ([8eaf575](https://github.com/anncwb/vue-vben-admin/commit/8eaf57562610a833c8083ae9957f458319d1cc93))
-- **table:** support columns-change event ([125a7d1](https://github.com/anncwb/vue-vben-admin/commit/125a7d14831642c9cbb2e4b3e75953c3b2e2cdef))
-- **table:** support custom update on row editing ([fe2bcfc](https://github.com/anncwb/vue-vben-admin/commit/fe2bcfc6f74159c355f3be153a316869fdb8b644)), closes [#646](https://github.com/anncwb/vue-vben-admin/issues/646)
-- **table:** updateTableDataRecord support functional rowKey ([448a4c2](https://github.com/anncwb/vue-vben-admin/commit/448a4c2809672480f8f635d7cc4661554112598a))
-- **table-action:** add stopButtonPropagation prop ([808012b](https://github.com/anncwb/vue-vben-admin/commit/808012b544b8c6f3cf467f42653c2783dbe8be6b)), closes [#699](https://github.com/anncwb/vue-vben-admin/issues/699)
-- **table-img:** support simple show mode and more props ([19d8e01](https://github.com/anncwb/vue-vben-admin/commit/19d8e01e11644c66222f137abd05940cbdec0bb6))
-- **test:** add jest test suite ([f6fe1dd](https://github.com/anncwb/vue-vben-admin/commit/f6fe1dd62df231ccbd063db0d32359b48aa5c76b))
-- **use-drawer:** add closeDrawer function ([639520a](https://github.com/anncwb/vue-vben-admin/commit/639520ad5ddf829875ab517067abf2b45ebc04c2))
-- add CropperAvatar component ([8e410fc](https://github.com/anncwb/vue-vben-admin/commit/8e410fc6401847d8e5545468b5ce6fd7ce9fc5cc))
-- **tabs:** add setTabTitle method ([#680](https://github.com/anncwb/vue-vben-admin/issues/680)) ([5ddccf6](https://github.com/anncwb/vue-vben-admin/commit/5ddccf6ba28453b9a35355d53d0db65f1a8876bc))
-- **tinymce:** support dark theme and I18n ([83c9cd7](https://github.com/anncwb/vue-vben-admin/commit/83c9cd77421e9c0888a41e2d8dcbca816da67488))
-- **Tinymce:** add dynamics to the read-only state of the rich text editor ([#725](https://github.com/anncwb/vue-vben-admin/issues/725)) ([efce482](https://github.com/anncwb/vue-vben-admin/commit/efce482b3215ddf9ed588f63a218d5f76939e947))
-- **tree:** add defaultExpandLevel prop ([6edca1c](https://github.com/anncwb/vue-vben-admin/commit/6edca1c19c3b0772f9ab82a7b09251a74fff2173)), closes [#672](https://github.com/anncwb/vue-vben-admin/issues/672)
+- refactoring API ([37b7583](https://github.com/kailong321200875/vue-element-plus-admin/commit/37b75839a591648b145065432efb1dc8c7a3b917))
+
+### Bug Fixes
+
+- 修复axios已知问题 ([537af57](https://github.com/kailong321200875/vue-element-plus-admin/commit/537af57a0aaa24c88ebe75acf52dc0403a58b04b))
 
 ### Performance Improvements
 
-- **component:** optimize tree and upload components ([3f6920f](https://github.com/anncwb/vue-vben-admin/commit/3f6920f7a9775fc06a34dead90b1724b23b7759c))
-- **cropper-avatar:** code optimization ([6dbbdba](https://github.com/anncwb/vue-vben-admin/commit/6dbbdbac76c2c3795e12dd346f6310d1b70f6a7d))
-- **i18n:** improve circular dependencies ([d677729](https://github.com/anncwb/vue-vben-admin/commit/d677729acbe2c024ab13cf490b205528507c4823))
-- **i18n:** improve warning prompt ([6ef62ba](https://github.com/anncwb/vue-vben-admin/commit/6ef62ba6ea7f5613a1fec982b30fe6b0f478bf59))
-- **locale:** reduce the number of multilingual files ([0acc4ab](https://github.com/anncwb/vue-vben-admin/commit/0acc4ab2dd70a239bd13929edede02b283feb7c2))
-- **PageWrapper:** fix the height calculation problem when footer and global footer are opened at the same time ([#760](https://github.com/anncwb/vue-vben-admin/issues/760)) ([ab2c7ef](https://github.com/anncwb/vue-vben-admin/commit/ab2c7efe6994dacfe0ff407783f2c3b246427bfc))
-- **utils:** mitt default export is changed from Class to Function ([d3d620f](https://github.com/anncwb/vue-vben-admin/commit/d3d620f4fc75dd69270e4d090a71d426701272ef))
-- add createImgPreview func ([#713](https://github.com/anncwb/vue-vben-admin/issues/713)) ([b7c7c46](https://github.com/anncwb/vue-vben-admin/commit/b7c7c46853d332641d116d818e657447884784f3))
-- optimize components and add comments ([55e9d9f](https://github.com/anncwb/vue-vben-admin/commit/55e9d9fc2953643cec95c74b6ed34b0e68641fb6))
+- perf axios config ([39edd84](https://github.com/kailong321200875/vue-element-plus-admin/commit/39edd84023109a84683c21ea33e41bd024756520))
 
-## [2.4.2](https://github.com/anncwb/vue-vben-admin/compare/v2.4.0...v2.4.2) (2021-06-09)
+## [1.4.5](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.4.4...v1.4.5) (2022-06-09)
 
 ### Bug Fixes
 
-- fix darkModeSwitch switch failure ([34a8054](https://github.com/anncwb/vue-vben-admin/commit/34a80542de670f0385dffaf5bf64bb9c3f6b90da))
-- **api-select:** loss option data on event callback ([c5f2577](https://github.com/anncwb/vue-vben-admin/commit/c5f2577f515e7ae96b27b509e5dd4b3317fcb7b4)), closes [#733](https://github.com/anncwb/vue-vben-admin/issues/733)
-- **avatar:** mock data and Account center style ([2066f66](https://github.com/anncwb/vue-vben-admin/commit/2066f669715491f3e91ac6d0e905cd2b3e80b58d))
-- **axios:** transformRequestHook logic error ([b69dcd7](https://github.com/anncwb/vue-vben-admin/commit/b69dcd79d742fd171302ce0f48c7750d60da217f))
-- **codeMirror:** fix the JsonEditor embedded in the bullet frame causing the style to be disordered ([#668](https://github.com/anncwb/vue-vben-admin/issues/668)) ([e1123a2](https://github.com/anncwb/vue-vben-admin/commit/e1123a2ccb5d5450a5072c19e5508a5dc0f14423))
-- **demo:** `breadcrumb` route invalid redirect ([84d9300](https://github.com/anncwb/vue-vben-admin/commit/84d9300e52fa73da575591aa4b71858a7e459c8c))
-- **demo:** account list page validate and save ([21f7a85](https://github.com/anncwb/vue-vben-admin/commit/21f7a854fe2455315287d04e895661ff739bce17))
-- **demo:** fix basic form page style ([8b6e07b](https://github.com/anncwb/vue-vben-admin/commit/8b6e07b768f110f13b4f2efa6c46e03266667a8c))
-- **demo:** make sure the map https resource is correct ([7b9cd09](https://github.com/anncwb/vue-vben-admin/commit/7b9cd09ad8a50c45b2e661e07953d786d82f367d))
-- **form:** fix form update problem ([bcad95d](https://github.com/anncwb/vue-vben-admin/commit/bcad95d32a08a73f84ecbabab409cd64159f4077)), closes [#720](https://github.com/anncwb/vue-vben-admin/issues/720)
-- **form:** radioButtonGroup value support boolean ([9e2aa20](https://github.com/anncwb/vue-vben-admin/commit/9e2aa20daa08d2902cb5d56c1560306947e44939))
-- **form:** radioButtonGroup value support number ([bbddf30](https://github.com/anncwb/vue-vben-admin/commit/bbddf30e96feb1ab048323d93d3b8c1b18857acd))
-- **form:** schemas update problem ([808328d](https://github.com/anncwb/vue-vben-admin/commit/808328dc7e56b1cc07b678d501d9589290173443)), closes [#688](https://github.com/anncwb/vue-vben-admin/issues/688)
-- **keep-alive:** tablist cache updating effect ([d62d0ca](https://github.com/anncwb/vue-vben-admin/commit/d62d0ca08cff442c23eb9265851b066a2f24afa8)), closes [#695](https://github.com/anncwb/vue-vben-admin/issues/695)
-- **lock:** fix lock modal height ([40e3cb0](https://github.com/anncwb/vue-vben-admin/commit/40e3cb043c90a8343fa44a32acad2cb77de732da)), closes [#701](https://github.com/anncwb/vue-vben-admin/issues/701)
-- **login:** login page modal style fixed: [#662](https://github.com/anncwb/vue-vben-admin/issues/662) ([#666](https://github.com/anncwb/vue-vben-admin/issues/666)) ([b218f10](https://github.com/anncwb/vue-vben-admin/commit/b218f10e25a9364c399a5fe42eedb549f57c01ea))
-- **mock:** menu list api loss `type` field ([4185412](https://github.com/anncwb/vue-vben-admin/commit/41854121f3713dbde236afd3a416e9f27bd0c673))
-- **mock:** type error ([7c1ffa3](https://github.com/anncwb/vue-vben-admin/commit/7c1ffa3d23de508a8d1590985806cb7a484b24e5))
-- **router:** loss `directory` route ([df8cd86](https://github.com/anncwb/vue-vben-admin/commit/df8cd860514f32f44847dcf724f0737ed4d8b9e0)), closes [#722](https://github.com/anncwb/vue-vben-admin/issues/722)
-- build error ([5212ea7](https://github.com/anncwb/vue-vben-admin/commit/5212ea79b43c832a5136354b549de8f89b6e2156))
-- **axios:** make sure that the parameter is an object before processing, fix [#660](https://github.com/anncwb/vue-vben-admin/issues/660) ([834fa7e](https://github.com/anncwb/vue-vben-admin/commit/834fa7eb9c8aff252e083d38fdab4f6f53b4d43a))
-- **code-editor:** fix CodeEditor style problem, fix [#655](https://github.com/anncwb/vue-vben-admin/issues/655) ([5662804](https://github.com/anncwb/vue-vben-admin/commit/566280422de0537c4e31496eaaa95a9d51fe9458))
-- **codeeditor:** empty value set failed.fixed:[#659](https://github.com/anncwb/vue-vben-admin/issues/659) ([ba2bebb](https://github.com/anncwb/vue-vben-admin/commit/ba2bebb4069085817a90d065ed5877fdb50a8039))
-- **layout:** fix class loss ([d018363](https://github.com/anncwb/vue-vben-admin/commit/d018363ddcd68189a18829a2b2560f3b98da58a6))
-- **layout:** fix style compatibility issues ([905e5b7](https://github.com/anncwb/vue-vben-admin/commit/905e5b714b582548f32feca723012124343686a6))
-- **log:** fix Wrong version number ([#653](https://github.com/anncwb/vue-vben-admin/issues/653)) ([4f0d45f](https://github.com/anncwb/vue-vben-admin/commit/4f0d45f1df48755eadc0b09fa19762ee68f9abd1))
-- **modal:** redoModalHeight not work as expected ([5d554f1](https://github.com/anncwb/vue-vben-admin/commit/5d554f184f7b61774d1a1b2e61451677b38505de))
-- **page:** `basic form` action btns should be in line ([6c4f947](https://github.com/anncwb/vue-vben-admin/commit/6c4f947386c181f45253c94e4ef735d29a253053))
-- **radio-button:** fix RadioButton `disabled` support ([ee384b1](https://github.com/anncwb/vue-vben-admin/commit/ee384b1fa7e387b3680e9d54cbe4a1e2f15ec750)), closes [#710](https://github.com/anncwb/vue-vben-admin/issues/710)
-- **table:** wrong indeterminate state ([495b1da](https://github.com/anncwb/vue-vben-admin/commit/495b1da385e9b6428d2b994669d2065722445923))
-- **table:** make sure the table width is correct, fix [#593](https://github.com/anncwb/vue-vben-admin/issues/593) ([d73d43e](https://github.com/anncwb/vue-vben-admin/commit/d73d43ed91f30957cfd202c51552ca40a19cef08))
-- **table:** settings indeterminate state effect ([4fd2051](https://github.com/anncwb/vue-vben-admin/commit/4fd2051bc0403bfc5345ed6a5fc283a372ef7a92))
-- **table:** support change event ([9f4d171](https://github.com/anncwb/vue-vben-admin/commit/9f4d1719caa76de94e6362c16e4df3ac28df253c)), closes [#677](https://github.com/anncwb/vue-vben-admin/issues/677)
-- **table:** try to get close to the form stuck ([d81481c](https://github.com/anncwb/vue-vben-admin/commit/d81481c52186145dac130aaa1594f0ba8db4d392))
-- **Tinymce:** Read only status upload button can also be used ([#718](https://github.com/anncwb/vue-vben-admin/issues/718)) ([966571b](https://github.com/anncwb/vue-vben-admin/commit/966571bdcb11c2729ab9ce212bd3e195f7bf3a59))
-- **upload:** ensure preview items valid ([4376928](https://github.com/anncwb/vue-vben-admin/commit/437692869a232ee65c300c65ee473557ae0913c7))
-- ensure that roleList is not empty ([aebad61](https://github.com/anncwb/vue-vben-admin/commit/aebad61b3d3e11aaf720b37e762e53e2e6999d3c))
-- fix node12 version data mock error ([644dbe3](https://github.com/anncwb/vue-vben-admin/commit/644dbe315bb03ea1641a682359873237208a5303))
-- Fix the problem that the `lang` attribute of `HTML` will not be set when it is first loaded ([#682](https://github.com/anncwb/vue-vben-admin/issues/682)) ([eca8907](https://github.com/anncwb/vue-vben-admin/commit/eca8907a11c28d816c3da5a0667f45a38a499012))
-- **table:** useTable support onChange ([9f5085c](https://github.com/anncwb/vue-vben-admin/commit/9f5085c9f9f46b09391156b17091c1771bc13026))
-- **table-action:** fix the split line style is missing,fix [#674](https://github.com/anncwb/vue-vben-admin/issues/674) ([b1cb863](https://github.com/anncwb/vue-vben-admin/commit/b1cb86350253dc5be095466966d9469775f4395d))
-- login failed ([035f55a](https://github.com/anncwb/vue-vben-admin/commit/035f55af9778819d72adc1700d9de56a6569b58f))
-- session timeout login logic error ([#678](https://github.com/anncwb/vue-vben-admin/issues/678)) ([132c7fb](https://github.com/anncwb/vue-vben-admin/commit/132c7fb944df255c4d76a25d6d924439f91f9c54)), closes [#673](https://github.com/anncwb/vue-vben-admin/issues/673)
-- **tree:** support defaultExpandAll prop ([3ed2339](https://github.com/anncwb/vue-vben-admin/commit/3ed2339a6d75abbd6ccf723b6eaa762f9921409e))
-- theme switching fails ([7e2ca79](https://github.com/anncwb/vue-vben-admin/commit/7e2ca79ece2f5209cb7ce4b0f5ee15012f9f51de))
+- fix tagsview not work ([d88e051](https://github.com/kailong321200875/vue-element-plus-admin/commit/d88e0514349e877f1c5280a48f9b1bd2bfd622bf))
+- fix tagsview not work ([1bf2d4c](https://github.com/kailong321200875/vue-element-plus-admin/commit/1bf2d4c77287fdca7ed1cb8c9998a53f1375dc6f))
+
+### Types
+
+- fix types error ([586486a](https://github.com/kailong321200875/vue-element-plus-admin/commit/586486a68d4bf2a024e50a79945b4007324f642d))
+
+## [1.4.4](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.4.3...v1.4.4) (2022-06-06)
+
+### Types
+
+- fix type error ([d66f12e](https://github.com/kailong321200875/vue-element-plus-admin/commit/d66f12e0e77f6acf485bae06509d9ea4abcd1eaa))
+
+### [1.4.3](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.4.2...v1.4.3) (2022-06-01)
+
+### Bug Fixes
+
+- multiple requests when pageSize change and currentPage isn't 1 ([f71a250](https://github.com/kailong321200875/vue-element-plus-admin/commit/f71a2503bc521c01e7102feecf4ec39a5224a6bb))
+
+### [1.4.2](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.4.1...v1.4.2) (2022-05-15)
+
+### Styling
+
+- fix dark mode bug ([2f9fd5d](https://github.com/kailong321200875/vue-element-plus-admin/commit/2f9fd5d21550d771ec12ae3540b975e2eebcd25b))
+
+### [1.4.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.4.0...v1.4.1) (2022-05-12)
+
+### Bug Fixes
+
+- the warning of VSCode extensions ([a368c21](https://github.com/kailong321200875/vue-element-plus-admin/commit/a368c21fb9c41f98f31f51586a2023076a8a9132))
+
+## [1.4.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.3.2...v1.4.0) (2022-05-10)
 
 ### Features
 
-- **api-select:** auto refetch after params changed ([50207ad](https://github.com/anncwb/vue-vben-admin/commit/50207ad702ef3faca1e27c873c89132ab92fae8e))
-- **app-search:** auto focus on show ([1ae6362](https://github.com/anncwb/vue-vben-admin/commit/1ae636296df2cf99e8a777f053c539c50e6ad49a))
-- **demo:** `switch` use in table ([46899aa](https://github.com/anncwb/vue-vben-admin/commit/46899aa3cd6b1616c42ac263a28af75be839f6a0))
-- **echarts:** add getInstance for useECharts ([fb6c76d](https://github.com/anncwb/vue-vben-admin/commit/fb6c76db535bd0c6305d03c0cff876a1f079100b))
-- **modal:** add closeModal for useModal ([6d5f9aa](https://github.com/anncwb/vue-vben-admin/commit/6d5f9aa699c5da8af6bf5841baddc4a8bd603917))
-- **modal:** add redoModalHeight for useModalInner ([f732b56](https://github.com/anncwb/vue-vben-admin/commit/f732b569042f7fe77c85cb295538ddd85561f7e9))
-- **table:** add editable DatePicker & TimePicker ([#654](https://github.com/anncwb/vue-vben-admin/issues/654)) ([93006c7](https://github.com/anncwb/vue-vben-admin/commit/93006c7dc7b5243b26637f444c8057c95935e622))
-- **table:** add updateTableDataRecord method ([8e4f486](https://github.com/anncwb/vue-vben-admin/commit/8e4f486fcf835f0b6f2a95676dba268ffdd0566e))
-- **table:** editable component text align ([8eaf575](https://github.com/anncwb/vue-vben-admin/commit/8eaf57562610a833c8083ae9957f458319d1cc93))
-- **table:** support columns-change event ([125a7d1](https://github.com/anncwb/vue-vben-admin/commit/125a7d14831642c9cbb2e4b3e75953c3b2e2cdef))
-- **table:** support custom update on row editing ([fe2bcfc](https://github.com/anncwb/vue-vben-admin/commit/fe2bcfc6f74159c355f3be153a316869fdb8b644)), closes [#646](https://github.com/anncwb/vue-vben-admin/issues/646)
-- **table:** updateTableDataRecord support functional rowKey ([448a4c2](https://github.com/anncwb/vue-vben-admin/commit/448a4c2809672480f8f635d7cc4661554112598a))
-- **table-action:** add stopButtonPropagation prop ([808012b](https://github.com/anncwb/vue-vben-admin/commit/808012b544b8c6f3cf467f42653c2783dbe8be6b)), closes [#699](https://github.com/anncwb/vue-vben-admin/issues/699)
-- **table-img:** support simple show mode and more props ([19d8e01](https://github.com/anncwb/vue-vben-admin/commit/19d8e01e11644c66222f137abd05940cbdec0bb6))
-- **tabs:** add setTabTitle method ([#680](https://github.com/anncwb/vue-vben-admin/issues/680)) ([5ddccf6](https://github.com/anncwb/vue-vben-admin/commit/5ddccf6ba28453b9a35355d53d0db65f1a8876bc))
-- **tinymce:** support dark theme and I18n ([83c9cd7](https://github.com/anncwb/vue-vben-admin/commit/83c9cd77421e9c0888a41e2d8dcbca816da67488))
-- **Tinymce:** add dynamics to the read-only state of the rich text editor ([#725](https://github.com/anncwb/vue-vben-admin/issues/725)) ([efce482](https://github.com/anncwb/vue-vben-admin/commit/efce482b3215ddf9ed588f63a218d5f76939e947))
-- **tree:** add defaultExpandLevel prop ([6edca1c](https://github.com/anncwb/vue-vben-admin/commit/6edca1c19c3b0772f9ab82a7b09251a74fff2173)), closes [#672](https://github.com/anncwb/vue-vben-admin/issues/672)
+- add dark mode ([0758a6a](https://github.com/kailong321200875/vue-element-plus-admin/commit/0758a6a9d83170e53d45d39c3313e52ff5885746))
+
+### [1.3.2](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.3.1...v1.3.2) (2022-05-07)
+
+### Bug Fixes
+
+- fix the problem that the page is stuck in top mode ([8d01f48](https://github.com/kailong321200875/vue-element-plus-admin/commit/8d01f48d5098195b10c03b3cb3a0f485ebc9e018))
+
+### [1.3.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.3.0...v1.3.1) (2022-05-06)
+
+### Bug Fixes
+
+- spelling 'useRenderChcekbox' ([ee92f03](https://github.com/kailong321200875/vue-element-plus-admin/commit/ee92f039bea4307ccfb819728d3e2ed04fa00e03))
+
+## [1.3.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.13...v1.3.0) (2022-04-26)
+
+### Features
+
+- add useCrudSchemas hook ([00d947e](https://github.com/kailong321200875/vue-element-plus-admin/commit/00d947e2f81105194b0622d33768f999e37ad28a))
+
+### Bug Fixes
+
+- fix Table slot warning ([0eac05d](https://github.com/kailong321200875/vue-element-plus-admin/commit/0eac05d4f973ff7b15e00973f6e96595a3cd6d43))
+
+### Code Refactoring
+
+- refactor useAxios ([185f1e6](https://github.com/kailong321200875/vue-element-plus-admin/commit/185f1e6e210ecaac28ebfdee4198b7ca2eaa0933))
+
+### Build System
+
+- add url ([ab0f59a](https://github.com/kailong321200875/vue-element-plus-admin/commit/ab0f59ac91a077cf060923fa76e6d57e05d0b21b))
+- update plugins ([c475a61](https://github.com/kailong321200875/vue-element-plus-admin/commit/c475a610c19094034306f2dc665e240c7c117f87))
+- update plugins ([dfedbc7](https://github.com/kailong321200875/vue-element-plus-admin/commit/dfedbc74fdb2c819a96b6263849bdaab59b9e337))
+
+### [1.2.13](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.12...v1.2.13) (2022-04-18)
 
 ### Performance Improvements
 
-- optimize components and add comments ([55e9d9f](https://github.com/anncwb/vue-vben-admin/commit/55e9d9fc2953643cec95c74b6ed34b0e68641fb6))
-- **i18n:** improve circular dependencies ([d677729](https://github.com/anncwb/vue-vben-admin/commit/d677729acbe2c024ab13cf490b205528507c4823))
-- **i18n:** improve warning prompt ([6ef62ba](https://github.com/anncwb/vue-vben-admin/commit/6ef62ba6ea7f5613a1fec982b30fe6b0f478bf59))
+- Editor component support v-model ([d77f8e3](https://github.com/kailong321200875/vue-element-plus-admin/commit/d77f8e334d77ee43c9ee0f411733f7397b278bc0))
 
-## [2.4.1](https://github.com/anncwb/vue-vben-admin/compare/v2.4.0...v2.4.1) (2021-06-01)
+### [1.2.12](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.11...v1.2.12) (2022-04-17)
 
 ### Bug Fixes
 
-- **table:** make sure the table width is correct, fix [#593](https://github.com/anncwb/vue-vben-admin/issues/593) ([d73d43e](https://github.com/anncwb/vue-vben-admin/commit/d73d43ed91f30957cfd202c51552ca40a19cef08))
-- Fix the problem that the `lang` attribute of `HTML` will not be set when it is first loaded ([#682](https://github.com/anncwb/vue-vben-admin/issues/682)) ([eca8907](https://github.com/anncwb/vue-vben-admin/commit/eca8907a11c28d816c3da5a0667f45a38a499012))
-- **avatar:** mock data and Account center style ([2066f66](https://github.com/anncwb/vue-vben-admin/commit/2066f669715491f3e91ac6d0e905cd2b3e80b58d))
-- **axios:** make sure that the parameter is an object before processing, fix [#660](https://github.com/anncwb/vue-vben-admin/issues/660) ([834fa7e](https://github.com/anncwb/vue-vben-admin/commit/834fa7eb9c8aff252e083d38fdab4f6f53b4d43a))
-- **code-editor:** fix CodeEditor style problem, fix [#655](https://github.com/anncwb/vue-vben-admin/issues/655) ([5662804](https://github.com/anncwb/vue-vben-admin/commit/566280422de0537c4e31496eaaa95a9d51fe9458))
-- **codeMirror:** fix the JsonEditor embedded in the bullet frame causing the style to be disordered ([#668](https://github.com/anncwb/vue-vben-admin/issues/668)) ([e1123a2](https://github.com/anncwb/vue-vben-admin/commit/e1123a2ccb5d5450a5072c19e5508a5dc0f14423))
-- **form:** radioButtonGroup value support number ([bbddf30](https://github.com/anncwb/vue-vben-admin/commit/bbddf30e96feb1ab048323d93d3b8c1b18857acd))
-- ensure that roleList is not empty ([aebad61](https://github.com/anncwb/vue-vben-admin/commit/aebad61b3d3e11aaf720b37e762e53e2e6999d3c))
-- fix node12 version data mock error ([644dbe3](https://github.com/anncwb/vue-vben-admin/commit/644dbe315bb03ea1641a682359873237208a5303))
-- **codeeditor:** empty value set failed.fixed:[#659](https://github.com/anncwb/vue-vben-admin/issues/659) ([ba2bebb](https://github.com/anncwb/vue-vben-admin/commit/ba2bebb4069085817a90d065ed5877fdb50a8039))
-- **layout:** fix style compatibility issues ([905e5b7](https://github.com/anncwb/vue-vben-admin/commit/905e5b714b582548f32feca723012124343686a6))
-- **login:** login page modal style fixed: [#662](https://github.com/anncwb/vue-vben-admin/issues/662) ([#666](https://github.com/anncwb/vue-vben-admin/issues/666)) ([b218f10](https://github.com/anncwb/vue-vben-admin/commit/b218f10e25a9364c399a5fe42eedb549f57c01ea))
-- **table:** support change event ([9f4d171](https://github.com/anncwb/vue-vben-admin/commit/9f4d1719caa76de94e6362c16e4df3ac28df253c)), closes [#677](https://github.com/anncwb/vue-vben-admin/issues/677)
-- **table:** useTable support onChange ([9f5085c](https://github.com/anncwb/vue-vben-admin/commit/9f5085c9f9f46b09391156b17091c1771bc13026))
-- **table-action:** fix the split line style is missing,fix [#674](https://github.com/anncwb/vue-vben-admin/issues/674) ([b1cb863](https://github.com/anncwb/vue-vben-admin/commit/b1cb86350253dc5be095466966d9469775f4395d))
-- login failed ([035f55a](https://github.com/anncwb/vue-vben-admin/commit/035f55af9778819d72adc1700d9de56a6569b58f))
-- session timeout login logic error ([#678](https://github.com/anncwb/vue-vben-admin/issues/678)) ([132c7fb](https://github.com/anncwb/vue-vben-admin/commit/132c7fb944df255c4d76a25d6d924439f91f9c54)), closes [#673](https://github.com/anncwb/vue-vben-admin/issues/673)
-- **layout:** fix class loss ([d018363](https://github.com/anncwb/vue-vben-admin/commit/d018363ddcd68189a18829a2b2560f3b98da58a6))
-- **log:** fix Wrong version number ([#653](https://github.com/anncwb/vue-vben-admin/issues/653)) ([4f0d45f](https://github.com/anncwb/vue-vben-admin/commit/4f0d45f1df48755eadc0b09fa19762ee68f9abd1))
-- **tree:** support defaultExpandAll prop ([3ed2339](https://github.com/anncwb/vue-vben-admin/commit/3ed2339a6d75abbd6ccf723b6eaa762f9921409e))
-- theme switching fails ([7e2ca79](https://github.com/anncwb/vue-vben-admin/commit/7e2ca79ece2f5209cb7ce4b0f5ee15012f9f51de))
+- fixed spelling 'ElememtPlusSzie' ([5dbbc60](https://github.com/kailong321200875/vue-element-plus-admin/commit/5dbbc608640d93fe68fec6f58fdb30a43e02aada))
 
-### Features
+### [1.2.11](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.10...v1.2.11) (2022-04-14)
 
-- **app-search:** auto focus on show ([1ae6362](https://github.com/anncwb/vue-vben-admin/commit/1ae636296df2cf99e8a777f053c539c50e6ad49a))
-- **table:** add editable DatePicker & TimePicker ([#654](https://github.com/anncwb/vue-vben-admin/issues/654)) ([93006c7](https://github.com/anncwb/vue-vben-admin/commit/93006c7dc7b5243b26637f444c8057c95935e622))
-- **table:** editable component text align ([8eaf575](https://github.com/anncwb/vue-vben-admin/commit/8eaf57562610a833c8083ae9957f458319d1cc93))
-- **tabs:** add setTabTitle method ([#680](https://github.com/anncwb/vue-vben-admin/issues/680)) ([5ddccf6](https://github.com/anncwb/vue-vben-admin/commit/5ddccf6ba28453b9a35355d53d0db65f1a8876bc))
-- **tinymce:** support dark theme and I18n ([83c9cd7](https://github.com/anncwb/vue-vben-admin/commit/83c9cd77421e9c0888a41e2d8dcbca816da67488))
-- **tree:** add defaultExpandLevel prop ([6edca1c](https://github.com/anncwb/vue-vben-admin/commit/6edca1c19c3b0772f9ab82a7b09251a74fff2173)), closes [#672](https://github.com/anncwb/vue-vben-admin/issues/672)
+### Bug Fixes
+
+- fix the error reported by the Editor component ([7dc6d8a](https://github.com/kailong321200875/vue-element-plus-admin/commit/7dc6d8a9d7289bfaf27f972e9ca1773c0a1ddd7d))
+- fix the error reported by the Editor component ([90ef985](https://github.com/kailong321200875/vue-element-plus-admin/commit/90ef9856a0885fa812339cb7047ecc98b86c7b73))
 
 ### Performance Improvements
 
-- **i18n:** improve warning prompt ([6ef62ba](https://github.com/anncwb/vue-vben-admin/commit/6ef62ba6ea7f5613a1fec982b30fe6b0f478bf59))
+- add tagsViewIcon setting ([d395f03](https://github.com/kailong321200875/vue-element-plus-admin/commit/d395f03a57a9265f1d39b3220fc7c9b983efee30))
+- add uniqueopened setting ([b060319](https://github.com/kailong321200875/vue-element-plus-admin/commit/b0603199a5ae0ee923483dad449f49220d36f444))
 
-# [2.4.0](https://github.com/anncwb/vue-vben-admin/compare/v2.2.0...v2.4.0) (2021-05-25)
+### Build System
+
+- update plugins ([2ee4954](https://github.com/kailong321200875/vue-element-plus-admin/commit/2ee49549e7b601af26ef5204f7648d271f3348f2))
+
+### Styling
+
+- add layout background color ([9b614fe](https://github.com/kailong321200875/vue-element-plus-admin/commit/9b614fe89288538197c50f164586aeed7836b7a8))
+
+### [1.2.10](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.9...v1.2.10) (2022-04-12)
 
 ### Bug Fixes
 
-- **api-select:** make sure the type is correct, fix [#468](https://github.com/anncwb/vue-vben-admin/issues/468) ([37c5741](https://github.com/anncwb/vue-vben-admin/commit/37c5741601951349f622801a48a7bf9e45d723a4))
-- **avatar:** show current user's avatar ([#640](https://github.com/anncwb/vue-vben-admin/issues/640)) ([7519a00](https://github.com/anncwb/vue-vben-admin/commit/7519a00ada89966f9caf93d315830dd628253d73))
-- **button:** ghost style ([f4af231](https://github.com/anncwb/vue-vben-admin/commit/f4af231172874eeffa9097e2624c4a7d0654f7d7))
-- **cipher:** fix [#587](https://github.com/anncwb/vue-vben-admin/issues/587) ([#588](https://github.com/anncwb/vue-vben-admin/issues/588)) ([d34467d](https://github.com/anncwb/vue-vben-admin/commit/d34467d3f4d0f709a99194e36c0e0b6f242d9b40))
-- **CodeEditor:** add readonly prop ([#572](https://github.com/anncwb/vue-vben-admin/issues/572)) ([9cd293c](https://github.com/anncwb/vue-vben-admin/commit/9cd293c283ede7391ccd36e2208ae68cbad66453))
-- **flow-chart:** dark style not work ([4a03547](https://github.com/anncwb/vue-vben-admin/commit/4a035478ca0e08098a4575a5b22c06580ffeecbe))
-- **form:** ensure that the DateTime component checked properly,fix [#511](https://github.com/anncwb/vue-vben-admin/issues/511) ([cb35341](https://github.com/anncwb/vue-vben-admin/commit/cb35341b8fd44eb649a79c3a2ae799c7bab8c4f6))
-- **form:** expose formModel,fix [#533](https://github.com/anncwb/vue-vben-admin/issues/533) ([7c41c86](https://github.com/anncwb/vue-vben-admin/commit/7c41c8673c2fd5f2cf946a3ae84d8688578f9754))
-- **form:** Improve form error handling ([9a21b8b](https://github.com/anncwb/vue-vben-admin/commit/9a21b8b6a4a33d69c4e1b439fc01c4038c150ff9))
-- **form:** improve form props acquisition,fix [#527](https://github.com/anncwb/vue-vben-admin/issues/527) ([b7ea68e](https://github.com/anncwb/vue-vben-admin/commit/b7ea68e6f8944b154edf1fccd3faf8744883cbd4))
-- **form:** improve warning prompt, fix [#538](https://github.com/anncwb/vue-vben-admin/issues/538) ([3ff70bb](https://github.com/anncwb/vue-vben-admin/commit/3ff70bb56f998cfc92a773676d75c06372d90658))
-- **form:** placeholder setting in componentProps ([#634](https://github.com/anncwb/vue-vben-admin/issues/634)) ([2d3d04f](https://github.com/anncwb/vue-vben-admin/commit/2d3d04f547046c23cdfc319a7483261b47c08e83))
-- **form:** remove field binding when deleting schema [#471](https://github.com/anncwb/vue-vben-admin/issues/471) ([38f5072](https://github.com/anncwb/vue-vben-admin/commit/38f5072695f63b30c6ce6b2741b003db605abd82))
-- **layout:** fix useLockPage not work, fix [#611](https://github.com/anncwb/vue-vben-admin/issues/611) ([3bb6d11](https://github.com/anncwb/vue-vben-admin/commit/3bb6d11ed1b33adbfd6c76a0e06442cd62356ab7))
-- **lock:** automatic screen lock does not work ([d5b7689](https://github.com/anncwb/vue-vben-admin/commit/d5b768929e02ac4c6a04f3fd17a904e894c50e36))
-- **login:** incorrect enter event bind ([#625](https://github.com/anncwb/vue-vben-admin/issues/625)) ([bb0d2e1](https://github.com/anncwb/vue-vben-admin/commit/bb0d2e1c71899937f3c3d467803b18013e91782a))
-- **menu:** ensure that the external link jumps correctly, fix [#516](https://github.com/anncwb/vue-vben-admin/issues/516) ([6b7f688](https://github.com/anncwb/vue-vben-admin/commit/6b7f688eaf08184272fc625ca7e7665384641714))
-- **menu:** improve menu logic, fix [#461](https://github.com/anncwb/vue-vben-admin/issues/461) ([ee1c349](https://github.com/anncwb/vue-vben-admin/commit/ee1c3498587951a6a4cc0b49edb9dacf3f2af5c3))
-- **modal:** proptype conflict with ant design modal(fixed: [#545](https://github.com/anncwb/vue-vben-admin/issues/545)) ([#575](https://github.com/anncwb/vue-vben-admin/issues/575)) ([a579b84](https://github.com/anncwb/vue-vben-admin/commit/a579b8456ac73ac48c6af1510317acca20ed9b52))
-- **store:** addTab fx ([#607](https://github.com/anncwb/vue-vben-admin/issues/607)) ([336be68](https://github.com/anncwb/vue-vben-admin/commit/336be680d307acf8a1710194eba5505f8532d0bb))
-- **store:** fix pinia typo ([bbf178f](https://github.com/anncwb/vue-vben-admin/commit/bbf178f64b29d4576ba7de8afdce37d677f748e8))
-- **style:** add table title min-height ([#547](https://github.com/anncwb/vue-vben-admin/issues/547)) ([bf365e2](https://github.com/anncwb/vue-vben-admin/commit/bf365e26e5d457ca1924def3e50097e1d211aa43))
-- **style:** fix icon style, fix [#496](https://github.com/anncwb/vue-vben-admin/issues/496) ([ccae5cd](https://github.com/anncwb/vue-vben-admin/commit/ccae5cd9246888709a319f92357d89c6ab9d9c0b))
-- **style:** fix layout style, fix [#633](https://github.com/anncwb/vue-vben-admin/issues/633) ([8e3f84c](https://github.com/anncwb/vue-vben-admin/commit/8e3f84c3b76fbca11222cbede2441e83154127b6))
-- **theme:** make sure the menu style is correct, fix [#382](https://github.com/anncwb/vue-vben-admin/issues/382) ([c77f7e6](https://github.com/anncwb/vue-vben-admin/commit/c77f7e62aba51072325dffdb01d3c0cc87c578b0))
-- **theme:** make sure the steps style is correct, fix [#414](https://github.com/anncwb/vue-vben-admin/issues/414) ([640a2c1](https://github.com/anncwb/vue-vben-admin/commit/640a2c17986e2b59be57125e91051ec879f31eeb))
-- **types:** fix store types ([cd4b5e1](https://github.com/anncwb/vue-vben-admin/commit/cd4b5e14c2afe8841871cf79490a02a30bed0ebe))
-- typo, ifx [#637](https://github.com/anncwb/vue-vben-admin/issues/637) ([e3569b8](https://github.com/anncwb/vue-vben-admin/commit/e3569b81b10e887ed7144349181904ea6fdef14d))
-- **style:** fix build style errors,fix [#528](https://github.com/anncwb/vue-vben-admin/issues/528) ([7f6f8ee](https://github.com/anncwb/vue-vben-admin/commit/7f6f8eefe9b1214d5c6dabc526d966dfcaea76e6))
-- **style:** fix layout header style, basic arrow style and table search form style ([#525](https://github.com/anncwb/vue-vben-admin/issues/525)) ([e2ddf43](https://github.com/anncwb/vue-vben-admin/commit/e2ddf43699df900dacab7d7d384d7caa53879ad9))
-- **table:** columns ref fixed([#564](https://github.com/anncwb/vue-vben-admin/issues/564)) ([#573](https://github.com/anncwb/vue-vben-admin/issues/573)) ([43e4c21](https://github.com/anncwb/vue-vben-admin/commit/43e4c21950ea3659c538ecc29b04b0377a6de874))
-- **table:** submitButtonOptions not work,fix [#531](https://github.com/anncwb/vue-vben-admin/issues/531) ([16ecf71](https://github.com/anncwb/vue-vben-admin/commit/16ecf71850675be0031f41c8cb91371cf07cbea0))
-- **tabs:** fix the problem that other functions are invalid when the tab is closed, close [#376](https://github.com/anncwb/vue-vben-admin/issues/376) ([b92b8a3](https://github.com/anncwb/vue-vben-admin/commit/b92b8a3c6af1d936d48b5f58674f419407eeb600))
-- **theme:** wrong color when RadioButtonGroup checked ([#626](https://github.com/anncwb/vue-vben-admin/issues/626)) ([5eee0ce](https://github.com/anncwb/vue-vben-admin/commit/5eee0ceb6e1e949e63d51cd0d9647cf8094f378c))
-- **theme generate:** Fix [#604](https://github.com/anncwb/vue-vben-admin/issues/604) ([#605](https://github.com/anncwb/vue-vben-admin/issues/605)) ([c26dd03](https://github.com/anncwb/vue-vben-admin/commit/c26dd034165b02d107977fdfe13471ea80e991cc))
-- **tinymce:** ensure that the public resource path is correct,fix [#487](https://github.com/anncwb/vue-vben-admin/issues/487) ([a863ad4](https://github.com/anncwb/vue-vben-admin/commit/a863ad46b4e2837cbbda8bb51b8c9a6e8bb3f442))
-- **tree:** basicTree 设置 blockNode=false 后，显示异常 ([#567](https://github.com/anncwb/vue-vben-admin/issues/567)) ([2f8b218](https://github.com/anncwb/vue-vben-admin/commit/2f8b2183ec25f7c2a11bb5dc0a0a2578d7568ec3))
-- **tree:** onCheck event lose origin param ([#636](https://github.com/anncwb/vue-vben-admin/issues/636)) ([d8ff30d](https://github.com/anncwb/vue-vben-admin/commit/d8ff30d9ece53e006e5e58894461adeeb3b273e0))
-- **tree:** typo([#615](https://github.com/anncwb/vue-vben-admin/issues/615)) ([bc82d1a](https://github.com/anncwb/vue-vben-admin/commit/bc82d1a397beff68ba86365d7d54bb70b3520f9f))
-- **tree:** value prop type ([#613](https://github.com/anncwb/vue-vben-admin/issues/613)) ([0112d6b](https://github.com/anncwb/vue-vben-admin/commit/0112d6b313e66f624cd91e9ef933af57b0d280f9))
-- echart import path ([7e43d88](https://github.com/anncwb/vue-vben-admin/commit/7e43d88f9c37d88d7bf1b2d29e8ffbdc7ca155a5))
-- ensure that the 401 jumps to the login page correctly, fix [#512](https://github.com/anncwb/vue-vben-admin/issues/512) ([6a88205](https://github.com/anncwb/vue-vben-admin/commit/6a8820597fb58ef7cda7ead59f5cbb4c72c0f882))
-- fix AppendFormDemo ([#505](https://github.com/anncwb/vue-vben-admin/issues/505)) ([8c2491f](https://github.com/anncwb/vue-vben-admin/commit/8c2491fcb6853bfe06df265eb6daa5aa7d979b74))
-- fix case errors ([663d13a](https://github.com/anncwb/vue-vben-admin/commit/663d13a67f84fb02a6b9ee44a6e8b53c32cc6044))
-- fix dark theme refreshing flashing white screen ([26adbc9](https://github.com/anncwb/vue-vben-admin/commit/26adbc92be1c8ce5ce6f93302fb806058ef087cf))
-- fix the default value of props ([8b2e0f6](https://github.com/anncwb/vue-vben-admin/commit/8b2e0f665f15edd211f558bc0526465e07e7bab0))
-- improve login page style ([780a8a6](https://github.com/anncwb/vue-vben-admin/commit/780a8a67b874ca1c8d05c2561f88081cc4ec4b28))
-- Improve the picture cropping component ([#463](https://github.com/anncwb/vue-vben-admin/issues/463)) ([700306b](https://github.com/anncwb/vue-vben-admin/commit/700306bb45d5f2b975c20bd2581fb87a210e589c))
-- login page overflow show problem ([#455](https://github.com/anncwb/vue-vben-admin/issues/455)) ([af6d58e](https://github.com/anncwb/vue-vben-admin/commit/af6d58eb26875f02afb419d9d4d5ee2454292863))
-- password icon dislocation ([#501](https://github.com/anncwb/vue-vben-admin/issues/501)) ([bd83ecc](https://github.com/anncwb/vue-vben-admin/commit/bd83eccdc55c697d0db83bc3a7cf2829cafe96e7))
-- trigger resize in full screen to ensure that the height of other components is normal,fix [#508](https://github.com/anncwb/vue-vben-admin/issues/508) ([ca71760](https://github.com/anncwb/vue-vben-admin/commit/ca717602a602ae90e5c175cdfda0bbcc200b72ad))
-- update Axios.ts ([#492](https://github.com/anncwb/vue-vben-admin/issues/492)) ([e1b30a5](https://github.com/anncwb/vue-vben-admin/commit/e1b30a5075a2a2f9e2c538350950e6e09b6decd1))
+- fix bug ([327522f](https://github.com/kailong321200875/vue-element-plus-admin/commit/327522f2b73ae0e11f8ebbc39394b06029ce0b65))
 
-### Features
+### Styling
 
-- **axios:** Do you want to return the original response header? For example, use this property when you need to get the response header ([56d8af1](https://github.com/anncwb/vue-vben-admin/commit/56d8af147ec88bb98a37fa3ddf47c2aa16a4110e))
-- **demo:** add permission table demo ([9e20841](https://github.com/anncwb/vue-vben-admin/commit/9e208411a24d4ccc9306555cc45aa7135d0df78f))
-- **form:** add 'layout', 'labelAlign', 'rowProps' option ([#651](https://github.com/anncwb/vue-vben-admin/issues/651)) ([785732f](https://github.com/anncwb/vue-vben-admin/commit/785732f438916d7767ad44789c16216a6f6505a8))
-- **form:** add form field nested support ([#591](https://github.com/anncwb/vue-vben-admin/issues/591)) ([ec3d51d](https://github.com/anncwb/vue-vben-admin/commit/ec3d51d69b66500f4f604151255920460d1906ce))
-- **form:** add prop autoSubmitOnEnter ([#620](https://github.com/anncwb/vue-vben-admin/issues/620)) ([9b2d41e](https://github.com/anncwb/vue-vben-admin/commit/9b2d41ea44ed0da4dde22856bf23b52748244642))
-- **form:** add Slider demo ([#555](https://github.com/anncwb/vue-vben-admin/issues/555)) ([e80280f](https://github.com/anncwb/vue-vben-admin/commit/e80280fb81b0bcdd74066c08fd4403e36b00b026))
-- **form:** adding resetSchema method ([c639e49](https://github.com/anncwb/vue-vben-admin/commit/c639e493a5a32789e397990953189541170169c8))
-- **form:** helpMessage Increase function type value ([#616](https://github.com/anncwb/vue-vben-admin/issues/616)) ([f455fb9](https://github.com/anncwb/vue-vben-admin/commit/f455fb97f9b70ca4979561a82ae0f25825527013))
-- **form:** requires Increase function type value ([#649](https://github.com/anncwb/vue-vben-admin/issues/649)) ([765064a](https://github.com/anncwb/vue-vben-admin/commit/765064a190b1a24dfb9ae808e99807ddae2ed212))
-- **qrcode:** custom drawing support ([#580](https://github.com/anncwb/vue-vben-admin/issues/580)) ([2b76b88](https://github.com/anncwb/vue-vben-admin/commit/2b76b88481dab2c580e684987a80028710d4698d))
-- **table:** 表格的数据列和操作列的字段可以根据权限和业务来控制是否显示 ([5a3861b](https://github.com/anncwb/vue-vben-admin/commit/5a3861b9cfc79da3297f8ddd045b88f0daca0ada))
-- **table:** Table operation columns support permission codes ([6afee41](https://github.com/anncwb/vue-vben-admin/commit/6afee415a3a8007f13af57892d62759ffbcde5a5))
-- **user:** add user login expiration example ([5465f05](https://github.com/anncwb/vue-vben-admin/commit/5465f058ceb7b130e456feaebb17c3beedb092a5))
-- add codeEditor component ([a812685](https://github.com/anncwb/vue-vben-admin/commit/a812685084b45ce3c6b6675bb1569e324f742416))
-- add flowChart Component ([#488](https://github.com/anncwb/vue-vben-admin/issues/488)) ([2576735](https://github.com/anncwb/vue-vben-admin/commit/2576735adeb42ddd39bbaae6f4f5662df781b83a))
-- add JsonPreview component ([0649011](https://github.com/anncwb/vue-vben-admin/commit/0649011eba9b86b543223aca99721da754dcea14))
-- add spin prop for Icon ([#477](https://github.com/anncwb/vue-vben-admin/issues/477)) ([6dd7d0f](https://github.com/anncwb/vue-vben-admin/commit/6dd7d0f928ebb4c6d7be66f4cd134fb291fc7dc2))
-- persistent save tab, fix [#359](https://github.com/anncwb/vue-vben-admin/issues/359) ([967b28c](https://github.com/anncwb/vue-vben-admin/commit/967b28c4c06cf92e9ab90cff51f59a0d6ced5d7b))
+- modify the commitlint package manager ([ba7e722](https://github.com/kailong321200875/vue-element-plus-admin/commit/ba7e7224ab58612548519415f5429c32827a61de))
+
+### [1.2.9](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.8...v1.2.9) (2022-04-12)
+
+### Docs
+
+- update changlog ([e37273d](https://github.com/kailong321200875/vue-element-plus-admin/commit/e37273d95d29a3bb752604658d550264aacdc979))
+
+### [1.2.8](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.7...v1.2.8) (2022-04-11)
+
+### Build System
+
+- update plugins ([00a573a](https://github.com/kailong321200875/vue-element-plus-admin/commit/00a573af3f455395b4ee2ab99a03f3103d466e9c))
+
+### Docs
+
+- update changlog ([62fc183](https://github.com/kailong321200875/vue-element-plus-admin/commit/62fc1839fdff3a4d06a7db4cf3f8ce2cb9aee681))
+
+### [1.2.7](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.6...v1.2.7) (2022-04-10)
+
+### Build System
+
+- update plugins ([f13a91d](https://github.com/kailong321200875/vue-element-plus-admin/commit/f13a91dd460b1dcdbd17aef723ab3ca2b01c34f0))
+
+### Styling
+
+- .bhs code formatting ([57b2707](https://github.com/kailong321200875/vue-element-plus-admin/commit/57b27071e9a33423c46542a5d0e5d5c2e9a3b718))
+
+### [1.2.6](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.5...v1.2.6) (2022-04-08)
+
+### Build System
+
+- update plugins ([d645892](https://github.com/kailong321200875/vue-element-plus-admin/commit/d645892cde2f7f43215a2ba1776ee94a322437bf))
+
+### [1.2.5](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.4...v1.2.5) (2022-04-08)
 
 ### Performance Improvements
 
-- let svg-icon support ssr ([94a826d](https://github.com/anncwb/vue-vben-admin/commit/94a826d02858e115adf8c1db4c0d0d7d795d7281))
-- **tree:** improve the beforeRightClick callback to support more configuration of the menu ([#608](https://github.com/anncwb/vue-vben-admin/issues/608)) ([adff788](https://github.com/anncwb/vue-vben-admin/commit/adff788de54a46fd035b569892135be377dd4f92))
-- add AppendFormDemo ([#503](https://github.com/anncwb/vue-vben-admin/issues/503)) ([85b92a9](https://github.com/anncwb/vue-vben-admin/commit/85b92a9add2b560559b4ef60ecf93e22f5941edb))
-- add Coordinating the selection of provinces and cities ([#534](https://github.com/anncwb/vue-vben-admin/issues/534)) ([5fae2b0](https://github.com/anncwb/vue-vben-admin/commit/5fae2b02eae7dc91baef774ca9dfdf0da91b8040))
-- improve countTo ([#499](https://github.com/anncwb/vue-vben-admin/issues/499)) ([94b2222](https://github.com/anncwb/vue-vben-admin/commit/94b2222c085e30cbc4a7a49dfac13af15aec98b9))
-- improve cropper example ([#491](https://github.com/anncwb/vue-vben-admin/issues/491)) ([5e36a8b](https://github.com/anncwb/vue-vben-admin/commit/5e36a8b5754afe916236f1c58a159aa7df69cf83))
-- improve flowChart logic ([e1bc33f](https://github.com/anncwb/vue-vben-admin/commit/e1bc33f5c5660f62591997c1949c887ac7387871))
-- merge locale file ([c04e894](https://github.com/anncwb/vue-vben-admin/commit/c04e8943bcdcdee612044a534d6c1281c956c3c1))
-- optimize i18n to add the initial locale to the locale pool during initialization ([#577](https://github.com/anncwb/vue-vben-admin/issues/577)) ([ae3f832](https://github.com/anncwb/vue-vben-admin/commit/ae3f8329c25ef24c44c54690116fd7d3dc35ae85))
-- set header can use For Qs ([#562](https://github.com/anncwb/vue-vben-admin/issues/562)) ([5724bc5](https://github.com/anncwb/vue-vben-admin/commit/5724bc5b3b960f7c0686c8e60c2b682b16841e6f))
+- add plop ([fa54a17](https://github.com/kailong321200875/vue-element-plus-admin/commit/fa54a1704ffd93f7b42dbeb1229bc4868d2d3a6a))
 
-# [2.3.0](https://github.com/anncwb/vue-vben-admin/compare/v2.2.0...v2.3.0) (2021-04-10)
+### Build System
 
-### Bug Fixes
+- update plugins ([18c6bd8](https://github.com/kailong321200875/vue-element-plus-admin/commit/18c6bd868622d954b51ea34e37516361ad4eb540))
 
-- **api-select:** make sure the type is correct, fix [#468](https://github.com/anncwb/vue-vben-admin/issues/468) ([37c5741](https://github.com/anncwb/vue-vben-admin/commit/37c5741601951349f622801a48a7bf9e45d723a4))
-- **menu:** improve menu logic, fix [#461](https://github.com/anncwb/vue-vben-admin/issues/461) ([ee1c349](https://github.com/anncwb/vue-vben-admin/commit/ee1c3498587951a6a4cc0b49edb9dacf3f2af5c3))
-- **theme:** make sure the menu style is correct, fix [#382](https://github.com/anncwb/vue-vben-admin/issues/382) ([c77f7e6](https://github.com/anncwb/vue-vben-admin/commit/c77f7e62aba51072325dffdb01d3c0cc87c578b0))
-- **theme:** make sure the steps style is correct, fix [#414](https://github.com/anncwb/vue-vben-admin/issues/414) ([640a2c1](https://github.com/anncwb/vue-vben-admin/commit/640a2c17986e2b59be57125e91051ec879f31eeb))
-- improve login page style ([780a8a6](https://github.com/anncwb/vue-vben-admin/commit/780a8a67b874ca1c8d05c2561f88081cc4ec4b28))
-- Improve the picture cropping component ([#463](https://github.com/anncwb/vue-vben-admin/issues/463)) ([700306b](https://github.com/anncwb/vue-vben-admin/commit/700306bb45d5f2b975c20bd2581fb87a210e589c))
-- login page overflow show problem ([#455](https://github.com/anncwb/vue-vben-admin/issues/455)) ([af6d58e](https://github.com/anncwb/vue-vben-admin/commit/af6d58eb26875f02afb419d9d4d5ee2454292863))
+### Styling
 
-### Features
+- fix padding and background color ([f8c9d54](https://github.com/kailong321200875/vue-element-plus-admin/commit/f8c9d54687edafd92f5b61bf5288bb1188c73f01))
 
-- persistent save tab, fix [#359](https://github.com/anncwb/vue-vben-admin/issues/359) ([967b28c](https://github.com/anncwb/vue-vben-admin/commit/967b28c4c06cf92e9ab90cff51f59a0d6ced5d7b))
-
-# [2.2.0](https://github.com/anncwb/vue-vben-admin/compare/v2.1.1...v2.2.0) (2021-04-07)
+### [1.2.4](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.3...v1.2.4) (2022-04-06)
 
 ### Bug Fixes
 
-- **abakysis:** fix tooltip style,fix [#436](https://github.com/anncwb/vue-vben-admin/issues/436) ([1e4a250](https://github.com/anncwb/vue-vben-admin/commit/1e4a250da10b01bfd4e667d533f6cae9b8c58fe9))
-- **breadcrumb:** ensure the breadcrumbs display the icon correctly, fix [#433](https://github.com/anncwb/vue-vben-admin/issues/433) ([0b66360](https://github.com/anncwb/vue-vben-admin/commit/0b66360cc9f60c5064be4c3cae39091541f3be8c))
-- **build:** fix build error ([6d6e0a1](https://github.com/anncwb/vue-vben-admin/commit/6d6e0a1bfef3a152d31776520e1445203d2ba3f4))
-- **drawer:** ensure the slot is working ([b9b470f](https://github.com/anncwb/vue-vben-admin/commit/b9b470f4df1cd57ca501666b6b3270a4d4d4f873))
-- **echart:** legend not work ([b25ceb4](https://github.com/anncwb/vue-vben-admin/commit/b25ceb4201bce806dc129f24c2d98fd2ff0392d1))
-- **menu:** ensure the menu is activated correctly,fix [#432](https://github.com/anncwb/vue-vben-admin/issues/432) ([bb67692](https://github.com/anncwb/vue-vben-admin/commit/bb67692cfdd5089f0f1d60d4a36b52592db22dde))
-- **mock:** make sure the background mode login is normal, fix [#452](https://github.com/anncwb/vue-vben-admin/issues/452) ([1e66987](https://github.com/anncwb/vue-vben-admin/commit/1e669870cc15384bf76f32ee95008f0c998b477b))
-- **server:** grammatical errors ([ee4829c](https://github.com/anncwb/vue-vben-admin/commit/ee4829c15d7c8e978eb616edb7f1e61c258d469b))
-- **table:** ensure data responsiveness, fix [#447](https://github.com/anncwb/vue-vben-admin/issues/447) ([64b6313](https://github.com/anncwb/vue-vben-admin/commit/64b6313b4e43fdc2e9b292f554889b845e26182f))
-- **table:** make sure the editing line is working, fix [#439](https://github.com/anncwb/vue-vben-admin/issues/439) ([b54b794](https://github.com/anncwb/vue-vben-admin/commit/b54b794264ecb513567b841c5a12856965d02754))
-- **table-action:** ensure that the click event is not triggered, fix [#441](https://github.com/anncwb/vue-vben-admin/issues/441) ([67a7a76](https://github.com/anncwb/vue-vben-admin/commit/67a7a76b735aafe2e1a8258c75c4a3c5dd657de6))
-- **use-loading:** rendering fails when used with onMounted, fix [#438](https://github.com/anncwb/vue-vben-admin/issues/438) ([6b99622](https://github.com/anncwb/vue-vben-admin/commit/6b996229e1449b1721ce6797ba6a964850e2e215))
-- **useColumn:** fixed table column changes with hidden columns disappearing after dropping ([#453](https://github.com/anncwb/vue-vben-admin/issues/453)) ([f05cc6d](https://github.com/anncwb/vue-vben-admin/commit/f05cc6d34e935c342e1f7ada6692ea0178b7c984))
+- add Sticky props comment ([46133b3](https://github.com/kailong321200875/vue-element-plus-admin/commit/46133b3ff39d48d11cbcaa1f20a271118f48eb29))
+- fix bug ([179ca06](https://github.com/kailong321200875/vue-element-plus-admin/commit/179ca064ba8adbb3b063d9798ec1930ccc68e459))
+- fix remove unnecessary variables ([ca01cbf](https://github.com/kailong321200875/vue-element-plus-admin/commit/ca01cbfd98b63a0d76190fe8d43097fdc9df74e6))
+- fix style ([17c8fea](https://github.com/kailong321200875/vue-element-plus-admin/commit/17c8fea93811d9d9b708808484f5c907d761fcf1))
+- remove ContentDetailWrap style ([4ceaa9d](https://github.com/kailong321200875/vue-element-plus-admin/commit/4ceaa9d7816369d0dcaf3e18e4cdbbd6165cef88))
+
+### [1.2.3](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.2...v1.2.3) (2022-03-31)
+
+### Bug Fixes
+
+- fix refresh with query ([e94020f](https://github.com/kailong321200875/vue-element-plus-admin/commit/e94020ff541a061599486c0003258f1dbf13aba8))
+
+### [1.2.2](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.1...v1.2.2) (2022-03-30)
+
+### Bug Fixes
+
+- fix avatar height bug ([cd4ab76](https://github.com/kailong321200875/vue-element-plus-admin/commit/cd4ab767018941777174d7837045f5259d1cc403))
+- fix parmas to params ([2c7211c](https://github.com/kailong321200875/vue-element-plus-admin/commit/2c7211c89d7299ffc0a36bef8999b3c201dbaf4a))
+
+### [1.2.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.2.0...v1.2.1) (2022-03-29)
+
+### Bug Fixes
+
+- fix invalid paging ([ad184ee](https://github.com/kailong321200875/vue-element-plus-admin/commit/ad184ee9c0619da36f1ca3f26e67f18f88488523))
+
+### Build System
+
+- update plugins ([0c7276f](https://github.com/kailong321200875/vue-element-plus-admin/commit/0c7276feadaedef83e6a4ad9d457e26d408698a8))
+
+## [1.2.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.14...v1.2.0) (2022-03-27)
 
 ### Features
 
-- dark mode ([5b8eb4a](https://github.com/anncwb/vue-vben-admin/commit/5b8eb4a49a097a47caf491c44df427522ab58daa))
-- **api-select:** add immediate option,close [#430](https://github.com/anncwb/vue-vben-admin/issues/430) ([5b4a41c](https://github.com/anncwb/vue-vben-admin/commit/5b4a41ced412fe3623618791ffa3123a3a2cfcdc))
-- **print:** add print example ([2f99892](https://github.com/anncwb/vue-vben-admin/commit/2f99892d96770d550e1cf58e052c40b85efb53c2))
-- **tree:** add headerTitle slot ([6bb19fb](https://github.com/anncwb/vue-vben-admin/commit/6bb19fb2d4fa57d8006281d52acd80baaa054b3e))
+- add hooks demo ([c43f39e](https://github.com/kailong321200875/vue-element-plus-admin/commit/c43f39efef296266c64cc24690717d07fa0bcb85))
+- add inputPassword demo ([8f8b126](https://github.com/kailong321200875/vue-element-plus-admin/commit/8f8b1260e75df6998ebea617f62d4ab6be81d721))
+
+### Docs
+
+- update LICENSE ([69d3dcc](https://github.com/kailong321200875/vue-element-plus-admin/commit/69d3dcc7edf69e9b4e3042ddb11faa85ec7d39e2))
+
+### Styling
+
+- modify the function name to make it more semantic ([046ae51](https://github.com/kailong321200875/vue-element-plus-admin/commit/046ae512f02df2d3f08134949b9376a061c1eef3))
+- update Footer component presentation ([d4a9ba3](https://github.com/kailong321200875/vue-element-plus-admin/commit/d4a9ba3aa6758b8aac18b30e1a6b9501baff826c))
+- update Icon demo ([8597122](https://github.com/kailong321200875/vue-element-plus-admin/commit/85971227cd3055ea280cf493c7c42b250c1515da))
+
+### Tests
+
+- test push first commit ([a67bb48](https://github.com/kailong321200875/vue-element-plus-admin/commit/a67bb48f269651a2dcd01b9e33d10f20c42d76ee))
+
+### Build System
+
+- update plugins ([9c13d92](https://github.com/kailong321200875/vue-element-plus-admin/commit/9c13d92b36a2a7c95b9edb7821367fc8f0ac6658))
+- update server port ([d2be8c1](https://github.com/kailong321200875/vue-element-plus-admin/commit/d2be8c1a307a3c5daf363bd7f1d21e574598de5c))
+
+### [1.1.14](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.13...v1.1.14) (2022-03-22)
+
+### Bug Fixes
+
+- fix the bug that the form search function is invalid of the example-dialog page ([9ec30e7](https://github.com/kailong321200875/vue-element-plus-admin/commit/9ec30e719f89865497dbb1321be1df906f59f14e))
+
+### [1.1.13](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.12...v1.1.13) (2022-03-17)
+
+### Build System
+
+- update plugins ([a2d0313](https://github.com/kailong321200875/vue-element-plus-admin/commit/a2d03137899f9b16fc1d4a09a23576cd74e7950e))
+
+### [1.1.12](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.11...v1.1.12) (2022-03-15)
+
+### Build System
+
+- update plugins ([fee2252](https://github.com/kailong321200875/vue-element-plus-admin/commit/fee2252930b05b709d0c012e809568c4ed32bd89))
+
+### [1.1.11](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.10...v1.1.11) (2022-03-15)
+
+### Bug Fixes
+
+- fix the problem of blank bar when toggle the TagsView component ([b1d9771](https://github.com/kailong321200875/vue-element-plus-admin/commit/b1d9771c750709fe45061d13299a85dbbd6ead25))
+- fix the problem that no reaction when copy setting config in http page ([61e0e33](https://github.com/kailong321200875/vue-element-plus-admin/commit/61e0e33c64d6a889fe6ed80d27a10cf8b201d21a))
+
+### [1.1.10](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.9...v1.1.10) (2022-03-13)
+
+### Build System
+
+- update plugins ([0b525c8](https://github.com/kailong321200875/vue-element-plus-admin/commit/0b525c875075a28288e92243b205b337f85ab550))
+
+### [1.1.9](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.8...v1.1.9) (2022-03-07)
+
+### Build System
+
+- update plugins ([1456fd4](https://github.com/kailong321200875/vue-element-plus-admin/commit/1456fd49ec9abbfe1f25aeadfe5fed54fec07394))
+
+### [1.1.8](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.7...v1.1.8) (2022-03-07)
+
+### Docs
+
+- update changelog ([bf09441](https://github.com/kailong321200875/vue-element-plus-admin/commit/bf09441852e59b0d07d4949a33de75958696817f))
+
+### [1.1.7](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.6...v1.1.7) (2022-03-06)
+
+### Styling
+
+- add labelMessage attribute to Form component ([8c42790](https://github.com/kailong321200875/vue-element-plus-admin/commit/8c427907843ccb2dfd882d27c1e8a894c5616487))
+
+### [1.1.6](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.5...v1.1.6) (2022-03-04)
+
+### Bug Fixes
+
+- fix the problem that the tree data of Table component cannot be displayed ([bf83d3e](https://github.com/kailong321200875/vue-element-plus-admin/commit/bf83d3efbad9097f245c32cc07d1178580cec4e3))
+
+### [1.1.5](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.4...v1.1.5) (2022-03-02)
+
+### Bug Fixes
+
+- fix the problem of tagsview error when loginout ([835d76a](https://github.com/kailong321200875/vue-element-plus-admin/commit/835d76ae87b950106f957976ebc8f6f2e8842ddf))
+
+### Build System
+
+- update plugins ([de34bb1](https://github.com/kailong321200875/vue-element-plus-admin/commit/de34bb193d6c844dbc1cec38db5f61b3f95e19f2))
+
+### Styling
+
+- fix tabMenu z-index bug ([8b3be02](https://github.com/kailong321200875/vue-element-plus-admin/commit/8b3be02368a1bddb7dc78f18adbea7f4ebfe75d6))
+- fix tags-view style bug ([ebff817](https://github.com/kailong321200875/vue-element-plus-admin/commit/ebff81777b9c0b839256b83e321ecbdbff25fc73))
+
+### [1.1.4](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.3...v1.1.4) (2022-03-01)
+
+### CI
+
+- update workflow ([0490d18](https://github.com/kailong321200875/vue-element-plus-admin/commit/0490d18145cb0d9c4b066ab01a2c10cb527e38ba))
+- update workflow ([51f7bca](https://github.com/kailong321200875/vue-element-plus-admin/commit/51f7bca6034902b251d081ee383b0d796782d434))
+
+### [1.1.3](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.2...v1.1.3) (2022-03-01)
+
+### CI
+
+- update workflow ([91cc5c5](https://github.com/kailong321200875/vue-element-plus-admin/commit/91cc5c595cadc5695d8f54bdc4922d8f04439f24))
+
+### [1.1.2](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.1...v1.1.2) (2022-03-01)
+
+### Workflows
+
+- update workflow ([d9708aa](https://github.com/kailong321200875/vue-element-plus-admin/commit/d9708aae5bc0cb795bb0fbf8d17df753cc88ba1d))
+
+### [1.1.1](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.1.0...v1.1.1) (2022-03-01)
+
+### Workflows
+
+- update workflow ([085328a](https://github.com/kailong321200875/vue-element-plus-admin/commit/085328aba8c4f356bf7915a6bbdc1ec4f46ceeda))
+
+## [1.1.0](https://github.com/kailong321200875/vue-element-plus-admin/compare/v1.0.3...v1.1.0) (2022-03-01)
+
+### Features
+
+- 🎸 layout 三种布局重构完成 ([429e428](https://github.com/kailong321200875/vue-element-plus-admin/commit/429e42809cef33a33662e41ad50297217d128b8c))
+- 🎸 layout 布局重构 �[bd24b92](https://github.com/kailong321200875/vue-element-plus-admin/commit/bd24b92acb279343dbaf83b74f1ed2a3f57f1003))
+- 🎸 Table 组件重构完成并给出相应示 �[35879f8](https://github.com/kailong321200875/vue-element-plus-admin/commit/35879f8ecc0ffa76122a336e2eaa93ecfb408c1d))
+- 🎸 v0.0.4 发布 ([a58dc1b](https://github.com/kailong321200875/vue-element-plus-admin/commit/a58dc1b1c2774974782ef6d116b8805975b82b1c))
+- 🎸 初始化项 �[26d4c7c](https://github.com/kailong321200875/vue-element-plus-admin/commit/26d4c7c56894cf2031b3a7cce08d53c37f4a49e3))
+- 🎸 初版完成 ([5bfe4d2](https://github.com/kailong321200875/vue-element-plus-admin/commit/5bfe4d236fd9c2841da100f34c980b4572b67b20))
+- 🎸 新增 Detail 详情组件并给出相应示 �[e77a931](https://github.com/kailong321200875/vue-element-plus-admin/commit/e77a931ef2d2967a9717e27b187d68512c01284f))
+- 🎸 新增二维码组 �[85555ee](https://github.com/kailong321200875/vue-element-plus-admin/commit/85555eef7dc7d72cb701bdd81044ba8fb8e72acc))
+- 🎸 新增全局配置 ([f8405a6](https://github.com/kailong321200875/vue-element-plus-admin/commit/f8405a63c9b1288fbe95bae235b65a08e8fae8d2))
+- 🎸 新增固定 � 级菜单配 �[4c4903e](https://github.com/kailong321200875/vue-element-plus-admin/commit/4c4903e806c8818e320108cc3e5279d728061c29))
+- 🎸 新增权限管理及相关示例文 �[32b6583](https://github.com/kailong321200875/vue-element-plus-admin/commit/32b6583099646b2ee622ac7b35388468769b91b8))
+- 🎸 显示更多组建 � 发中 ([fa9f24d](https://github.com/kailong321200875/vue-element-plus-admin/commit/fa9f24d5da8d2e40d7c3661eabacb8f0474a7bf2))
+- 🎸 权限管理 � 发中 ([38f5211](https://github.com/kailong321200875/vue-element-plus-admin/commit/38f521174ba9eba750fee4516141d7a267f1c4ce))
+- 🎸 权限管理 � 发中 ([6d7ea66](https://github.com/kailong321200875/vue-element-plus-admin/commit/6d7ea6694d8299332018a6689bcd82502a9a552c))
+- 🎸 综合实例重构 �[5142e6e](https://github.com/kailong321200875/vue-element-plus-admin/commit/5142e6e323cb20c89a97398bf41d32c93ce42cad))
+- 🎸 重构 layout ([7ede021](https://github.com/kailong321200875/vue-element-plus-admin/commit/7ede02141e258ab4c88e9b4daad966513d4dbe68))
+- 🎸 重构 layout-classic 布局 ([29d9c98](https://github.com/kailong321200875/vue-element-plus-admin/commit/29d9c988605b822195900268da6bc3f3b0b9c770))
+- 🎸 重构 sider 组件 �[51313d7](https://github.com/kailong321200875/vue-element-plus-admin/commit/51313d7116c7ab2ded7e3a65514ea9ac413edecd))
+- Add analysis api ([83327ea](https://github.com/kailong321200875/vue-element-plus-admin/commit/83327ea763ebb233bb540513276ffa288fbcb4a1))
+- Add analysis demo ([cd06934](https://github.com/kailong321200875/vue-element-plus-admin/commit/cd069340fc5157535fdc82e792c6b6dce7d7a97e))
+- Add count-to demo ([d3fbd3a](https://github.com/kailong321200875/vue-element-plus-admin/commit/d3fbd3a06c3b802fc863b4dc8013122c14bd16f2))
+- Add Descriptions component and add Descriptions demo ([7ad46f8](https://github.com/kailong321200875/vue-element-plus-admin/commit/7ad46f828d626a87699cd4d3a959a5634577d580))
+- Add Dialog component and add dailog demo ([a18ad8f](https://github.com/kailong321200875/vue-element-plus-admin/commit/a18ad8f4a89b78c73e57d8d2543494243f656d05))
+- add doucment link ([53201ae](https://github.com/kailong321200875/vue-element-plus-admin/commit/53201ae97a425714871d99e8847a3672ba0d389f))
+- Add dynamic route ([9d926b2](https://github.com/kailong321200875/vue-element-plus-admin/commit/9d926b2760b75e1d8e71a68dc7ff6c5026223a43))
+- Add Editor component and add editor demo ([3fb3e8d](https://github.com/kailong321200875/vue-element-plus-admin/commit/3fb3e8da39d816bcf4aedb65d40c7052bdb6d8bf))
+- Add Error component ([7411dbc](https://github.com/kailong321200875/vue-element-plus-admin/commit/7411dbc9fd8f122187c86a11523b49c88cc71a8c))
+- Add example-dialog demo ([262f421](https://github.com/kailong321200875/vue-element-plus-admin/commit/262f4211cf53aef30a32f4b88e88fb1b9246ffcb))
+- Add example-page demo ([1492f91](https://github.com/kailong321200875/vue-element-plus-admin/commit/1492f9119aa2960cc05956218e6d151c8b316875))
+- Add form demo ([472f574](https://github.com/kailong321200875/vue-element-plus-admin/commit/472f574f42f8f31c4e6047043ac755ba5fb35b7b))
+- Add form demo ([e6f9580](https://github.com/kailong321200875/vue-element-plus-admin/commit/e6f95803316bb5df2d1060285c1d591a79340721))
+- Add form demo ([543156f](https://github.com/kailong321200875/vue-element-plus-admin/commit/543156f328350bd12e71a41c872e547e41cda7fe))
+- Add form demo ([7795d2a](https://github.com/kailong321200875/vue-element-plus-admin/commit/7795d2a4fe3dbc9849ddc7c1d3e2d9215dc66f56))
+- Add guide demo ([0832194](https://github.com/kailong321200875/vue-element-plus-admin/commit/0832194e6131051416edff7c2eac6b0a016ffd80))
+- Add highlight demo ([eb206b0](https://github.com/kailong321200875/vue-element-plus-admin/commit/eb206b0cc31ac7da3dfd8b3d4b874061c5c91d53))
+- Add Icon demo ([e4b7a76](https://github.com/kailong321200875/vue-element-plus-admin/commit/e4b7a769126d6f0fca424007c294ff229eefcb35))
+- Add ImageViewer component and add ImageViewer demo ([af9fc0a](https://github.com/kailong321200875/vue-element-plus-admin/commit/af9fc0a4aded3ec08746ddeaeabac4c3cfa9463d))
+- Add Infotip component ([e4b7a76](https://github.com/kailong321200875/vue-element-plus-admin/commit/e4b7a769126d6f0fca424007c294ff229eefcb35))
+- Add infotip demo ([dbf3b0f](https://github.com/kailong321200875/vue-element-plus-admin/commit/dbf3b0f5a333ccef524bbac825035b0c6dc78ec9))
+- Add Qrcode component and add qrcode demo ([535a31b](https://github.com/kailong321200875/vue-element-plus-admin/commit/535a31b35eb6a76589f602fd96dcf91f46f349b0))
+- Add Search component and add search demo ([33eca8a](https://github.com/kailong321200875/vue-element-plus-admin/commit/33eca8a97d59f5cc453e1a60ee81b1519527d0f1))
+- Add Table component and add useTable hook ([17e8e7c](https://github.com/kailong321200875/vue-element-plus-admin/commit/17e8e7cda9a009818f11cfa0429ce0f9adc00be5))
+- Add useScrollTo hook ([7d7fd9e](https://github.com/kailong321200875/vue-element-plus-admin/commit/7d7fd9ed646d2b68cec0547ad8e65b0404bb95bb))
+- Add useWatermark hook and add useWatermark demo ([d3fbd3a](https://github.com/kailong321200875/vue-element-plus-admin/commit/d3fbd3a06c3b802fc863b4dc8013122c14bd16f2))
+- Add workplace api ([cb558f8](https://github.com/kailong321200875/vue-element-plus-admin/commit/cb558f8af9dfef2ba2879f021db395ee79e8c8d4))
+- **Animate:** Add animate.css ([1436543](https://github.com/kailong321200875/vue-element-plus-admin/commit/1436543a5c599f651ed7805165ea83b9ebcddef5))
+- **Breadcrumbe:** Add Breadcrumb component ([4612e55](https://github.com/kailong321200875/vue-element-plus-admin/commit/4612e5544bcd626d686972e5cb874d0aa4af08b3))
+- **component:** Add CountTo component and Echart component ([e20fa76](https://github.com/kailong321200875/vue-element-plus-admin/commit/e20fa76cad0894a69fd04c81c2108faabf392684))
+- **component:** Add Footer component ([dad7330](https://github.com/kailong321200875/vue-element-plus-admin/commit/dad733063413c79eca61c6cb5ff671b35933a85f))
+- **component:** Add Footer component ([f81e996](https://github.com/kailong321200875/vue-element-plus-admin/commit/f81e996a426538aeaa2aa37a540395dcf360a09c))
+- **Component:** Add Highlight component ([c53fa56](https://github.com/kailong321200875/vue-element-plus-admin/commit/c53fa562e540447df082e35c7f26e56f2426e430))
+- **component:** Add namespace of class ([d847ccb](https://github.com/kailong321200875/vue-element-plus-admin/commit/d847ccb098edc72fe55c1f8459bf149453a3b73d))
+- **Component:** Setting component add copy button ([e496096](https://github.com/kailong321200875/vue-element-plus-admin/commit/e496096539e6a56b0761a625c9d59210facc5432))
+- **ContextMenu:** Add ContextMenu component ([349ac9d](https://github.com/kailong321200875/vue-element-plus-admin/commit/349ac9d3989d77e5246cecf0006dd8d83c489990))
+- Detail 组件重构完成 ([7f5ef99](https://github.com/kailong321200875/vue-element-plus-admin/commit/7f5ef99ccc32b03f7be21f70c333bb8e679c7d93))
+- Highlight 组件重构 ([34221f3](https://github.com/kailong321200875/vue-element-plus-admin/commit/34221f387f5e15a08cdc21edd76ce8d8c5c20fbc))
+- **hooks:** Add useIntro hook ([0832194](https://github.com/kailong321200875/vue-element-plus-admin/commit/0832194e6131051416edff7c2eac6b0a016ffd80))
+- **hooks:** Add useTimeAgo hook ([c53fa56](https://github.com/kailong321200875/vue-element-plus-admin/commit/c53fa562e540447df082e35c7f26e56f2426e430))
+- **I18n:** Add Ii8n ([3810b8c](https://github.com/kailong321200875/vue-element-plus-admin/commit/3810b8c3b26f86c27aa7db479dfb7b0d283d970f))
+- **Layout:** Add classic layout ([839b601](https://github.com/kailong321200875/vue-element-plus-admin/commit/839b6015b8e31bf70e6f0bf0608fa729b028729b))
+- **Layout:** Add cutMenu layout ([ff4dd3a](https://github.com/kailong321200875/vue-element-plus-admin/commit/ff4dd3afbf5c0c7a439c71b0c494b81e0f2c70d4))
+- **Layout:** Add topLeft layout ([71b1c5e](https://github.com/kailong321200875/vue-element-plus-admin/commit/71b1c5e10cade8d1c018d0c5f63c98ba9357bab8))
+- **LocaleDropdown:** Add LocaleDropdown Component ([3810b8c](https://github.com/kailong321200875/vue-element-plus-admin/commit/3810b8c3b26f86c27aa7db479dfb7b0d283d970f))
+- **Logo:** Add Logo component ([958edef](https://github.com/kailong321200875/vue-element-plus-admin/commit/958edefe7bc2bf3ae77520a5d885a9d47e8a37b9))
+- **mock:** Add mock ([3fc7d4d](https://github.com/kailong321200875/vue-element-plus-admin/commit/3fc7d4d39a72056fcf419fe19a9d41d90f945bad))
+- **router:** Add dynamic routing ([b218ccc](https://github.com/kailong321200875/vue-element-plus-admin/commit/b218ccc9cce2ce1363c4a21d22b4d69c43c7b2dc))
+- Search component add expand attribute and expandField attribute ([9b4b317](https://github.com/kailong321200875/vue-element-plus-admin/commit/9b4b31781765d31dec50acc40e2eed91401502d4))
+- **store:** Add localeStore ([3810b8c](https://github.com/kailong321200875/vue-element-plus-admin/commit/3810b8c3b26f86c27aa7db479dfb7b0d283d970f))
+- **store:** Add tagsView store ([349ac9d](https://github.com/kailong321200875/vue-element-plus-admin/commit/349ac9d3989d77e5246cecf0006dd8d83c489990))
+- Table 组件重构 ([07adefb](https://github.com/kailong321200875/vue-element-plus-admin/commit/07adefb89b7555280e6217e09cf81ba7aa5b93c2))
+- **TagsView:** Add TagsView component ([349ac9d](https://github.com/kailong321200875/vue-element-plus-admin/commit/349ac9d3989d77e5246cecf0006dd8d83c489990))
+- **useForm:** Add useForm ([357fc44](https://github.com/kailong321200875/vue-element-plus-admin/commit/357fc44e519c5829567c17f611fcaadee3f9f933))
+- **useNProgress:** Add useNProgress ([c5ab359](https://github.com/kailong321200875/vue-element-plus-admin/commit/c5ab3599c8ea001ff7831b72fefc9e274163fbbb))
+- **useTitle:** Add useTitle ([c5ab359](https://github.com/kailong321200875/vue-element-plus-admin/commit/c5ab3599c8ea001ff7831b72fefc9e274163fbbb))
+- **utils:** Add color utils ([71dfba2](https://github.com/kailong321200875/vue-element-plus-admin/commit/71dfba21c5bc0276689b5aecf0d75e53efdda09f))
+- **VForm:** Add VForm component ([448ac52](https://github.com/kailong321200875/vue-element-plus-admin/commit/448ac5293e48a03840df2bb0b399a8f02aae666e))
+- **VInputPassword:** Add VInputPassword Component ([a1bf7e9](https://github.com/kailong321200875/vue-element-plus-admin/commit/a1bf7e9b552f75d3b87c64904ac9e7c99fc936a5))
+- **Workplace:** Add wrokplace demo ([c53fa56](https://github.com/kailong321200875/vue-element-plus-admin/commit/c53fa562e540447df082e35c7f26e56f2426e430))
+- 综合实例、权限管理重 �[a4bd206](https://github.com/kailong321200875/vue-element-plus-admin/commit/a4bd2068a5d40d146b5b45cb3727ced990147b68))
+- 部分组件重构完成 ([3d96229](https://github.com/kailong321200875/vue-element-plus-admin/commit/3d9622978dc234ef12dbce63e18caf3440563aa0))
+
+### Bug Fixes
+
+- 🐛 删除 Editor 双向绑定，改 �props 传参 ([c395e27](https://github.com/kailong321200875/vue-element-plus-admin/commit/c395e27f67af9f60b151a5484ab5a3c90c4c1d1e))
+- fix Form component setProps not work bug ([48ffc52](https://github.com/kailong321200875/vue-element-plus-admin/commit/48ffc52ca8fa26d8e6a5fa4b8b3001701a1f0732))
+- fix useScrollTo not work bug ([53201ae](https://github.com/kailong321200875/vue-element-plus-admin/commit/53201ae97a425714871d99e8847a3672ba0d389f))
+- 修复 tagsView 无动画效 �[0e3eb4b](https://github.com/kailong321200875/vue-element-plus-admin/commit/0e3eb4ba8b1503e1d221dfda59a3a0001dbdcb56))
 
 ### Performance Improvements
 
-- code optimization ([37f6660](https://github.com/anncwb/vue-vben-admin/commit/37f6660c574f0cf8b432f66b67062c3bb0314d5c))
-- delete tinymce useless style files ([edc7525](https://github.com/anncwb/vue-vben-admin/commit/edc7525103f2e0fd90562b2e30839c11ed62556d))
-- refoctor useTitle ([979058a](https://github.com/anncwb/vue-vben-admin/commit/979058ad95d9669cb113033f76b5dafb932aad0f))
-
-## [2.1.1](https://github.com/anncwb/vue-vben-admin/compare/v2.1.0...v2.1.1) (2021-03-25)
-
-### Bug Fixes
-
-- **form:** ensure that the hidden fields of the form are verified properly, fix [#413](https://github.com/anncwb/vue-vben-admin/issues/413) ([237f41d](https://github.com/anncwb/vue-vben-admin/commit/237f41da68592ede236b722157c91f9d7b45db1b))
-- **icon:** ensure the menu icon style is correct, fix [#425](https://github.com/anncwb/vue-vben-admin/issues/425) ([5c57a1d](https://github.com/anncwb/vue-vben-admin/commit/5c57a1dda13975c13e65511a39e7483e4a5d3999))
-- add route base close [#404](https://github.com/anncwb/vue-vben-admin/issues/404) ([8ad127c](https://github.com/anncwb/vue-vben-admin/commit/8ad127c293872aa10db03044bbc68715dc1b804a))
-- ensure permissionMode exists close [#409](https://github.com/anncwb/vue-vben-admin/issues/409) ([8fb0396](https://github.com/anncwb/vue-vben-admin/commit/8fb03961f50051695983f8cb415d6009b9d6b643))
-- refresh error ([5bf90ee](https://github.com/anncwb/vue-vben-admin/commit/5bf90eea627638517e3ced024289696a6ece8e74))
-- **input-count:** make sure the reset function works close [#381](https://github.com/anncwb/vue-vben-admin/issues/381) ([3c4de9b](https://github.com/anncwb/vue-vben-admin/commit/3c4de9b0be06350f0d9ad97bfb5f7f773c38be38))
-- **menu:** ensure the menu has meta attributes close [#397](https://github.com/anncwb/vue-vben-admin/issues/397) ([b2a1951](https://github.com/anncwb/vue-vben-admin/commit/b2a1951fd00433cb5e1c9dce982c53a9c9edd874))
-- **menu:** fix the menu disappeared in background mode ([50915c9](https://github.com/anncwb/vue-vben-admin/commit/50915c9754473ba9096b3b1cceedf0d7e7212ad9))
-- **menu:** make sure the menu is displayed properly on the small screen close [#336](https://github.com/anncwb/vue-vben-admin/issues/336) ([82c3186](https://github.com/anncwb/vue-vben-admin/commit/82c3186309971517183fc44bfcac159612e48a7b))
-- **progress:** fix progress sometimes cannot done ([#388](https://github.com/anncwb/vue-vben-admin/issues/388)) ([8360b1d](https://github.com/anncwb/vue-vben-admin/commit/8360b1d6886b5639cf43da5ab866156d140a0f01))
-- **route:** ensure that the first level menu can be hidden ([e2cc5af](https://github.com/anncwb/vue-vben-admin/commit/e2cc5af9375f59d2891be769010ef5d3ccfe9755))
-- **table:** ensure that the height calculation is correct close [#395](https://github.com/anncwb/vue-vben-admin/issues/395) ([1d7608e](https://github.com/anncwb/vue-vben-admin/commit/1d7608ee40c27ce81e031947ed6c679cc8b04c77))
-- **table:** fix table check column configuration failure close [#391](https://github.com/anncwb/vue-vben-admin/issues/391) ([c3096e2](https://github.com/anncwb/vue-vben-admin/commit/c3096e26ff24c8afd9555e676c898030664846d7))
-- **tree:** ensure that the check event is emitted close [#400](https://github.com/anncwb/vue-vben-admin/issues/400) ([16ef134](https://github.com/anncwb/vue-vben-admin/commit/16ef13477c8f06c13ff3611b9e67e430fac433e7))
-- ensure the breadcrumb level is correct ([e49072c](https://github.com/anncwb/vue-vben-admin/commit/e49072c31339ba58473ffa883308cc3c2c4c43e9))
-- LayoutMap cannot get correctly ([#398](https://github.com/anncwb/vue-vben-admin/issues/398)) ([7c16c2f](https://github.com/anncwb/vue-vben-admin/commit/7c16c2fa9e6cb2e87894666d6687eed3fc744b64))
-- welcome page not cached in back-end mode ([#389](https://github.com/anncwb/vue-vben-admin/issues/389)) ([f0b93b5](https://github.com/anncwb/vue-vben-admin/commit/f0b93b50e7b6b9c444f8422f91be73085be8c5fe))
-- **v-auth:** ensure the background mode is correct close [#330](https://github.com/anncwb/vue-vben-admin/issues/330) ([67962f1](https://github.com/anncwb/vue-vben-admin/commit/67962f1deea31d695d20ae0ea7fc39b39c1eea47))
-
-### Features
-
-- **route:** add hideChildrenInMenu option close [#346](https://github.com/anncwb/vue-vben-admin/issues/346) ([b67cf22](https://github.com/anncwb/vue-vben-admin/commit/b67cf22dfc8d27428b045f47fcd9e2797b81a81d))
-- **table:** add expandAll/collapseAll function close [#333](https://github.com/anncwb/vue-vben-admin/issues/333) ([391da9e](https://github.com/anncwb/vue-vben-admin/commit/391da9ec2884885f9dfe86ddb869ccc0d193491e))
-
-# [2.1.0](https://github.com/anncwb/vue-vben-admin/compare/v2.0.3...v2.1.0) (2021-03-15)
-
-### Bug Fixes
-
-- **button:** fix button style error close [#312](https://github.com/anncwb/vue-vben-admin/issues/312) ([7a6c87f](https://github.com/anncwb/vue-vben-admin/commit/7a6c87f8c1aa34a7a00506fb89fb231e3a176f6f))
-- **menu:** fix hideMenu not working close [#338](https://github.com/anncwb/vue-vben-admin/issues/338) ([5b2fbfb](https://github.com/anncwb/vue-vben-admin/commit/5b2fbfb6ce4054ece60c851c45baf60f3a07a4db))
-- **page-wraper:** fix PageWrapper the scroll bar on the right side of the content area when the user clicks on the tab page to reload the page ([#341](https://github.com/anncwb/vue-vben-admin/issues/341)) ([fcff2cb](https://github.com/anncwb/vue-vben-admin/commit/fcff2cb1911f1e18017f25b3509d1c67f7e86e81))
-- **page-wrapper:** fix PageWrapper title not showing ([9e3adaa](https://github.com/anncwb/vue-vben-admin/commit/9e3adaa30c7cdaf23855922100e16717856ba1d9))
-- **table:** ensure that editable cell values are echoed correctly close [#335](https://github.com/anncwb/vue-vben-admin/issues/335) ([fab7a6c](https://github.com/anncwb/vue-vben-admin/commit/fab7a6c58d586300d58e1b6837927e1569b57aa5))
-- **table:** ensure that the height calculation is normal close [#349](https://github.com/anncwb/vue-vben-admin/issues/349) ([6095cb5](https://github.com/anncwb/vue-vben-admin/commit/6095cb54afe3f4fcabbfff26ac6704ecfbbddae5))
-- **table:** ensure that the table height is correct when the data is empty ([53867a8](https://github.com/anncwb/vue-vben-admin/commit/53867a846154d9a3529f50d20d92ce5fdb41986f))
-- **table:** ensure that the value of the table action is updated correctly close [#301](https://github.com/anncwb/vue-vben-admin/issues/301) [#313](https://github.com/anncwb/vue-vben-admin/issues/313) ([7156e47](https://github.com/anncwb/vue-vben-admin/commit/7156e47c1813ec01594d9dff4a1e7d593f3c17db))
-- **table:** fix table height calculation problem ([0fe42a0](https://github.com/anncwb/vue-vben-admin/commit/0fe42a06c1f2ef69805dbfeecbcac919ff0aedd0)), closes [#348](https://github.com/anncwb/vue-vben-admin/issues/348)
-- **table:** fix table row misalignment close [#353](https://github.com/anncwb/vue-vben-admin/issues/353) ([e15737b](https://github.com/anncwb/vue-vben-admin/commit/e15737b9d17d8ebea4f4e9897aeae9b250910a15))
-- **table:** fix TableAction row height error close [#350](https://github.com/anncwb/vue-vben-admin/issues/350) ([a759e44](https://github.com/anncwb/vue-vben-admin/commit/a759e44c6e5c223d2fef52c5a9698e571eed2d52))
-- **transition:** fix transition not work close [#334](https://github.com/anncwb/vue-vben-admin/issues/334) ([7d8b8db](https://github.com/anncwb/vue-vben-admin/commit/7d8b8db256f78b228b2b4629a472834a4cce9bd4))
-- **tree:** ebsure the expansion is functioning properly close [#362](https://github.com/anncwb/vue-vben-admin/issues/362) ([a405de8](https://github.com/anncwb/vue-vben-admin/commit/a405de8d202710264e802edb270bbd5cd4a1ab80))
-- **tree:** tree can customize title close [#344](https://github.com/anncwb/vue-vben-admin/issues/344) ([ed422b7](https://github.com/anncwb/vue-vben-admin/commit/ed422b7c56bf9d44be001b8a54358d69c100ff35))
-- **useTableScroll:** query paginationel every time to get the correct height ([#355](https://github.com/anncwb/vue-vben-admin/issues/355)) ([f818bb9](https://github.com/anncwb/vue-vben-admin/commit/f818bb9a107e43adfb8ef2a095635f5fffb5800b))
-
-### Features
-
-- **icon:** added svg icon picker ([1418dc6](https://github.com/anncwb/vue-vben-admin/commit/1418dc6a597a8410711359f07ae66f0fea858977))
-- **map:** added AMap/Baidu/Google Map example close [#81](https://github.com/anncwb/vue-vben-admin/issues/81) ([a9462f0](https://github.com/anncwb/vue-vben-admin/commit/a9462f0d4dacb8db9300c416b2d3f094be624220))
-- **time:** added time compoennt close [#285](https://github.com/anncwb/vue-vben-admin/issues/285) ([a89eeef](https://github.com/anncwb/vue-vben-admin/commit/a89eeef6f3a0b9863d28cf516b126a938eed7361))
-
-### Performance Improvements
-
-- **icon:** icon and SvgIcon integration ([e8fe6a9](https://github.com/anncwb/vue-vben-admin/commit/e8fe6a929be025a889ddec624ff9c2729313c818))
-
-## [2.0.3](https://github.com/anncwb/vue-vben-admin/compare/v2.0.2...v2.0.3) (2021-03-07)
-
-### Bug Fixes
-
-- **breadcrumb:** ensure that the single-level breadcrumbs jump correctly close [#321](https://github.com/anncwb/vue-vben-admin/issues/321) ([e0dc5cf](https://github.com/anncwb/vue-vben-admin/commit/e0dc5cf2f299fd4c1efdf4f00b9f0f72f07d5937))
-- **description:** ensure that props respond ([ce93e46](https://github.com/anncwb/vue-vben-admin/commit/ce93e46faf1d7250dd3acd3fd97ccd6382b2f822))
-- **form:** allow the setFieldsValue method to be null or undefined close [#320](https://github.com/anncwb/vue-vben-admin/issues/320) ([8f76ef4](https://github.com/anncwb/vue-vben-admin/commit/8f76ef4e70de58ba5c4497d8b10a036a54a9ac87))
-- **form:** ensure that the Form component does not verify hidden form items ([43a45b7](https://github.com/anncwb/vue-vben-admin/commit/43a45b7c996c84f19d00cb9754277b943daf9a10))
-- **form:** fix the problem of form props monitoring close [#322](https://github.com/anncwb/vue-vben-admin/issues/322) ([83a3460](https://github.com/anncwb/vue-vben-admin/commit/83a34603562e6358203b834b8feb59b0b44dbbcd))
-- **menu:** fix menu icon missing close [#328](https://github.com/anncwb/vue-vben-admin/issues/328) ([d5d4c4b](https://github.com/anncwb/vue-vben-admin/commit/d5d4c4b4136158e061e4a3b6b306af6d4e8cd621))
-- **table:** fix pagination error ([745fcfc](https://github.com/anncwb/vue-vben-admin/commit/745fcfc014e3e9e13d6a415a8f094cfef68be908))
-- **tree:** fix the logic problem of show attribute of ActionItem under BasicTree ([80b47c8](https://github.com/anncwb/vue-vben-admin/commit/80b47c84cd490388c6db659921f1103c443d7b9d))
-
-### Features
-
-- add SvgIcon component ([9c2a2a0](https://github.com/anncwb/vue-vben-admin/commit/9c2a2a0c00dae6f334c99acc9ab2f571fd8905c0))
-- **tree:** add clickRowToExpand option close [#318](https://github.com/anncwb/vue-vben-admin/issues/318) ([e696089](https://github.com/anncwb/vue-vben-admin/commit/e696089660131786ea24632ed75adc57b6ea58f4))
-
-### Performance Improvements
-
-- optimize local loading speed close [#329](https://github.com/anncwb/vue-vben-admin/issues/329) ([491f1fc](https://github.com/anncwb/vue-vben-admin/commit/491f1fcfff17f2297e3fee00e1542778aed08e56))
-- **login:** enter to log in ([b93f20f](https://github.com/anncwb/vue-vben-admin/commit/b93f20f0df91689191b8414657171e9f17ba5d68))
-- **table:** the table fills the height according to the screen close [#310](https://github.com/anncwb/vue-vben-admin/issues/310) ([551fe50](https://github.com/anncwb/vue-vben-admin/commit/551fe50a44d0b6358cf3861f772ca223ea56f0e2))
-
-## [2.0.2](https://github.com/anncwb/vue-vben-admin/compare/v2.0.0...v2.0.2) (2021-03-03)
-
-### Bug Fixes
-
-- change transition-duration to make animate smoothly ([#294](https://github.com/anncwb/vue-vben-admin/issues/294)) ([5eac9b2](https://github.com/anncwb/vue-vben-admin/commit/5eac9b23d6d8ad91e110169519bfd3ab50f985a9))
-- ensure that storage is deleted correctly close [#292](https://github.com/anncwb/vue-vben-admin/issues/292) ([ec7bef7](https://github.com/anncwb/vue-vben-admin/commit/ec7bef792b2a780736c2b1713af3638fa0b69eed))
-- ensure that the correct components are dynamically imported ([b476e1c](https://github.com/anncwb/vue-vben-admin/commit/b476e1c84c52dab7030fd19b34ecd33e65fadcb2))
-- ensure to request the interface correctly ([11d3f39](https://github.com/anncwb/vue-vben-admin/commit/11d3f395caf7e2268630090eb34f4e5c114a96b7))
-- expose tree information in the event close [#315](https://github.com/anncwb/vue-vben-admin/issues/315) ([b6bb816](https://github.com/anncwb/vue-vben-admin/commit/b6bb81630de728c146bf0e559bef88b69d4b8a21))
-- fix login page style ([7b4fcd2](https://github.com/anncwb/vue-vben-admin/commit/7b4fcd2ecac8107f7d052dee08cb8007dc5e5dd9))
-- improve persistent cache logic ([15567e4](https://github.com/anncwb/vue-vben-admin/commit/15567e478c0f274b0f8f0a7410ea5cb636bacc3d))
-- **dashboard:** fix workbench page style ([#280](https://github.com/anncwb/vue-vben-admin/issues/280)) ([7d9b521](https://github.com/anncwb/vue-vben-admin/commit/7d9b521c693b59da5fa28130b5753afa0914e598))
-- **image:** fix preview style close [#276](https://github.com/anncwb/vue-vben-admin/issues/276) ([f675fff](https://github.com/anncwb/vue-vben-admin/commit/f675fff2e66054b4157b2a330dbf151822b0befd))
-- **login:** fix login style close [#306](https://github.com/anncwb/vue-vben-admin/issues/306) ([a84586e](https://github.com/anncwb/vue-vben-admin/commit/a84586e2f49a2966ac5cb02d945e62e107b247d1))
-- **modal:** ensure that the height is correct in the modal full screen state close [#308](https://github.com/anncwb/vue-vben-admin/issues/308) ([37508ca](https://github.com/anncwb/vue-vben-admin/commit/37508ca4113701458cae84fff64062427ba43898))
-- **style:** fix anticon style ([e250ad5](https://github.com/anncwb/vue-vben-admin/commit/e250ad567f3169d4ef7baec8954be2e18c6932e6))
-- **table:** ensure the table setting button dividing line is hidden ([7c2f851](https://github.com/anncwb/vue-vben-admin/commit/7c2f85169248b369f95c5866ef7e90d4fb1739ef))
-- **table:** fix known errors in editable tables close [#267](https://github.com/anncwb/vue-vben-admin/issues/267) ([4f8e1c1](https://github.com/anncwb/vue-vben-admin/commit/4f8e1c1b5ffc78242b300e85be22b1fa07c7d902))
-- **table:** get the selected rows of the table correctly ([6013689](https://github.com/anncwb/vue-vben-admin/commit/601368921f075aa1870d1c3ce8f4a8330260206a))
-- **watermark:** watermark causes a blank bar ([#297](https://github.com/anncwb/vue-vben-admin/issues/297)) ([66fc1b7](https://github.com/anncwb/vue-vben-admin/commit/66fc1b78450fa7846b0d58e6da5f2135e6456238))
-
-### Features
-
-- added system management sample page ([4628d94](https://github.com/anncwb/vue-vben-admin/commit/4628d94415c1787da8b04499e295967f15c4eef5))
-- **icon-picker:** add icon-picker component ([b6cea4a](https://github.com/anncwb/vue-vben-admin/commit/b6cea4a950e92a0f91e06bcc60b4653e1d2709ef))
-- **moda;:** can switch full screen by double-clicking on the head close [#277](https://github.com/anncwb/vue-vben-admin/issues/277) ([e3851dc](https://github.com/anncwb/vue-vben-admin/commit/e3851dc5ea290ef6eb4d12ce2469311b1bee53cd))
-- **tree:** actionItem added show attribute close [#314](https://github.com/anncwb/vue-vben-admin/issues/314) ([8b62fa0](https://github.com/anncwb/vue-vben-admin/commit/8b62fa0cb0559ec3ea8a1b82a2d44165b2337522))
-- **tree:** add renderIcon props close [#309](https://github.com/anncwb/vue-vben-admin/issues/309) ([72b42d7](https://github.com/anncwb/vue-vben-admin/commit/72b42d7b3539919a9baa4f1a7316842f85991c1e))
-- **ws:** added WebSocket examples and service scripts ([c625462](https://github.com/anncwb/vue-vben-admin/commit/c625462e98eec006aaeeef14280775cafeb72364))
-- add dept management page ([3b8ca42](https://github.com/anncwb/vue-vben-admin/commit/3b8ca420c763fe0e386a8dbc023f4f8eb8742252))
-- added settingButtonPosition configuration close [#275](https://github.com/anncwb/vue-vben-admin/issues/275) ([da04913](https://github.com/anncwb/vue-vben-admin/commit/da04913ef324fff122732b445c1b1d1d662b87a3))
-- axios supports form-data format requests ([c41fa75](https://github.com/anncwb/vue-vben-admin/commit/c41fa75265beb00f629dcda808957cb58b905bc2))
-
-### Performance Improvements
-
-- **tree:** strengthen BasicTree function ([cd8e924](https://github.com/anncwb/vue-vben-admin/commit/cd8e924d4641fc46cacd4a934478d8861e8c3c04))
-- hide table full screen button by default ([500900a](https://github.com/anncwb/vue-vben-admin/commit/500900abe16d3e27e1c9e0446a13386c6129d449))
-- imporve axios logic ([a821d9a](https://github.com/anncwb/vue-vben-admin/commit/a821d9a3a279f0e6a5b7dbb316725d603ce30f74))
-- improve login logic ([a09a0ee](https://github.com/anncwb/vue-vben-admin/commit/a09a0eedd29fdc9a9bd5414bd12c08e37c72982a))
-- improve persistent logic ([f57eb94](https://github.com/anncwb/vue-vben-admin/commit/f57eb944edfd967f5f45566ec5bedbf12f147492))
-- move src/types to root ([fcee7d4](https://github.com/anncwb/vue-vben-admin/commit/fcee7d4eb71471dd40567c8d7c97302eeee80697))
-- remove useless code ([be3a3ed](https://github.com/anncwb/vue-vben-admin/commit/be3a3ed699f73d352d49623ef07288093a3332c4))
-- replace crypto-es with crypto-js ([bba7768](https://github.com/anncwb/vue-vben-admin/commit/bba7768759c5d4dedd6599417154c4cb8ab64920))
-
-## [2.0.1](https://github.com/anncwb/vue-vben-admin/compare/v2.0.0...v2.0.1) (2021-02-21)
-
-### Bug Fixes
-
-- **dashboard:** fix workbench page style ([#280](https://github.com/anncwb/vue-vben-admin/issues/280)) ([7d9b521](https://github.com/anncwb/vue-vben-admin/commit/7d9b521c693b59da5fa28130b5753afa0914e598))
-- **image:** fix preview style close [#276](https://github.com/anncwb/vue-vben-admin/issues/276) ([f675fff](https://github.com/anncwb/vue-vben-admin/commit/f675fff2e66054b4157b2a330dbf151822b0befd))
-- **style:** fix anticon style ([e250ad5](https://github.com/anncwb/vue-vben-admin/commit/e250ad567f3169d4ef7baec8954be2e18c6932e6))
-- **table:** fix known errors in editable tables close [#267](https://github.com/anncwb/vue-vben-admin/issues/267) ([4f8e1c1](https://github.com/anncwb/vue-vben-admin/commit/4f8e1c1b5ffc78242b300e85be22b1fa07c7d902))
-
-### Features
-
-- **moda;:** can switch full screen by double-clicking on the head close [#277](https://github.com/anncwb/vue-vben-admin/issues/277) ([e3851dc](https://github.com/anncwb/vue-vben-admin/commit/e3851dc5ea290ef6eb4d12ce2469311b1bee53cd))
-- added settingButtonPosition configuration close [#275](https://github.com/anncwb/vue-vben-admin/issues/275) ([da04913](https://github.com/anncwb/vue-vben-admin/commit/da04913ef324fff122732b445c1b1d1d662b87a3))
-
-# [2.0.0](https://github.com/anncwb/vue-vben-admin/compare/v2.0.0-rc.18...v2.0.0) (2021-02-17)
-
-### Bug Fixes
-
-- **i18n:** fix useMessage i18n type [#262](https://github.com/anncwb/vue-vben-admin/issues/262) ([d753155](https://github.com/anncwb/vue-vben-admin/commit/d7531554a274ad9d793ea621739dfffdc7f73db8))
-- **table:** fix the table in the editable row status and press Enter to confirm [#258](https://github.com/anncwb/vue-vben-admin/issues/258) ([64533f6](https://github.com/anncwb/vue-vben-admin/commit/64533f6204f96f79c6006d9911e9417cd9800d0d))
-- correct debugger code ([759e532](https://github.com/anncwb/vue-vben-admin/commit/759e5320790504f0d274289001543c1397e8b617))
-- some color error ([33b2365](https://github.com/anncwb/vue-vben-admin/commit/33b2365f6e645edf2a6c1cf38596aaec52b35df6))
-- **description:** not rendering while show method return false ([#253](https://github.com/anncwb/vue-vben-admin/issues/253)) ([23eba27](https://github.com/anncwb/vue-vben-admin/commit/23eba274560a294f50e4b7c529ae8a63a266fb87)), closes [#252](https://github.com/anncwb/vue-vben-admin/issues/252)
-- fix collapse header title not rendering ([#256](https://github.com/anncwb/vue-vben-admin/issues/256)) ([c81d48e](https://github.com/anncwb/vue-vben-admin/commit/c81d48e734b09217fa42df2358e616a970006eab))
-- **pop-confirm-button:** fix responsive failure [#246](https://github.com/anncwb/vue-vben-admin/issues/246) ([c57dea0](https://github.com/anncwb/vue-vben-admin/commit/c57dea0438fc5ba0fbf1716b9e76e2fba1f33f84))
-- fix the problem of mock error under post [#247](https://github.com/anncwb/vue-vben-admin/issues/247) ([9b6f37c](https://github.com/anncwb/vue-vben-admin/commit/9b6f37caef75f8752ea8bd07a78377dcaa59922b))
-- suppoer build sourcemap ([3ba8285](https://github.com/anncwb/vue-vben-admin/commit/3ba828558646a7fa233ebbbda27f71c3121dd7c7))
-- **type:** fix .vue file type error ([22088e8](https://github.com/anncwb/vue-vben-admin/commit/22088e820c79a9832179c8fb7c5cffe30b9b57e9))
-- **upload:** fix maxNumber not work [#240](https://github.com/anncwb/vue-vben-admin/issues/240) ([91e004e](https://github.com/anncwb/vue-vben-admin/commit/91e004e21148c38e572cfbb6b75f0a6f353c15b6))
-
-### Features
-
-- added brotli|gzip compression and related test commands ([993538d](https://github.com/anncwb/vue-vben-admin/commit/993538de21dbb9e54e308afb40ff096ba0ab0e19))
-- support echarts 5.0 ([370b12f](https://github.com/anncwb/vue-vben-admin/commit/370b12f5154f4a531c3a27c3ccc2601845872344))
-- **modal:** exporse redoModalHeight ([a3a903b](https://github.com/anncwb/vue-vben-admin/commit/a3a903bc86e7248424f94f734d21c86c5327ed20))
-
-### Performance Improvements
-
-- adjust the return value of the interface to obtain user information in array format [#259](https://github.com/anncwb/vue-vben-admin/issues/259) ([5894093](https://github.com/anncwb/vue-vben-admin/commit/589409305f58ebc2f6b110bd7b31f924ecd06c16))
-- remove unless code ([2365754](https://github.com/anncwb/vue-vben-admin/commit/23657547ab28fa65c2369ded8e73929dee76c750))
-- update style ([aaae668](https://github.com/anncwb/vue-vben-admin/commit/aaae66835a9f1bdfa316e187c01557e5b54959ab))
-
-# [2.0.0-rc.18](https://github.com/anncwb/vue-vben-admin/compare/v2.0.0-rc.17...v2.0.0-rc.18) (2021-02-04)
-
-### Bug Fixes
-
-- **build:** fix rollup compact not work ([783e658](https://github.com/anncwb/vue-vben-admin/commit/783e65813d41ad9a3030412edede6f25f8f8cb49))
-- **descriotion:** fix type [#228](https://github.com/anncwb/vue-vben-admin/issues/228) ([4909a4c](https://github.com/anncwb/vue-vben-admin/commit/4909a4cb25ee62661e38cac38a8c3a388fdabbdf))
-- **form:** format destructuring assignment error ([#238](https://github.com/anncwb/vue-vben-admin/issues/238)) ([612995a](https://github.com/anncwb/vue-vben-admin/commit/612995a5326ef183d9f454059da6a2914ce5dd2f))
-- **menu:** fix the menu outside link does not jump ([55d4b77](https://github.com/anncwb/vue-vben-admin/commit/55d4b77b04d7a87b416a37019fbf047df1eeec41))
-- **menu:** top submenu disappeared problem [#214](https://github.com/anncwb/vue-vben-admin/issues/214) ([0ec1a62](https://github.com/anncwb/vue-vben-admin/commit/0ec1a62e596c363f3f017d6ac3b374a1b5caa7c5))
-- **modal:** fullscreen height calculation error [#203](https://github.com/anncwb/vue-vben-admin/issues/203) ([b45f8c5](https://github.com/anncwb/vue-vben-admin/commit/b45f8c5021a4225026ed698c083a1af42a08faff))
-- **moment:** fix moment error [#217](https://github.com/anncwb/vue-vben-admin/issues/217) ([61cf0f7](https://github.com/anncwb/vue-vben-admin/commit/61cf0f791e8ee05676fe7fa382b6a2c2b1bea92d))
-- **ripple:** fix ripple style [#211](https://github.com/anncwb/vue-vben-admin/issues/211) ([2201629](https://github.com/anncwb/vue-vben-admin/commit/22016291e4df206dbca351d00ae033c952276ebe))
-- **table:** fix the table: cancel editing and not restore the initial value [#235](https://github.com/anncwb/vue-vben-admin/issues/235) ([1d0ec36](https://github.com/anncwb/vue-vben-admin/commit/1d0ec3629f9cdd40c16b62ce61f9230dcd56a82f))
-- modifyVars not work ([b107b52](https://github.com/anncwb/vue-vben-admin/commit/b107b5288695130592a82951012b743fc825880f))
-- **optimize-deps:** fix resize-observer-polyfill error ([1fac4b4](https://github.com/anncwb/vue-vben-admin/commit/1fac4b4ba76d432b9a56e142a8d56571e825950f))
-- **simple-menu:** collapse openmenus error [#204](https://github.com/anncwb/vue-vben-admin/issues/204) ([ca4f1a8](https://github.com/anncwb/vue-vben-admin/commit/ca4f1a8faf7d588c0d57d0dc81f4dc04cd757380))
-- **table:** cell content does not wrap [#210](https://github.com/anncwb/vue-vben-admin/issues/210) ([ea93553](https://github.com/anncwb/vue-vben-admin/commit/ea9355398fe89235bf2e657c291541bd79a41d98))
-- **table:** fix the initial data display of editable cells ([#218](https://github.com/anncwb/vue-vben-admin/issues/218)) ([9ea257e](https://github.com/anncwb/vue-vben-admin/commit/9ea257e1fbd9e50369b0065eb4db37d4f9c24970))
-- **use-table:** fix types ([c889fb1](https://github.com/anncwb/vue-vben-admin/commit/c889fb174bbd8301479cd67ed99cb5f3552f9988))
-- error action style ([da64c1d](https://github.com/anncwb/vue-vben-admin/commit/da64c1dac95b96984283e496070ab9dc086dca4d))
-
-### Features
-
-- production mode compressed image ([de332ae](https://github.com/anncwb/vue-vben-admin/commit/de332ae3f55afa611e86322753d5a713ea00307d))
-- theme color switch ([3d1681e](https://github.com/anncwb/vue-vben-admin/commit/3d1681ee9ae2b8e8a8f9d7afeaef3b059aa20b48))
-- vite preview ([c1a4600](https://github.com/anncwb/vue-vben-admin/commit/c1a4600b8a0f42c37d90c05198627062eb5742e2))
-- **api-select:** added numberToString prop [#200](https://github.com/anncwb/vue-vben-admin/issues/200) ([5d51d48](https://github.com/anncwb/vue-vben-admin/commit/5d51d48787f7b96637bc6abe5175578e0263092a))
-
-### Performance Improvements
-
-- **form:** perf form in modal ([2882d6e](https://github.com/anncwb/vue-vben-admin/commit/2882d6e937a7d4996ae42ff62148d9a2f893fe47))
-- **mock:** when mock is not used, move mock.js out of the package file ([43503d5](https://github.com/anncwb/vue-vben-admin/commit/43503d597028926c93e4624d999cad4bbccc75fb))
-- **nprocess:** remove nprocess css ([733afdd](https://github.com/anncwb/vue-vben-admin/commit/733afddd19523550d8c7df5c523a0b0929afc608))
-
-### Reverts
-
-- vite previre ([2eb2d2a](https://github.com/anncwb/vue-vben-admin/commit/2eb2d2a07529f7a33d2fbbf1e5fc2e1aac706b0f))
-
-# [2.0.0-rc.17](https://github.com/anncwb/vue-vben-admin/compare/v2.0.0-rc.16...v2.0.0-rc.17) (2021-01-18)
-
-### Bug Fixes
-
-- **menu:** currentActiveMenu fails after refresh [#188](https://github.com/anncwb/vue-vben-admin/issues/188) ([6d5c49f](https://github.com/anncwb/vue-vben-admin/commit/6d5c49f0a208de5b745c36d2320dd4c2cffe7d75))
-- **menu-trigger:** menu-trigger lost ([b803c41](https://github.com/anncwb/vue-vben-admin/commit/b803c4100d5b40c04ae4c3b7153f7f8f32d7da81))
-- **mitt:** logout and clear the mitt ([0aeec5e](https://github.com/anncwb/vue-vben-admin/commit/0aeec5e9d727fc6291fa2d6edaedb4c3e1ef0dad))
-- **table:** index column value error [#187](https://github.com/anncwb/vue-vben-admin/issues/187) ([056fc13](https://github.com/anncwb/vue-vben-admin/commit/056fc131168c4e900e9257c3e03257a390c3d3ba))
-- **table:** tableAction icon [#182](https://github.com/anncwb/vue-vben-admin/issues/182) ([b9d53a7](https://github.com/anncwb/vue-vben-admin/commit/b9d53a7133de70922d6f2a0e16e5b623ffab84fb))
-
-### Features
-
-- css import on demand ([c2f6542](https://github.com/anncwb/vue-vben-admin/commit/c2f6542b48abb85b2c80d13a36882899b11c140b))
-
-### Performance Improvements
-
-- auto import mock file ([df6b5e9](https://github.com/anncwb/vue-vben-admin/commit/df6b5e926f3384a1c56e6607a39efcc4638e8dbc))
-
-# [2.0.0-rc.16](https://github.com/anncwb/vue-vben-admin/compare/v2.0.0-rc.15...v2.0.0-rc.16) (2021-01-12)
-
-### Bug Fixes
-
-- **table:** table setting error [#174](https://github.com/anncwb/vue-vben-admin/issues/174) [#165](https://github.com/anncwb/vue-vben-admin/issues/165) ([c960020](https://github.com/anncwb/vue-vben-admin/commit/c9600208c52e3575fe8741e350833f7952bae3b7))
-- mock plugin error [#171](https://github.com/anncwb/vue-vben-admin/issues/171) ([3509ebe](https://github.com/anncwb/vue-vben-admin/commit/3509ebec165d26651cc02dc233bd9433c544bed5))
-- upload component not work [#169](https://github.com/anncwb/vue-vben-admin/issues/169) ([18ad1bc](https://github.com/anncwb/vue-vben-admin/commit/18ad1bcc6e927f70dc16bf7e3c1627c1f7f376f3))
-- useI18n type ([c22de5c](https://github.com/anncwb/vue-vben-admin/commit/c22de5c35b4781322c9ee17ad375ec0af2fe60a7))
-- **form:** formAction slot not work ([de5bf75](https://github.com/anncwb/vue-vben-admin/commit/de5bf757f241a097d62d61adf4d7346b73a09f92))
-- **layout:** fix layout scale error ([da76f3c](https://github.com/anncwb/vue-vben-admin/commit/da76f3c77bd044caaf65e2c7a5c1c9dd72b4ca44))
-- **modal:** height calc error [#161](https://github.com/anncwb/vue-vben-admin/issues/161) ([144ab57](https://github.com/anncwb/vue-vben-admin/commit/144ab577da06ff0bd1f258d1901b87864f232e45))
-- **table:** fix edit-table not work ([c031163](https://github.com/anncwb/vue-vben-admin/commit/c031163f34d7ec16aa5a7a406d5467a18e527c79))
-- **table:** fix table setting error [#162](https://github.com/anncwb/vue-vben-admin/issues/162) ([a2c89d2](https://github.com/anncwb/vue-vben-admin/commit/a2c89d2e842beb9f15f3fc00d651c42954a57ff7))
-- **table:** restore the property of the table ([5c27353](https://github.com/anncwb/vue-vben-admin/commit/5c2735346745cf91aa9812a0afbf62e4625faf40))
-- **table:** table columns setting error ([af55511](https://github.com/anncwb/vue-vben-admin/commit/af55511bd6e533ab68356aa9038f80f50f53cf26))
-- **table:** table columns setting will uncheck all render columns [#154](https://github.com/anncwb/vue-vben-admin/issues/154) ([aa596af](https://github.com/anncwb/vue-vben-admin/commit/aa596af608a313a5494db8e3ddbf0ef84c7f0c55))
-- **table:** table memory overflow ([7a07b70](https://github.com/anncwb/vue-vben-admin/commit/7a07b703d11afb832daa4bd2b87bf5cab3c61e04))
-- **transition:** fix transition not work ([a7a8b89](https://github.com/anncwb/vue-vben-admin/commit/a7a8b894c1062d8eb05a094fdbb7887044d0d973))
-- invalid error-log page path ([#158](https://github.com/anncwb/vue-vben-admin/issues/158)) ([17ecaea](https://github.com/anncwb/vue-vben-admin/commit/17ecaea97d1d4c61ddb79a23616a49598c9a10aa))
-
-### Features
-
-- **tinymce:** add image upload [#170](https://github.com/anncwb/vue-vben-admin/issues/170) ([3ad1a4f](https://github.com/anncwb/vue-vben-admin/commit/3ad1a4f5a69b4242d55e6bc17aceab7279241e14))
-- added mixSide trigger ([1e5fcd2](https://github.com/anncwb/vue-vben-admin/commit/1e5fcd2cd2981b29f06cff08e588077b2dd02f45))
-- support vite2 ([eba5576](https://github.com/anncwb/vue-vben-admin/commit/eba55769ec765cd4fbf1faefdd4f3df5e38f11d9))
-- **layout:** added setting. Used to fix the left mixed mode menu ([97180e8](https://github.com/anncwb/vue-vben-admin/commit/97180e83f5055ebd138acc2a82c981d8a7399371))
-- **menu:** add mixSideTrigger setting ([0419a07](https://github.com/anncwb/vue-vben-admin/commit/0419a070413be34ea5455ed955fa51d8c522da86))
-- **modal:** add minHeight and height prop [#156](https://github.com/anncwb/vue-vben-admin/issues/156) ([5091a87](https://github.com/anncwb/vue-vben-admin/commit/5091a875ab520c51aec4c57cdd200d68016958ab))
-- **page-wrapper:** added pageWrapper component ([31ff055](https://github.com/anncwb/vue-vben-admin/commit/31ff0559fe3b635fc2091aac0e2f5e340629134c))
-- **table:** add summaryData prop [#163](https://github.com/anncwb/vue-vben-admin/issues/163) ([8d7d083](https://github.com/anncwb/vue-vben-admin/commit/8d7d0835adf4a7d1b8afc5e8bd911a60833006a4))
-- **tabs:** added tab folding ([0e7c57b](https://github.com/anncwb/vue-vben-admin/commit/0e7c57bd5ecafd8283bcc950b24bb63b59b70e5a))
-
-### Performance Improvements
-
-- perf table ([cdf0a60](https://github.com/anncwb/vue-vben-admin/commit/cdf0a600e505daf429446b8a7968269e1034de04))
-- **i18n:** merge common lang ([efbde0d](https://github.com/anncwb/vue-vben-admin/commit/efbde0d57e20d07373d78d1226e2e83f396a74f3))
-- add @ant-design/icons-vue to optimizeDeps ([fb57cf7](https://github.com/anncwb/vue-vben-admin/commit/fb57cf734da31af94f3072c685b778a64fc740a5))
-- **menu:** mixSideTrigger setting ([#155](https://github.com/anncwb/vue-vben-admin/issues/155)) ([e821f4c](https://github.com/anncwb/vue-vben-admin/commit/e821f4c706c4108a4309a0589223e05e718f15cf))
-
-# [2.0.0-rc.15](https://github.com/anncwb/vue-vben-admin/compare/v2.0.0-rc.14...v2.0.0-rc.15) (2020-12-31)
-
-### Bug Fixes
-
-- **build:** fix environment variable configuration file failure ([bd7b53f](https://github.com/anncwb/vue-vben-admin/commit/bd7b53f14adc05fd3d4af5027b5fb85015021ac9))
-- **charts:** fix echarts does not display after refresh [#140](https://github.com/anncwb/vue-vben-admin/issues/140) ([5cbfb2a](https://github.com/anncwb/vue-vben-admin/commit/5cbfb2a1f9ace8b991ac67c5b7d37b64eb2dbac8))
-- **demo:** fix demo error ([a0681cc](https://github.com/anncwb/vue-vben-admin/commit/a0681cca8f9de2e3686001fa715f53f6fc3cf1a1))
-- **form:** fix appendSchemaByField not work ([405d746](https://github.com/anncwb/vue-vben-admin/commit/405d7466dd935a845e91f4c6ece76b1475507eb7))
-- **form:** form validate error ([a305e59](https://github.com/anncwb/vue-vben-admin/commit/a305e59124f4cc88aaf6ec85a13fc998a18b9471))
-- **form:** form-item style error ([08df198](https://github.com/anncwb/vue-vben-admin/commit/08df198710ff597af2cbffa2afbb3a6ca13a1d63))
-- **iframe:** iframe loads early when closing multi-tabs ([73cee06](https://github.com/anncwb/vue-vben-admin/commit/73cee06daa26c056131fb5ec78afd912dd9832f7))
-- **locale:** fix locale.show not work ([10cd4fc](https://github.com/anncwb/vue-vben-admin/commit/10cd4fcdff2fa3961e095285ae7a26b38be52c2a))
-- **menu:** fix scrillbar not work ([de25557](https://github.com/anncwb/vue-vben-admin/commit/de25557f86945a96b89294043796ccf4ab476ad5))
-- **modal:** do not hide the scroll bar when opening the pop-up window [#151](https://github.com/anncwb/vue-vben-admin/issues/151) ([8f332e3](https://github.com/anncwb/vue-vben-admin/commit/8f332e3cd45814a181a24c884edf050936928755))
-- **sider:** mix mode adaptation in the left menu ([ed213d8](https://github.com/anncwb/vue-vben-admin/commit/ed213d878b78697f0bdb69cb474dfab45972b2cb))
-- **table:** Update useDataSource.ts ([#131](https://github.com/anncwb/vue-vben-admin/issues/131)) ([877311f](https://github.com/anncwb/vue-vben-admin/commit/877311f9df70b7d76f8a0f8b5082f061de439ec8))
-- **table:** wrong tag label style [#134](https://github.com/anncwb/vue-vben-admin/issues/134) ([e09e0a1](https://github.com/anncwb/vue-vben-admin/commit/e09e0a12531977d679ab0f4574f4016d4c5b2ad0))
-- **tinymce:** the editor reports an error under keep-alive [#152](https://github.com/anncwb/vue-vben-admin/issues/152) ([09c9f8a](https://github.com/anncwb/vue-vben-admin/commit/09c9f8a881d1f2c76b11fdeff08f3ca2893e0886))
-- **types:** fix routing type error [#145](https://github.com/anncwb/vue-vben-admin/issues/145) ([b6e5c3f](https://github.com/anncwb/vue-vben-admin/commit/b6e5c3f625f3e30b1fa7433e57b1294a8ce8d04b))
-- add an example of markdown embedded in the form [#138](https://github.com/anncwb/vue-vben-admin/issues/138) ([7db0c5c](https://github.com/anncwb/vue-vben-admin/commit/7db0c5c49f23a4ab4958b3f73d47516deafa6166))
-
-### Features
-
-- **breadcrumb:** add breadcrumb demo [#143](https://github.com/anncwb/vue-vben-admin/issues/143) ([819bcbe](https://github.com/anncwb/vue-vben-admin/commit/819bcbe5263c721f1f77cb277d670a9868b229f7))
-- **hook:** add useKeyPress ([3c3e640](https://github.com/anncwb/vue-vben-admin/commit/3c3e640d69b48d8e9382acd25b60d906af038a9d))
-- add mainout page demo ([930383f](https://github.com/anncwb/vue-vben-admin/commit/930383f9ae17b18d697a35ef9c73ad17dbca1e13))
-- **layout:** add mix sidebar mode ([e6db0d3](https://github.com/anncwb/vue-vben-admin/commit/e6db0d39b9ba98f6396866715ed3b6d56994697a))
-- add ripple directive ([2e79c9f](https://github.com/anncwb/vue-vben-admin/commit/2e79c9f37adda4003e6b054561b26da69a762673))
-
-### Performance Improvements
-
-- **form:** improve the form function ([ac1a369](https://github.com/anncwb/vue-vben-admin/commit/ac1a36950259844822c6300a00710b040dfc2640))
-- **import:** perf components import ([2ee01fa](https://github.com/anncwb/vue-vben-admin/commit/2ee01fa6ea3200ec964d4e1b4765e48dfa7aeb3a))
-- **modal-drawer:** replace the scrollbar assembly ([ebf7c8a](https://github.com/anncwb/vue-vben-admin/commit/ebf7c8aa53b7ed11c72734646d558a559e818473))
-- **route:** refactor guard ([3b126e0](https://github.com/anncwb/vue-vben-admin/commit/3b126e011c7ca7ac1b008c37aa2cf617242a2e9c))
-- Update useApexCharts.ts ([#139](https://github.com/anncwb/vue-vben-admin/issues/139)) ([5eecec0](https://github.com/anncwb/vue-vben-admin/commit/5eecec03126d131bd1210d4fcac3acfe3d5aeb40))
-
-# [2.0.0-rc.14](https://github.com/anncwb/vue-vben-admin/compare/2.0.0-beta.3...v2.0.0-rc.14) (2020-12-15)
-
-### Bug Fixes
-
-- **form:** fix the form item setting not taking effect ([6936adb](https://github.com/anncwb/vue-vben-admin/commit/6936adb2c2af3c0bfbd238be1d61933601ff2b88))
-- **router:** reserving `Redirect` after reset ([#126](https://github.com/anncwb/vue-vben-admin/issues/126)) ([ec7efcf](https://github.com/anncwb/vue-vben-admin/commit/ec7efcf0f0161c8e14168bf69ba27ba36e2a1ac8))
-- fix modal and drawer component missing uid ([1293a73](https://github.com/anncwb/vue-vben-admin/commit/1293a7389ea797b1c1dad62e06657c846b1dcb3c))
-- **comp:** fix the memory overflow problem of component containing keywords ([6b3195b](https://github.com/anncwb/vue-vben-admin/commit/6b3195b4ca88a33044bcd014e8c5d090710e7fbb))
-- **form:** fix baseColProps not work ([c8ef82b](https://github.com/anncwb/vue-vben-admin/commit/c8ef82b2c11c9938f0f7a7f6a1a10010b82979dc))
-- **form:** fix form inputNumber verification error ([4ddee05](https://github.com/anncwb/vue-vben-admin/commit/4ddee05dee87c944ba95dca54a754e048b8cfc84))
-- **form:** fix form verification and console error message issues ([bb1b267](https://github.com/anncwb/vue-vben-admin/commit/bb1b267e2fc306608300ec09084b1f3d0cab7e59))
-- **icon:** fix g-icon not work ([f7ec3c9](https://github.com/anncwb/vue-vben-admin/commit/f7ec3c931e780b2b5d35bf65ea5b4ace26f7c356))
-- **keep-alive:** fix the problem that the multi-level routing cache page is rendered multiple times [#123](https://github.com/anncwb/vue-vben-admin/issues/123) ([0daca28](https://github.com/anncwb/vue-vben-admin/commit/0daca28362419911d642e4b3a5111e213eef49d9))
-- **login:** fix the problem of successful login and notify disappearing ([0434030](https://github.com/anncwb/vue-vben-admin/commit/0434030f2777ee65a4255287e1842fcb0b772f87))
-- **menu:** calc 0 不能省略单位 ([#124](https://github.com/anncwb/vue-vben-admin/issues/124)) ([d023fb1](https://github.com/anncwb/vue-vben-admin/commit/d023fb13742cc1f5cc1585b82f1a7b3c576ee66c))
-- **menu:** fix externalLink not work ([7bae4c3](https://github.com/anncwb/vue-vben-admin/commit/7bae4c37525c6534ec0b0c3ea8c1b2257af74a33))
-- **menu:** fix menu icon style ([1bc237d](https://github.com/anncwb/vue-vben-admin/commit/1bc237d77a068e99b0e803ab4f16d8bbcf54ff6b))
-- **menu:** fix menu split mode problem ([1ef49e5](https://github.com/anncwb/vue-vben-admin/commit/1ef49e542d23ca44696ec5dd2f6498a4ea8135aa))
-- **theme:** css filter breaking fixed position ([#125](https://github.com/anncwb/vue-vben-admin/issues/125)) ([c911af4](https://github.com/anncwb/vue-vben-admin/commit/c911af4aca49e6f9fe099e74a4d454286554e181))
-- 整体图标调整 ([5dc8226](https://github.com/anncwb/vue-vben-admin/commit/5dc8226ce14559f48f8b979809f8a054ce7935e5))
-- file upload key loss [#120](https://github.com/anncwb/vue-vben-admin/issues/120) ([29461a8](https://github.com/anncwb/vue-vben-admin/commit/29461a856826fbb7726848982387ea78f8573754))
-- **menu:** fix the calculation error of the top menu width ([de1f006](https://github.com/anncwb/vue-vben-admin/commit/de1f00628479c4d31e6ed904d4b0fd7e312cc030))
-- **table:** fix table setting error ([59ad824](https://github.com/anncwb/vue-vben-admin/commit/59ad82442bf213bac547940086ff4e14d0cd342a))
-- **table:** fix unsuccessful saving of row edit table ([#117](https://github.com/anncwb/vue-vben-admin/issues/117)) ([404db2f](https://github.com/anncwb/vue-vben-admin/commit/404db2fb4975c69851dbf73a9ea8f981fb0ddb56))
-- **upload:** fix file upload key loss [#120](https://github.com/anncwb/vue-vben-admin/issues/120) ([fb5395b](https://github.com/anncwb/vue-vben-admin/commit/fb5395b5401b4b1f9e605d2721784482a76d49cc))
-- **upload:** repair file upload and delete invalidation ([bd6b203](https://github.com/anncwb/vue-vben-admin/commit/bd6b203fa969d173574657940a50b649c778b0b4))
-- fix cssVar hmr error ([2b95be8](https://github.com/anncwb/vue-vben-admin/commit/2b95be8013e70e1b891601cecb6d9e03a56d1ac2))
-- fix descriotions title not work ([819127e](https://github.com/anncwb/vue-vben-admin/commit/819127e807123cccc7ae50f0fdffb43a662465d4))
-- fix form submit error ([94bf854](https://github.com/anncwb/vue-vben-admin/commit/94bf854dd98f37ffb39e9086c565a0610c250205))
-- fix form validate error ([1db72c8](https://github.com/anncwb/vue-vben-admin/commit/1db72c8fe13384f24e9cc1bdc839d5e4176ea9b4))
-- fix keepAlive not work ([b884654](https://github.com/anncwb/vue-vben-admin/commit/b884654761f93455014fd1dcb0e40c030d8fb360))
-- fix menu style not work ([bda3e5d](https://github.com/anncwb/vue-vben-admin/commit/bda3e5da30b434dd3a5879695261422fdd365455))
-- fix mock data error [#109](https://github.com/anncwb/vue-vben-admin/issues/109) ([41a4b82](https://github.com/anncwb/vue-vben-admin/commit/41a4b827a22e785453238da6b9b8b5b1c604b91a))
-- fix notify type error ([cb1ae34](https://github.com/anncwb/vue-vben-admin/commit/cb1ae34f1120d2555ff039fc945235c3f45e13a8))
-- fix spelling errors of i18n words ([68a96b7](https://github.com/anncwb/vue-vben-admin/commit/68a96b7f81a1ad72c93a53c2ebfde046c66c215f))
-- fix spin style ([fca0bb1](https://github.com/anncwb/vue-vben-admin/commit/fca0bb164a0f2e03acb5090bf59634225f5c06ee))
-- fix table column settings not displayed by setting ([54d1405](https://github.com/anncwb/vue-vben-admin/commit/54d14056462566521f2528480c13fb24279156ae))
-- fix the display problem of table icon ([de499a1](https://github.com/anncwb/vue-vben-admin/commit/de499a145556427304abe075b62e6869f44dc640))
-- fix the original page after login expired ([6676c95](https://github.com/anncwb/vue-vben-admin/commit/6676c9506be7b3095c466c83432d40b2a36565fb))
-- fix win system dynamicImport error ([a90d93f](https://github.com/anncwb/vue-vben-admin/commit/a90d93fc4d8dd8491702183f3db700c33dbcc5a8))
-- page switching did not return to the top ([fef3644](https://github.com/anncwb/vue-vben-admin/commit/fef3644067b7ccac96ec9ae122e3f1c8b8fc58ef))
-- pageLoading not working ([3f78b5a](https://github.com/anncwb/vue-vben-admin/commit/3f78b5aa0cd3e7a6f17d58512ca93ee2905d5e2f))
-- style error ([7bfe5f7](https://github.com/anncwb/vue-vben-admin/commit/7bfe5f753d77620027248a6238bccd8a23f7ad7c))
-- **charts:** fix useCharts resize not work ([6d9585b](https://github.com/anncwb/vue-vben-admin/commit/6d9585b46f849ea4cf3dc93d46f15c2c09d04891))
-- **form:** fix updateSchema error [#100](https://github.com/anncwb/vue-vben-admin/issues/100) ([4982786](https://github.com/anncwb/vue-vben-admin/commit/498278660112a52b7c6e608159d20920d6047e04))
-- 修复链接 ([#49](https://github.com/anncwb/vue-vben-admin/issues/49)) ([28392c3](https://github.com/anncwb/vue-vben-admin/commit/28392c3d6efc2fb3298255bc2c466167e8a4e91c))
-- fix editable cells cannot be entered ([4500214](https://github.com/anncwb/vue-vben-admin/commit/4500214b2a158965281e43e673622e4492e8ca26))
-- fix expandTransition ([3355066](https://github.com/anncwb/vue-vben-admin/commit/335506628e15e29e08df55d4b7e7cf6333fe25be))
-- fix fullscreen bg color not work ([#75](https://github.com/anncwb/vue-vben-admin/issues/75)) ([0c28ffa](https://github.com/anncwb/vue-vben-admin/commit/0c28ffa8e6a93e8923b7d3a32292db8ae786242c))
-- **table:** fix table typo ([69af37e](https://github.com/anncwb/vue-vben-admin/commit/69af37ec88e21acf926fdf5969c2189dc7450822))
-- fix menu permission failure ([b8353fe](https://github.com/anncwb/vue-vben-admin/commit/b8353fe1f262b87cc20af56aaf380ae1a5599724))
-- fix message type error ([35d2bfc](https://github.com/anncwb/vue-vben-admin/commit/35d2bfc5623fcf3a608ae12e9781b2e23ff4130d))
-- fix the problem of closing multiple tabs ([275ad9f](https://github.com/anncwb/vue-vben-admin/commit/275ad9f14e8fa75620ff35c906c06c616fb2104f))
-- **mock:** fix mock paging tool error ([b36d948](https://github.com/anncwb/vue-vben-admin/commit/b36d9486a544dd3badea23d86088af98aadad8f4))
-- **table:** fix table search criteria collapse failure ([84b8302](https://github.com/anncwb/vue-vben-admin/commit/84b8302c0921ea7fbcd1c42fa057b94660129857))
-- fix missing cache of refresh page ([02d6a39](https://github.com/anncwb/vue-vben-admin/commit/02d6a3940277a5939d25d16fda58e09346821e0e))
-- fix npm build error ([a3b7a65](https://github.com/anncwb/vue-vben-admin/commit/a3b7a6537ae25af076fdcccb50dd6967f0def40b))
-- fix table small style ([#67](https://github.com/anncwb/vue-vben-admin/issues/67)) ([da4aea1](https://github.com/anncwb/vue-vben-admin/commit/da4aea1399f67759b06266aa410036f69fde9521))
-- **table:** fix table type error ([05980a8](https://github.com/anncwb/vue-vben-admin/commit/05980a817e68c2a57eed2db7cf23bd7eb4ec10ba))
-- build error ([7bd0b8e](https://github.com/anncwb/vue-vben-admin/commit/7bd0b8eb6ffb143b4f341efeeb60b4e90f0e4ddf))
-- fix abnormal breadcrumb status ([144fde8](https://github.com/anncwb/vue-vben-admin/commit/144fde8a688217440071c7b0ac70e46f6832635a))
-- fix base-help style not work ([1fb759e](https://github.com/anncwb/vue-vben-admin/commit/1fb759ec7cf2c6104670025073920ca352413b10))
-- fix drawer autoHeight ([88de82c](https://github.com/anncwb/vue-vben-admin/commit/88de82c493b068b6d9bb5e29475350ed092fe482))
-- fix missing page refresh parameters ([349d197](https://github.com/anncwb/vue-vben-admin/commit/349d1978b154f6e9e74e36de7cc56a2ca261d0b0))
-- fix modal dragging failure when destroyOnClose=true ([#51](https://github.com/anncwb/vue-vben-admin/issues/51)) ([9c02d8e](https://github.com/anncwb/vue-vben-admin/commit/9c02d8ec08b309e7f982f417a4c907f33ccc96f0))
-- fix npm script ([b84de1a](https://github.com/anncwb/vue-vben-admin/commit/b84de1a515600d2ead1c2b5f6db949e7bf6ab923))
-- fix require error ([06e1d38](https://github.com/anncwb/vue-vben-admin/commit/06e1d3879be187f99f5142e054884e1c09ac8dfa))
-- fix routing switch, tab is not activated ([beb4c3a](https://github.com/anncwb/vue-vben-admin/commit/beb4c3a37f314b97657a1d85e7db2abf40dbe6c3))
-- fix script preview no build ([c2333f5](https://github.com/anncwb/vue-vben-admin/commit/c2333f5d044c74c9df82c6c3134681ba21e0d0cd))
-- fix table auto height ([ddc3786](https://github.com/anncwb/vue-vben-admin/commit/ddc3786b168a2931200ef61cc68dd80a18d714cc))
-- fix the failure of table expansion icon animation ([8e885d6](https://github.com/anncwb/vue-vben-admin/commit/8e885d6967747f3204e61ca85bde25ac2b8ba2a4))
-- fix the failure of table expansion icon animation ([db06289](https://github.com/anncwb/vue-vben-admin/commit/db06289481965524f42ed36a056bd54ba1a46dfe))
-- fix the problem of folding display name of the first level menu ([e3cbc93](https://github.com/anncwb/vue-vben-admin/commit/e3cbc9326ecedf386919f344df5dbdef8eb3d78c))
-- fix the problem of page blank caused by page refresh ([7653610](https://github.com/anncwb/vue-vben-admin/commit/7653610c7bc45e97cb744994835cf7fb5074ff7b))
-- fix the style problem of the table border in the production environment ([f2c7638](https://github.com/anncwb/vue-vben-admin/commit/f2c7638bd7789bddacd56ea2ab809f4a0b3b86cb))
-- fix the top menu adaptive failure ([2f12556](https://github.com/anncwb/vue-vben-admin/commit/2f12556d26ba386d9dca2ecf8a88e3764abab870))
-- fix window npm script ([a0b09e7](https://github.com/anncwb/vue-vben-admin/commit/a0b09e74baf1f4e514da85ed9b1859ca2820fb37))
-- form col style ([840332a](https://github.com/anncwb/vue-vben-admin/commit/840332abf733dd1dc404523d38c5377114f4b6c2))
-- some error ([2407b33](https://github.com/anncwb/vue-vben-admin/commit/2407b3368c3fc5128bbfced98a1d2c70fa3e02e0))
-- **modal:** fix modal not showing footer ([fb0c776](https://github.com/anncwb/vue-vben-admin/commit/fb0c7763eddde38d3746cb424ebe9662ac576c86))
-- **tree:** fix tree style ([#99](https://github.com/anncwb/vue-vben-admin/issues/99)) ([e8ccdc7](https://github.com/anncwb/vue-vben-admin/commit/e8ccdc7f34891ea31768aea9ebcfc33227d37eb7))
-- **use-redo:** refresh the page to keep the parameters([#104](https://github.com/anncwb/vue-vben-admin/issues/104)) ([e04aaa0](https://github.com/anncwb/vue-vben-admin/commit/e04aaa06459c6613e59aa6ae5906b998b0685bdb))
-- fix the disappearance of tab switching parameters ([#56](https://github.com/anncwb/vue-vben-admin/issues/56)) ([6bffdb5](https://github.com/anncwb/vue-vben-admin/commit/6bffdb5c64aa139cf6119b50aeed42629a65f07b))
-- fix the occupancy problem of the folding button ([#90](https://github.com/anncwb/vue-vben-admin/issues/90)) ([cd35d3e](https://github.com/anncwb/vue-vben-admin/commit/cd35d3e0d16cb57cb15c2ca20c8a663f21e4bfbf))
-- fix the problem of collapsed display when the menu has no child nodes ([5cff73b](https://github.com/anncwb/vue-vben-admin/commit/5cff73bcafc27a36f111949d33f463dd2bb52571))
-- fix topMenu align not work ([25d43a5](https://github.com/anncwb/vue-vben-admin/commit/25d43a5f7c9182f2ca620f1daf0d5f47d2e4fb2d))
-- fix useTimeoutFn not work ([b49950a](https://github.com/anncwb/vue-vben-admin/commit/b49950a3906de6626eedb973590d02e4d95b98b9))
-- hmr multiple registered components ([7a6181e](https://github.com/anncwb/vue-vben-admin/commit/7a6181e8c72cd110cdfc09f624f8be43e76ef74c))
-- repair local development post request proxy to https error problem ([#63](https://github.com/anncwb/vue-vben-admin/issues/63)) ([34c09fc](https://github.com/anncwb/vue-vben-admin/commit/34c09fcea82e3529519a5acc563a22adcd5faae1))
-- repair packaging error ([526e6ce](https://github.com/anncwb/vue-vben-admin/commit/526e6ce22bf15cd04a09faf53a08ac43da491534))
-- Repair tree component click to select ([#33](https://github.com/anncwb/vue-vben-admin/issues/33)) ([67df9b8](https://github.com/anncwb/vue-vben-admin/commit/67df9b8c93a26b0edb4f3d5d5c589d355803cea0))
-- replace taskfile module ([e828baa](https://github.com/anncwb/vue-vben-admin/commit/e828baa67b5f8e6fa28354d85563d127b6b70d6b))
-- reset back to default value after fixing form query ([1c075a7](https://github.com/anncwb/vue-vben-admin/commit/1c075a7a32dd05454bc45d4eb686e2234c3c6175))
-- the action column appears repeatedly in the table ([#53](https://github.com/anncwb/vue-vben-admin/issues/53)) ([74d4742](https://github.com/anncwb/vue-vben-admin/commit/74d47424069c4dca71579637916431aa80014fd8))
-- the login tab page in tabs ([#60](https://github.com/anncwb/vue-vben-admin/issues/60)) ([bfac425](https://github.com/anncwb/vue-vben-admin/commit/bfac425d1e12943b55e9afb732a36d84f6a02404))
-- the useMessage icon style problem ([a2c413a](https://github.com/anncwb/vue-vben-admin/commit/a2c413a838bb3f737e28e95302ccf0a0171c91b6))
-- type error ([ecfb702](https://github.com/anncwb/vue-vben-admin/commit/ecfb702b09e296efd5bf095d65840147d47b7923))
-- typo ([7658f4d](https://github.com/anncwb/vue-vben-admin/commit/7658f4d6e82dc532b378ec13157756f0e1cd78de))
-- update account page demo ([#92](https://github.com/anncwb/vue-vben-admin/issues/92)) ([9f8796e](https://github.com/anncwb/vue-vben-admin/commit/9f8796ee586a5f33e20713f53d2aa447b6aa312e))
-- update upload component ([815250e](https://github.com/anncwb/vue-vben-admin/commit/815250ed341ccaec23e7ea34db6cc478a47ad065))
-- **excel:** update excel demo ([a207caf](https://github.com/anncwb/vue-vben-admin/commit/a207cafec98461b39882f352f2bf5c7d3c21716a))
-- **table:** fix table actionColOptions not work ([5a6db8c](https://github.com/anncwb/vue-vben-admin/commit/5a6db8c640376ca67b451a9647b9958946e5c3ab))
-- **table:** fix table type error ([db0bfc8](https://github.com/anncwb/vue-vben-admin/commit/db0bfc886314b193e7cb86a80b6c13b2743aa652))
-- **table:** fix the problem that multi-level header configuration does not take effect ([cdf2c59](https://github.com/anncwb/vue-vben-admin/commit/cdf2c59e5c3b070d039c04fb746b53147f5e0ced))
-- **tinymce:** fixed multiple editors showing only one ([#83](https://github.com/anncwb/vue-vben-admin/issues/83)) ([1093ec3](https://github.com/anncwb/vue-vben-admin/commit/1093ec3e6e4fe1f49b7458c29e518744fe56532f))
-
-### Features
-
-- add account center page ([#86](https://github.com/anncwb/vue-vben-admin/issues/86)) ([78d4d41](https://github.com/anncwb/vue-vben-admin/commit/78d4d41c85f5341bb5dfd2a1cbb6e60d6858b084))
-- add accountSetting page ([#85](https://github.com/anncwb/vue-vben-admin/issues/85)) ([7ad4cee](https://github.com/anncwb/vue-vben-admin/commit/7ad4cee79ade617a13358f7417ce3e1182c1027f))
-- add basic-list page ([2f75a94](https://github.com/anncwb/vue-vben-admin/commit/2f75a948899713e10b200e0f39a48d4b62ef231e))
-- add card-list page ([3a132f3](https://github.com/anncwb/vue-vben-admin/commit/3a132f3f4f4e08b4675c157548aa093b3a1c3c94))
-- add collapsedShowTitle setting ([5737e47](https://github.com/anncwb/vue-vben-admin/commit/5737e478f671e7f1c60f7db08a0007f154b6f4b8))
-- add count-to component and demo ([afc7263](https://github.com/anncwb/vue-vben-admin/commit/afc7263efb90c0410041358a9dd5f10ec685ac2f))
-- add design setting ([bae53f3](https://github.com/anncwb/vue-vben-admin/commit/bae53f3e2c62b3fca246432307f45a6363c4c176))
-- add error handle ([7101587](https://github.com/anncwb/vue-vben-admin/commit/7101587b9676c91e9079044a096df08848f1f602))
-- add file download demo ([db3092d](https://github.com/anncwb/vue-vben-admin/commit/db3092db2eb7d5346778847757adb2b9c4041ed5))
-- add lazyContainer comp and demo ([fdeaa00](https://github.com/anncwb/vue-vben-admin/commit/fdeaa00bf24b0710ca341fafba8327c786ab9879))
-- add markdown component ([5fb069f](https://github.com/anncwb/vue-vben-admin/commit/5fb069f432799e0d17a7102fae70757e320dc0c5))
-- add notice ([#47](https://github.com/anncwb/vue-vben-admin/issues/47)) ([7a1e94c](https://github.com/anncwb/vue-vben-admin/commit/7a1e94c49d546e155d8c17b492ff6b1e5fb55121))
-- add permissionCacheType setting ([26b6109](https://github.com/anncwb/vue-vben-admin/commit/26b6109ca08a28c37355474bf8593f2e2b741ef6))
-- add pwa ([a1b9902](https://github.com/anncwb/vue-vben-admin/commit/a1b9902b97da03d0ee1e99a021fc6497b8f51fa6))
-- add README.en-US.md ([#37](https://github.com/anncwb/vue-vben-admin/issues/37)) ([7437896](https://github.com/anncwb/vue-vben-admin/commit/74378960345e706b45fab1f39fba045a1e95a547))
-- add result page demo ([21e0548](https://github.com/anncwb/vue-vben-admin/commit/21e0548e34cf70ebf97967089f458e759ca326d9))
-- add search page ([dddda5b](https://github.com/anncwb/vue-vben-admin/commit/dddda5b296025d1d6b37ec15930a02722b8e1b0c))
-- add search-list page ([4cb3784](https://github.com/anncwb/vue-vben-admin/commit/4cb3784f13fc516c6343798e8bf8a435e14d774c))
-- add tab drag and drop sort ([cedba37](https://github.com/anncwb/vue-vben-admin/commit/cedba37e4cf63456c97f7e391761f176137e0165))
-- add table setting ([8b3a4d3](https://github.com/anncwb/vue-vben-admin/commit/8b3a4d37a8addd151b918cf64bce6361376dec9e))
-- add tag display to the menu ([a3887f8](https://github.com/anncwb/vue-vben-admin/commit/a3887f8cd99546cde8882d77271cc430eb7a83f5))
-- add the parameter sortFn to the table ([491ba9a](https://github.com/anncwb/vue-vben-admin/commit/491ba9a3cc19ceb97dd9a6448831b64c86e1e475))
-- add the parameter submitOnReset to the form ([#54](https://github.com/anncwb/vue-vben-admin/issues/54)) ([d09406e](https://github.com/anncwb/vue-vben-admin/commit/d09406e3cb8cfc069ce79b5f4194f7d959f63daf))
-- add tinymce embedded form example ([58f988a](https://github.com/anncwb/vue-vben-admin/commit/58f988a7184dd7bdec415627e16b56b80f36b661))
-- add useDesign ([74e62cb](https://github.com/anncwb/vue-vben-admin/commit/74e62cbc712bdd4d4826e5fe80f537d87e44ffce))
-- added base64 file stream download ([a161bfa](https://github.com/anncwb/vue-vben-admin/commit/a161bfa818cb63d9cc0b00ae062eb16b1efaf74f))
-- auto import route ([8a1bfdf](https://github.com/anncwb/vue-vben-admin/commit/8a1bfdf13de966acc5eb41718ccb085d3efc4581))
-- axios add joinTime field ([f646e37](https://github.com/anncwb/vue-vben-admin/commit/f646e37754d21ba7c89437176bd9e375924dee03))
-- first screen loading waiting animation ([4811cce](https://github.com/anncwb/vue-vben-admin/commit/4811cce809453df78dc2c25cd9805eae483297fc))
-- global loading add text ([4f98978](https://github.com/anncwb/vue-vben-admin/commit/4f98978edacbe72610a226267628ab20b57cfc4e))
-- integrate upload components into form by default ([be2b8a7](https://github.com/anncwb/vue-vben-admin/commit/be2b8a7e175033dace7a521ab26cd319c5cfdea6))
-- multi-language component ([dc09de1](https://github.com/anncwb/vue-vben-admin/commit/dc09de1e052d6b104c5af3a426af6b0e7bb147c7))
-- multi-language layout ([e5f8ce3](https://github.com/anncwb/vue-vben-admin/commit/e5f8ce3fd8ec25c6fdb122867cd33e4e84a6f43f))
-- multi-language support ([1901129](https://github.com/anncwb/vue-vben-admin/commit/19011296ed61f820356f6b201cbb274d57dcb7d3))
-- new menu and top bar color selection color matching ([7692ffb](https://github.com/anncwb/vue-vben-admin/commit/7692ffb95b94672b6fbc8c25fd43d9dd1a1da81e))
-- projectSetting add closeMessageOnSwitch and removeAllHttpPending ([e83cb06](https://github.com/anncwb/vue-vben-admin/commit/e83cb06bb93544369c8934d1065bf46835e3f003))
-- restore the breadcrumb display icon function ([f65bed7](https://github.com/anncwb/vue-vben-admin/commit/f65bed72ac8c63aaed640d59703f73e83de80da5))
-- right-click menu supports multiple levels ([f645680](https://github.com/anncwb/vue-vben-admin/commit/f645680a3b9a1f75395329970551d9e5d6bd845b))
-- routes with parameters can be cached ([90b3fab](https://github.com/anncwb/vue-vben-admin/commit/90b3fab28ef53135f3cab1f69a4675f98a130857))
-- support mobile layout adaptation ([c774a6d](https://github.com/anncwb/vue-vben-admin/commit/c774a6d3a03d9507a9023d600aa9dd9592f52fb3))
-- support vscode i18n-ally plugin ([962f90d](https://github.com/anncwb/vue-vben-admin/commit/962f90de445d7935ad76ea7b74a98f12ce9a7498))
-- the cache can be configured to be encrypted ([234c1d1](https://github.com/anncwb/vue-vben-admin/commit/234c1d1fae6a7f2c78e456f992f91622ca599060))
-- **analysis:** add analysis page ([52ee35c](https://github.com/anncwb/vue-vben-admin/commit/52ee35c4beca8fc07737aa28328663e86ba797d4))
-- **breadcrumb:** support showIcon ([#48](https://github.com/anncwb/vue-vben-admin/issues/48)) ([d8b25b4](https://github.com/anncwb/vue-vben-admin/commit/d8b25b488ba4c6626d3b94ed84270e96f403d859))
-- **chart:** add useEcharts and useApexChart demo ([21d0ed9](https://github.com/anncwb/vue-vben-admin/commit/21d0ed92dffd28f45c98afee547d25d9b40dde7f))
-- **desc-page:** add desc page demo ([7a00036](https://github.com/anncwb/vue-vben-admin/commit/7a000366b92b942727dd2cd7c0aec193f8c1a7b0))
-- **excel:** import/export ([#40](https://github.com/anncwb/vue-vben-admin/issues/40)) ([c0692b0](https://github.com/anncwb/vue-vben-admin/commit/c0692b0f43b50be56e399c4aa07c0c4244080e9f))
-- **form:** support function type of form item ([5832ee6](https://github.com/anncwb/vue-vben-admin/commit/5832ee6697e23afefc25ba2aa4df9476b5034bf4))
-- **form-page:** add form page demo ([0b6110a](https://github.com/anncwb/vue-vben-admin/commit/0b6110a8fc92a11df6501346e093246a5abe2b0e))
-- **from:** add required in schema ([2859067](https://github.com/anncwb/vue-vben-admin/commit/28590676214b1c5fdbf6878e40da45a7bc0c5874))
-- **tinymce:** add line height ([#58](https://github.com/anncwb/vue-vben-admin/issues/58)) ([adffefd](https://github.com/anncwb/vue-vben-admin/commit/adffefd702688ba5fa8c5df616b8f3685a0fb778))
-- **tinymce:** add rich editor ([c0e4c9e](https://github.com/anncwb/vue-vben-admin/commit/c0e4c9e5a55524840e9598d24d84dcada8b57102))
-- **transition:** add transition comp and demo ([3713487](https://github.com/anncwb/vue-vben-admin/commit/3713487c85f4b512ab3e13fcb4c89a14b9ee8d50))
-- **trigger:** add trigger config ([4f6b65b](https://github.com/anncwb/vue-vben-admin/commit/4f6b65b8a1b7e694718b4aa42aced1e59e90ec9e))
-- the Button component extends the and attributes ([8f5016e](https://github.com/anncwb/vue-vben-admin/commit/8f5016e3f3476539a763162ea235cf2aac230eea))
-- the production environment can be dynamically configured ([bb3b8f8](https://github.com/anncwb/vue-vben-admin/commit/bb3b8f817de15d336968354515649f7142cd5683))
-- **workbench:** add workbench page ([1cd75fc](https://github.com/anncwb/vue-vben-admin/commit/1cd75fcf5ba7a3114399db8f22cf8eb6f2e4d783))
-
-### Performance Improvements
-
-- **setting-drawer:** perf setting-drawer ([ed41e50](https://github.com/anncwb/vue-vben-admin/commit/ed41e5082fd2e6109c2ad3ff77199d15ac14342a))
-- **tabs:** perf multiple-tabs ([f81c401](https://github.com/anncwb/vue-vben-admin/commit/f81c401959dda4b8d568c00786b691c21abbb59c))
-- **tabs:** perf multiple-tabs ([27e50b4](https://github.com/anncwb/vue-vben-admin/commit/27e50b47479af8eaeb4be020aeb0fcbdb4308295))
-- Add the style injection of the top row to the form. ([#102](https://github.com/anncwb/vue-vben-admin/issues/102)) ([b9d3d60](https://github.com/anncwb/vue-vben-admin/commit/b9d3d60e0f8fe1166a0addcc8295365cbe65a7bf))
-- adjust the logic of ([b350098](https://github.com/anncwb/vue-vben-admin/commit/b350098f442be1b8143b44e09e735179676f755c))
-- code style ([f96d6b2](https://github.com/anncwb/vue-vben-admin/commit/f96d6b221c7ad97e0ed80250acb192b6be92c4a6))
-- enhance openModal and openDrawer ([b6d5e5c](https://github.com/anncwb/vue-vben-admin/commit/b6d5e5c96f89c31d4df11e71f2d4cb5ecf8f0b92))
-- layout code adjustment ([4392917](https://github.com/anncwb/vue-vben-admin/commit/439291746fe237410140575be2a634a74e8ef382))
-- layout style optimization ([7702832](https://github.com/anncwb/vue-vben-admin/commit/77028321816f00799cc3f70d3f0d6bde27c34522))
-- mobile style adjustment ([1899146](https://github.com/anncwb/vue-vben-admin/commit/1899146f71ab2020dc01bd84b282e6b614ad3d57))
-- optimize lazy loading components ([87fcd0d](https://github.com/anncwb/vue-vben-admin/commit/87fcd0d21ea78ce916a4f2b9cdcceda5e7866eee))
-- optimize multiple-tab switching effect ([f2bdf0b](https://github.com/anncwb/vue-vben-admin/commit/f2bdf0b86dd818f3cc59fdb0c55eb1b53b222f7f))
-- optimize preview and ContextMenu functions ([bbfb06f](https://github.com/anncwb/vue-vben-admin/commit/bbfb06f0ad1e345b0e716da730acaf7c0a778e4b))
-- optimize settingDrawer code ([4ff6b73](https://github.com/anncwb/vue-vben-admin/commit/4ff6b73c2bb57764db2bcd8212d82f028e25e36d))
-- optimize tab switching speed ([4baf90a](https://github.com/anncwb/vue-vben-admin/commit/4baf90a5c87493939830129efaa146624faabbcc))
-- optimize the size of the first screen ([968f791](https://github.com/anncwb/vue-vben-admin/commit/968f791f4b7112730813c8c990379051c3f8340d))
-- optimized page switching effect ([5f2a927](https://github.com/anncwb/vue-vben-admin/commit/5f2a927cd50a5efe4c9576528d944553c5243277))
-- perf component ([73c8e0c](https://github.com/anncwb/vue-vben-admin/commit/73c8e0c1583afa83353ff36d1d9ec847776d3016))
-- perf context menu ([6e03e05](https://github.com/anncwb/vue-vben-admin/commit/6e03e05032474c858151b3835eb5318486a56729))
-- perf excel comp code ([eecde4c](https://github.com/anncwb/vue-vben-admin/commit/eecde4c7e947cf392dbd8eace2db8ed9aea417b1))
-- perf loading logic ([f4621cc](https://github.com/anncwb/vue-vben-admin/commit/f4621cc66411d8ff4ca852b548a79cd3da9be1ce))
-- perf menu ([88f4a3f](https://github.com/anncwb/vue-vben-admin/commit/88f4a3f02a0c0f35953c93427fe700d414b6ec50))
-- perf menu mini style ([66acb21](https://github.com/anncwb/vue-vben-admin/commit/66acb21edda3fcac61849c7c03c6b396992d8d06))
-- perf modal and drawer ([81baf1d](https://github.com/anncwb/vue-vben-admin/commit/81baf1d5c4606aab83c0e65397ce4b090c2e4e08))
-- tsx use useExpose ([9bb7514](https://github.com/anncwb/vue-vben-admin/commit/9bb751475dc212d4e2829468cf1a11502137071e))
-- **button:** delete the button component useless code ([bdce845](https://github.com/anncwb/vue-vben-admin/commit/bdce84537aa58b9507744a3a14c8d598e88e95fc))
-- **drawer:** perf drawer ([28f7f7b](https://github.com/anncwb/vue-vben-admin/commit/28f7f7bf7f3ae49759b44395f6b06c2c61359d04))
-- **lazy-container:** optimize lazyContainer code ([0f4b847](https://github.com/anncwb/vue-vben-admin/commit/0f4b847d69e90e5bbb4fb0883fb5ea1dd1daf1e7))
-- **logo:** optimize logo code ([e79e540](https://github.com/anncwb/vue-vben-admin/commit/e79e540b48be80fb08b67a99e64bede3816b2c9e))
-- **menu:** optimize layout menu ([96c10d6](https://github.com/anncwb/vue-vben-admin/commit/96c10d6c0fb46b56b0e74e09a8e20bcfc9f54cde))
-- **modal:** optimize table embedding height calculation problem ([9abf176](https://github.com/anncwb/vue-vben-admin/commit/9abf1763c78ead7de21ece6d328337a6a1da5f05))
-- **strength-meter:** modify name word ([#38](https://github.com/anncwb/vue-vben-admin/issues/38)) ([19477cd](https://github.com/anncwb/vue-vben-admin/commit/19477cd980661ace337ec6e3295f76c44d05763c))
-- **table:** optimize effect performance ([a1ffb61](https://github.com/anncwb/vue-vben-admin/commit/a1ffb61804940f1ebaea741b0df41485ad95d5f2))
-- **upload:** improve upload component ([661db0c](https://github.com/anncwb/vue-vben-admin/commit/661db0c767772bb7a30da9d3eeaf2b47858ccf0b))
-- **use-message:** fix typo ([bcab4b7](https://github.com/anncwb/vue-vben-admin/commit/bcab4b774d384a5de9b87a0c700a9937c79eb5cd))
-- perf TableAction ([4b384b1](https://github.com/anncwb/vue-vben-admin/commit/4b384b137c58428f0cf28621e183250da4576479))
-- performance optimization ([70fba7e](https://github.com/anncwb/vue-vben-admin/commit/70fba7ecac80a1cd8ec08052e8265641f2b56204))
-- pwa icon ([404c73d](https://github.com/anncwb/vue-vben-admin/commit/404c73de450c165ffe623ca2969322bae1786a73))
-- remove optional chain ([e034d1b](https://github.com/anncwb/vue-vben-admin/commit/e034d1bacc5501a83188d20129951422bc127e3b))
-- review tinymce code ([f75425d](https://github.com/anncwb/vue-vben-admin/commit/f75425d13bc9f6003021fd4b5d6451ae096c09b7))
-- set cache default time ([c620f82](https://github.com/anncwb/vue-vben-admin/commit/c620f8279f1056ddab84b3907fb50b3af4fe9247))
-- tabs optimization ([6e40051](https://github.com/anncwb/vue-vben-admin/commit/6e4005111db58ca10f10e9aa4bca4aec57363736))
-- the existing tab switching no longer displays animation and processbar ([e9536b5](https://github.com/anncwb/vue-vben-admin/commit/e9536b5b7ccc5f667496c4ec7ab838738f804a71))
-- the routeModule can ignore the layou configuration without writing ([4c658f4](https://github.com/anncwb/vue-vben-admin/commit/4c658f4868c7df6e0b8f18728c5d5ae53b04448a))
-- update form types ([a0c3197](https://github.com/anncwb/vue-vben-admin/commit/a0c3197454b59a231cf6d27048b2e9c0bd7bf77f))
-
-### Reverts
-
-- **table:** revert form type annotation ([261936b](https://github.com/anncwb/vue-vben-admin/commit/261936b117d1d261ecb8fafc0f6c839cb2913918))
-
-# [2.0.0-beta.3](https://github.com/anncwb/vue-vben-admin/compare/2.0.0-beta.2...2.0.0-beta.3) (2020-10-07)
-
-### Features
-
-- **setting:** add openNProgress setting ([67d0ff0](https://github.com/anncwb/vue-vben-admin/commit/67d0ff0e251f584883d50fd71b2413b6ca94729d))
-- **table:** add table component ([faf3f46](https://github.com/anncwb/vue-vben-admin/commit/faf3f4602ecf4b16ff57994668edc8433a43945d))
-
-# [2.0.0-beta.2](https://github.com/anncwb/vue-vben-admin/compare/2.0.0-beta.1...2.0.0-beta.2) (2020-10-07)
-
-### Features
-
-- **img-preview:** add imgPreview componnt ([e6093aa](https://github.com/anncwb/vue-vben-admin/commit/e6093aa4f48f3b3c16b1640c56512e6e3cf84c4b))
-
-# [2.0.0-beta.1](https://github.com/anncwb/vue-vben-admin/compare/2f268ca8f43d98687ffd809e2c1d140d29033bd6...2.0.0-beta.1) (2020-09-30)
-
-### Bug Fixes
-
-- fix form,transition,build bug ([2f268ca](https://github.com/anncwb/vue-vben-admin/commit/2f268ca8f43d98687ffd809e2c1d140d29033bd6))
+- update useForm hook ([8a958cd](https://github.com/kailong321200875/vue-element-plus-admin/commit/8a958cd71d9afbd32b243aac0814bfa3281477cd))
+
+### Code Refactoring
+
+- 💡 综合实例查看详情重构 ([9c26edd](https://github.com/kailong321200875/vue-element-plus-admin/commit/9c26edd5d599b5fb5a832fb547e3d95b6bfa9a98))
+
+### Build System
+
+- Add conventional-changelog-cli plugin ([384485f](https://github.com/kailong321200875/vue-element-plus-admin/commit/384485f6994c6ac33abee506508ab9d35fe658a9))
+- Add conventional-github-releaser plugin ([3cd5c71](https://github.com/kailong321200875/vue-element-plus-admin/commit/3cd5c71899dde3ac3910aef0180d8b39fad51f1b))
+- Add standard-version plugin ([110ce25](https://github.com/kailong321200875/vue-element-plus-admin/commit/110ce257841648e29b247a0338624a188694b6e9))
+- Add vite-plugin-html plugin ([d5b6e2a](https://github.com/kailong321200875/vue-element-plus-admin/commit/d5b6e2a7770eb59aa32839f69da5be37397e3538))
+- delete useless plugin ([c756761](https://github.com/kailong321200875/vue-element-plus-admin/commit/c756761dfc3200156acb228474d3539197ef413b))
+- **pinia:** Add pinia ([2040500](https://github.com/kailong321200875/vue-element-plus-admin/commit/2040500af14d277a79f01eba5eca2a440203cecf))
+- **types:** Add vue-types ([2c41826](https://github.com/kailong321200875/vue-element-plus-admin/commit/2c41826c572268b74a663a6966c548628ac7e280))
+- **unplugin-auto-import:** Delete unplugin-auto-import ([2040500](https://github.com/kailong321200875/vue-element-plus-admin/commit/2040500af14d277a79f01eba5eca2a440203cecf))
+- **unplugin-vue-components:** Delete unplugin-vue-components ([2040500](https://github.com/kailong321200875/vue-element-plus-admin/commit/2040500af14d277a79f01eba5eca2a440203cecf))
+- update plugin ([8d08bc6](https://github.com/kailong321200875/vue-element-plus-admin/commit/8d08bc6fc92258674abdd12834eaa4530ec276dd))
+- update plugins ([3c58042](https://github.com/kailong321200875/vue-element-plus-admin/commit/3c580420a20121845f02c0dd3caca5a74f06a89d))
+- **vite-plugin-style-import:** Add vite-plugin-style-import ([2040500](https://github.com/kailong321200875/vue-element-plus-admin/commit/2040500af14d277a79f01eba5eca2a440203cecf))
+- **vite-plugin-vue-setup-extend:** Delete vite-plugin-vue-setup-extend ([2040500](https://github.com/kailong321200875/vue-element-plus-admin/commit/2040500af14d277a79f01eba5eca2a440203cecf))
+- 修改 vite 配置 ([9991fb4](https://github.com/kailong321200875/vue-element-plus-admin/commit/9991fb4e5c46b9e4016beaade7232e28dc272797))
+- 设置多语 �([45e879e](https://github.com/kailong321200875/vue-element-plus-admin/commit/45e879edeef677b6aa1d2cfe4dd8dc5b76c83c59))
+- 配置代码格式 �[ffdb556](https://github.com/kailong321200875/vue-element-plus-admin/commit/ffdb556a096db247306eae8eecc1b85718314cdd))
+- 集成基础配置 ([ced99de](https://github.com/kailong321200875/vue-element-plus-admin/commit/ced99de9b113a01d9d0b190f6d2c6adc983a3102))
+- 集成基础配置 ([5dbcf23](https://github.com/kailong321200875/vue-element-plus-admin/commit/5dbcf2397ccdec80c695c113f49e8aa9bb6d012c))
+
+### Styling
+
+- 💄 优化 layout 样式 ([37ec378](https://github.com/kailong321200875/vue-element-plus-admin/commit/37ec378f0b2bf83d73ddf0e472aada6aab248f09))
+- 💄 微调样式 ([612b486](https://github.com/kailong321200875/vue-element-plus-admin/commit/612b48673c3389779ccfdd161e2ca80b21d265b2))
+- Add elNamespace ([d847ccb](https://github.com/kailong321200875/vue-element-plus-admin/commit/d847ccb098edc72fe55c1f8459bf149453a3b73d))
+- **appStore:** code style ([641ed68](https://github.com/kailong321200875/vue-element-plus-admin/commit/641ed684fefeb52e2f91e8baab7b610fc74c8d88))
+- **Breadcrumb:** fix Breadcrumb style bug ([8755c86](https://github.com/kailong321200875/vue-element-plus-admin/commit/8755c862b837d90a25b27c01fabe64abf81fc4a2))
+- **breadcrumb:** update disabled text color ([1522e92](https://github.com/kailong321200875/vue-element-plus-admin/commit/1522e925bae37cb9df4de2252d81f717788f4537))
+- change function to arrow function ([4612e55](https://github.com/kailong321200875/vue-element-plus-admin/commit/4612e5544bcd626d686972e5cb874d0aa4af08b3))
+- delete console.log ([49a6bfe](https://github.com/kailong321200875/vue-element-plus-admin/commit/49a6bfe9d81a40e2f5f15b68d7289e1787e89b54))
+- **Icon:** delete default color ([95a2bd8](https://github.com/kailong321200875/vue-element-plus-admin/commit/95a2bd884dd9846a56cda7c4c3ee4a41ce631b7c))
+- level demo style beautification ([dbf3b0f](https://github.com/kailong321200875/vue-element-plus-admin/commit/dbf3b0f5a333ccef524bbac825035b0c6dc78ec9))
+- lint code style ([b292419](https://github.com/kailong321200875/vue-element-plus-admin/commit/b2924190b8996e8208f951e3fadbcb09baddb8df))
+- **Login:** update login styles ([eb68f1d](https://github.com/kailong321200875/vue-element-plus-admin/commit/eb68f1d919e13c07b7d200e9aec53804b2a6dc7b))
+- modify menu z-index attribute ([0d7a778](https://github.com/kailong321200875/vue-element-plus-admin/commit/0d7a7781ce0b5e39f01355d3acdb3f364cabf76d))
+- **TagView:** Vertical center tag ([41281c4](https://github.com/kailong321200875/vue-element-plus-admin/commit/41281c4d541a2744e5df5dff2764cc85465b6a4c))
+
+### Types
+
+- add ImportMetaEnv ([38e0257](https://github.com/kailong321200875/vue-element-plus-admin/commit/38e0257487e4138a74ad1bb4ee4ba004abcfaa12))
+- Adding BfFrom Component types ([8e036f5](https://github.com/kailong321200875/vue-element-plus-admin/commit/8e036f54b56ce8521eb8ec4b7ca21aa9c24f43f2))
+- **BfForm:** Adding BfForm types ([bc9195b](https://github.com/kailong321200875/vue-element-plus-admin/commit/bc9195b21eeb79629a82a04d90e2ac5aa6592928))
+- **BfForm:** Adding BfForm types ([184b468](https://github.com/kailong321200875/vue-element-plus-admin/commit/184b468cd41dcd1cdae11477b9ee2d6e17de1481))
+- **BfForm:** Adding BfForm types ([58cb24d](https://github.com/kailong321200875/vue-element-plus-admin/commit/58cb24d9f8a50be80b5ea793387d582a77a59137))
+- delete useless types ([3fc79c0](https://github.com/kailong321200875/vue-element-plus-admin/commit/3fc79c0ae7acd0929f47e33f96c8d45a90d8f762))
+- **VForm:** Adding VForm types ([7528fe6](https://github.com/kailong321200875/vue-element-plus-admin/commit/7528fe6da60368213d28d9f1b6310d02d3d53282))
+
+### Docs
+
+- ✏️ 修改 readme ([8edb2a3](https://github.com/kailong321200875/vue-element-plus-admin/commit/8edb2a3493dca975036859b5d2c52afaa91f5dbb))
+- ✏️ 更新 readme ([62eeb55](https://github.com/kailong321200875/vue-element-plus-admin/commit/62eeb55330dd4af2a46801c7a19f38a3ef312bbf))
+- Add README.md ([21dcf88](https://github.com/kailong321200875/vue-element-plus-admin/commit/21dcf88ba31957bbdb50c6207d010650daab70fc))
+- Error modifying readme name ([25d5c84](https://github.com/kailong321200875/vue-element-plus-admin/commit/25d5c84e92e68aa72362a14f55aacd946fa5b1b2))
+- update description ([be6ff98](https://github.com/kailong321200875/vue-element-plus-admin/commit/be6ff9899b25cc00519210950d27ee56ac5112e6))
+- update description ([c15aa87](https://github.com/kailong321200875/vue-element-plus-admin/commit/c15aa8755c9c937512c7380a6d03c4d877ef4d87))
+- update README ([27979dc](https://github.com/kailong321200875/vue-element-plus-admin/commit/27979dc6def7d9d8cea62a08d49a6c828be2258b))
+- update README.md ([53201ae](https://github.com/kailong321200875/vue-element-plus-admin/commit/53201ae97a425714871d99e8847a3672ba0d389f))
+- update README.md ([c11823a](https://github.com/kailong321200875/vue-element-plus-admin/commit/c11823abd8a033e14b4c20d17ac941195d39bcfe))
+- 修改 README ([b79a567](https://github.com/kailong321200875/vue-element-plus-admin/commit/b79a56753df55976e749c4494266df052d315416))

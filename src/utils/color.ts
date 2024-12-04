@@ -5,7 +5,7 @@
  * @param   String  color   十六进制颜色值
  * @return  Boolean
  */
-export function isHexColor(color: string) {
+export const isHexColor = (color: string) => {
   const reg = /^#([0-9a-fA-F]{3}|[0-9a-fA-f]{6})$/
   return reg.test(color)
 }
@@ -19,7 +19,7 @@ export function isHexColor(color: string) {
  * @param g
  * @param b
  */
-export function rgbToHex(r: number, g: number, b: number) {
+export const rgbToHex = (r: number, g: number, b: number) => {
   // tslint:disable-next-line:no-bitwise
   const hex = ((r << 16) | (g << 8) | b).toString(16)
   return '#' + new Array(Math.abs(hex.length - 7)).join('0') + hex
@@ -30,7 +30,7 @@ export function rgbToHex(r: number, g: number, b: number) {
  * @param {string} hex The color to transform
  * @returns The RGB representation of the passed color
  */
-export function hexToRGB(hex: string) {
+export const hexToRGB = (hex: string, opacity?: number) => {
   let sHex = hex.toLowerCase()
   if (isHexColor(hex)) {
     if (sHex.length === 4) {
@@ -44,12 +44,14 @@ export function hexToRGB(hex: string) {
     for (let i = 1; i < 7; i += 2) {
       sColorChange.push(parseInt('0x' + sHex.slice(i, i + 2)))
     }
-    return 'RGB(' + sColorChange.join(',') + ')'
+    return opacity
+      ? 'RGBA(' + sColorChange.join(',') + ',' + opacity + ')'
+      : 'RGB(' + sColorChange.join(',') + ')'
   }
   return sHex
 }
 
-export function colorIsDark(color: string) {
+export const colorIsDark = (color: string) => {
   if (!isHexColor(color)) return
   const [r, g, b] = hexToRGB(color)
     .replace(/(?:\(|\)|rgb|RGB)*/g, '')
@@ -64,12 +66,12 @@ export function colorIsDark(color: string) {
  * @param {number} amount The amount to change the color by
  * @returns {string} The HEX representation of the processed color
  */
-export function darken(color: string, amount: number) {
+export const darken = (color: string, amount: number) => {
   color = color.indexOf('#') >= 0 ? color.substring(1, color.length) : color
   amount = Math.trunc((255 * amount) / 100)
   return `#${subtractLight(color.substring(0, 2), amount)}${subtractLight(
     color.substring(2, 4),
-    amount,
+    amount
   )}${subtractLight(color.substring(4, 6), amount)}`
 }
 
@@ -79,12 +81,12 @@ export function darken(color: string, amount: number) {
  * @param {number} amount The amount to change the color by
  * @returns {string} The processed color represented as HEX
  */
-export function lighten(color: string, amount: number) {
+export const lighten = (color: string, amount: number) => {
   color = color.indexOf('#') >= 0 ? color.substring(1, color.length) : color
   amount = Math.trunc((255 * amount) / 100)
   return `#${addLight(color.substring(0, 2), amount)}${addLight(
     color.substring(2, 4),
-    amount,
+    amount
   )}${addLight(color.substring(4, 6), amount)}`
 }
 
@@ -95,7 +97,7 @@ export function lighten(color: string, amount: number) {
  * @param {number} amount The amount to change the color by
  * @returns {string} The processed part of the color
  */
-function addLight(color: string, amount: number) {
+const addLight = (color: string, amount: number) => {
   const cc = parseInt(color, 16) + amount
   const c = cc > 255 ? 255 : cc
   return c.toString(16).length > 1 ? c.toString(16) : `0${c.toString(16)}`
@@ -107,7 +109,7 @@ function addLight(color: string, amount: number) {
  * @param {number} g green
  * @param {number} b blue
  */
-function luminanace(r: number, g: number, b: number) {
+const luminanace = (r: number, g: number, b: number) => {
   const a = [r, g, b].map((v) => {
     v /= 255
     return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4)
@@ -120,7 +122,7 @@ function luminanace(r: number, g: number, b: number) {
  * @param {string} rgb1 rgb color 1
  * @param {string} rgb2 rgb color 2
  */
-function contrast(rgb1: string[], rgb2: number[]) {
+const contrast = (rgb1: string[], rgb2: number[]) => {
   return (
     (luminanace(~~rgb1[0], ~~rgb1[1], ~~rgb1[2]) + 0.05) /
     (luminanace(rgb2[0], rgb2[1], rgb2[2]) + 0.05)
@@ -131,7 +133,7 @@ function contrast(rgb1: string[], rgb2: number[]) {
  * Determines what the best text color is (black or white) based con the contrast with the background
  * @param hexColor - Last selected color by the user
  */
-export function calculateBestTextColor(hexColor: string) {
+export const calculateBestTextColor = (hexColor: string) => {
   const rgbColor = hexToRGB(hexColor.substring(1))
   const contrastWithBlack = contrast(rgbColor.split(','), [0, 0, 0])
 
@@ -144,8 +146,27 @@ export function calculateBestTextColor(hexColor: string) {
  * @param {number} amount The amount to change the color by
  * @returns {string} The processed part of the color
  */
-function subtractLight(color: string, amount: number) {
+const subtractLight = (color: string, amount: number) => {
   const cc = parseInt(color, 16) - amount
   const c = cc < 0 ? 0 : cc
   return c.toString(16).length > 1 ? c.toString(16) : `0${c.toString(16)}`
+}
+
+/**
+ * Mixes two colors.
+ *
+ * @param {string} color1 - The first color, should be a 6-digit hexadecimal color code starting with `#`.
+ * @param {string} color2 - The second color, should be a 6-digit hexadecimal color code starting with `#`.
+ * @param {number} [weight=0.5] - The weight of color1 in the mix, should be a number between 0 and 1, where 0 represents 100% of color2, and 1 represents 100% of color1.
+ * @returns {string} The mixed color, a 6-digit hexadecimal color code starting with `#`.
+ */
+export const mix = (color1: string, color2: string, weight: number = 0.5): string => {
+  let color = '#'
+  for (let i = 0; i <= 2; i++) {
+    const c1 = parseInt(color1.substring(1 + i * 2, 3 + i * 2), 16)
+    const c2 = parseInt(color2.substring(1 + i * 2, 3 + i * 2), 16)
+    const c = Math.round(c1 * weight + c2 * (1 - weight))
+    color += c.toString(16).padStart(2, '0')
+  }
+  return color
 }

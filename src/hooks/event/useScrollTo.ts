@@ -1,11 +1,11 @@
-import { isFunction, isUnDef } from '/@/utils/is'
 import { ref, unref } from 'vue'
 
 export interface ScrollToParams {
-  el: any
+  el: HTMLElement
   to: number
+  position: string
   duration?: number
-  callback?: () => any
+  callback?: () => void
 }
 
 const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
@@ -16,42 +16,45 @@ const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
   t--
   return (-c / 2) * (t * (t - 2) - 1) + b
 }
-const move = (el: HTMLElement, amount: number) => {
-  el.scrollTop = amount
+const move = (el: HTMLElement, position: string, amount: number) => {
+  el[position] = amount
 }
 
-const position = (el: HTMLElement) => {
-  return el.scrollTop
-}
-export function useScrollTo({ el, to, duration = 500, callback }: ScrollToParams) {
+export function useScrollTo({
+  el,
+  position = 'scrollLeft',
+  to,
+  duration = 500,
+  callback
+}: ScrollToParams) {
   const isActiveRef = ref(false)
-  const start = position(el)
+  const start = el[position]
   const change = to - start
   const increment = 20
   let currentTime = 0
-  duration = isUnDef(duration) ? 500 : duration
 
-  const animateScroll = function () {
+  function animateScroll() {
     if (!unref(isActiveRef)) {
       return
     }
     currentTime += increment
     const val = easeInOutQuad(currentTime, start, change, duration)
-    move(el, val)
+    move(el, position, val)
     if (currentTime < duration && unref(isActiveRef)) {
       requestAnimationFrame(animateScroll)
     } else {
-      if (callback && isFunction(callback)) {
+      if (callback) {
         callback()
       }
     }
   }
-  const run = () => {
+
+  function run() {
     isActiveRef.value = true
     animateScroll()
   }
 
-  const stop = () => {
+  function stop() {
     isActiveRef.value = false
   }
 

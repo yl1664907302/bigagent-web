@@ -1,42 +1,206 @@
+import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import type { App } from 'vue'
+import { Layout } from '@/utils/routerHelper'
+import { useI18n } from '@/hooks/web/useI18n'
 
-import { createRouter, createWebHashHistory } from 'vue-router'
-import { basicRoutes } from './routes'
+const { t } = useI18n()
 
-// 白名单应该包含基本静态路由
-const WHITE_NAME_LIST: string[] = []
-const getRouteNames = (array: any[]) =>
-  array.forEach((item) => {
-    WHITE_NAME_LIST.push(item.name)
-    getRouteNames(item.children || [])
-  })
-getRouteNames(basicRoutes)
+export const constantRouterMap: AppRouteRecordRaw[] = [
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/alertmanger',
+    name: 'Root',
+    meta: {
+      hidden: true
+    }
+  },
+  {
+    path: '/redirect',
+    component: Layout,
+    name: 'Redirect',
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        name: 'Redirect',
+        component: () => import('@/views/Redirect/Redirect.vue'),
+        meta: {}
+      }
+    ],
+    meta: {
+      hidden: true,
+      noTagsView: true
+    }
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/Login/Login.vue'),
+    name: 'Login',
+    meta: {
+      hidden: true,
+      title: t('router.login'),
+      noTagsView: true
+    }
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/Error/404.vue'),
+    name: 'NoFind',
+    meta: {
+      hidden: true,
+      title: '404',
+      noTagsView: true
+    }
+  }
+]
 
-// app router
-// 创建一个可以被 Vue 应用程序使用的路由实例
-export const router = createRouter({
-  // 创建一个 hash 历史记录。
-  history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
-  // 应该添加到路由的初始路由列表。
-  routes: basicRoutes as unknown as RouteRecordRaw[],
-  // 是否应该禁止尾部斜杠。默认为假
+export const asyncRouterMap: AppRouteRecordRaw[] = [
+  // {
+  //   path: '/level',
+  //   component: Layout,
+  //   redirect: '/level/menu1/menu1-1/menu1-1-1',
+  //   name: 'Level',
+  //   meta: {
+  //     title: t('router.level'),
+  //     icon: 'carbon:skill-level-advanced'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'menu1',
+  //       name: 'Menu1',
+  //       component: getParentLayout(),
+  //       redirect: '/level/menu1/menu1-1/menu1-1-1',
+  //       meta: {
+  //         title: t('router.menu1')
+  //       },
+  //       children: [
+  //         {
+  //           path: 'menu1-1',
+  //           name: 'Menu11',
+  //           component: getParentLayout(),
+  //           redirect: '/level/menu1/menu1-1/menu1-1-1',
+  //           meta: {
+  //             title: t('router.menu11'),
+  //             alwaysShow: true
+  //           },
+  //           children: [
+  //             {
+  //               path: 'menu1-1-1',
+  //               name: 'Menu111',
+  //               component: () => import('@/views/Level/Menu111.vue'),
+  //               meta: {
+  //                 title: t('router.menu111')
+  //               }
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           path: 'menu1-2',
+  //           name: 'Menu12',
+  //           component: () => import('@/views/Level/Menu12.vue'),
+  //           meta: {
+  //             title: t('router.menu12')
+  //           }
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       path: 'menu2',
+  //       name: 'Menu2',
+  //       component: () => import('@/views/Level/Menu2.vue'),
+  //       meta: {
+  //         title: t('router.menu2')
+  //       }
+  //     }
+  //   ]
+  // },
+  {
+    path: '/config',
+    component: Layout,
+    redirect: '/config/first',
+    name: 'Config',
+    meta: {
+      title: t('router.alertmanger')
+    },
+    children: [
+      {
+        path: 'first',
+        name: 'First',
+        component: () => import('@/views/Config/index.vue'),
+        meta: {
+          title: t('router.first')
+        }
+      }
+      // {
+      //   path: 'show',
+      //   name: 'Show',
+      //   component: () => import('@/views/main/2.vue'),
+      //   meta: {
+      //     title: t('router.show')
+      //   }
+      // },
+      // {
+      //   path: 'status',
+      //   name: 'Status',
+      //   component: () => import('@/views/main/detail.vue'),
+      //   meta: {
+      //     hidden: true,
+      //     title: t('router.status')
+      //   }
+      // }
+    ]
+  }
+  // {
+  //   path: 'status',
+  //   name: 'Status',
+  //   component: () => import('@/views/main/detail.vue'),
+  //   meta: {
+  //     title: t('router.status'),
+  //     showInSidebar: false
+  //   }
+  // }
+  // {
+  //   path: '/detail',
+  //   redirect: '/detail/status',
+  //   name: 'Detail',
+  //   component: Layout,
+  //   meta: {
+  //     title: t('router.detail')
+  //   },
+  //   children: [
+  //     {
+  //       path: 'status',
+  //       name: 'Status',
+  //       component: () => import('@/views/main/detail.vue'),
+  //       meta: {
+  //         title: t('router.status')
+  //         // showInSidebar: false
+  //       }
+  //     }
+  //   ]
+  // }
+]
+
+const router = createRouter({
+  history: createWebHashHistory(),
   strict: true,
-  scrollBehavior: () => ({ left: 0, top: 0 }),
+  routes: constantRouterMap as RouteRecordRaw[],
+  scrollBehavior: () => ({ left: 0, top: 0 })
 })
 
-// reset router
-export function resetRouter() {
+export const resetRouter = (): void => {
+  const resetWhiteNameList = ['Redirect', 'Login', 'NoFind', 'Root']
   router.getRoutes().forEach((route) => {
     const { name } = route
-    if (name && !WHITE_NAME_LIST.includes(name as string)) {
+    if (name && !resetWhiteNameList.includes(name as string)) {
       router.hasRoute(name) && router.removeRoute(name)
     }
   })
 }
 
-// config router
-// 配置路由器
-export function setupRouter(app: App<Element>) {
+export const setupRouter = (app: App<Element>) => {
   app.use(router)
 }
+
+export default router

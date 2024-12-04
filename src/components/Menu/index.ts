@@ -1,3 +1,3 @@
-import BasicMenu from './src/BasicMenu.vue'
+import Menu from './src/Menu.vue'
 
-export { BasicMenu }
+export { Menu }

@@ -1,55 +1,59 @@
-import type { LocaleSetting, LocaleType } from '/#/config'
-
 import { defineStore } from 'pinia'
-import { store } from '/@/store'
+import { store } from '../index'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import en from 'element-plus/es/locale/lang/en'
+import { useStorage } from '@/hooks/web/useStorage'
+import { LocaleDropdownType } from '@/components/LocaleDropdown'
 
-import { LOCALE_KEY } from '/@/enums/cacheEnum'
-import { createLocalStorage } from '/@/utils/cache'
-import { localeSetting } from '/@/settings/localeSetting'
+const { getStorage, setStorage } = useStorage('localStorage')
 
-const ls = createLocalStorage()
-
-const lsLocaleSetting = (ls.get(LOCALE_KEY) || localeSetting) as LocaleSetting
-
+const elLocaleMap = {
+  'zh-CN': zhCn,
+  en: en
+}
 interface LocaleState {
-  localInfo: LocaleSetting
+  currentLocale: LocaleDropdownType
+  localeMap: LocaleDropdownType[]
 }
 
-export const useLocaleStore = defineStore({
-  id: 'app-locale',
-  state: (): LocaleState => ({
-    localInfo: lsLocaleSetting,
-  }),
+export const useLocaleStore = defineStore('locales', {
+  state: (): LocaleState => {
+    return {
+      currentLocale: {
+        lang: getStorage('lang') || 'zh-CN',
+        elLocale: elLocaleMap[getStorage('lang') || 'zh-CN']
+      },
+      // 多语言
+      localeMap: [
+        {
+          lang: 'zh-CN',
+          name: '简体中文'
+        },
+        {
+          lang: 'en',
+          name: 'English'
+        }
+      ]
+    }
+  },
   getters: {
-    getShowPicker(): boolean {
-      return !!this.localInfo?.showPicker
+    getCurrentLocale(): LocaleDropdownType {
+      return this.currentLocale
     },
-    getLocale(): LocaleType {
-      return this.localInfo?.locale ?? 'zh_CN'
-    },
+    getLocaleMap(): LocaleDropdownType[] {
+      return this.localeMap
+    }
   },
   actions: {
-    /**
-     * Set up multilingual information and cache
-     * @param info multilingual info
-     */
-    setLocaleInfo(info: Partial<LocaleSetting>) {
-      this.localInfo = { ...this.localInfo, ...info }
-      ls.set(LOCALE_KEY, this.localInfo)
-    },
-    /**
-     * Initialize multilingual information and load the existing configuration from the local cache
-     */
-    initLocale() {
-      this.setLocaleInfo({
-        ...localeSetting,
-        ...this.localInfo,
-      })
-    },
-  },
+    setCurrentLocale(localeMap: LocaleDropdownType) {
+      // this.locale = Object.assign(this.locale, localeMap)
+      this.currentLocale.lang = localeMap?.lang
+      this.currentLocale.elLocale = elLocaleMap[localeMap?.lang]
+      setStorage('lang', localeMap?.lang)
+    }
+  }
 })
 
-// Need to be used outside the setup
-export function useLocaleStoreWithOut() {
+export const useLocaleStoreWithOut = () => {
   return useLocaleStore(store)
 }
