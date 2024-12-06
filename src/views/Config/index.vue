@@ -1,19 +1,17 @@
 <template>
   <el-table :data="tableData" style="width: 100%" max-height="250">
-    <el-table-column fixed prop="date" label="日期" width="150" />
-    <el-table-column prop="name" label="配置名称" width="120" />
-    <el-table-column prop="state" label="状态" width="120" />
-    <el-table-column prop="city" label="操作角色" width="120" />
-    <el-table-column prop="address" label="范围" width="600" />
-    <el-table-column prop="zip" label="备注" width="120" />
-    <el-table-column fixed="right" label="操作" min-width="120">
+    <el-table-column fixed prop="title" label="配置标题" width="150" />
+    <el-table-column prop="status" label="状态" width="100" />
+    <el-table-column prop="times" label="次数" width="100" />
+    <el-table-column prop="role_name" label="角色" width="120" />
+    <el-table-column prop="ranges" label="范围" width="120" />
+    <el-table-column prop="host" label="主机地址" width="150" />
+    <el-table-column prop="protocol" label="协议" width="100" />
+    <el-table-column prop="port" label="端口" width="100" />
+    <el-table-column prop="details" label="备注" width="150" />
+    <el-table-column fixed="right" label="操作" width="120">
       <template #default="scope">
-        <el-button
-          link
-          type="primary"
-          size="small"
-          @click.prevent="deleteRow(scope.$index)"
-        >
+        <el-button link type="primary" size="small" @click.prevent="pushConf(scope.$index)">
           下发
         </el-button>
       </template>
@@ -25,51 +23,32 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import dayjs from 'dayjs'
 
-const now = new Date()
+import { reactive } from "vue";
 
-const tableData = ref([
-  {
-    date: '2016-05-01',
-    name: '更新配置',
-    state: '已下发',
-    city: 'admin',
-    address: '全部',
-    zip: '无',
-  },
-  {
-    date: '2016-05-02',
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036',
-  },
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036',
-  },
-])
+const tableData =reactive({
+  id: "",
+  title: "",
+  status: "",
+  times: "",
+  role_name: "",
+  details: "",
+  ranges: "",
+  auth_name: "",
+  data_name: "",
+  protocol: "",
+  host: "",
+  port: "",
+  path: "",
+  token: ""
+})
 
-const deleteRow = (index: number) => {
-  tableData.value.splice(index, 1)
+
+
+const pushConf =() =>{
+
 }
 
 const onAddItem = () => {
-  now.setDate(now.getDate() + 1)
-  tableData.value.push({
-    date: dayjs(now).format('YYYY-MM-DD'),
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    zip: 'CA 90036',
-  })
 }
 </script>
