@@ -22,8 +22,6 @@ import type {
   Selectmarkdowntemplate_response,
   UpdateRobot,
   UpdateRobot_response,
-  AgentConfigAdd_response,
-  AgentConfigAdd
 } from './types'
 
 interface RoleParams {
@@ -120,19 +118,20 @@ export const getmarktemplate = (
 
 //bigagent
 // 新增配置文件
-export const addagentconf = (data: AgentConfigAdd): Promise<IResponse<AgentConfigAdd_response>> => {
+export const addagentconf = (data: any): Promise<IResponse<any>> => {
   return request.post({ url: '/v1/add', data,    headers: {
       'Authorization': "123456"
     } })
 }
 
 // 查询配置文件
-export const getagentconf = (params: any): Promise<IResponse<AgentConfigAdd_response>> => {
+export const getagentconf = (params: any): Promise<IResponse<any>> => {
   return request.get({ 
     url: '/v1/get', 
     params,
     headers: {
-      'Authorization': "123456"
-    }
+      'Authorization': "123456",
+      'Content-Type': 'application/json',
+    },
   })
 }
