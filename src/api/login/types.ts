@@ -194,5 +194,5 @@ export type AgentConfigAdd = {
 
 export type AgentConfigAdd_response = {
   data: any,
-  message: string,
+  total: number,
 }

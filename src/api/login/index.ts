@@ -135,3 +135,20 @@ export const getagentconf = (params: any): Promise<IResponse<any>> => {
     },
   })
 }
+
+// 下发配置文件
+export const pushagentconf = (data: any): Promise<IResponse<any>> => {
+  return request.post({ url: '/v1/push', data,    headers: {
+      'Authorization': "123456"
+    } })
+}
+
+// 删除配置文件
+export const delagentconf = (params: any): Promise<IResponse<any>> => {
+  return request.delete({ url: '/v1/del',params,    headers: {
+      'Authorization': "123456",
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'*'
+    }
+  })
+}
