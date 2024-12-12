@@ -47,7 +47,7 @@
                 :loading="loadingStates[row.id]"
                 @click="handleDo(row)"
               >
-                下发
+                下发(ALL)
               </el-button>
               <el-button
                 size="small"
@@ -117,7 +117,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted, h } from "vue";
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { delagentconf, getagentconf, pushagentconf } from "@/api/login";
 import dayjs from 'dayjs' // 需要安装 dayjs
@@ -256,17 +256,20 @@ const handleReset = () => {
 const handleDo = async (row: TableItem) => {
   try {
     await ElMessageBox.confirm(
-      `确认下发配置 "${row.title}" 吗？`,
-      '下发确认',
+      h('div', null, [
+        '确认下发配置 "',
+        row.title,
+        '" 吗？',
+        h('span', { style: { color: 'red' } }, '范围是所有主机！')
+      ]),
       {
+        title: '下发确认',
         confirmButtonText: '确认',
         cancelButtonText: '取消',
         type: 'warning'
       }
     )
-    // 用户点击确认后执行删除
     await PushConfig(row.id)
-    // 可能需要刷新列表
     await fetchTableData()
   } catch (error) {
     // 用户取消或发生错误
@@ -285,9 +288,14 @@ const handleDo = async (row: TableItem) => {
 const handleDel = async (row: TableItem) => {
   try {
     await ElMessageBox.confirm(
-      `确认删除配置 "${row.title}" 吗？`,
-      '删除确认',
+      h('div', null, [
+        '确认删除配置 "',
+        row.title,
+        '" 吗？',
+        h('span', { style: { color: 'red' } }, '删除后无法找回！')
+      ]),
       {
+        title: '删除确认',
         confirmButtonText: '确认',
         cancelButtonText: '取消',
         type: 'warning'

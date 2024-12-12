@@ -29,7 +29,11 @@ interface RoleParams {
 }
 
 export const loginApi = (data: UserType): Promise<IResponse<UserType>> => {
-  return request.post({ url: '/v1/login', data })
+  return request.post({ url: '/v1/login', data,
+    headers: {
+      'Authorization': "123456"
+     } }
+  )
 }
 
 export const loginOutApi = (): Promise<IResponse> => {

@@ -10,7 +10,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
   {
     path: '/',
     component: Layout,
-    redirect: '/alertmanger',
+    redirect: '/config',
     name: 'Root',
     meta: {
       hidden: true
