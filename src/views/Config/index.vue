@@ -13,35 +13,57 @@
         border
         style="width: 100%"
       >
-        <el-table-column prop="id" label="ID" width="80" />
-        <el-table-column prop="title" label="配置标题" />
-        <el-table-column prop="status" label="状态">
+        <el-table-column prop="id" label="ID" min-width="60" />
+        <el-table-column prop="title" label="配置标题" min-width="120" />
+        <el-table-column prop="status" label="状态" min-width="80">
           <template #default="{ row }">
             <el-tag :type="row.status === '有效' ? 'success' : 'danger'">
               {{ row.status }}
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="times" label="次数" />
-        <el-table-column prop="role_name" label="角色" />
-        <el-table-column prop="ranges" label="范围" />
-        <el-table-column label="接口信息">
+        <el-table-column prop="times" label="次数" min-width="80" />
+        <el-table-column prop="role_name" label="角色" min-width="100" />
+        <el-table-column prop="ranges" label="范围" min-width="100" />
+        <el-table-column label="接口信息" min-width="150">
           <template #default="{ row }">
              {{ row.host }}
           </template>
         </el-table-column>
-        <el-table-column prop="auth_name" label="认证方式" />
-        <el-table-column prop="slot_name" label="槽位" />
-        <el-table-column prop="data_name" label="数据格式" />
-        <el-table-column prop="created_at" label="创建时间" width="180">
+        <el-table-column prop="auth_name" label="认证方式" min-width="100" />
+        <el-table-column prop="slot_name" label="槽位" min-width="100" />
+        <el-table-column prop="data_name" label="数据格式" min-width="100" />
+        <el-table-column prop="created_at" label="创建时间" min-width="160">
           <template #default="{ row }">
             {{ formatDate(row.created_at) }}
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="180" fixed="right">
+        <el-table-column label="操作" min-width="180" fixed="right">
           <template #default="{ row }">
-            <el-button type="primary" link @click="handleDo(row)">下发</el-button>
-            <el-button type="danger" link @click="handleDel(row)">删除</el-button>
+            <el-space>
+              <el-button
+                size="small"
+                type="primary"
+                :loading="loadingStates[row.id]"
+                @click="handleDo(row)"
+              >
+                下发
+              </el-button>
+              <el-button
+                size="small"
+                type="warning"
+                @click="handleEdit(row)"
+              >
+                编辑
+              </el-button>
+              <el-button
+                size="small"
+                type="danger"
+                @click="handleDel(row)"
+              >
+                删除
+              </el-button>
+            </el-space>
           </template>
         </el-table-column>
       </el-table>
@@ -62,13 +84,29 @@
       <div>
         <!-- 弹窗表单 -->
         <el-dialog
-          v-model="dialogVisible"
-          :title="dialogTitle"
+          v-model="dialogVisible_add"
+          :title="dialogTitle_add"
           width="50%"
           :close-on-click-modal="false"
           :destroy-on-close="true"
         >
           <ConfigForm
+            @submit="handleSubmit"
+            @reset="handleReset"
+          />
+        </el-dialog>
+      </div>
+      <div>
+        <!-- 编辑表单 -->
+        <el-dialog
+          v-model="dialogVisible_edit"
+          :title="dialogTitle_edit"
+          width="50%"
+          :close-on-click-modal="false"
+          :destroy-on-close="true"
+        >
+          <ConfigForm_edit
+            v-model=currentEditRow
             @submit="handleSubmit"
             @reset="handleReset"
           />
@@ -84,9 +122,12 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { delagentconf, getagentconf, pushagentconf } from "@/api/login";
 import dayjs from 'dayjs' // 需要安装 dayjs
 import ConfigForm from './form.vue'
-var  dialogVisible = ref(false)
-var dialogTitle = ref('新增agent配置')
-
+import ConfigForm_edit from './form_edit.vue'
+import { Delete, Download, Edit } from "@element-plus/icons-vue";
+var  dialogVisible_add = ref(false)
+var dialogTitle_add = ref('新增agent配置')
+var  dialogVisible_edit = ref(false)
+var dialogTitle_edit = ref('编辑agent配置')
 interface TableItem {
   id: number
   title: string
@@ -107,7 +148,11 @@ interface TableItem {
   updated_at: string
 }
 
+// 添加 loading 状态变量
+const loadingStates = ref<{ [key: number]: boolean }>({})
 
+// 编辑框预填值
+const currentEditRow = ref<TableItem | null>(null)
 
 // 表格数据
 const tableData = ref<TableItem[]>([])
@@ -186,9 +231,15 @@ const handleCurrentChange = (val: number) => {
   fetchTableData()
 }
 
-// 表格操作
+// 新增表格操作
 const handleAdd = () => {
-  dialogVisible.value = true
+  dialogVisible_add.value = true
+}
+
+// 编辑表格操作
+const handleEdit = (row) => {
+  currentEditRow.value = { ...row }
+  dialogVisible_edit.value = true
 }
 
 // 添加表单处理函数
@@ -204,10 +255,30 @@ const handleReset = () => {
 
 const handleDo = async (row: TableItem) => {
   try {
-    await PushConfig(row.id)  // 等待下发配置完成
-    await fetchTableData()    // 然后刷新表格数据
+    await ElMessageBox.confirm(
+      `确认下发配置 "${row.title}" 吗？`,
+      '下发确认',
+      {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }
+    )
+    // 用户点击确认后执行删除
+    await PushConfig(row.id)
+    // 可能需要刷新列表
+    await fetchTableData()
   } catch (error) {
-    console.error('配置下发操作失败:', error)
+    // 用户取消或发生错误
+    if (error !== 'cancel') {
+      ElMessage({
+        type: 'error',
+        message: '下发失败：' + error
+      })
+    }
+  }finally {
+    // 清除 loading 状态
+    loadingStates.value[row.id] = false
   }
 }
 

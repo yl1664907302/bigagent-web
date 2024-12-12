@@ -145,10 +145,24 @@ export const pushagentconf = (data: any): Promise<IResponse<any>> => {
 
 // 删除配置文件
 export const delagentconf = (params: any): Promise<IResponse<any>> => {
-  return request.delete({ url: '/v1/del',params,    headers: {
+  return request.delete({
+    url: '/v1/del',
+    params,
+    headers: {
       'Authorization': "123456",
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin':'*'
+    }
+  })
+}
+
+// 编辑配置文件
+export const editagentconf = (data: any): Promise<IResponse<any>> => {
+  return request.put({
+    url: '/v1/edit',
+    data,
+    headers: {
+      'Authorization': "123456",
+      'Content-Type': 'application/json',
     }
   })
 }
