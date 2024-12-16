@@ -117,9 +117,11 @@ export default {
     codePlaceholder: '请输入验证码'
   },
   router: {
+    config: '配置管理',
+    info : 'agent管理',
     detail: '详情',
     status: '状态',
-    alertmanger: 'alertmanger',
+    base : '基础模块',
     show: '所有模块',
     start: '开始',
     first: '配置下发',

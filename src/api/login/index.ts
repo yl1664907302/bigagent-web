@@ -170,3 +170,23 @@ export const editagentconf = (data: any): Promise<IResponse<any>> => {
     }
   })
 }
+
+// 下发指定agent配置
+export const pushagentconfbyhost = (data: any): Promise<IResponse<any>> => {
+  return request.post({ url: '/v1/push_host', data,    headers: {
+      'Authorization': "123456"
+    } })
+}
+
+// 查询agent信息
+export const getagentinfo = (params: any): Promise<IResponse<any>> => {
+  return request.get({
+    url: '/v1/info',
+    params,
+    headers: {
+      'Authorization': "123456",
+      'Content-Type': 'application/json',
+    },
+  })
+}
+

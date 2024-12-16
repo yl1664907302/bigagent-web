@@ -121,7 +121,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     redirect: '/config/first',
     name: 'Config',
     meta: {
-      title: t('router.alertmanger')
+      title: t('router.base')
     },
     children: [
       {
@@ -129,53 +129,34 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         name: 'First',
         component: () => import('@/views/Config/index.vue'),
         meta: {
-          title: t('router.first')
+          title: t('router.config')
         }
-      }
-      // {
-      //   path: 'show',
-      //   name: 'Show',
-      //   component: () => import('@/views/main/2.vue'),
-      //   meta: {
-      //     title: t('router.show')
-      //   }
-      // },
-      // {
-      //   path: 'status',
-      //   name: 'Status',
-      //   component: () => import('@/views/main/detail.vue'),
-      //   meta: {
-      //     hidden: true,
-      //     title: t('router.status')
-      //   }
-      // }
+      },
+          {
+            path: 'info',
+            name: 'Info',
+            component: () => import('@/views/Info/index.vue'),
+            meta: {
+              title: t('router.info')
+            }
+          }
     ]
-  }
+  },
   // {
-  //   path: 'status',
-  //   name: 'Status',
-  //   component: () => import('@/views/main/detail.vue'),
-  //   meta: {
-  //     title: t('router.status'),
-  //     showInSidebar: false
-  //   }
-  // }
-  // {
-  //   path: '/detail',
-  //   redirect: '/detail/status',
-  //   name: 'Detail',
+  //   path: '/info',
   //   component: Layout,
+  //   redirect: '/info/first',
+  //   name: 'Info',
   //   meta: {
-  //     title: t('router.detail')
+  //     title: t('router.alertmanger')
   //   },
   //   children: [
   //     {
-  //       path: 'status',
-  //       name: 'Status',
-  //       component: () => import('@/views/main/detail.vue'),
+  //       path: 'first',
+  //       name: 'First',
+  //       component: () => import('@/views/Info/index.vue'),
   //       meta: {
-  //         title: t('router.status')
-  //         // showInSidebar: false
+  //         title: t('router.first')
   //       }
   //     }
   //   ]
