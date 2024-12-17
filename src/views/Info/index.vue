@@ -49,6 +49,19 @@
 <!--            {{ formatDate(row.created_at) }}-->
 <!--          </template>-->
 <!--        </el-table-column>-->
+        <el-table-column label="操作" min-width="180" fixed="right">
+          <template #default="{ row }">
+            <el-space>
+              <el-button
+                size="small"
+                type="primary"
+                @click="handleDetail(row)"
+              >
+                实时元数据
+              </el-button>
+            </el-space>
+          </template>
+        </el-table-column>
       </el-table>
 
       <!-- 分页区域 -->
@@ -75,19 +88,61 @@
         :selected-hosts="selectedRows"
       />
     </el-dialog>
+    <!-- 添加详情弹窗 -->
+    <el-dialog
+      v-model="detailDialogVisible"
+      :title=display_title_detail
+      width="80%"
+    >
+      <div class="metadata-container">
+        <vue-json-pretty
+          :deep="3"
+          :showSelectController="true"
+          :highlightMouseoverNode="true"
+          path="res"
+          :data="detailData"
+          :height="700"
+          :virtual="true"
+          :show-icon="true"
+          :editable="false"
+          :show-line-number="true"
+        />
+      </div>
+        <el-space>
+          <el-button
+            size="small"
+            type="primary"
+            @click="handleDetail2(detailData.uuid,'stand1')"
+          >
+            标准类型1(默认)
+          </el-button>
+          <el-button
+            size="small"
+            type="primary"
+            @click="handleDetail2(detailData.uuid,'stand2')"
+          >
+            标准类型2
+          </el-button>
+        </el-space>
+    </el-dialog>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, reactive, onMounted, h } from "vue";
 import { ElMessage, ElMessageBox } from "element-plus";
-import dayjs from 'dayjs'
-import { getagentinfo,pushagentconfbyhost} from "@/api/login";
+import { getagentinfo,getagentmetadata} from "@/api/login";
 import ConfigForm from "@/views/Info/form.vue";
+import VueJsonPretty from "vue-json-pretty";
+import "vue-json-pretty/lib/styles.css";
 
 // 弹出
 var  dialogVisible_host = ref(false)
-var  dialogTitle_host = ref("选择配置下发")
+// 详情弹窗相关
+const detailDialogVisible = ref(false)
+const detailData = ref({})
+const display_title_detail =ref("")
+
 // agent 信息
 interface AgentInfo {
   uuid: string
@@ -101,17 +156,6 @@ interface AgentInfo {
   created_at: string
   updated_at: string
 }
-
-// 添加表单处理函数
-const handleSubmit = () => {
-  ElMessage.success('提交成功')
-  fetchTableData()
-}
-
-const handleReset = () => {
-  dialogVisible_host.value = false
-}
-
 // 表格数据
 const tableData = ref<AgentInfo[]>([])
 const tableLoading = ref(false)
@@ -124,10 +168,11 @@ const pagination = reactive({
   total: 0
 })
 
-// 格式化日期
-const formatDate = (date: string) => {
-  return dayjs(date).format('YYYY-MM-DD HH:mm:ss')
-}
+// 元数据配置
+const metadata = reactive({
+  uuid: "",
+  model_name: "stand1"
+})
 
 // 获取状态标签类型
 const getStatusType = (status: string) => {
@@ -141,8 +186,6 @@ const handleSelectionChange = (rows: AgentInfo[]) => {
   selectedRows.value = rows
 }
 
-
-
 // 批量操作
 const handleBatchOperation = () => {
   if (selectedRows.value.length === 0) {
@@ -150,26 +193,6 @@ const handleBatchOperation = () => {
     return
   }
   dialogVisible_host.value = true
-}
-
-// 处理弹窗关闭
-const handleDialogClose = () => {
-  dialogVisible_host.value = false
-}
-
-// 处理配置提交
-const handleConfigSubmit = async (data) => {
-  try {
-    await pushagentconfbyhost({
-      hosts: data.hosts.map(h => h.uuid),
-      config_id: data.id
-    })
-    ElMessage.success('配置下发成功')
-    dialogVisible_host.value = false
-    await fetchTableData()
-  } catch (error) {
-    ElMessage.error('配置下发失败：' + error)
-  }
 }
 
 // 分页处理
@@ -205,6 +228,53 @@ const fetchTableData = async () => {
   }
 }
 
+
+// 获取元数据
+const jsonData = async (uuid) => {
+  try {
+    const params = {
+      uuid: uuid,
+      model_name: metadata.model_name,
+    }
+    const res = await getagentmetadata(params)
+    detailData.value = res.data
+  } catch (error) {
+    console.error('获取元数据失败:', error)
+    ElMessage.error('获取元数据失败，请重试')
+  } finally {
+  }
+}
+
+const jsonData2 = async (uuid,model_name) => {
+  try {
+    const params = {
+      uuid: uuid,
+      model_name: model_name,
+    }
+    const res = await getagentmetadata(params)
+    detailData.value = res.data
+  } catch (error) {
+    console.error('获取元数据失败:', error)
+    ElMessage.error('获取元数据失败，请重试')
+  } finally {
+  }
+}
+
+// 处理详情按钮点击
+const handleDetail2 = (uuid,model_name) => {
+  jsonData2(uuid,model_name)
+  display_title_detail.value = "当前数据模型："+model_name
+  detailDialogVisible.value = true
+}
+
+
+// 处理详情按钮点击
+const handleDetail = (row: AgentInfo) => {
+   jsonData(row.uuid)
+  display_title_detail.value = "当前数据模型："+"stand1"
+  detailDialogVisible.value = true
+}
+
 onMounted(() => {
   fetchTableData()
 })
@@ -225,5 +295,18 @@ onMounted(() => {
   margin-top: 20px;
   display: flex;
   justify-content: flex-end;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.metadata-container {
+  background-color: #f5f7fa;
+  border: 1px solid #e4e7ed;
+  border-radius: 4px;
+  padding: 16px;
+  max-height: 600px;
+  overflow: auto;
 }
 </style>

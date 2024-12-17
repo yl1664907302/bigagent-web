@@ -190,3 +190,14 @@ export const getagentinfo = (params: any): Promise<IResponse<any>> => {
   })
 }
 
+// 查询agent元数据
+export const getagentmetadata = (params: any): Promise<IResponse<any>> => {
+  return request.get({
+    url: '/v1/agent_id',
+    params,
+    headers: {
+      'Authorization': "123456",
+      'Content-Type': 'application/json',
+    },
+  })
+}
