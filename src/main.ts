@@ -1,5 +1,7 @@
 import 'vue/jsx'
 
+import JsonViewer from 'vue-json-viewer'
+
 // 引入unocss
 import '@/plugins/unocss'
 
@@ -61,6 +63,7 @@ const setupAll = async () => {
   app.use(ElementPlus)
   app.use(DatePicker)
   app.use(ArcoVue)
+  app.use(JsonViewer)
   app.mount('#app')
 }
 

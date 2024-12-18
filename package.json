@@ -55,6 +55,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "qrcode": "^1.5.3",
     "qs": "^6.11.2",
+    "tsrpc-browser": "^3.4.16",
     "url": "^0.11.3",
     "vue": "3.4.15",
     "vue-draggable-plus": "^0.3.5",
@@ -122,6 +123,7 @@
     "vite-plugin-purge-icons": "^0.10.0",
     "vite-plugin-style-import": "2.0.0",
     "vite-plugin-svg-icons": "^2.0.1",
+    "vue-json-viewer": "^2.2.22",
     "vue-tsc": "^1.8.27"
   },
   "packageManager": "pnpm@8.1.0",

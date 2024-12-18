@@ -25,6 +25,10 @@
           width="55"
         />
         <el-table-column prop="uuid" label="UUID" min-width="220" />
+        <el-table-column prop="platform" label="平台" min-width="100"/>
+        <el-table-column prop="os" label="操作系统" min-width="100"/>
+        <el-table-column prop="kernel" label="内核版本" min-width="100"/>
+        <el-table-column prop="machine_type" label="机器类型" min-width="100"/>
         <el-table-column prop="net_ip" label="网络IP" min-width="120" />
         <el-table-column prop="hostname" label="主机名" min-width="150" />
         <el-table-column prop="ipv4_first" label="IPv4" min-width="120" />
@@ -153,6 +157,10 @@ interface AgentInfo {
   status: string
   action_detail: string
   grpc_port: string
+  platform: string
+  machine_type:  string,
+  os:           string,
+  kernel: string,
   created_at: string
   updated_at: string
 }
@@ -205,6 +213,77 @@ const handleCurrentChange = (val: number) => {
   pagination.currentPage = val
   fetchTableData()
 }
+
+
+// let socket = null
+//
+// // 初始化 WebSocket
+// const initWebSocket = () => {
+//   try {
+//     socket = new WebSocket('ws://127.0.0.1:8080/v1/info_ws') // 替换为你的 WebSocket 服务地址
+//
+//     // 监听连接打开事件
+//     socket.onopen = () => {
+//       console.log('WebSocket 连接成功')
+//       fetchTableDataViaWebSocket()
+//     }
+//
+//     // 监听收到消息事件
+//     socket.onmessage = (event) => {
+//       const data = JSON.parse(event.data)
+//       if (data.type === 'tableData') {
+//         updateTableData(data.payload)
+//       }
+//     }
+//
+//     // 监听连接关闭事件
+//     socket.onclose = () => {
+//       console.log('WebSocket 已关闭')
+//     }
+//
+//     // 监听连接错误事件
+//     socket.onerror = (error) => {
+//       console.error('WebSocket 错误:', error)
+//       ElMessage.error('WebSocket 连接错误，请检查网络或服务器')
+//     }
+//   } catch (error) {
+//     console.error('初始化 WebSocket 失败:', error)
+//   }
+// }
+//
+// // 使用 WebSocket 获取表格数据
+// const fetchTableDataViaWebSocket = () => {
+//   if (socket && socket.readyState === WebSocket.OPEN) {
+//     const params = {
+//       page: pagination.currentPage,
+//       pageSize: pagination.pageSize
+//     }
+//     socket.send(JSON.stringify({ type: 'fetchTableData', payload: params }))
+//   } else {
+//     console.error('WebSocket 未连接')
+//     ElMessage.error('WebSocket 未连接，请重试')
+//   }
+// }
+//
+// // 更新表格数据
+// const updateTableData = (data) => {
+//   tableLoading.value = true
+//   try {
+//     tableData.value = data.agentInfos || []
+//     if (data.nums !== undefined) {
+//       pagination.total = data.nums
+//     }
+//   } catch (error) {
+//     console.error('更新表格数据失败:', error)
+//     ElMessage.error('更新表格数据失败')
+//   } finally {
+//     tableLoading.value = false
+//   }
+// }
+
+
+
+
 
 // 获取表格数据
 const fetchTableData = async () => {
@@ -276,6 +355,7 @@ const handleDetail = (row: AgentInfo) => {
 }
 
 onMounted(() => {
+  // initWebSocket()
   fetchTableData()
 })
 </script>
