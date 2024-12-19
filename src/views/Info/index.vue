@@ -5,7 +5,7 @@
       <div class="operation-area">
         <el-button
           type="primary"
-          :disabled="!selectedRows.length"
+          :disabled="!selectedData.length"
           @click="handleBatchOperation"
         >
           批量操作
@@ -17,12 +17,13 @@
         v-loading="tableLoading"
         :data="tableData"
         border
-        style="width: 100%"
+        style="width: 100%r"
         @selection-change="handleSelectionChange"
       >
         <el-table-column
           type="selection"
           width="55"
+          :selectable="isRowSelectable"
         />
         <el-table-column prop="uuid" label="UUID" min-width="220" />
         <el-table-column prop="platform" label="平台" min-width="100"/>
@@ -89,7 +90,7 @@
     >
       <ConfigForm
         v-model:visible="dialogVisible_host"
-        :selected-hosts="selectedRows"
+        :selected-hosts="selectedData"
       />
     </el-dialog>
     <!-- 添加详情弹窗 -->
@@ -133,18 +134,31 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, onMounted, h } from "vue";
+// 本人前端废物，代码写的很烂，不要学我，所以注释很多！
+import { ref, reactive, onMounted, h, watch, nextTick } from "vue";
 import { ElMessage, ElMessageBox } from "element-plus";
 import { getagentinfo,getagentmetadata} from "@/api/login";
 import ConfigForm from "@/views/Info/form.vue";
 import VueJsonPretty from "vue-json-pretty";
 import "vue-json-pretty/lib/styles.css";
-
+import { fetchEventSource } from '@microsoft/fetch-event-source';
 // 弹出
-var  dialogVisible_host = ref(false)
+const dialogVisible_host = ref(false)
+watch(dialogVisible_host, (newVal) => {
+  if (newVal) {
+    // 弹窗打开时，中断 SSE 连接
+    if (sseController.value) {
+      sseController.value.abort()
+    }
+  } else {
+    // 弹窗关闭时，重新建立 SSE 连接
+    sseController.value = initSSE()
+  }
+})
+
 // 详情弹窗相关
 const detailDialogVisible = ref(false)
-const detailData = ref({})
+const detailData = ref<{ uuid?: string }>({})
 const display_title_detail =ref("")
 
 // agent 信息
@@ -166,8 +180,9 @@ interface AgentInfo {
 }
 // 表格数据
 const tableData = ref<AgentInfo[]>([])
+const selectedData = ref<AgentInfo[]>([]) // 存储选中的完整数据
+const selectedUUIDs = ref<string[]>([]) // 存储选中行的 UUID
 const tableLoading = ref(false)
-const selectedRows = ref<AgentInfo[]>([])
 
 // 分页配置
 const pagination = reactive({
@@ -191,12 +206,15 @@ const getStatusType = (status: string) => {
 
 // 处理选择变化
 const handleSelectionChange = (rows: AgentInfo[]) => {
-  selectedRows.value = rows
+  // 深拷贝选中的数据
+  selectedData.value = JSON.parse(JSON.stringify(rows))
+  // 保存选中行的 UUID
+  selectedUUIDs.value = rows.map(row => row.uuid)
 }
 
 // 批量操作
 const handleBatchOperation = () => {
-  if (selectedRows.value.length === 0) {
+  if (selectedData.value.length === 0) {
     ElMessage.warning('请先选择要操作的主机')
     return
   }
@@ -214,76 +232,89 @@ const handleCurrentChange = (val: number) => {
   fetchTableData()
 }
 
+// 只有当active为1时才能勾选
+const isRowSelectable = (row: AgentInfo) => {
+  return row.active === 1; 
+}
 
-// let socket = null
-//
-// // 初始化 WebSocket
-// const initWebSocket = () => {
-//   try {
-//     socket = new WebSocket('ws://127.0.0.1:8080/v1/info_ws') // 替换为你的 WebSocket 服务地址
-//
-//     // 监听连接打开事件
-//     socket.onopen = () => {
-//       console.log('WebSocket 连接成功')
-//       fetchTableDataViaWebSocket()
-//     }
-//
-//     // 监听收到消息事件
-//     socket.onmessage = (event) => {
-//       const data = JSON.parse(event.data)
-//       if (data.type === 'tableData') {
-//         updateTableData(data.payload)
-//       }
-//     }
-//
-//     // 监听连接关闭事件
-//     socket.onclose = () => {
-//       console.log('WebSocket 已关闭')
-//     }
-//
-//     // 监听连接错误事件
-//     socket.onerror = (error) => {
-//       console.error('WebSocket 错误:', error)
-//       ElMessage.error('WebSocket 连接错误，请检查网络或服务器')
-//     }
-//   } catch (error) {
-//     console.error('初始化 WebSocket 失败:', error)
-//   }
-// }
-//
-// // 使用 WebSocket 获取表格数据
-// const fetchTableDataViaWebSocket = () => {
-//   if (socket && socket.readyState === WebSocket.OPEN) {
-//     const params = {
-//       page: pagination.currentPage,
-//       pageSize: pagination.pageSize
-//     }
-//     socket.send(JSON.stringify({ type: 'fetchTableData', payload: params }))
-//   } else {
-//     console.error('WebSocket 未连接')
-//     ElMessage.error('WebSocket 未连接，请重试')
-//   }
-// }
-//
-// // 更新表格数据
-// const updateTableData = (data) => {
-//   tableLoading.value = true
-//   try {
-//     tableData.value = data.agentInfos || []
-//     if (data.nums !== undefined) {
-//       pagination.total = data.nums
-//     }
-//   } catch (error) {
-//     console.error('更新表格数据失败:', error)
-//     ElMessage.error('更新表格数据失败')
-//   } finally {
-//     tableLoading.value = false
-//   }
-// }
+// 添加 SSE 控制器引用
+const sseController = ref(null)
 
+// 修改 initSSE 函数
+const initSSE = () => {
+  const controller = new AbortController()
+  fetchEventSource('http://127.0.0.1:8080/v1/info_sse?page='+pagination.currentPage+'&pageSize='+pagination.pageSize, {
+    signal: controller.signal,
+    headers: {
+      'Accept': 'text/event-stream',  // Changed to proper SSE content type
+      // 'Cache-Control': 'no-cache',
+      // 'Connection': 'keep-alive',
+      "Authorization": "123456"
+    },
+    async onopen(response) {
+      if (response.ok && response.status === 200) {
+        console.log('SSE 连接成功');
+      } else if (response.status >= 400 && response.status < 500 && response.status !== 429) {
+        throw new Error(`Failed to connect: ${response.status}`);
+      }
+    },
+    onmessage(event) {
+      try {
+        if (!event.data) {
+          console.warn('Empty event data received');
+          return;
+        }
+        const data = JSON.parse(event.data);
+        console.log('SSE 收到消息:', data);
+        updateTableData(data);
+      } catch (error) {
+        console.error('解析消息失败:', error);
+      }
+    },
+    onclose() {
+      console.log('SSE 连接关闭');
+      // 可以在这里添加重连逻辑
+      setTimeout(initSSE, 1000);
+    },
+    onerror(err) {
+      console.error('SSE 错误:', err);
+      ElMessage.error('SSE 连接错误，请检查网络或服务器');
+      controller.abort();  // 出错时中断连接
+    },
+  })
+  return controller
+}
 
+const updateTableData = (rep) => {
+  if (!rep || !rep.data) {
+    console.error('Invalid response data')
+    ElMessage.error('更新表格数据失败：无效数据')
+    return
+  }
 
+  tableLoading.value = true
+  try {
+    tableData.value = rep.data.agentInfos || []
+    pagination.total = rep.data.nums ?? pagination.total
 
+    // SSE 更新后，需要重新设置选中状态
+    nextTick(() => {
+      const table = document.querySelector('.el-table')
+      if (table && table.__vue__) {
+        tableData.value.forEach(row => {
+          if (selectedUUIDs.value.includes(row.uuid)) {
+            table.__vue__.toggleRowSelection(row, true)
+          }
+        })
+      }
+    })
+  } catch (error) {
+    console.error('更新表格数据失败:', error)
+    ElMessage.error('更新表格数据失败')
+  } finally {
+    tableLoading.value = false
+  }
+}
 
 // 获取表格数据
 const fetchTableData = async () => {
@@ -334,7 +365,7 @@ const jsonData2 = async (uuid,model_name) => {
     detailData.value = res.data
   } catch (error) {
     console.error('获取元数据失败:', error)
-    ElMessage.error('获取元数据失败，请重试')
+    ElMessage.error('获取元数���失败，请重试')
   } finally {
   }
 }
@@ -349,14 +380,19 @@ const handleDetail2 = (uuid,model_name) => {
 
 // 处理详情按钮点击
 const handleDetail = (row: AgentInfo) => {
+  if (row.active==0) {
+    ElMessage.warning('设备不在线，无法获取实时数据')
+    return
+  }
+  detailData.value={}
    jsonData(row.uuid)
   display_title_detail.value = "当前数据模型："+"stand1"
   detailDialogVisible.value = true
 }
 
 onMounted(() => {
-  // initWebSocket()
-  fetchTableData()
+  sseController.value = initSSE()
+  // fetchTableData()
 })
 </script>
 

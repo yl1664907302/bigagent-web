@@ -83,7 +83,6 @@ export const getmarkdownbystatus2time = (
 }
 
 //创建机器人
-
 export const postcreaterobot = (data: CreateRobot): Promise<IResponse<CreateRobot_response>> => {
   return request.post({ url: '/alertmanger/post/newrobot', data })
 }
