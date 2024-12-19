@@ -1,9 +1,15 @@
 <template>
   <div class="agent-config-container">
-    <el-card>
+    <el-card class="table-card">
       <!-- 操作按钮区域 -->
       <div class="operation-area">
-        <el-button type="primary" @click="handleAdd">新增配置</el-button>
+        <el-button 
+          type="primary" 
+          @click="handleAdd"
+          :icon="Plus"
+        >
+          新增配置
+        </el-button>
       </div>
 
       <!-- 表格区域 -->
@@ -12,6 +18,10 @@
         :data="tableData"
         border
         style="width: 100%"
+        :header-cell-style="headerCellStyle"
+        :cell-style="cellStyle"
+        highlight-current-row
+        stripe
       >
         <el-table-column prop="id" label="ID" min-width="60" />
         <el-table-column prop="title" label="配置标题" min-width="120" />
@@ -78,6 +88,7 @@
           layout="total, sizes, prev, pager, next, jumper"
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
+          background
         />
       </div>
     </el-card>
@@ -123,7 +134,7 @@ import { delagentconf, getagentconf, pushagentconf } from "@/api/login";
 import dayjs from 'dayjs' // 需要安装 dayjs
 import ConfigForm from './form.vue'
 import ConfigForm_edit from './form_edit.vue'
-import { Delete, Download, Edit } from "@element-plus/icons-vue";
+import { Delete, Download, Edit, Plus } from "@element-plus/icons-vue";
 var  dialogVisible_add = ref(false)
 var dialogTitle_add = ref('新增agent配置')
 var  dialogVisible_edit = ref(false)
@@ -316,6 +327,21 @@ const handleDel = async (row: TableItem) => {
   }
 }
 
+// 添加表格样式配置
+const headerCellStyle = {
+  backgroundColor: '#f5f7fa',
+  color: '#606266',
+  fontWeight: 'bold',
+  fontSize: '14px',
+  height: '45px',
+  padding: '8px'
+}
+
+const cellStyle = {
+  fontSize: '14px',
+  padding: '8px'
+}
+
 onMounted(() => {
   fetchTableData()
 })
@@ -323,16 +349,70 @@ onMounted(() => {
 
 <style scoped>
 .agent-config-container {
-  padding: 20px;
+  padding: 12px;
+}
+
+.table-card {
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .operation-area {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  padding: 0 5px;
 }
 
 .pagination-area {
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   justify-content: flex-end;
+  padding: 5px;
+}
+
+/* 美化滚动条 */
+:deep(.el-table__body-wrapper::-webkit-scrollbar) {
+  width: 8px;
+  height: 8px;
+}
+
+:deep(.el-table__body-wrapper::-webkit-scrollbar-thumb) {
+  background-color: #dcdfe6;
+  border-radius: 4px;
+}
+
+:deep(.el-table__body-wrapper::-webkit-scrollbar-track) {
+  background-color: #f5f7fa;
+}
+
+/* 表格hover效果增强 */
+:deep(.el-table__row:hover) {
+  background-color: #f5f7fa !important;
+  transition: background-color 0.3s;
+}
+
+/* 表格边框美化 */
+:deep(.el-table) {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* 按钮悬停效果 */
+.el-button {
+  transition: all 0.3s;
+}
+
+.el-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+:deep(.el-table .el-table__cell) {
+  padding: 6px 0;
+}
+
+:deep(.el-table th.el-table__cell) {
+  padding: 8px 0;
 }
 </style>
