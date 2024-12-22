@@ -121,6 +121,7 @@ export default {
     info : 'agent管理',
     detail: '详情',
     status: '状态',
+    one: '开始',
     base : '基础模块',
     show: '所有模块',
     start: '开始',

@@ -10,7 +10,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
   {
     path: '/',
     component: Layout,
-    redirect: '/config',
+    redirect: '/one',
     name: 'Root',
     meta: {
       hidden: true
@@ -116,6 +116,25 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
   //   ]
   // },
   {
+    path: '/one',
+    component: Layout,
+    redirect: '/one/one-1',
+    name: 'One',
+    meta: {
+      title: t('router.one')
+    },
+    children: [
+      {
+        path: 'one-1',
+        name: 'One-1',
+        component: () => import('@/views/One/index.vue'),
+        meta: {
+          title: t('router.one')
+        }
+      }
+    ]
+  },
+  {
     path: '/config',
     component: Layout,
     redirect: '/config/first',
@@ -132,16 +151,16 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           title: t('router.config')
         }
       },
-          {
-            path: 'info',
-            name: 'Info',
-            component: () => import('@/views/Info/index.vue'),
-            meta: {
-              title: t('router.info')
-            }
-          }
+      {
+        path: 'info',
+        name: 'Info',
+        component: () => import('@/views/Info/index.vue'),
+        meta: {
+          title: t('router.info')
+        }
+      }
     ]
-  },
+  }
   // {
   //   path: '/info',
   //   component: Layout,
