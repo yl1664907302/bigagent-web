@@ -108,7 +108,6 @@ import 'vue-json-pretty/lib/styles.css'
 import { fetchEventSource } from '@microsoft/fetch-event-source'
 // 弹出
 const dialogVisible_host = ref(false)
-
 // 详情弹窗相关
 const detailDialogVisible = ref(false)
 const detailData = ref<{ uuid?: string }>({})
@@ -177,12 +176,14 @@ const handleBatchOperation = () => {
 // 分页处理
 const handleSizeChange = (val: number) => {
   pagination.pageSize = val
-  fetchTableData()
+  sseController.abort() // 切换分页时中断连接
+  sseController = initSSE()
 }
 
 const handleCurrentChange = (val: number) => {
   pagination.currentPage = val
-  fetchTableData()
+  sseController.abort() // 切换分页时中断连接
+  sseController = initSSE()
 }
 
 // 只有当active为1时才能勾选
@@ -239,6 +240,7 @@ const initSSE = () => {
   )
   return controller
 }
+let sseController = initSSE()
 
 const updateTableData = (rep) => {
   if (selectedUUIDs.value.length > 0) {
@@ -353,7 +355,7 @@ const handleDetail = (row: AgentInfo) => {
 }
 
 onMounted(() => {
-  initSSE()
+  sseController
   // fetchTableData()
 })
 </script>
