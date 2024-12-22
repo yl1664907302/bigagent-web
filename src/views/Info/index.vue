@@ -1,61 +1,12 @@
 <template>
   <div class="agent-info-container">
-    <!-- 添加统计卡片区域 -->
-    <el-card class="statistics-card">
-      <el-row :gutter="16" class="statistics-row">
-        <el-col :span="8">
-          <div class="statistic-item">
-            <el-statistic :value="statistics.totalAgents">
-              <template #title>
-                <div style="display: inline-flex; align-items: center">
-                  总主机数
-                  <el-tooltip effect="dark" content="系统中注册的总主机数量" placement="top">
-                    <el-icon style="margin-left: 4px" :size="12"><Warning /></el-icon>
-                  </el-tooltip>
-                </div>
-              </template>
-            </el-statistic>
-          </div>
-        </el-col>
-        <el-col :span="8">
-          <div class="statistic-item">
-            <el-statistic :value="statistics.onlineAgents" value-style="color: #67C23A">
-              <template #title>
-                <div style="display: inline-flex; align-items: center">
-                  在线主机数
-                  <el-tooltip effect="dark" content="当前在线的主机数量" placement="top">
-                    <el-icon style="margin-left: 4px" :size="12"><Warning /></el-icon>
-                  </el-tooltip>
-                </div>
-              </template>
-            </el-statistic>
-          </div>
-        </el-col>
-        <el-col :span="8">
-          <div class="statistic-item">
-            <el-statistic :value="statistics.offlineAgents" value-style="color: #F56C6C">
-              <template #title>
-                <div style="display: inline-flex; align-items: center">
-                  离线主机数
-                  <el-tooltip effect="dark" content="当前离线的主机数量" placement="top">
-                    <el-icon style="margin-left: 4px" :size="12"><Warning /></el-icon>
-                  </el-tooltip>
-                </div>
-              </template>
-            </el-statistic>
-          </div>
-        </el-col>
-      </el-row>
-    </el-card>
-
-    <el-card class="table-card">
+    <el-card>
       <!-- 操作按钮区域 -->
       <div class="operation-area">
         <el-button
           type="primary"
           :disabled="!selectedData.length"
           @click="handleBatchOperation"
-          :icon="Plus"
         >
           批量操作
         </el-button>
@@ -68,10 +19,6 @@
         border
         style="width: 100%"
         @selection-change="handleSelectionChange"
-        :header-cell-style="headerCellStyle"
-        :cell-style="cellStyle"
-        highlight-current-row
-        stripe
       >
         <el-table-column
           type="selection"
@@ -79,13 +26,6 @@
           :selectable="isRowSelectable"
         />
         <el-table-column prop="uuid" label="UUID" min-width="220" />
-        <el-table-column prop="platform" label="平台" min-width="100"/>
-        <el-table-column prop="os" label="操作系统" min-width="100"/>
-        <el-table-column prop="kernel" label="内核版本" min-width="100"/>
-        <el-table-column prop="machine_type" label="机器类型" min-width="100"/>
-        <el-table-column prop="net_ip" label="网络IP" min-width="120" />
-        <el-table-column prop="hostname" label="主机名" min-width="150" />
-        <el-table-column prop="ipv4_first" label="IPv4" min-width="120" />
         <el-table-column prop="active" label="活跃状态" min-width="100">
           <template #default="{ row }">
             <el-tag :type="row.active === 1 ? 'success' : 'danger'">
@@ -93,6 +33,13 @@
             </el-tag>
           </template>
         </el-table-column>
+        <el-table-column prop="platform" label="平台" min-width="100"/>
+        <el-table-column prop="os" label="操作系统" min-width="100"/>
+        <el-table-column prop="kernel" label="内核版本" min-width="100"/>
+        <el-table-column prop="machine_type" label="机器类型" min-width="100"/>
+        <el-table-column prop="net_ip" label="网络IP" min-width="120" />
+        <el-table-column prop="hostname" label="主机名" min-width="150" />
+        <el-table-column prop="ipv4_first" label="IPv4" min-width="120" />
         <el-table-column prop="status" label="状态" min-width="150">
           <template #default="{ row }">
             <el-tag :type="getStatusType(row.status)">
@@ -102,11 +49,6 @@
         </el-table-column>
         <el-table-column prop="action_detail" label="操作详情" min-width="150" />
         <el-table-column prop="grpc_port" label="GRPC端口" min-width="100" />
-<!--        <el-table-column prop="created_at" label="创建时间" min-width="180">-->
-<!--          <template #default="{ row }">-->
-<!--            {{ formatDate(row.created_at) }}-->
-<!--          </template>-->
-<!--        </el-table-column>-->
         <el-table-column label="操作" min-width="180" fixed="right">
           <template #default="{ row }">
             <el-space>
@@ -132,7 +74,6 @@
           layout="total, sizes, prev, pager, next, jumper"
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
-          background
         />
       </div>
     </el-card>
@@ -190,44 +131,14 @@
 <script lang="ts" setup>
 // 本人前端废物，代码写的很烂，不要学我，所以注释很多！
 import { ref, reactive, onMounted, h, watch, nextTick } from "vue";
-import { ElMessage, ElMessageBox, ElNotification } from "element-plus";
+import { ElMessage, ElMessageBox,ElNotification } from "element-plus";
 import { getagentinfo,getagentmetadata} from "@/api/login";
 import ConfigForm from "@/views/Info/form.vue";
 import VueJsonPretty from "vue-json-pretty";
 import "vue-json-pretty/lib/styles.css";
 import { fetchEventSource } from '@microsoft/fetch-event-source';
-import { Plus, Warning } from '@element-plus/icons-vue'
-
 // 弹出
 const dialogVisible_host = ref(false)
-watch(dialogVisible_host, (newVal) => {
-  if (newVal) {
-    // 弹窗打开时，中断 SSE 连接
-    if (sseController.value) {
-      sseController.value.abort()
-    }
-  } else {
-    // 保存当前选中状态
-    const currentSelected = [...selectedData.value]
-    
-    // 弹窗关闭时，重新建立 SSE 连接并刷新数据
-    sseController.value = initSSE()
-    fetchTableData().then(() => {
-      // 数据刷新后恢复选中状态
-      nextTick(() => {
-        const table: any = document.querySelector('.el-table')?.__vueParentComponent?.proxy
-        if (table) {
-          table.clearSelection()
-          tableData.value.forEach(row => {
-            if (currentSelected.some(selected => selected.uuid === row.uuid) && row.active === 1) {
-              table.toggleRowSelection(row, true)
-            }
-          })
-        }
-      })
-    })
-  }
-})
 
 // 详情弹窗相关
 const detailDialogVisible = ref(false)
@@ -310,8 +221,6 @@ const isRowSelectable = (row: AgentInfo) => {
   return row.active === 1; 
 }
 
-// 添加 SSE 控制器引用
-const sseController = ref(null)
 
 // 修改 initSSE 函数
 const initSSE = () => {
@@ -338,9 +247,8 @@ const initSSE = () => {
           return;
         }
         const data = JSON.parse(event.data);
-        console.log('SSE 收到消息:', data);
-        updateTableData(data);
-      } catch (error) {
+       updateTableData(data);    
+  } catch (error) {
         console.error('解析消息失败:', error);
       }
     },
@@ -358,69 +266,39 @@ const initSSE = () => {
   return controller
 }
 
-// 添加统计数据
-const statistics = reactive({
-  totalAgents: 0,
-  onlineAgents: 0,
-  offlineAgents: 0
-})
-
-// 修改 updateTableData 函数
-const updateTableData = (rep) => {
-  // 如果弹窗正在显示，不更新数据
-  if (dialogVisible_host.value || detailDialogVisible.value) {
-    return
+const notfiy = (data) => {
+  console.log('SSE 收到消息:', data);
+  data.data.agentInfos.forEach((newAgent) => {
+    const oldAgent = tableData.value.find(agent => agent.uuid === newAgent.uuid);
+    if (oldAgent && oldAgent.active !== newAgent.active){
+    ElNotification({
+          title: newAgent?.active === 1 ? '设备上线通知' : '设备离线通知',
+          message: `设备 ${newAgent?.hostname}(${newAgent?.net_ip}) ${newAgent?.active === 1 ? '已上线' : '已离线'}`,
+          type: newAgent?.active === 1 ? 'success' : 'warning',
+          duration: 3000,
+          position: 'top-right'
+        });
   }
+}
+);
+}
 
+const updateTableData = (rep) => {
+  if (selectedUUIDs.value.length > 0) {
+    console.log('存在勾选项，跳过更新');
+    return;
+  }
+  notfiy(rep);
   if (!rep || !rep.data) {
     console.error('Invalid response data')
     ElMessage.error('更新表格数据失败：无效数据')
     return
   }
 
+  tableLoading.value = true
   try {
-    const oldData = [...tableData.value]
-    // 保存当前选中的 UUID 列表，而不是完整数据
-    const currentSelectedUUIDs = selectedUUIDs.value
-    
-    const newData = rep.data.agentInfos || []
-    
-    const changedDevices = newData.filter(newRow => {
-      const oldRow = oldData.find(row => row.uuid === newRow.uuid)
-      return oldRow && oldRow.active !== newRow.active
-    })
-
-    tableData.value = newData
+    tableData.value = rep.data.agentInfos || []
     pagination.total = rep.data.nums ?? pagination.total
-
-    // 更新统计数据
-    statistics.totalAgents = newData.length
-    statistics.onlineAgents = newData.filter(agent => agent.active === 1).length
-    statistics.offlineAgents = newData.filter(agent => agent.active === 0).length
-    
-    nextTick(() => {
-      // 只恢复之前选中的行
-      const table: any = document.querySelector('.el-table')?.__vueParentComponent?.proxy
-      if (table) {
-        table.clearSelection()
-        tableData.value.forEach(row => {
-          if (currentSelectedUUIDs.includes(row.uuid) && row.active === 1) {
-            table.toggleRowSelection(row, true)
-          }
-        })
-      }
-      
-      // 通知逻辑保持不变
-      changedDevices.forEach(device => {
-        ElNotification({
-          title: device.active === 1 ? '设备上线通知' : '设备离线通知',
-          message: `设备 ${device.hostname}(${device.net_ip}) ${device.active === 1 ? '已上线' : '已离线'}`,
-          type: device.active === 1 ? 'success' : 'warning',
-          duration: 3000,
-          position: 'top-right'
-        })
-      })
-    })
   } catch (error) {
     console.error('更新表格数据失败:', error)
     ElMessage.error('更新表格数据失败')
@@ -429,7 +307,7 @@ const updateTableData = (rep) => {
   }
 }
 
-// 获取表格数据
+// 获取表格数据（静态）
 const fetchTableData = async () => {
   try {
     tableLoading.value = true
@@ -478,7 +356,7 @@ const jsonData2 = async (uuid,model_name) => {
     detailData.value = res.data
   } catch (error) {
     console.error('获取元数据失败:', error)
-    ElMessage.error('获取元数据失败，请重试')
+    ElMessage.error('获取元数数失败，请重试')
   } finally {
   }
 }
@@ -503,112 +381,27 @@ const handleDetail = (row: AgentInfo) => {
   detailDialogVisible.value = true
 }
 
-// 添加表格样式配置
-const headerCellStyle = {
-  backgroundColor: '#f5f7fa',
-  color: '#606266',
-  fontWeight: 'bold',
-  fontSize: '14px',
-  height: '45px',
-  padding: '8px'
-}
-
-const cellStyle = {
-  fontSize: '14px',
-  padding: '8px'
-}
-
-watch(detailDialogVisible, (newVal) => {
-  if (newVal) {
-    if (sseController.value) {
-      sseController.value.abort()
-    }
-  } else {
-    // 保存当前选中状态
-    const currentSelected = [...selectedData.value]
-    
-    sseController.value = initSSE()
-    fetchTableData().then(() => {
-      nextTick(() => {
-        const table: any = document.querySelector('.el-table')?.__vueParentComponent?.proxy
-        if (table) {
-          table.clearSelection()
-          tableData.value.forEach(row => {
-            if (currentSelected.some(selected => selected.uuid === row.uuid) && row.active === 1) {
-              table.toggleRowSelection(row, true)
-            }
-          })
-        }
-      })
-    })
-  }
-})
-
 onMounted(() => {
-  sseController.value = initSSE()
+ initSSE()
   // fetchTableData()
 })
 </script>
 
 <style scoped>
 .agent-info-container {
-  padding: 10px;
-}
-
-/* 更新统计卡片样式 */
-.statistics-card {
-  margin-bottom: 20px;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-.statistics-row {
-  margin: 0 !important;  /* 移除外边距 */
-}
-
-.statistic-item {
   padding: 20px;
-  text-align: center;
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 添加分隔线 */
-.statistic-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 20%;
-  height: 60%;
-  width: 1px;
-  background-color: var(--el-border-color-lighter);
-}
-
-.el-statistic {
-  --el-statistic-content-font-size: 28px;
-}
-
-/* 表格相关样式 */
-.table-card {
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .operation-area {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   display: flex;
   gap: 10px;
-  padding: 0 5px;
 }
 
 .pagination-area {
-  margin-top: 15px;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-end;
-  padding: 5px;
 }
 
 .mt-4 {
@@ -622,50 +415,5 @@ onMounted(() => {
   padding: 16px;
   max-height: 600px;
   overflow: auto;
-}
-
-/* 滚动条美化 */
-:deep(.el-table__body-wrapper::-webkit-scrollbar) {
-  width: 8px;
-  height: 8px;
-}
-
-:deep(.el-table__body-wrapper::-webkit-scrollbar-thumb) {
-  background-color: #dcdfe6;
-  border-radius: 4px;
-}
-
-:deep(.el-table__body-wrapper::-webkit-scrollbar-track) {
-  background-color: #f5f7fa;
-}
-
-/* 表格交互效果 */
-:deep(.el-table__row:hover) {
-  background-color: #f5f7fa !important;
-  transition: background-color 0.3s;
-}
-
-:deep(.el-table) {
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-/* 按钮效果 */
-.el-button {
-  transition: all 0.3s;
-}
-
-.el-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* 表格内边距调整 */
-:deep(.el-table .el-table__cell) {
-  padding: 6px 0;
-}
-
-:deep(.el-table th.el-table__cell) {
-  padding: 8px 0;
 }
 </style>
