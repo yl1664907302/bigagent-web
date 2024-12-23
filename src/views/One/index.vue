@@ -1,14 +1,3 @@
 <template>
-  <div v-html="md.render(markdown)"></div>
+  <iframe src="/src/views/One/index.html"></iframe>
 </template>
-<script>
-import MarkdownIt from 'markdown-it'
-export default {
-  data() {
-    return {
-      markdown: '# Hello, world!\nThis is **Markdown**.',
-      md: new MarkdownIt()
-    }
-  }
-}
-</script>

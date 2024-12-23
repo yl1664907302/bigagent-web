@@ -1,13 +1,156 @@
 <template>
   <div class="agent-info-container">
     <el-card>
+      <el-row :gutter="16">
+        <el-col :span="8">
+          <div class="statistic-card">
+            <el-statistic :value="agent_num.total_num">
+              <template #title>
+                <div style="display: inline-flex; align-items: center">
+                  agent注册数
+                  <el-tooltip effect="dark" content="已经注册的agent总数" placement="top">
+                    <el-icon style="margin-left: 4px" :size="12">
+                      <Warning />
+                    </el-icon>
+                  </el-tooltip>
+                </div>
+              </template>
+            </el-statistic>
+            <div class="statistic-footer">
+              <div class="footer-item">
+                <span>合法 agents</span>
+                <span class="green" v-if="agent_num.total_num > 0">
+                  100%
+                  <el-icon>
+                    <CaretTop />
+                  </el-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="statistic-card">
+            <el-statistic :value="agent_num.alive_num">
+              <template #title>
+                <div style="display: inline-flex; align-items: center">
+                  agent在线数
+                  <el-tooltip effect="dark" content="目前在线的agent数量" placement="top">
+                    <el-icon style="margin-left: 4px" :size="12">
+                      <Warning />
+                    </el-icon>
+                  </el-tooltip>
+                </div>
+              </template>
+            </el-statistic>
+            <div class="statistic-footer">
+              <div class="footer-item">
+                <span>agent在线率</span>
+                <span class="red" v-if="agent_num.alive_num < agent_num.total_num">
+                  {{ (agent_num.alive_num / agent_num.total_num) * 100 }}%
+                  <el-icon>
+                    <CaretBottom />
+                  </el-icon>
+                </span>
+              </div>
+              <div class="footer-item">
+                <span class="green" v-if="agent_num.alive_num == agent_num.total_num">
+                  100%
+                  <el-icon>
+                    <CaretTop />
+                  </el-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="statistic-card">
+            <el-statistic :value="agent_num.dead_num" title="New transactions today">
+              <template #title>
+                <div style="display: inline-flex; align-items: center">
+                  agent离线数
+                  <el-tooltip effect="dark" content="目前离线的agent数量" placement="top">
+                    <el-icon style="margin-left: 4px" :size="12">
+                      <Warning />
+                    </el-icon>
+                  </el-tooltip>
+                </div>
+              </template>
+            </el-statistic>
+            <div class="statistic-footer">
+              <div class="footer-item">
+                <span>agent离线率</span>
+                <span class="red" v-if="agent_num.alive_num < agent_num.total_num">
+                  {{ (agent_num.dead_num / agent_num.total_num) * 100 }}%
+                  <el-icon>
+                    <CaretTop />
+                  </el-icon>
+                </span>
+                <span class="green" v-if="agent_num.alive_num == agent_num.total_num">
+                  0%
+                  <el-icon>
+                    <CaretBottom />
+                  </el-icon>
+                </span>
+              </div>
+              <div class="footer-item">
+                <!-- <el-icon :size="14">
+                  <ArrowRight />
+                </el-icon> -->
+              </div>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+    </el-card>
+    <div class="mt-4"></div>
+    <el-card>
       <!-- 操作按钮区域 -->
       <div class="operation-area">
         <el-button type="primary" :disabled="!selectedData.length" @click="handleBatchOperation">
-          批量操作
+          批量下发
         </el-button>
+        <el-button type="primary" @click="handleQuery"> 查询 </el-button>
+        <el-select
+          v-model="agent_option.type"
+          placeholder="类型"
+          style="width: 240px"
+          :disabled="isDisabled"
+        >
+          <el-option
+            v-for="item in options1"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+        <el-select
+          v-model="agent_option.platform"
+          placeholder="平台"
+          style="width: 240px"
+          :disabled="isDisabled"
+        >
+          <el-option
+            v-for="item in options2"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+        <el-input
+          v-model="agent_option.ip"
+          style="width: 240px"
+          placeholder="请输入ip地址"
+          @input="() => checkInput('ip')"
+        />
+        <el-input
+          v-model="agent_option.uuid"
+          style="width: 240px"
+          placeholder="请输入机器uuid"
+          @input="() => checkInput('uuid')"
+        />
       </div>
-
       <!-- 表格区域 -->
       <el-table
         v-loading="tableLoading"
@@ -25,13 +168,13 @@
             </el-tag>
           </template>
         </el-table-column>
+        <el-table-column prop="hostname" label="主机名" min-width="150" />
+        <el-table-column prop="ipv4_first" label="IPv4" min-width="120" />
         <el-table-column prop="platform" label="平台" min-width="100" />
         <el-table-column prop="os" label="操作系统" min-width="100" />
         <el-table-column prop="kernel" label="内核版本" min-width="100" />
         <el-table-column prop="machine_type" label="机器类型" min-width="100" />
         <el-table-column prop="net_ip" label="网络IP" min-width="120" />
-        <el-table-column prop="hostname" label="主机名" min-width="150" />
-        <el-table-column prop="ipv4_first" label="IPv4" min-width="120" />
         <el-table-column prop="status" label="状态" min-width="150">
           <template #default="{ row }">
             <el-tag :type="getStatusType(row.status)">
@@ -47,6 +190,7 @@
               <el-button size="small" type="primary" @click="handleDetail(row)">
                 实时元数据
               </el-button>
+              <el-button size="small" type="danger" @click="handleDetail(row)"> 删除 </el-button>
             </el-space>
           </template>
         </el-table-column>
@@ -98,10 +242,10 @@
 </template>
 
 <script lang="ts" setup>
-// 本人前端废物，代码写的很烂，不要学我，所以注释很多！
-import { ref, reactive, onMounted, h, watch, nextTick } from 'vue'
-import { ElMessage, ElMessageBox, ElNotification } from 'element-plus'
-import { getagentinfo, getagentmetadata } from '@/api/login'
+// 本人前端废物，代码写的很烂，���要学我，所以注释很多！
+import { ref, reactive, onMounted } from 'vue'
+import { ElMessage } from 'element-plus'
+import { getagentmetadata } from '@/api/login'
 import ConfigForm from '@/views/Info/form.vue'
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'
@@ -112,6 +256,43 @@ const dialogVisible_host = ref(false)
 const detailDialogVisible = ref(false)
 const detailData = ref<{ uuid?: string }>({})
 const display_title_detail = ref('')
+import { CaretBottom, CaretTop, Warning } from '@element-plus/icons-vue'
+const agent_option = reactive({
+  type: '',
+  platform: '',
+  ip: '',
+  uuid: ''
+})
+
+const options1 = [
+  {
+    value: 'physical',
+    label: '物理机'
+  },
+  {
+    value: 'virtual',
+    label: '虚拟机'
+  },
+  {
+    value: '',
+    label: '所有'
+  }
+]
+
+const options2 = [
+  {
+    value: 'linux',
+    label: 'LINUX'
+  },
+  {
+    value: 'windows',
+    label: 'WINDOWS'
+  },
+  {
+    value: '',
+    label: '所有'
+  }
+]
 
 // agent 信息
 interface AgentInfo {
@@ -141,6 +322,13 @@ const pagination = reactive({
   currentPage: 1,
   pageSize: 10,
   total: 0
+})
+
+// 统计数据
+const agent_num = reactive({
+  total_num: 0,
+  dead_num: 0,
+  alive_num: 0
 })
 
 // 元数据配置
@@ -173,6 +361,12 @@ const handleBatchOperation = () => {
   dialogVisible_host.value = true
 }
 
+// 查询
+const handleQuery = () => {
+  sseController.abort() // 查询时中断连接
+  sseController = initSSE()
+}
+
 // 分页处理
 const handleSizeChange = (val: number) => {
   pagination.pageSize = val
@@ -198,13 +392,19 @@ const initSSE = () => {
     'http://127.0.0.1:8080/v1/info_sse?page=' +
       pagination.currentPage +
       '&pageSize=' +
-      pagination.pageSize,
+      pagination.pageSize +
+      '&ip=' +
+      agent_option.ip +
+      '&uuid=' +
+      agent_option.uuid +
+      '&platform=' +
+      agent_option.platform +
+      '&type=' +
+      agent_option.type,
     {
       signal: controller.signal,
       headers: {
-        Accept: 'text/event-stream', // Changed to proper SSE content type
-        // 'Cache-Control': 'no-cache',
-        // 'Connection': 'keep-alive',
+        Accept: 'text/event-stream',
         Authorization: '123456'
       },
       async onopen(response) {
@@ -233,7 +433,7 @@ const initSSE = () => {
       },
       onerror(err) {
         console.error('SSE 错误:', err)
-        ElMessage.error('SSE 连接错误，请检查网络或服务器')
+        // ElMessage.error('SSE 连接错误，请检查网络或服务器')
         controller.abort() // 出错时中断连接
       }
     }
@@ -247,7 +447,7 @@ const updateTableData = (rep) => {
     console.log('存在勾选项，跳过更新')
     return
   }
-  notfiy(rep)
+  // notfiy(rep)
   if (!rep || !rep.data) {
     console.error('Invalid response data')
     ElMessage.error('更新表格数据失败：无效数据')
@@ -256,8 +456,12 @@ const updateTableData = (rep) => {
 
   tableLoading.value = true
   try {
+    console.log(rep.data)
     tableData.value = rep.data.agentInfos || []
     pagination.total = rep.data.nums ?? pagination.total
+    agent_num.total_num = rep.data.nums
+    agent_num.alive_num = rep.data.anums
+    agent_num.dead_num = rep.data.dnums
   } catch (error) {
     console.error('更新表格数据失败:', error)
     ElMessage.error('更新表格数据失败')
@@ -266,43 +470,42 @@ const updateTableData = (rep) => {
   }
 }
 
-const notfiy = (data) => {
-  console.log('SSE 收到消息:', data)
-  data.data.agentInfos.forEach((newAgent) => {
-    const oldAgent = tableData.value.find((agent) => agent.uuid === newAgent.uuid)
-    if (oldAgent && oldAgent.active !== newAgent.active) {
-      ElNotification({
-        title: newAgent?.active === 1 ? '设备上线通知' : '设备离线通知',
-        message: `设备 ${newAgent?.hostname}(${newAgent?.net_ip}) ${newAgent?.active === 1 ? '已上线' : '已离线'}`,
-        type: newAgent?.active === 1 ? 'success' : 'warning',
-        duration: 3000,
-        position: 'top-right'
-      })
-    }
-  })
-}
+// const notfiy = (data) => {
+//   data.data.agentInfos.forEach((newAgent) => {
+//     const oldAgent = tableData.value.find((agent) => agent.uuid === newAgent.uuid)
+//     if (oldAgent && oldAgent.active !== newAgent.active) {
+//       ElNotification({
+//         title: newAgent?.active === 1 ? '设备上线通知' : '设备离线通知',
+//         message: `设备 ${newAgent?.hostname}(${newAgent?.net_ip}) ${newAgent?.active === 1 ? '已上线' : '已离线'}`,
+//         type: newAgent?.active === 1 ? 'success' : 'warning',
+//         duration: 3000,
+//         position: 'top-right'
+//       })
+//     }
+//   })
+// }
 
 // 获取表格数据（静态）
-const fetchTableData = async () => {
-  try {
-    tableLoading.value = true
-    const params = {
-      page: pagination.currentPage,
-      pageSize: pagination.pageSize
-    }
-    const res = await getagentinfo(params)
-    tableData.value = res.data.agentInfos
-    // 如果后端返回了总数，则更新
-    if (res.data.nums) {
-      pagination.total = res.data.nums
-    }
-  } catch (error) {
-    console.error('获取数据失败:', error)
-    ElMessage.error('获取数据失败，请重试')
-  } finally {
-    tableLoading.value = false
-  }
-}
+// const fetchTableData = async () => {
+//   try {
+//     tableLoading.value = true
+//     const params = {
+//       page: pagination.currentPage,
+//       pageSize: pagination.pageSize
+//     }
+//     const res = await getagentinfo(params)
+//     tableData.value = res.data.agentInfos
+//     // 如果后端返回了总数，则更新
+//     if (res.data.nums) {
+//       pagination.total = res.data.nums
+//     }
+//   } catch (error) {
+//     console.error('获取数据失败:', error)
+//     ElMessage.error('获取数据失败，请重试')
+//   } finally {
+//     tableLoading.value = false
+//   }
+// }
 
 // 获取元数据
 const jsonData = async (uuid) => {
@@ -354,9 +557,28 @@ const handleDetail = (row: AgentInfo) => {
   detailDialogVisible.value = true
 }
 
+const isDisabled = ref(false)
+
+const checkInput = (field: 'ip' | 'uuid') => {
+  if (field === 'ip') {
+    if (agent_option.ip) {
+      agent_option.uuid = ''
+      agent_option.platform = ''
+      agent_option.type = ''
+    }
+  } else if (field === 'uuid') {
+    if (agent_option.uuid) {
+      agent_option.ip = ''
+      agent_option.platform = ''
+      agent_option.type = ''
+    }
+  }
+  // 更新禁用状态
+  isDisabled.value = !!(agent_option.ip || agent_option.uuid)
+}
+
 onMounted(() => {
   sseController
-  // fetchTableData()
 })
 </script>
 
@@ -388,5 +610,49 @@ onMounted(() => {
   padding: 16px;
   max-height: 600px;
   overflow: auto;
+}
+
+:global(h2#card-usage ~ .example .example-showcase) {
+  background-color: var(--el-fill-color) !important;
+}
+
+.el-statistic {
+  --el-statistic-content-font-size: 28px;
+}
+
+.statistic-card {
+  height: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: var(--el-bg-color-overlay);
+}
+
+.statistic-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--el-text-color-regular);
+  margin-top: 16px;
+}
+
+.statistic-footer .footer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statistic-footer .footer-item span:last-child {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.green {
+  color: var(--el-color-success);
+}
+.red {
+  color: var(--el-color-error);
 }
 </style>
